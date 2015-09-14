@@ -35,7 +35,7 @@
 	<widget label="Smart(ish) albums" type="albums" target="music" path="plugin://service.smartish.widgets?type=albums&amp;reload=$INFO[Window.Property(smartish.albums)]">SmartAlbums</widget>
 
 	<!-- Weather -->
-	<widget label="Weather Forecast">WeatherWidget</widget>
+	<widget label="Weather Forecast" type="custom" path="$INCLUDE[weather-widget]">WeatherWidget</widget>
 	<widgetdefault labelID="weather">WeatherWidget</widgetdefault>
 	
 	<!-- Favourites -->

@@ -67,8 +67,9 @@
 	</variable>
 
 	<variable name="SubMenuColor">
-		<value condition="!Control.HasFocus(9002)">TextColor2</value>
-		<value>TextColor1</value>
+		<!--value condition="!Control.HasFocus(9002)">TextColor2</value>
+		<value>TextColor1</value-->
+		<value>TextColor2</value>
 	</variable>
 
 	<variable name="Plot">
