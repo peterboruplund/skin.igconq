@@ -3,7 +3,7 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=0)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 
@@ -61,8 +61,7 @@
 			<include condition="!Skin.HasSetting(HideConqLogo)">ConqLogo</include>
 
 			<!-- Home layout -->
-			<include condition="!Skin.HasSetting(HomeHorizontal)">HomeDefault</include>
-			<include condition="Skin.HasSetting(HomeHorizontal)">HomeHorizontal</include>
+			<include>HomeDefault</include>
 
 			<!-- RSS -->
 			<control type="rss" id="1">

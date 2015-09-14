@@ -3,7 +3,7 @@
 	<!-- skinsettings -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=0)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onunload>
 
 	<controls>
 
@@ -553,17 +553,6 @@
 					<label>31053</label>
 					<onclick>Skin.ToggleSetting(HideSubmenuHeading)</onclick>
 					<selected>Skin.HasSetting(HideSubmenuHeading)</selected>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
-				<!-- Horizontal home -->
-				<control type="radiobutton" id="1002">
-					<width>1200</width>
-					<height>66</height>
-					<onup>101</onup>
-					<textwidth>1120</textwidth>
-					<label>31061</label>
-					<onclick>Skin.ToggleSetting(HomeHorizontal)</onclick>
-					<selected>Skin.HasSetting(HomeHorizontal)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Hide Conq logo -->
