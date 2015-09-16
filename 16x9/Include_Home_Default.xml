@@ -2,19 +2,7 @@
 <includes>
 
 	<include name="HomeDefault">
-
 		<!-- Submenu indicator -->
-		<control type="label">
-			<left>60</left>
-			<top>60</top>
-			<width>3000</width>
-			<height>120</height>
-			<label>!$INFO[Container(9000).ListItem.Property(labelID)] $INFO[Window.Property(1036-widget)]</label>
-			<font>Font42</font>
-			<textcolor>HomeNF</textcolor>
-		</control>
-
-		<!-- Submenu indicator -->>
 		<control type="label">
 			<left>60</left>
 			<top>763</top>
@@ -340,136 +328,33 @@
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
 		</control>
 
-		<!-- Weather sub menu -->
-		<!--control type="list" id="9003">
-			<left>2605</left>
-			<top>688</top>
-			<width>1218</width>
-			<height>339</height>
-			<onup>Control.Move(9000,-1)</onup>
-			<onup>PageUp</onup>
-			<onup>9000</onup>
-			<ondown>Control.Move(9000,1)</ondown>
-			<ondown>PageUp</ondown>
-			<ondown>9000</ondown>
-			<onleft>9000</onleft>
-			<onright>noop</onright>
-			<orientation>horizontal</orientation>
-			<viewtype label="">list</viewtype>
-			<scrolltime tween="sine" easing="out">240</scrolltime>
-			<visible>StringCompare(Container(9000).ListItem.Property(Widget),WeatherWidget)</visible>
-			<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100" >Visible</animation>
-			<animation effect="slide" start="0,0" end="-1000,0" time="0" condition="StringCompare(Container(9003).NumItems,1)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-1203,0" time="0" condition="StringCompare(Container(9003).NumItems,2)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-1406,0" time="0" condition="StringCompare(Container(9003).NumItems,3)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-1609,0" time="0" condition="StringCompare(Container(9003).NumItems,4)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9003).NumItems,5)">conditional</animation>
-			<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9003).NumItems,5)">conditional</animation>
-
-			<itemlayout width="203" height="339">
-				<control type="label">
-					<top>2</top>
-					<width>203</width>
-					<height>33</height>
-					<font>Font33</font>
-					<align>center</align>
-					<textcolor>TextColor2</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-				</control>
-				<control type="image">
-					<left>30</left>
-					<top>56</top>
-					<width>150</width>
-					<height>150</height>
-					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				</control>
-				<control type="label">
-					<top>249</top>
-					<width>203</width>
-					<height>25</height>
-					<font>Font25</font>
-					<align>center</align>
-					<textcolor>TextColor2</textcolor>
-					<label>$INFO[ListItem.Label2]</label>
-				</control>
-			</itemlayout>
-
-			<focusedlayout width="203" height="339">
-				<control type="label">
-					<top>2</top>
-					<width>203</width>
-					<height>33</height>
-					<font>Font33</font>
-					<align>center</align>
-					<label>$INFO[ListItem.Label]</label>
-					<textcolor>TextColor2</textcolor>
-				</control>
-				<control type="image">
-					<left>30</left>
-					<top>56</top>
-					<width>150</width>
-					<height>150</height>
-					<texture background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				</control>
-				<control type="label">
-					<top>249</top>
-					<width>203</width>
-					<height>25</height>
-					<font>Font25</font>
-					<align>center</align>
-					<textcolor>TextColor2</textcolor>
-					<label>$INFO[ListItem.Label2]</label>
-				</control>
-			</focusedlayout>
-			<content>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day0]</label>
-					<label2>$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day0.Title))</visible>
-				</item>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day1]</label>
-					<label2>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day1.Title))</visible>
-				</item>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day2]</label>
-					<label2>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day2.Title))</visible>
-				</item>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day3]</label>
-					<label2>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day3.Title))</visible>
-				</item>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day4]</label>
-					<label2>$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day4.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day4.Title))</visible>
-				</item>
-				<item>
-					<onclick>noop</onclick>
-					<label>$VAR[Day5]</label>
-					<label2>$INFO[Window(Weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</label2>
-					<icon>$INFO[Window(Weather).Property(Day5.OutlookIcon)]</icon>
-					<visible>!IsEmpty(Window(Weather).Property(Day5.Title))</visible>
-				</item>
-			</content>
-
-		</control-->
+		<!-- Additional widget page indicator -->
+		<control type="label">
+			<top>815</top>
+			<left>550</left>
+			<width>30</width>
+			<height>30</height>
+			<font>Font33</font>
+			<align>right</align>
+			<textcolor>TextColor2</textcolor>
+			<label>&lt;</label>
+			<visible>[Control.HasFocus(9002) + Container(9002).HasPrevious] | [Control.HasFocus(9003) + Container(9003).HasPrevious] | [Control.HasFocus(9004) + Container(9004).HasPrevious] | [Control.HasFocus(9005) + Container(9005).HasPrevious] | [Control.HasFocus(9006) + Container(9006).HasPrevious]</visible>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+		</control>
+		<control type="label">
+			<top>815</top>
+			<right>80</right>
+			<width>30</width>
+			<height>30</height>
+			<font>Font33</font>
+			<align>right</align>
+			<textcolor>TextColor2</textcolor>
+			<label>&gt;</label>
+			<visible>[Control.HasFocus(9002) + Container(9002).HasNext] | [Control.HasFocus(9003) + Container(9003).HasNext] | [Control.HasFocus(9004) + Container(9004).HasNext] | [Control.HasFocus(9005) + Container(9005).HasNext] | [Control.HasFocus(9006) + Container(9006).HasNext]</visible>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+		</control>
 
 		<include>skinshortcuts-template-widget-1</include>
 		<include>skinshortcuts-template-widget-2</include>

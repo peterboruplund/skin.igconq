@@ -14,36 +14,34 @@
 		<property name="isWeather" tag="property" attribute="name|widget" value="WeatherWidget">True</property>
 		<property name="isWeather">False</property>
 
-		<property name="isNotWeather" tag="property" attribute="name|widget" value="WeatherWidget">False</property>
-		<property name="isNotWeather">True</property>
-
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<translate-numeric-properties>True</translate-numeric-properties>
 
 
 		<controls>
 			<control type="list" id="9002">
-				<left>2605</left>
+				<left>6605</left>
 				<top>688</top>
 				<width>1218</width>
 				<height>306</height>
 				
 				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,5)</onup>
-				<onup>9006</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
 
 				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,4)</onup>
-				<onup>9005</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
 
 				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,3)</onup>
-				<onup>9004</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
 
 				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,2)</onup>
-				<onup>9003</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
 
 				<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty($SKINSHORTCUTS[labelID]-widget,2)</ondown>
 				<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 
 				<onleft>9000</onleft>
+				<onback>9000</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
@@ -58,8 +56,19 @@
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9002).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9002).NumItems,5)">conditional</animation>
 
+				<animation effect="slide" start="0,0" end="-4000,0" time="0" condition="IsEmpty(Window.Property($SKINSHORTCUTS[labelID]-widget)) | StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),1) | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]">conditional</animation>
+
 				<animation effect="fade" start="0" end="100" time="200" delay="100" condition="IsEmpty(Window.Property($SKINSHORTCUTS[labelID]-widget)) | StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),1) | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] | [StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="!IsEmpty(Window.Property($SKINSHORTCUTS[labelID]-widget)) + !StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),1) + ![StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] + ![StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] + ![StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] + ![StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]">conditional</animation>
+
+				<animation type="visible">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+					<effect type="slide" start="600,0" end="0,0" time="200" delay="100" />
+				</animation>
+				<animation type="hidden">
+					<effect type="fade" start="100" end="0" time="200" />
+					<effect type="slide" start="0,0" end="600,0" time="200" />
+				</animation>
 
 				<itemlayout width="203" height="306">
 					<control type="image">
@@ -71,66 +80,108 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
+
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+							<aspectratio align="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</itemlayout>
 
 				<focusedlayout width="203" height="306">
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>!Control.HasFocus(9002)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>Control.HasFocus(9002)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+					<control type="group">
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<visible>!Control.HasFocus(9002)</visible>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture background="true">$SKINSHORTCUTS[art]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<visible>Control.HasFocus(9002)</visible>
+						</control>
 					</control>
 
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<visible>!Control.HasFocus(9002)</visible>
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<visible>Control.HasFocus(9002)</visible>
-						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>TextColor2</textcolor>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<visible>!Control.HasFocus(9002)</visible>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture background="true">$SKINSHORTCUTS[art]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<visible>Control.HasFocus(9002)</visible>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</focusedlayout>
+
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
@@ -165,16 +216,13 @@
 		<property name="isWeather" tag="property" attribute="name|widget.1" value="WeatherWidget">True</property>
 		<property name="isWeather">False</property>
 
-		<property name="isNotWeather" tag="property" attribute="name|widget.1" value="WeatherWidget">False</property>
-		<property name="isNotWeather">True</property>
-
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<translate-numeric-properties>True</translate-numeric-properties>
 
 
 		<controls>
 			<control type="list" id="9003">
-				<left>2605</left>
+				<left>6605</left>
 				<top>688</top>
 				<width>1218</width>
 				<height>306</height>
@@ -187,7 +235,8 @@
 				<ondown condition="IsEmpty(Container(9000).ListItem.Property(widgetPath.2))">SetProperty($SKINSHORTCUTS[labelID]-widget,1)</ondown>
 				<ondown condition="IsEmpty(Container(9000).ListItem.Property(widgetPath.2))">9002</ondown>
 
-				<onleft>9000</onleft> 
+				<onleft>9000</onleft>
+				<onback>9000</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
@@ -202,8 +251,19 @@
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9003).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9003).NumItems,5)">conditional</animation>
 
+				<animation effect="slide" start="0,0" end="-4000,0" time="0" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2)">conditional</animation>
+
 				<animation effect="fade" start="0" end="100" time="200" delay="100" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="!StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2)">conditional</animation>
+
+				<animation type="visible">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+					<effect type="slide" start="600,0" end="0,0" time="200" delay="100" />
+				</animation>
+				<animation type="hidden">
+					<effect type="fade" start="100" end="0" time="200" />
+					<effect type="slide" start="0,0" end="600,0" time="200" />
+				</animation>
 
 				<itemlayout width="203" height="306">
 					<control type="image">
@@ -215,16 +275,37 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
+
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>56</top>
+							<width>150</width>
+							<height>150</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</itemlayout>
 
@@ -239,7 +320,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!Control.HasFocus(9003)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 					<control type="image">
 						<left>13</left>
@@ -251,7 +332,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9003)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 
 					<control type="image">
@@ -309,16 +390,13 @@
 		<property name="isWeather" tag="property" attribute="name|widget.2" value="WeatherWidget">True</property>
 		<property name="isWeather">False</property>
 
-		<property name="isNotWeather" tag="property" attribute="name|widget.2" value="WeatherWidget">False</property>
-		<property name="isNotWeather">True</property>
-
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<translate-numeric-properties>True</translate-numeric-properties>
 
 
 		<controls>
 			<control type="list" id="9004">
-				<left>2605</left>
+				<left>6605</left>
 				<top>688</top>
 				<width>1218</width>
 				<height>306</height>
@@ -332,6 +410,7 @@
 				<ondown condition="IsEmpty(Container(9000).ListItem.Property(widgetPath.3))">9002</ondown>
 
 				<onleft>9000</onleft>
+				<onback>9000</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
@@ -346,8 +425,19 @@
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9004).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9004).NumItems,5)">conditional</animation>
 
+				<animation effect="slide" start="0,0" end="-4000,0" time="0" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3)">conditional</animation>
+
 				<animation effect="fade" start="0" end="100" time="200" delay="100" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="!StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3)">conditional</animation>
+
+				<animation type="visible">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+					<effect type="slide" start="600,0" end="0,0" time="200" delay="100" />
+				</animation>
+				<animation type="hidden">
+					<effect type="fade" start="100" end="0" time="200" />
+					<effect type="slide" start="0,0" end="600,0" time="200" />
+				</animation>
 
 				<itemlayout width="203" height="306">
 					<control type="image">
@@ -359,16 +449,37 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
+
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>56</top>
+							<width>150</width>
+							<height>150</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</itemlayout>
 
@@ -383,7 +494,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!Control.HasFocus(9004)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 					<control type="image">
 						<left>13</left>
@@ -395,7 +506,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9004)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 
 					<control type="image">
@@ -453,16 +564,13 @@
 		<property name="isWeather" tag="property" attribute="name|widget.3" value="WeatherWidget">True</property>
 		<property name="isWeather">False</property>
 
-		<property name="isNotWeather" tag="property" attribute="name|widget.3" value="WeatherWidget">False</property>
-		<property name="isNotWeather">True</property>
-
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<translate-numeric-properties>True</translate-numeric-properties>
 
 
 		<controls>
 			<control type="list" id="9005">
-				<left>2605</left>
+				<left>6605</left>
 				<top>688</top>
 				<width>1218</width>
 				<height>306</height>
@@ -476,6 +584,7 @@
 				<ondown condition="IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9002</ondown>
 
 				<onleft>9000</onleft>
+				<onback>9000</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
@@ -490,8 +599,19 @@
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9005).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9005).NumItems,5)">conditional</animation>
 
+				<animation effect="slide" start="0,0" end="-4000,0" time="0" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4)">conditional</animation>
+
 				<animation effect="fade" start="0" end="100" time="200" delay="100" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="!StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4)">conditional</animation>
+
+				<animation type="visible">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+					<effect type="slide" start="600,0" end="0,0" time="200" delay="100" />
+				</animation>
+				<animation type="hidden">
+					<effect type="fade" start="100" end="0" time="200" />
+					<effect type="slide" start="0,0" end="600,0" time="200" />
+				</animation>
 
 				<itemlayout width="203" height="306">
 					<control type="image">
@@ -503,16 +623,37 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
+
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>56</top>
+							<width>150</width>
+							<height>150</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</itemlayout>
 
@@ -527,7 +668,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!Control.HasFocus(9005)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 					<control type="image">
 						<left>13</left>
@@ -539,7 +680,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9005)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 
 					<control type="image">
@@ -597,16 +738,13 @@
 		<property name="isWeather" tag="property" attribute="name|widget.4" value="WeatherWidget">True</property>
 		<property name="isWeather">False</property>
 
-		<property name="isNotWeather" tag="property" attribute="name|widget.4" value="WeatherWidget">False</property>
-		<property name="isNotWeather">True</property>
-
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<translate-numeric-properties>True</translate-numeric-properties>
 
 
 		<controls>
 			<control type="list" id="9006">
-				<left>2605</left>
+				<left>6605</left>
 				<top>688</top>
 				<width>1218</width>
 				<height>306</height>
@@ -618,6 +756,7 @@
 				<ondown>9002</ondown>
 
 				<onleft>9000</onleft>
+				<onback>9000</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
@@ -632,8 +771,19 @@
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(9006).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(9006).NumItems,5)">conditional</animation>
 
+				<animation effect="slide" start="0,0" end="-4000,0" time="0" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)">conditional</animation>
+
 				<animation effect="fade" start="0" end="100" time="200" delay="100" condition="StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="!StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)">conditional</animation>
+
+				<animation type="visible">
+					<effect type="fade" start="0" end="100" time="200" delay="100" />
+					<effect type="slide" start="600,0" end="0,0" time="200" delay="100" />
+				</animation>
+				<animation type="hidden">
+					<effect type="fade" start="100" end="0" time="200" />
+					<effect type="slide" start="0,0" end="600,0" time="200" />
+				</animation>
 
 				<itemlayout width="203" height="306">
 					<control type="image">
@@ -645,16 +795,37 @@
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
-						<aspectratio align="center">keep</aspectratio>
+
+					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>30</left>
+							<top>56</top>
+							<width>150</width>
+							<height>150</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<textcolor>TextColor2</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
 					</control>
 				</itemlayout>
 
@@ -669,7 +840,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!Control.HasFocus(9006)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 					<control type="image">
 						<left>13</left>
@@ -681,7 +852,7 @@
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9006)</visible>
-						<visible>$SKINSHORTCUTS[isNotWeather]</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 
 					<control type="image">
