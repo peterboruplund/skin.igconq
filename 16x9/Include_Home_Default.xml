@@ -25,9 +25,9 @@
 		<!-- Main list -->
 		<control type="wraplist" id="9000">
 			<left>120</left>
-			<top>643</top>
+			<top>523</top>
 			<width>460</width>
-			<height>360</height>
+			<height>600</height>
 			<onup>9000</onup>
 			<ondown>9000</ondown>
 			<onleft>9001</onleft>
@@ -35,7 +35,7 @@
 			<include>skinshortcuts-template-onright</include>
 			<!--onright>SetFocus(9002,0)</onright-->
 
-			<focusposition>1</focusposition>
+			<focusposition>2</focusposition>
 			<defaultcontrol>3</defaultcontrol>
 			<orientation>vertical</orientation>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
@@ -84,14 +84,14 @@
 		<!-- Sub menu -->
 		<control type="fixedlist" id="9001">
 			<left>120</left>
-			<top>643</top>
+			<top>523</top>
 			<width>460</width>
-			<height>360</height>
+			<height>600</height>
 			<onup>9001</onup>
 			<ondown>9001</ondown>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<focusposition>2</focusposition>
+			<focusposition>4</focusposition>
 			<orientation>vertical</orientation>
 			<defaultcontrol always="true">1</defaultcontrol>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
