@@ -8,7 +8,7 @@
 			<top>763</top>
 			<width>30</width>
 			<height>120</height>
-			<label>&lt;</label>
+			<label>•</label>
 			<font>Font42</font>
 			<textcolor>HomeNF</textcolor>
 			<visible>IntegerGreaterThan(Container(9001).NumItems,0) + Control.HasFocus(9000)</visible>
@@ -304,7 +304,7 @@
 			<height>30</height>
 			<font>Font33</font>
 			<align>right</align>
-			<textcolor>TextColor2</textcolor>
+			<textcolor>HomeNF</textcolor>
 			<label>&lt;</label>
 			<visible>Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004) | Control.HasFocus(9005) | Control.HasFocus(9006)</visible>
 			<visible>!IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1))</visible>
@@ -319,7 +319,7 @@
 			<height>30</height>
 			<font>Font33</font>
 			<align>right</align>
-			<textcolor>TextColor2</textcolor>
+			<textcolor>HomeNF</textcolor>
 			<label>&gt;</label>
 			<visible>Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004) | Control.HasFocus(9005) | Control.HasFocus(9006)</visible>
 			<visible>!IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1))</visible>
@@ -336,8 +336,8 @@
 			<height>30</height>
 			<font>Font33</font>
 			<align>right</align>
-			<textcolor>TextColor2</textcolor>
-			<label>&lt;</label>
+			<textcolor>HomeNF</textcolor>
+			<label>•</label>
 			<visible>[Control.HasFocus(9002) + Container(9002).HasPrevious] | [Control.HasFocus(9003) + Container(9003).HasPrevious] | [Control.HasFocus(9004) + Container(9004).HasPrevious] | [Control.HasFocus(9005) + Container(9005).HasPrevious] | [Control.HasFocus(9006) + Container(9006).HasPrevious]</visible>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
@@ -349,8 +349,8 @@
 			<height>30</height>
 			<font>Font33</font>
 			<align>right</align>
-			<textcolor>TextColor2</textcolor>
-			<label>&gt;</label>
+			<textcolor>HomeNF</textcolor>
+			<label>•</label>
 			<visible>[Control.HasFocus(9002) + Container(9002).HasNext] | [Control.HasFocus(9003) + Container(9003).HasNext] | [Control.HasFocus(9004) + Container(9004).HasNext] | [Control.HasFocus(9005) + Container(9005).HasNext] | [Control.HasFocus(9006) + Container(9006).HasNext]</visible>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
