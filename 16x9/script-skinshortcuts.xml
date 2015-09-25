@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<!-- script-skinshortcuts -->
-	<defaultcontrol always="true">10</defaultcontrol>
+	<defaultcontrol always="true">211</defaultcontrol>
 	<include>DialogZoomAnimation</include>
 
 	<controls>
