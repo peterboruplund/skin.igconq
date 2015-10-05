@@ -3,7 +3,7 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=3)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 
@@ -46,7 +46,8 @@
 			<fadetime>320</fadetime>
 			<randomize>true</randomize>
 			<colordiffuse>FanartDiffuse</colordiffuse>
-			<imagepath background="true">$INFO[Container(9000).ListItem.Property(Background)]</imagepath>
+			<!--imagepath background="true">$INFO[Container(9000).ListItem.Property(Background)]</imagepath-->
+			<imagepath>$VAR[HomeBackgroundImage]</imagepath>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 
