@@ -52,7 +52,4 @@
 	<background label="Widget 1 fanart">fanart</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>
 
-	<propertySettings property="customproperty" buttonID="312" title="Dialog title" showNone="False" imageBrowse="True" />
-	<property property="customproperty" label="Example">[Property Value]</property>
-
 </overrides>
