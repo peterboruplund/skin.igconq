@@ -1133,4 +1133,25 @@
 			<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)">9006</onright>
 		</controls>
 	</other>
+
+	<other include="background-fanart">
+		<condition tag="property" attribute="name|background">fanart</condition>
+
+		<property name="path" tag="property" attribute="name|backgroundPlaylist" />
+		<property name="path" tag="property" attribute="name|widgetPath" />
+
+		<controls>
+			<control type="wraplist" id="9010">
+				<left>-1000</left>
+				<top>-1000</top>
+				<width>100</width>
+				<height>100</height>
+				<itemlayout height="100" width="100" />
+				<focusedlayout height="100" width="100" />
+				<content>$SKINSHORTCUTS[path]</content>
+				<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
+				<skinshortcuts>visibility</skinshortcuts>
+			</control>
+		</controls>
+	</other>
 </template>

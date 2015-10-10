@@ -54,6 +54,7 @@
 		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Art(fanart)">$INFO[Container(9004).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Art(fanart)">$INFO[Container(9005).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9006).ListItem.Art(fanart)">$INFO[Container(9006).ListItem.Art(fanart)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),fanart)">$INFO[Container(9010).ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
 		<value>transparent.png</value>
 	</variable>

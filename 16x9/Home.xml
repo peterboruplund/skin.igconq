@@ -16,6 +16,7 @@
 		</control>
 
 		<!-- Background -->
+		<include>skinshortcuts-template-background-fanart</include>
 		<control type="visualisation">
 			<include>FullscreenDimensions</include>
 			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
@@ -46,7 +47,6 @@
 			<fadetime>320</fadetime>
 			<randomize>true</randomize>
 			<colordiffuse>FanartDiffuse</colordiffuse>
-			<!--imagepath background="true">$INFO[Container(9000).ListItem.Property(Background)]</imagepath-->
 			<imagepath>$VAR[HomeBackgroundImage]</imagepath>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>

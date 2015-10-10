@@ -140,7 +140,7 @@
 				<width>1200</width>
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32045]</label>
-				<label2>$INFO[Container(211).ListItem.Property(Background)]</label2>
+				<label2>$INFO[Container(211).ListItem.Property(BackgroundName)]</label2>
 			</control>
 
 
@@ -172,7 +172,7 @@
 				<label>$ADDON[script.skinshortcuts 32044] 2</label>
 				<label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2>
 				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
-				<onclick>SetProperty(widgetID,1)</onclick>
+				<onclick>SetProperty(widgetID,$INFO[Container(211).ListItem.Label]1)</onclick>
 				<onclick>SendClick(312)</onclick>
 				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName))</visible>
 			</control>
