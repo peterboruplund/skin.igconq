@@ -3,7 +3,7 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=3)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 
@@ -63,20 +63,6 @@
 
 			<!-- Home layout -->
 			<include>HomeDefault</include>
-
-			<!-- RSS -->
-			<control type="rss" id="1">
-				<left>0</left>
-				<bottom>40</bottom>
-				<width>1920</width>
-				<height>30</height>
-				<font>Font30</font>
-				<textcolor>TextColor2</textcolor>
-				<headlinecolor>TextColor2</headlinecolor>
-				<titlecolor>TextColor2</titlecolor>
-				<urlset>1</urlset>
-			</control>
-
 		</control>
 
 	</controls>

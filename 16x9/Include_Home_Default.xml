@@ -25,9 +25,9 @@
 		<!-- Main list -->
 		<control type="wraplist" id="9000">
 			<left>120</left>
-			<top>523</top>
+			<top>-77</top>
 			<width>460</width>
-			<height>600</height>
+			<height>1200</height>
 			<onup>9000</onup>
 			<ondown>9000</ondown>
 			<onleft>9001</onleft>
@@ -35,7 +35,7 @@
 			<include>skinshortcuts-template-onright</include>
 			<!--onright>SetFocus(9002,0)</onright-->
 
-			<focusposition>2</focusposition>
+			<focusposition>7</focusposition>
 			<defaultcontrol>3</defaultcontrol>
 			<orientation>vertical</orientation>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
@@ -58,6 +58,13 @@
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font42</font>
 					<textcolor>HomeNF</textcolor>
+					<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9000).ListItem(-7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="0" condition="StringCompare(Container(9000).ListItem(-6).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItem(-5).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="55" time="0" condition="StringCompare(Container(9000).ListItem(-4).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="75" time="0" condition="StringCompare(Container(9000).ListItem(-3).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9000).ListItem(3).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="90" time="0" condition="StringCompare(Container(9000).ListItem(-2).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9000).ListItem(2).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="100" time="0" condition="StringCompare(Container(9000).ListItem(-1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9000).ListItem(1).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
 				</control>
 			</itemlayout>
 
@@ -84,14 +91,14 @@
 		<!-- Sub menu -->
 		<control type="fixedlist" id="9001">
 			<left>120</left>
-			<top>523</top>
+			<top>348</top>
 			<width>460</width>
-			<height>600</height>
+			<height>816</height>
 			<onup>9001</onup>
 			<ondown>9001</ondown>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<focusposition>4</focusposition>
+			<focusposition>6</focusposition>
 			<orientation>vertical</orientation>
 			<defaultcontrol always="true">1</defaultcontrol>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
@@ -113,6 +120,13 @@
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font30</font>
 					<textcolor>HomeNF</textcolor>
+					<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-7).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="10" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-6).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(6).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-5).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(5).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="55" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-4).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(4).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="75" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-3).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(3).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="90" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-2).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(2).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="100" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(1).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
 				</control>
 			</itemlayout>
 
