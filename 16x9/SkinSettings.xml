@@ -3,7 +3,7 @@
 	<!-- skinsettings -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;minitems=11)</onunload>
 
 	<controls>
 
