@@ -242,17 +242,10 @@
 				<onclick>Close</onclick>
 			</control>
 
-			<!-- Reset -->
+			<!-- Restore -->
 			<control type="button" id="308">
 				<width>400</width>
 				<label>$ADDON[script.skinshortcuts 32028]</label>
-			</control>
-
-			<!-- Reset all -->
-			<control type="button" id="999">
-				<width>400</width>
-				<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-				<label>$ADDON[script.skinshortcuts 32037]</label>
 			</control>
 
 		</control>

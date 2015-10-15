@@ -45,7 +45,7 @@
 
 	<variable name="BackgroundImage">
 		<value condition="!IsEmpty(Skin.String(CustomBackgroundImage))">$INFO[Skin.String(CustomBackgroundImage)]</value>
-		<value>special://skin/extras/backgrounds/Blue.jpg</value>
+		<value>special://skin/extras/backgrounds/Default.jpg</value>
 	</variable>
 
 	<variable name="HomeBackgroundImage">

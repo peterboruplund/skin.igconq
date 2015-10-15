@@ -213,7 +213,7 @@
 					<width>970</width>
 					<height>42</height>
 					<font>Font33</font>
-					<label>Conq</label>
+					<label>igConq</label>
 					<align>right</align>
 					<textcolor>TextColor2</textcolor>
 				</control>
@@ -545,24 +545,23 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
+				<!-- Reset all -->
+				<control type="button" id="1214">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+					<label>$ADDON[script.skinshortcuts 32037]</label>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
 				<!-- Hide submenu headings -->
-				<control type="radiobutton" id="1214">
+				<control type="radiobutton" id="1215">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>31053</label>
 					<onclick>Skin.ToggleSetting(HideSubmenuHeading)</onclick>
 					<selected>Skin.HasSetting(HideSubmenuHeading)</selected>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
-				<!-- Hide Conq logo -->
-				<control type="radiobutton" id="1112">
-					<width>1200</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>31040</label>
-					<onclick>Skin.ToggleSetting(HideConqLogo)</onclick>
-					<selected>Skin.HasSetting(HideConqLogo)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 
