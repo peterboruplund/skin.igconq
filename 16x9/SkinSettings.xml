@@ -572,6 +572,15 @@
 					<selected>Skin.HasSetting(HideSubmenuHeading)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
+				<!-- Set passcode -->
+				<control type="button" id="1216">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Set menu passcode</label>
+					<onclick>Skin.SetNumeric(passcode)</onclick>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
 
 				<!-- Background -->
 				<!-- Custom image -->

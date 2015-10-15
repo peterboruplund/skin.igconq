@@ -53,4 +53,20 @@
 	<background label="Current weather fanart">weather</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>
 
+	<!-- Parental control -->
+	<override action="globaloverride">
+	    <condition>[IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | SubString(Container(9000).ListItem.Property(ParentalControl),no)] | StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
+	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
+	    <action>::ACTION::</action>
+	</override>
+	<override action="globaloverride">
+	    <condition>SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
+	    <action>Skin.SetNumeric(mypassword)</action>
+	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
+	</override>
+
+	<propertySettings property="ParentalControl" buttonID="600" title="Require password?" showNone="False" imageBrowse="False" />
+	<property property="ParentalControl" label="No">no</property>
+	<property property="ParentalControl" label="Yes">yes</property>
+
 </overrides>

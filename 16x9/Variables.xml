@@ -406,4 +406,9 @@
 		<value condition="!IsEmpty(Skin.String(weatherFanart.path))">$INFO[Skin.String(weatherFanart.path)]</value>
 	</variable>
 
+	<variable name="passcode">
+		<value condition="[IsEmpty(Container(211).ListItem.Property(ParentalControl)) | StringCompare(Container(211).ListItem.Property(ParentalControl),no)]">No</value>
+		<value>Yes</value>
+	</variable>
+
 </includes>

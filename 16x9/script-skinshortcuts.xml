@@ -207,6 +207,13 @@
 				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName)) + !IsEmpty(Container(211).ListItem.Property(widgetName.1)) + !IsEmpty(Container(211).ListItem.Property(widgetName.2)) + !IsEmpty(Container(211).ListItem.Property(widgetName.3))</visible>
 			</control>
 
+			<control type="button" id="600">
+				<width>1200</width>				
+				<label>Require passcode?</label>
+				<label2>$VAR[passcode]</label2>
+				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
+			</control>
+
 			<!-- Remove -->
 			<control type="button" id="302">
 				<width>1200</width>
