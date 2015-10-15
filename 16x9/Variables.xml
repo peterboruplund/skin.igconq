@@ -36,6 +36,7 @@
 		<value condition="Window.IsVisible(programs) + Skin.HasSetting(Headings)">$LOCALIZE[0]</value>
 		<value condition="[Window.IsVisible(settings) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(skinsettings) | Window.IsVisible(systeminfo) | Window.IsVisible(addonbrowser) | Window.IsVisible(profiles) | Window.IsVisible(filemanager)] + Skin.HasSetting(Headings)">$LOCALIZE[5]</value>
 		<value condition="Window.IsVisible(weather) + Skin.HasSetting(Headings)">$LOCALIZE[8]</value>
+		<value condition="Window.IsVisible(eventlog) + Skin.HasSetting(Headings)">$LOCALIZE[14111]</value>
 	</variable>
 
 	<variable name="PVRChannelIcon">
@@ -50,11 +51,22 @@
 
 	<variable name="HomeBackgroundImage">
 		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(fanart)">$INFO[Container(9002).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9002).ListItem.Property(weatherFanart),,.jpg]</value>
+
 		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Art(fanart)">$INFO[Container(9003).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9003).ListItem.Property(weatherFanart),,.jpg]</value>
+
 		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Art(fanart)">$INFO[Container(9004).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9004).ListItem.Property(weatherFanart),,.jpg]</value>
+
 		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Art(fanart)">$INFO[Container(9005).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9005).ListItem.Property(weatherFanart),,.jpg]</value>
+
 		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9006).ListItem.Art(fanart)">$INFO[Container(9006).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9007).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9006).ListItem.Property(weatherFanart),,.jpg]</value>
+
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),fanart)">$INFO[Container(9010).ListItem.Art(fanart)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather)">$VAR[weatherFanart]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
 		<value condition="!IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
 		<value>transparent.png</value>
 	</variable>
@@ -84,18 +96,18 @@
 	</variable>
 
 	<variable name="Plot">
-		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 	</variable>
 
 	<variable name="Day0">
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[11])">$LOCALIZE[41]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[12])">$LOCALIZE[42]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[13])">$LOCALIZE[43]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[14])">$LOCALIZE[44]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[15])">$LOCALIZE[45]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[16])">$LOCALIZE[46]</value>
-		<value condition="StringCompare(Window(Weather).Property(Day0.Title),$LOCALIZE[17])">$LOCALIZE[47]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[11])">$LOCALIZE[41]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[12])">$LOCALIZE[42]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[13])">$LOCALIZE[43]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[14])">$LOCALIZE[44]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[15])">$LOCALIZE[45]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[16])">$LOCALIZE[46]</value>
+		<value condition="StringCompare(Window(Weather).Property(Daily.1.Title),$LOCALIZE[17])">$LOCALIZE[47]</value>
 	</variable>
 
 	<variable name="Day1">
@@ -240,6 +252,11 @@
 		<value>DialogColor2</value>
 	</variable>
 
+	<variable name="SkinSettingButton13">
+		<value condition="ControlGroup(9).HasFocus(13)">DialogColor1</value>
+		<value>DialogColor2</value>
+	</variable>
+
 	<variable name="Label1">
 		<value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -378,6 +395,15 @@
 	<variable name="SystemInfoButton99">
 		<value condition="!ControlGroup(50).HasFocus + ControlGroup(50).HasFocus(99)">TextColor1</value>
 		<value>TextColor2</value>
+	</variable>
+
+	<variable name="weatherIcons">
+		<value condition="!IsEmpty(Skin.String(weatherIcons.path))">$INFO[Skin.String(weatherIcons.path)]</value>
+		<value>resource://resource.images.weathericons.default/</value>
+	</variable>
+
+	<variable name="weatherFanart">
+		<value condition="!IsEmpty(Skin.String(weatherFanart.path))">$INFO[Skin.String(weatherFanart.path)]</value>
 	</variable>
 
 </includes>

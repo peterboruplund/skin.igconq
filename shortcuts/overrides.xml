@@ -50,6 +50,7 @@
 	<!-- Backgrounds -->
 	<backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
 	<background label="Widget 1 fanart">fanart</background>
+	<background label="Current weather fanart">weather</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>
 
 </overrides>

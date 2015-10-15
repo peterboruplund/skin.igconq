@@ -106,6 +106,7 @@
 			<height>33</height>
 			<aligny>top</aligny>
 			<label>[COLOR TextColor1]$VAR[HeadingLabel][/COLOR]</label>
+			<!--label>$VAR[weatherFanart]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</label-->
 			<label2>$INFO[System.Time]</label2>
 			<font>Font33</font>
 			<textcolor>TextColor2</textcolor>

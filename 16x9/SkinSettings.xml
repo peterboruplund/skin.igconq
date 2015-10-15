@@ -511,6 +511,14 @@
 					<textcolor>$VAR[SkinSettingButton11]</textcolor>
 				</control>
 
+				<!-- Weather -->
+				<control type="button" id="13">
+					<width>600</width>
+					<height>66</height>
+					<label>Weather</label>
+					<textcolor>$VAR[SkinSettingButton13]</textcolor>
+				</control>
+
 				<!-- General -->
 				<control type="button" id="12">
 					<width>600</width>
@@ -616,6 +624,26 @@
 					<onclick>Skin.ToggleSetting(FadeArtistFanart)</onclick>
 					<selected>Skin.HasSetting(FadeArtistFanart)</selected>
 					<visible>ControlGroup(9).HasFocus(11) + Skin.HasSetting(EnableArtistFanart)</visible>
+				</control>
+
+				<!-- Weather -->
+				<!-- Weather icons-->
+				<control type="button" id="1401">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Weather icons</label>
+					<onclick>RunScript(script.image.resource.select,property=weatherIcons&amp;type=resource.images.weathericons)</onclick>
+					<visible>ControlGroup(9).HasFocus(13)</visible>
+				</control>
+				<!-- Weather fanart -->
+				<control type="button" id="1402">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.image.resource.select,property=weatherFanart&amp;type=resource.images.weatherfanart)</onclick>
+					<label>Weather fanart</label>
+					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
 
 				<!-- General -->
