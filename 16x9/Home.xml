@@ -41,15 +41,6 @@
 			<texture>$VAR[BackgroundImage]</texture>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<timeperimage>10000</timeperimage>
-			<fadetime>320</fadetime>
-			<randomize>true</randomize>
-			<colordiffuse>FanartDiffuse</colordiffuse>
-			<texture>$INFO[Skin.String(OverlayBackgroundImage)]</texture>
-			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<timeperimage>10000</timeperimage>
@@ -57,7 +48,7 @@
 			<randomize>true</randomize>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			<imagepath>$VAR[HomeBackgroundImage]</imagepath>
-			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 
 		<!-- Time -->
