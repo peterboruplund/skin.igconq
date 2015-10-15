@@ -2573,6 +2573,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Weather Forecast</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(weather-widget),1) | IsEmpty(Window.Property(weather-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -2772,6 +2773,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Recent movies</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(movies-widget),1) | IsEmpty(Window.Property(movies-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -2971,6 +2973,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Recent episodes</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(tvshows-widget),1) | IsEmpty(Window.Property(tvshows-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -3170,6 +3173,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Recent albums</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(132-widget),1) | IsEmpty(Window.Property(132-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -3371,6 +3375,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Favourites</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(1036-widget),1) | IsEmpty(Window.Property(1036-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -3570,6 +3575,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Smart(ish) PVR</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(livetv-widget),1) | IsEmpty(Window.Property(livetv-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -3769,6 +3775,7 @@
 			<textcolor>$VAR[SubMenuColor]</textcolor>
 			<label>Smart(ish) PVR</label>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio)</visible>
+			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 			<visible>StringCompare(Window.Property(radio-widget),1) | IsEmpty(Window.Property(radio-widget))</visible>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>

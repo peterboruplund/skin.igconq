@@ -237,6 +237,7 @@
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$SKINSHORTCUTS[name]</label>
 				<skinshortcuts>visibility</skinshortcuts>
+				<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),1) | IsEmpty(Window.Property($SKINSHORTCUTS[labelID]-widget))</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
@@ -456,6 +457,7 @@
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$SKINSHORTCUTS[name]</label>
 				<skinshortcuts>visibility</skinshortcuts>
+				<visible>Control.HasFocus(9003) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
@@ -675,6 +677,7 @@
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$SKINSHORTCUTS[name]</label>
 				<skinshortcuts>visibility</skinshortcuts>
+				<visible>Control.HasFocus(9004) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
@@ -894,6 +897,7 @@
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$SKINSHORTCUTS[name]</label>
 				<skinshortcuts>visibility</skinshortcuts>
+				<visible>Control.HasFocus(9005) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
@@ -1111,6 +1115,7 @@
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$SKINSHORTCUTS[name]</label>
 				<skinshortcuts>visibility</skinshortcuts>
+				<visible>Control.HasFocus(9006) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
