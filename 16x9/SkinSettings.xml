@@ -550,11 +550,21 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>31049</label>
+					<onclick>Skin.SetNumeric(mypassword)</onclick>
+					<textcolor>LockedNF</textcolor>
+					<focusedcolor>Locked</focusedcolor>
+					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+				</control>
+				<control type="button" id="1214">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>31049</label>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
+					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
 				<!-- Reset all -->
-				<control type="button" id="1214">
+				<control type="button" id="1215">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -563,7 +573,7 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Hide submenu headings -->
-				<control type="radiobutton" id="1215">
+				<control type="radiobutton" id="1216">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -573,14 +583,33 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Set passcode -->
-				<control type="button" id="1216">
+				<control type="button" id="1217">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Change menu passcode</label>
+					<onclick>Skin.SetNumeric(mypassword)</onclick>
+					<textcolor>LockedNF</textcolor>
+					<focusedcolor>Locked</focusedcolor>
+					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+				</control>
+				<control type="button" id="1218">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Change menu passcode</label>
+					<onclick>Skin.SetNumeric(passcode)</onclick>
+					<visible>ControlGroup(9).HasFocus(10) + StringCompare(Skin.String(mypassword),Skin.String(passcode)) + !IsEmpty(Skin.String(passcode))</visible>
+				</control>
+				<control type="button" id="1219">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Set menu passcode</label>
 					<onclick>Skin.SetNumeric(passcode)</onclick>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
+					<visible>ControlGroup(9).HasFocus(10) + IsEmpty(Skin.String(passcode))</visible>
 				</control>
+
 
 				<!-- Background -->
 				<!-- Custom image -->
@@ -642,6 +671,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Weather icons</label>
+					<label2>$INFO[Skin.String(weatherIcons.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,property=weatherIcons&amp;type=resource.images.weathericons)</onclick>
 					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
@@ -652,6 +682,7 @@
 					<textwidth>1120</textwidth>
 					<onclick>RunScript(script.image.resource.select,property=weatherFanart&amp;type=resource.images.weatherfanart)</onclick>
 					<label>Weather fanart</label>
+					<label2>$INFO[Skin.String(weatherFanart.name)]</label2>
 					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
 

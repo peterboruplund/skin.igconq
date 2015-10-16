@@ -12,6 +12,8 @@
 	<color name="FanartDiffuse">33f1f1f1</color>
 	<color name="DiffusePosterNF">58ffffff</color>
 	<color name="HomeNF">44777777</color>
+	<color name="LockedNF">44775B5B</color>
+	<color name="Locked">66775B5B</color>
 	
 	<!-- Dialog colors -->
 	<color name="DialogColor1">ffffffff</color>

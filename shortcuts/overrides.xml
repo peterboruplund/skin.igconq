@@ -55,12 +55,16 @@
 
 	<!-- Parental control -->
 	<override action="globaloverride">
-	    <condition>[IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | SubString(Container(9000).ListItem.Property(ParentalControl),no)] | StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
+	    <condition>IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | SubString(Container(9000).ListItem.Property(ParentalControl),no) | IsEmpty(Skin.String(passcode))</condition>
+	    <action>::ACTION::</action>
+	</override>
+	<override action="globaloverride">
+		<condition>!IsEmpty(Container(9000).ListItem.Property(ParentalControl)) + !SubString(Container(9000).ListItem.Property(ParentalControl),no) + !IsEmpty(Skin.String(passcode)) + StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
 	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
 	    <action>::ACTION::</action>
 	</override>
 	<override action="globaloverride">
-	    <condition>SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
+	    <condition>!IsEmpty(Container(9000).ListItem.Property(ParentalControl)) + !SubString(Container(9000).ListItem.Property(ParentalControl),no) + !IsEmpty(Skin.String(passcode)) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
 	    <action>Skin.SetNumeric(mypassword)</action>
 	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
 	</override>

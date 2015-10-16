@@ -407,8 +407,17 @@
 	</variable>
 
 	<variable name="passcode">
-		<value condition="[IsEmpty(Container(211).ListItem.Property(ParentalControl)) | StringCompare(Container(211).ListItem.Property(ParentalControl),no)]">No</value>
+		<value condition="[IsEmpty(Container(211).ListItem.Property(ParentalControl)) | SubString(Container(211).ListItem.Property(ParentalControl),no)]">No</value>
 		<value>Yes</value>
+	</variable>
+
+	<variable name="HomeNF">
+		<value condition="SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))">salmon</value>
+		<value>HomeNF</value>
+	</variable>
+
+	<variable name="HomeFocus">
+		<value>TextColor1</value>
 	</variable>
 
 </includes>

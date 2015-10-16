@@ -50,14 +50,7 @@
 			</animation>
 
 			<itemlayout width="460" height="120">
-				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width>460</width>
-					<height>120</height>
-					<label>$INFO[ListItem.Label]</label>
-					<font>Font42</font>
-					<textcolor>HomeNF</textcolor>
+				<control type="group">
 					<animation effect="fade" start="100" end="90" time="0" condition="StringCompare(Container(9000).ListItem(-1).Property(id),ListItem.Property(id)) | StringCompare(Container(9000).ListItem(1).Property(id),ListItem.Property(id))">Conditional</animation>
 					<animation effect="fade" start="100" end="75" time="0" condition="StringCompare(Container(9000).ListItem(-2).Property(id),ListItem.Property(id)) | StringCompare(Container(9000).ListItem(2).Property(id),ListItem.Property(id))">Conditional</animation>
 					<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9000).ListItem(-3).Property(id),ListItem.Property(id))">Conditional</animation>
@@ -65,6 +58,28 @@
 					<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItem(-5).Property(id),ListItem.Property(id))">Conditional</animation>
 					<animation effect="fade" start="100" end="15" time="0" condition="StringCompare(Container(9000).ListItem(-6).Property(id),ListItem.Property(id))">Conditional</animation>
 					<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9000).ListItem(-7).Property(id),ListItem.Property(id))">Conditional</animation>
+
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>460</width>
+						<height>120</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font42</font>
+						<visible>![SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
+						<textcolor>HomeNF</textcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>460</width>
+						<height>120</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font42</font>
+						<visible>SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+						<textcolor>LockedNF</textcolor>
+					</control>
+
 				</control>
 			</itemlayout>
 
@@ -78,6 +93,19 @@
 					<font>Font72</font>
 					<textcolor>TextColor1</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
+					<visible>![SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
+					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9000)">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>460</width>
+					<height>120</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font72</font>
+					<textcolor>Locked</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<visible>SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
 					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9000)">Conditional</animation>
 				</control>
 			</focusedlayout>
@@ -113,20 +141,33 @@
 			</animation>
 
 			<itemlayout width="400" height="72">
-				<control type="label">
-					<top>0</top>
-					<width>400</width>
-					<height>72</height>
-					<label>$INFO[ListItem.Label]</label>
-					<font>Font30</font>
-					<textcolor>HomeNF</textcolor>
-					<animation effect="fade" start="100" end="100" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(2).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(3).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(4).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(5).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(6).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
-					<animation effect="fade" start="100" end="90" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-2).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
-					<animation effect="fade" start="100" end="75" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-3).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
-					<animation effect="fade" start="100" end="55" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-4).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+				<control type="group">
+					<animation effect="fade" start="100" end="90" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(1).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(2).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(3).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(4).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(5).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(6).Property(labelID),ListItem.Property(labelID)) | StringCompare(Container(9001).ListItemNoWrap(7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="75" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-2).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-3).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="45" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-4).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
 					<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-5).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
-					<animation effect="fade" start="100" end="10" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-6).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
-					<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="15" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-6).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-7).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9001).ListItemNoWrap(-8).Property(labelID),ListItem.Property(labelID))">Conditional</animation>
+					<control type="label">
+						<top>0</top>
+						<width>400</width>
+						<height>72</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font30</font>
+						<textcolor>HomeNF</textcolor>
+						<visible>![SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<width>400</width>
+						<height>72</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Font30</font>
+						<textcolor>LockedNF</textcolor>
+						<visible>SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+					</control>
 				</control>
 			</itemlayout>
 
@@ -139,6 +180,18 @@
 					<font>Font42</font>
 					<textcolor>TextColor1</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
+					<visible>![SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
+					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+				</control>
+				<control type="label">
+					<top>0</top>
+					<width>460</width>
+					<height>72</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font42</font>
+					<textcolor>Locked</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<visible>SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
 					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
 				</control>
 			</focusedlayout>
