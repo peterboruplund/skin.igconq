@@ -24,19 +24,12 @@
 
 		<!-- Main list -->
 		<control type="wraplist" id="9000">
-			<left>120</left>
-			<top>-77</top>
-			<width>460</width>
-			<height>1200</height>
+			<include condition="Skin.HasSetting(SmallMainMenu)">SmallMainMenu</include>
+			<include condition="!Skin.HasSetting(SmallMainMenu)">LargeMainMenu</include>
 			<onup>9000</onup>
 			<ondown>9000</ondown>
 			<onleft>9001</onleft>
-			
 			<include>skinshortcuts-template-onright</include>
-			<!--onright>SetFocus(9002,0)</onright-->
-
-			<focusposition>7</focusposition>
-			<defaultcontrol>1</defaultcontrol>
 			<orientation>vertical</orientation>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
 			<visible allowhiddenfocus="true">!Control.HasFocus(9001)</visible>

@@ -563,8 +563,18 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
+				<!-- Small main menu -->
+				<control type="radiobutton" id="1215">
+					<width>1200</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Classic main menu (3 items)</label>
+					<onclick>Skin.ToggleSetting(SmallMainMenu)</onclick>
+					<selected>Skin.HasSetting(SmallMainMenu)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
 				<!-- Reset all -->
-				<control type="button" id="1215">
+				<control type="button" id="1216">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -573,7 +583,7 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Hide submenu headings -->
-				<control type="radiobutton" id="1216">
+				<control type="radiobutton" id="1217">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -583,7 +593,7 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Set passcode -->
-				<control type="button" id="1217">
+				<control type="button" id="1218">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -593,7 +603,7 @@
 					<focusedcolor>Locked</focusedcolor>
 					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
 				</control>
-				<control type="button" id="1218">
+				<control type="button" id="1219">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -601,7 +611,7 @@
 					<onclick>Skin.SetNumeric(passcode)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + StringCompare(Skin.String(mypassword),Skin.String(passcode)) + !IsEmpty(Skin.String(passcode))</visible>
 				</control>
-				<control type="button" id="1219">
+				<control type="button" id="1220">
 					<width>1200</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>

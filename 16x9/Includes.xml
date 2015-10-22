@@ -31,6 +31,26 @@
 		</control>
 	</include>
 
+	<!-- Classic main menu -->
+	<include name="SmallMainMenu">
+		<left>120</left>
+		<top>643</top>
+		<width>460</width>
+		<height>360</height>
+		<focusposition>1</focusposition>
+		<defaultcontrol>3</defaultcontrol>
+	</include>
+
+	<!-- igConq main menu -->
+	<include name="LargeMainMenu">
+		<left>120</left>
+		<top>-77</top>
+		<width>460</width>
+		<height>1200</height>
+		<focusposition>7</focusposition>
+		<defaultcontrol>1</defaultcontrol>
+	</include>
+
 	<!-- Window background image -->
 	<include name="WindowBackgroundImage">
 		<control type="visualisation">
