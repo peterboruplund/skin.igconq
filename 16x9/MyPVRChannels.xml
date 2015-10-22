@@ -87,7 +87,7 @@
 						<width>802</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>TextColor4</textcolor>
+						<textcolor>HomeNF</textcolor>
 						<label>$INFO[ListItem.Title]</label>
 					</control>
 

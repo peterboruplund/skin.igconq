@@ -57,7 +57,7 @@
 						<height>27</height>
 						<font>Font27</font>
 						<align>right</align>
-						<textcolor>TextColor4</textcolor>
+						<textcolor>HomeNF</textcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
 					</control>
 
@@ -87,7 +87,7 @@
 						<width>634</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>TextColor4</textcolor>
+						<textcolor>HomeNF</textcolor>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 

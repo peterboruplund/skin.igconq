@@ -56,7 +56,7 @@
 						<height>27</height>
 						<font>Font27</font>
 						<align>right</align>
-						<textcolor>TextColor4</textcolor>
+						<textcolor>HomeNF</textcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.Duration, (,)]</label>
 					</control>
 
