@@ -30,17 +30,17 @@
 				<width>1218</width>
 				<height>306</height>
 				
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,5)</onup>
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty($SKINSHORTCUTS[labelID]-widget,5)</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
 
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,4)</onup>
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty($SKINSHORTCUTS[labelID]-widget,4)</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
 
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,3)</onup>
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty($SKINSHORTCUTS[labelID]-widget,3)</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
 
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty($SKINSHORTCUTS[labelID]-widget,2)</onup>
-				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty($SKINSHORTCUTS[labelID]-widget,2)</onup>
+				<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 
 				<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty($SKINSHORTCUTS[labelID]-widget,2)</ondown>
 				<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>

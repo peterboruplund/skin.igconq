@@ -50,20 +50,20 @@
 	</variable>
 
 	<variable name="HomeBackgroundImage">
-		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(fanart)">$INFO[Container(9002).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9002).ListItem.Property(weatherFanart),,.jpg]</value>
+		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Art(fanart))">$INFO[Container(9002).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9002) + !IsEmpty(Container(9002).ListItem.Property(weatherFanart))">$VAR[weatherFanart]$INFO[Container(9002).ListItem.Property(weatherFanart),,.jpg]</value>
 
-		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Art(fanart)">$INFO[Container(9003).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9003).ListItem.Property(weatherFanart),,.jpg]</value>
+		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Art(fanart))">$INFO[Container(9003).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9003) + !IsEmpty(Container(9003).ListItem.Property(weatherFanart))">$VAR[weatherFanart]$INFO[Container(9003).ListItem.Property(weatherFanart),,.jpg]</value>
 
-		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Art(fanart)">$INFO[Container(9004).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9004).ListItem.Property(weatherFanart),,.jpg]</value>
+		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Art(fanart))">$INFO[Container(9004).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9004) + !IsEmpty(Container(9004).ListItem.Property(weatherFanart))">$VAR[weatherFanart]$INFO[Container(9004).ListItem.Property(weatherFanart),,.jpg]</value>
 
-		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Art(fanart)">$INFO[Container(9005).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9005).ListItem.Property(weatherFanart),,.jpg]</value>
+		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Art(fanart))">$INFO[Container(9005).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9005) + !IsEmpty(Container(9005).ListItem.Property(weatherFanart))">$VAR[weatherFanart]$INFO[Container(9005).ListItem.Property(weatherFanart),,.jpg]</value>
 
-		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9006).ListItem.Art(fanart)">$INFO[Container(9006).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9007).ListItem.Property(weatherFanart)">$VAR[weatherFanart]$INFO[Container(9006).ListItem.Property(weatherFanart),,.jpg]</value>
+		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9006).ListItem.Art(fanart))">$INFO[Container(9006).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(9006) + !IsEmpty(Container(9007).ListItem.Property(weatherFanart))">$VAR[weatherFanart]$INFO[Container(9006).ListItem.Property(weatherFanart),,.jpg]</value>
 
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),fanart)">$INFO[Container(9010).ListItem.Art(fanart)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather)">$VAR[weatherFanart]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
