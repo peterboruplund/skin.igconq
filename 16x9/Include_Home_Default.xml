@@ -203,149 +203,144 @@
 		</control>
 
 		<!-- Widget heading -->
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$INFO[Container(9002).ListItem.Label]</label>
-			<visible>Control.HasFocus(9002)</visible>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
+		<control type="group">
+			<visible>Control.HasFocus(9002) + !StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>(s$INFO[Container(9002).ListItem.Season]e$INFO[Container(9002).ListItem.Episode]) $INFO[Container(9002).ListItem.Label]</label>
-			<visible>Control.HasFocus(9002)</visible>
-			<visible>StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$INFO[Container(9003).ListItem.Label]</label>
-			<visible>Control.HasFocus(9003)</visible>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>(s$INFO[Container(9003).ListItem.Season]e$INFO[Container(9003).ListItem.Episode]) $INFO[Container(9003).ListItem.Label]</label>
-			<visible>Control.HasFocus(9003)</visible>
-			<visible>StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9002).ListItem.Label]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
+			</control>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>(s$INFO[Container(9002).ListItem.Season]e$INFO[Container(9002).ListItem.Episode]) $INFO[Container(9002).ListItem.Label]</label>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
+			</control>
 		</control>
 
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$INFO[Container(9004).ListItem.Label]</label>
-			<visible>Control.HasFocus(9004)</visible>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
+		<control type="group">
+			<visible>Control.HasFocus(9003) + !StringCompare(Container(9000).ListItem.Property(widget.1),WeatherWidget)</visible>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>(s$INFO[Container(9004).ListItem.Season]e$INFO[Container(9004).ListItem.Episode]) $INFO[Container(9004).ListItem.Label]</label>
-			<visible>Control.HasFocus(9004)</visible>
-			<visible>StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$INFO[Container(9005).ListItem.Label]</label>
-			<visible>Control.HasFocus(9005)</visible>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-		</control>
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>(s$INFO[Container(9005).ListItem.Season]e$INFO[Container(9005).ListItem.Episode]) $INFO[Container(9005).ListItem.Label]</label>
-			<visible>Control.HasFocus(9005)</visible>
-			<visible>StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9003).ListItem.Label]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
+			</control>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>(s$INFO[Container(9003).ListItem.Season]e$INFO[Container(9003).ListItem.Episode]) $INFO[Container(9003).ListItem.Label]</label>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
+			</control>
 		</control>
 
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$INFO[Container(9006).ListItem.Label]</label>
-			<visible>Control.HasFocus(9006)</visible>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+		<control type="group">
+			<visible>Control.HasFocus(9004) + !StringCompare(Container(9000).ListItem.Property(widget.2),WeatherWidget)</visible>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9004).ListItem.Label]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
+			</control>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>(s$INFO[Container(9004).ListItem.Season]e$INFO[Container(9004).ListItem.Episode]) $INFO[Container(9004).ListItem.Label]</label>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
+			</control>
 		</control>
-		<control type="label">
-			<top>636</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>(s$INFO[Container(9006).ListItem.Season]e$INFO[Container(9006).ListItem.Episode]) $INFO[Container(9006).ListItem.Label]</label>
-			<visible>Control.HasFocus(9006)</visible>
-			<visible>StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+
+		<control type="group">
+			<visible>Control.HasFocus(9005) + !StringCompare(Container(9000).ListItem.Property(widget.3),WeatherWidget)</visible>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
 			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9005).ListItem.Label]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
+			</control>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>(s$INFO[Container(9005).ListItem.Season]e$INFO[Container(9005).ListItem.Episode]) $INFO[Container(9005).ListItem.Label]</label>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
+			</control>
+		</control>
+
+		<control type="group">
+			<visible>Control.HasFocus(9006) + !StringCompare(Container(9000).ListItem.Property(widget.4),WeatherWidget)</visible>
+			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9006).ListItem.Label]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+			</control>
+			<control type="label">
+				<top>636</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<font>Font33</font>
+				<align>right</align>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>(s$INFO[Container(9006).ListItem.Season]e$INFO[Container(9006).ListItem.Episode]) $INFO[Container(9006).ListItem.Label]</label>
+				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+			</control>
 		</control>
 
 		<!-- Sub menu label -->
