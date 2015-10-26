@@ -49,7 +49,8 @@
 			<fadetime>320</fadetime>
 			<randomize>true</randomize>
 			<imagepath diffuse="diffuse.png">$VAR[HomeBackgroundImage]</imagepath>
-			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="80" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<visible>SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) | IsEmpty(Skin.String(CustomBackgroundImage))</visible>
 		</control>
 		<control type="multiimage">

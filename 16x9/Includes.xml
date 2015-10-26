@@ -113,6 +113,7 @@
 				<fadetime>400</fadetime>
 				<texture background="true" diffuse="diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
 				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 				<visible>SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) | IsEmpty(Skin.String(CustomBackgroundImage))</visible>
 			</control>
 
@@ -131,21 +132,40 @@
 
 	<!-- Time -->
 	<include name="Time">
-		<control type="button">
-			<left>120</left>
-			<top>110</top>
-			<width>1680</width>
-			<height>33</height>
-			<aligny>top</aligny>
-			<label>[COLOR TextColor1]$VAR[HeadingLabel][/COLOR]</label>
-			<!--label>$VAR[weatherFanart]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</label-->
-			<label2>$INFO[System.Time]</label2>
-			<font>Font33</font>
-			<textcolor>TextColor2</textcolor>
-			<animation type="WindowOpen" condition="Window.Previous(startup)">
-				<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
-			</animation>
-		</control>
+		<param name="heading">$VAR[HeadingLabel]</param>
+		<definition>
+			<control type="button">
+				<left>120</left>
+				<top>110</top>
+				<width>1680</width>
+				<height>33</height>
+				<aligny>top</aligny>
+				<label>[COLOR TextColor1]$PARAM[heading][/COLOR]</label>
+				<label2>$INFO[System.Time]</label2>
+				<font>Font33</font>
+				<textcolor>TextColor2</textcolor>
+				<animation type="WindowOpen" condition="Window.Previous(startup)">
+					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
+				</animation>
+				<visible>Skin.HasSetting(Headings)</visible>
+			</control>
+
+			<control type="button">
+				<left>120</left>
+				<top>110</top>
+				<width>1680</width>
+				<height>33</height>
+				<aligny>top</aligny>
+				<label />
+				<label2>$INFO[System.Time]</label2>
+				<font>Font33</font>
+				<textcolor>TextColor2</textcolor>
+				<animation type="WindowOpen" condition="Window.Previous(startup)">
+					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
+				</animation>
+				<visible>!Skin.HasSetting(Headings)</visible>
+			</control>
+		</definition>
 	</include>
 
 	<!-- Window animation -->
@@ -168,7 +188,7 @@
 		</animation>
 		<animation type="WindowClose">
 			<effect type="zoom" start="100" end="70" center="auto" time="100" />
-			<effect type="fade" start="100" end="0" time="100" />
+			<effect type="fade" start="100" end="0" time="300" />
 		</animation>
 	</include>
 

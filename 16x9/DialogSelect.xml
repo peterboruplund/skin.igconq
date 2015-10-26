@@ -2,15 +2,29 @@
 <window>
 	<!-- selectdialog -->
 	<defaultcontrol always="true">3</defaultcontrol>
-	<include>DialogZoomAnimation</include>
+	<include>WindowFadeAnimation</include>
 	<controls>
 
 		<!-- Background -->
-		<include>DialogBackgroundImage</include>
+		<!--include>WindowBackgroundImage</include-->
+
+		<!-- Curve -->
+		<control type="image">
+			<right>20</right>
+			<top>20</top>
+			<width>1280</width>
+			<height>1040</height>
+			<texture border="40,0,0,0">common/Curve.png</texture>
+			<visible>Skin.HasSetting(ShowCurve)</visible>
+		</control>
+
+		<include name="Time">
+			<param name="heading">$INFO[Control.GetLabel(1)]</param>
+		</include>
 
 		<!-- Heading -->
 		<control type="label" id="1">
-			<left>150</left>
+			<left>-15000</left>
 			<top>96</top>
 			<width>1620</width>
 			<height>72</height>
@@ -40,11 +54,11 @@
 
 		<!-- List -->
 		<control type="list" id="3">
-			<left>150</left>
+			<left>750</left>
 			<top>235</top>
-			<width>1620</width>
-			<height>580</height>
-			<onup>noop</onup>
+			<width>1050</width>
+			<height>696</height>
+			<onup>6</onup>
 			<ondown>5</ondown>
 			<onleft>5</onleft>
 			<onright>5</onright>
@@ -77,10 +91,10 @@
 
 		<!-- List -->
 		<control type="list" id="6">
-			<left>600</left>
+			<left>750</left>
 			<top>235</top>
-			<width>1170</width>
-			<height>576</height>
+			<width>1050</width>
+			<height>672</height>
 			<onup>noop</onup>
 			<ondown>5</ondown>
 			<onleft>5</onleft>
@@ -151,8 +165,8 @@
 
 		<!-- Get more button -->
 		<control type="button" id="5">
-			<left>150</left>
-			<top>912</top>
+			<left>750</left>
+			<top>926</top>
 			<width>400</width>
 			<height>66</height>
 			<onleft>noop</onleft>
