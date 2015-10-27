@@ -2,16 +2,30 @@
 <window>
 	<!-- filebrowser -->
 	<defaultcontrol always="true">450</defaultcontrol>
-	<include>DialogZoomAnimation</include>
+	<include>WindowFadeAnimation</include>
 
 	<controls>
 
 		<!-- Background -->
-		<include>DialogBackgroundImage</include>
+		<include>WindowBackgroundImage</include>
+
+		<!-- Curve -->
+		<control type="image">
+			<right>20</right>
+			<top>20</top>
+			<width>1280</width>
+			<height>1040</height>
+			<texture border="40,0,0,0">common/Curve.png</texture>
+			<visible>Skin.HasSetting(ShowCurve)</visible>
+		</control>
+
+		<include name="Time">
+			<param name="heading">$INFO[Control.GetLabel(411)]</param>
+		</include>
 
 		<!-- Heading -->
 		<control type="label" id="411">
-			<left>150</left>
+			<left>-15000</left>
 			<top>96</top>
 			<width>1620</width>
 			<height>72</height>
@@ -58,31 +72,52 @@
 			<visible>StringCompare(ListItem.Path,special://skin/extras/backgrounds/)</visible>
 		</control>
 
+		<!-- Scrollbar -->
+		<control type="scrollbar" id="60">
+			<left>690</left>
+			<centertop>50%</centertop>
+			<width>20</width>
+			<height>720</height>
+			<onleft>9000</onleft>
+			<onright>450</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+			<colordiffuse>OverlayColorNF</colordiffuse>
+			<texturesliderbackground border="11,1,1,1">common/ScrollBackground.png</texturesliderbackground>
+			<texturesliderbar border="11,1,1,1">common/ScrollbarGripNF.png</texturesliderbar>
+			<texturesliderbarfocus border="11,1,1,1" colordiffuse="DialogOverlayColorFO">common/ScrollbarGripFO.png</texturesliderbarfocus>
+			<textureslidernib>-</textureslidernib>
+			<textureslidernibfocus>-</textureslidernibfocus>
+			<visible>!Skin.HasSetting(Scrollbars)</visible>
+		</control>
+
 		<!-- List -->
 		<control type="list" id="450">
-			<left>600</left>
+			<left>750</left>
 			<top>235</top>
-			<width>1170</width>
-			<height>580</height>
+			<width>1050</width>
+			<height>672</height>
 			<onup>noop</onup>
 			<ondown>9000</ondown>
-			<onleft>9000</onleft>
+			<onleft>60</onleft>
 			<onright>9000</onright>
 			<orientation>vertical</orientation>
 			<viewtype label="list">list</viewtype>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
+			<pagecontrol>60</pagecontrol>
 
-			<itemlayout width="1170" height="96">
+			<itemlayout width="1050" height="96">
 				<control type="image">
 					<width>96</width>
 					<height>96</height>
 					<bordersize>6</bordersize>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="75" condition="True">Conditional</animation>
 				</control>
 				<control type="label">
 					<left>140</left>
-					<width>1030</width>
+					<width>910</width>
 					<height>96</height>
 					<font>Font36</font>
 					<textcolor>DialogColor2</textcolor>
@@ -90,7 +125,7 @@
 				</control>
 			</itemlayout>
 
-			<focusedlayout width="1170" height="96">
+			<focusedlayout width="1050" height="96">
 				<control type="image">
 					<width>96</width>
 					<height>96</height>
@@ -101,11 +136,21 @@
 				</control>
 				<control type="label">
 					<left>140</left>
-					<width>1030</width>
+					<width>910</width>
 					<height>96</height>
 					<font>Font36</font>
 					<textcolor>DialogColor1</textcolor>
 					<label>$INFO[ListItem.Label]</label>
+					<visible>Control.HasFocus(450)</visible>
+				</control>
+				<control type="label">
+					<left>140</left>
+					<width>910</width>
+					<height>96</height>
+					<font>Font36</font>
+					<textcolor>DialogColor2</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Control.HasFocus(450)</visible>
 				</control>
 			</focusedlayout>
 
@@ -114,10 +159,10 @@
 		<!-- List -->
 
 		<control type="list" id="451">
-			<left>600</left>
+			<left>750</left>
 			<top>235</top>
-			<width>1170</width>
-			<height>576</height>
+			<width>1050</width>
+			<height>672</height>
 			<onup>noop</onup>
 			<ondown>9000</ondown>
 			<onleft>9000</onleft>
@@ -132,10 +177,11 @@
 					<bordersize>6</bordersize>
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="75" condition="True">Conditional</animation>
 				</control>
 				<control type="label">
 					<left>140</left>
-					<width>1030</width>
+					<width>910</width>
 					<height>96</height>
 					<font>Font36</font>
 					<textcolor>DialogColor2</textcolor>
@@ -154,11 +200,21 @@
 				</control>
 				<control type="label">
 					<left>140</left>
-					<width>1030</width>
+					<width>910</width>
 					<height>96</height>
 					<font>Font36</font>
 					<textcolor>DialogColor1</textcolor>
 					<label>$INFO[ListItem.Label]</label>
+					<visible>Control.HasFocus(451)</visible>
+				</control>
+				<control type="label">
+					<left>140</left>
+					<width>910</width>
+					<height>96</height>
+					<font>Font36</font>
+					<textcolor>DialogColor1</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>!Control.HasFocus(451)</visible>
 				</control>
 			</focusedlayout>
 
@@ -166,7 +222,7 @@
 
 		<!-- Button grouplist -->
 		<control type="grouplist" id="9000">
-			<left>150</left>
+			<left>750</left>
 			<top>912</top>
 			<width>1620</width>
 			<height>66</height>
