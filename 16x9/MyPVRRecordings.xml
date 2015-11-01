@@ -206,7 +206,15 @@
 						<aspectratio>scale</aspectratio>
 						<font>Font30</font>
 						<align>right</align>
-						<label>$INFO[Container(50).ListItem.Genre]</label>
+						<$INFO[Container(50).ListItem.Genre]</label>
+					</control>
+
+					<control type="image">
+						<right>0</right>
+						<top>0</top>
+						<width>512</width>
+						<height>460</height>
+						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
 					</control>
 
 				</control>

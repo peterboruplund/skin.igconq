@@ -8,6 +8,9 @@
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="Window.Previous(startup)">Skin.Reset(mypassword)</onload>
 	<onload condition="!Window.Previous(startup)">AlarmClock(parental,Skin.Reset(mypassword),2,Silent)</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
+	<onload>Skin.SetBool(SkinHelper.WidgetContainer)</onload>
 
 	<controls>
 

@@ -3,31 +3,27 @@
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
 			<property name="id">$NUM[1]</property>
-			<label>$LOCALIZE[12600]</label>
+			<label>בחר צבע הדגשה</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">weather</property>
+			<thumb>special://skin/extras/hometiles/shutdown.png</thumb>
+			<property name="labelID">31035</property>
 			<property name="defaultID">weather</property>
-			<property name="widget">WeatherWidget</property>
-			<property name="widgetName">Weather Forecast</property>
-			<property name="widgetType">custom</property>
-			<property name="widgetPath">$INCLUDE[weather-widget]</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<property name="list">Weather</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">weather</property>
+			<property name="submenuVisibility">num-31035</property>
 			<property name="group">mainmenu</property>
-			<property name="hasSubmenu">True</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="2">
 			<property name="id">$NUM[2]</property>
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultVideo.png</icon>
-			<thumb />
+			<thumb>special://skin/extras/hometiles/tvseries.png</thumb>
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
 			<onclick>ActivateWindow(Videos,root)</onclick>
@@ -59,7 +55,7 @@
 			<property name="id">$NUM[4]</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultMovies.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
@@ -81,7 +77,7 @@
 			<property name="id">$NUM[5]</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
@@ -241,7 +237,7 @@
 			<property name="id">$NUM[14]</property>
 			<label>$ADDON[script.skinshortcuts 32022]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">livetv</property>
 			<property name="defaultID">livetv</property>
@@ -262,7 +258,7 @@
 			<property name="id">$NUM[15]</property>
 			<label>$ADDON[script.skinshortcuts 32087]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">radio</property>
 			<property name="defaultID">radio</property>
@@ -281,30 +277,27 @@
 		</item>
 		<item id="16">
 			<property name="id">$NUM[16]</property>
-			<label>$LOCALIZE[12600]</label>
+			<label>בחר צבע הדגשה</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">weather</property>
+			<thumb>special://skin/extras/hometiles/shutdown.png</thumb>
+			<property name="labelID">31035</property>
 			<property name="defaultID">weather</property>
-			<property name="widget">WeatherWidget</property>
-			<property name="widgetName">Weather Forecast</property>
-			<property name="widgetType">custom</property>
-			<property name="widgetPath">$INCLUDE[weather-widget]</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<property name="list">Weather</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">weather</property>
+			<property name="submenuVisibility">num-31035</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="17">
 			<property name="id">$NUM[17]</property>
 			<label>$LOCALIZE[10006]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultVideo.png</icon>
-			<thumb />
+			<thumb>special://skin/extras/hometiles/tvseries.png</thumb>
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
 			<onclick>ActivateWindow(Videos,root)</onclick>
@@ -313,6 +306,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="18">
 			<property name="id">$NUM[18]</property>
@@ -329,12 +323,13 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">dvd</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="19">
 			<property name="id">$NUM[19]</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultMovies.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
@@ -350,12 +345,13 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="20">
 			<property name="id">$NUM[20]</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
@@ -371,6 +367,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="21">
 			<property name="id">$NUM[21]</property>
@@ -392,6 +389,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-132</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="22">
 			<property name="id">$NUM[22]</property>
@@ -407,6 +405,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="23">
 			<property name="id">$NUM[23]</property>
@@ -422,6 +421,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="24">
 			<property name="id">$NUM[24]</property>
@@ -441,6 +441,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-1036</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="25">
 			<property name="id">$NUM[25]</property>
@@ -456,6 +457,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-31063</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="26">
 			<property name="id">$NUM[26]</property>
@@ -471,6 +473,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="27">
 			<property name="id">$NUM[27]</property>
@@ -486,6 +489,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">script-globalsearch</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="28">
 			<property name="id">$NUM[28]</property>
@@ -501,12 +505,13 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-13005</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="29">
 			<property name="id">$NUM[29]</property>
 			<label>$ADDON[script.skinshortcuts 32022]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">livetv</property>
 			<property name="defaultID">livetv</property>
@@ -521,12 +526,13 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">livetv</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="30">
 			<property name="id">$NUM[30]</property>
 			<label>$ADDON[script.skinshortcuts 32087]</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultTVShows.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">radio</property>
 			<property name="defaultID">radio</property>
@@ -541,25 +547,11 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">radio</property>
 			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
 		</item>
 	</include>
 	<include />
 	<include name="skinshortcuts-submenu">
-		<item id="1">
-			<property name="id">$NUM[1]</property>
-			<label>$LOCALIZE[10004]</label>
-			<label2>$ADDON[script.skinshortcuts 32034]</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">settings</property>
-			<property name="defaultID">settings</property>
-			<onclick>ActivateWindow(Settings)</onclick>
-			<property name="path">ActivateWindow(Settings)</property>
-			<property name="list">Settings</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
-			<property name="group">weather</property>
-			<property name="isSubmenu">True</property>
-		</item>
 		<item id="1">
 			<property name="id">$NUM[1]</property>
 			<label>$LOCALIZE[1037]</label>
@@ -623,11 +615,11 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUM[1]</property>
-			<label>Recent movies</label>
+			<label>בחר צבע הדגשה</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
 			<thumb />
-			<property name="labelID">31031</property>
+			<property name="labelID">31035</property>
 			<property name="defaultID">31031</property>
 			<onclick>ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</onclick>
 			<property name="path">ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</property>
@@ -1138,40 +1130,8 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-weather">
-		<item id="1">
-			<property name="id">$NUM[1]</property>
-			<label>$LOCALIZE[10004]</label>
-			<label2>$ADDON[script.skinshortcuts 32034]</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">settings</property>
-			<property name="defaultID">settings</property>
-			<onclick>ActivateWindow(Settings)</onclick>
-			<property name="path">ActivateWindow(Settings)</property>
-			<property name="list">Settings</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">weather</property>
-			<property name="isSubmenu">True</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-weather">
-		<item id="1">
-			<property name="id">$NUM[1]</property>
-			<label>$LOCALIZE[10004]</label>
-			<label2>$ADDON[script.skinshortcuts 32034]</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">settings</property>
-			<property name="defaultID">settings</property>
-			<onclick>ActivateWindow(Settings)</onclick>
-			<property name="path">ActivateWindow(Settings)</property>
-			<property name="list">Settings</property>
-			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),weather)</visible>
-			<property name="group">weather</property>
-			<property name="isSubmenu">True</property>
-		</item>
-	</include>
+	<include name="skinshortcuts-group-31035" />
+	<include name="skinshortcuts-group-alt-31035" />
 	<include name="skinshortcuts-group-videos">
 		<item id="1">
 			<property name="id">$NUM[1]</property>
@@ -1305,11 +1265,11 @@
 	<include name="skinshortcuts-group-movies">
 		<item id="1">
 			<property name="id">$NUM[1]</property>
-			<label>Recent movies</label>
+			<label>בחר צבע הדגשה</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
 			<thumb />
-			<property name="labelID">31031</property>
+			<property name="labelID">31035</property>
 			<property name="defaultID">31031</property>
 			<onclick>ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</onclick>
 			<property name="path">ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</property>
@@ -1416,11 +1376,11 @@
 	<include name="skinshortcuts-group-alt-movies">
 		<item id="1">
 			<property name="id">$NUM[1]</property>
-			<label>Recent movies</label>
+			<label>בחר צבע הדגשה</label>
 			<label2>$ADDON[script.skinshortcuts 32014]</label2>
 			<icon>DefaultRecentlyAddedMovies.png</icon>
 			<thumb />
-			<property name="labelID">31031</property>
+			<property name="labelID">31035</property>
 			<property name="defaultID">31031</property>
 			<onclick>ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</onclick>
 			<property name="path">ActivateWindow(Videos,plugin://service.library.data.provider?type=recentmovies,return)</property>
@@ -2372,6 +2332,101 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-template-onright">
+		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-onright-Master user</include>
+	</include>
+	<include name="skinshortcuts-template-onright-Master user">
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31035-widget)) | StringCompare(Window.Property(31035-widget),1)] | [StringCompare(Window.Property(31035-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31035-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31035-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31035-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(31035-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31035-widget)) | StringCompare(Window.Property(31035-widget),1)] | [StringCompare(Window.Property(31035-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31035-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31035-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31035-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(31035-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(31035-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(31035-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31035) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(31035-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(videos-widget)) | StringCompare(Window.Property(videos-widget),1)] | [StringCompare(Window.Property(videos-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(videos-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(videos-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(videos-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(videos-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(videos-widget)) | StringCompare(Window.Property(videos-widget),1)] | [StringCompare(Window.Property(videos-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(videos-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(videos-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(videos-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(videos-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(videos-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(videos-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(videos-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(dvd-widget)) | StringCompare(Window.Property(dvd-widget),1)] | [StringCompare(Window.Property(dvd-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(dvd-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(dvd-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(dvd-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(dvd-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(dvd-widget)) | StringCompare(Window.Property(dvd-widget),1)] | [StringCompare(Window.Property(dvd-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(dvd-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(dvd-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(dvd-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(dvd-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(dvd-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(dvd-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(dvd-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(movies-widget)) | StringCompare(Window.Property(movies-widget),1)] | [StringCompare(Window.Property(movies-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(movies-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(movies-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(movies-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(movies-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(movies-widget)) | StringCompare(Window.Property(movies-widget),1)] | [StringCompare(Window.Property(movies-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(movies-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(movies-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(movies-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(movies-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(movies-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(movies-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(movies-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(tvshows-widget)) | StringCompare(Window.Property(tvshows-widget),1)] | [StringCompare(Window.Property(tvshows-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(tvshows-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(tvshows-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(tvshows-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(tvshows-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(tvshows-widget)) | StringCompare(Window.Property(tvshows-widget),1)] | [StringCompare(Window.Property(tvshows-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(tvshows-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(tvshows-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(tvshows-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(tvshows-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(tvshows-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(tvshows-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(tvshows-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(132-widget)) | StringCompare(Window.Property(132-widget),1)] | [StringCompare(Window.Property(132-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(132-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(132-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(132-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(132-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(132-widget)) | StringCompare(Window.Property(132-widget),1)] | [StringCompare(Window.Property(132-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(132-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(132-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(132-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(132-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(132-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(132-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(132-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(music-widget)) | StringCompare(Window.Property(music-widget),1)] | [StringCompare(Window.Property(music-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(music-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(music-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(music-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(music-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(music-widget)) | StringCompare(Window.Property(music-widget),1)] | [StringCompare(Window.Property(music-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(music-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(music-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(music-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(music-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(music-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(music-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(music-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(pictures-widget)) | StringCompare(Window.Property(pictures-widget),1)] | [StringCompare(Window.Property(pictures-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(pictures-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(pictures-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(pictures-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(pictures-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(pictures-widget)) | StringCompare(Window.Property(pictures-widget),1)] | [StringCompare(Window.Property(pictures-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(pictures-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(pictures-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(pictures-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(pictures-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(pictures-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(pictures-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(pictures-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(1036-widget)) | StringCompare(Window.Property(1036-widget),1)] | [StringCompare(Window.Property(1036-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(1036-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(1036-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(1036-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(1036-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(1036-widget)) | StringCompare(Window.Property(1036-widget),1)] | [StringCompare(Window.Property(1036-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(1036-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(1036-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(1036-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(1036-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(1036-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(1036-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(1036-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31063-widget)) | StringCompare(Window.Property(31063-widget),1)] | [StringCompare(Window.Property(31063-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31063-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31063-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31063-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(31063-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31063-widget)) | StringCompare(Window.Property(31063-widget),1)] | [StringCompare(Window.Property(31063-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31063-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31063-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31063-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(31063-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(31063-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(31063-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(31063-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(settings-widget)) | StringCompare(Window.Property(settings-widget),1)] | [StringCompare(Window.Property(settings-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(settings-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(settings-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(settings-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(settings-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(settings-widget)) | StringCompare(Window.Property(settings-widget),1)] | [StringCompare(Window.Property(settings-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(settings-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(settings-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(settings-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(settings-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(settings-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(settings-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(settings-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(script.globalsearch-widget)) | StringCompare(Window.Property(script.globalsearch-widget),1)] | [StringCompare(Window.Property(script.globalsearch-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(script.globalsearch-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(script.globalsearch-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(script.globalsearch-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(script.globalsearch-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(script.globalsearch-widget)) | StringCompare(Window.Property(script.globalsearch-widget),1)] | [StringCompare(Window.Property(script.globalsearch-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(script.globalsearch-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(script.globalsearch-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(script.globalsearch-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(script.globalsearch-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(script.globalsearch-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(script.globalsearch-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(script.globalsearch-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(13005-widget)) | StringCompare(Window.Property(13005-widget),1)] | [StringCompare(Window.Property(13005-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(13005-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(13005-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(13005-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(13005-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(13005-widget)) | StringCompare(Window.Property(13005-widget),1)] | [StringCompare(Window.Property(13005-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(13005-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(13005-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(13005-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(13005-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(13005-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(13005-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(13005-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(livetv-widget)) | StringCompare(Window.Property(livetv-widget),1)] | [StringCompare(Window.Property(livetv-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(livetv-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(livetv-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(livetv-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(livetv-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(livetv-widget)) | StringCompare(Window.Property(livetv-widget),1)] | [StringCompare(Window.Property(livetv-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(livetv-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(livetv-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(livetv-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(livetv-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(livetv-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(livetv-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(livetv-widget),5)">9006</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(radio-widget)) | StringCompare(Window.Property(radio-widget),1)] | [StringCompare(Window.Property(radio-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(radio-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(radio-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(radio-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(radio-widget,1)</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(radio-widget)) | StringCompare(Window.Property(radio-widget),1)] | [StringCompare(Window.Property(radio-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(radio-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(radio-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(radio-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(radio-widget),2)">9003</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(radio-widget),3)">9004</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(radio-widget),4)">9005</onright>
+		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(radio-widget),5)">9006</onright>
+	</include>
 	<include name="skinshortcuts-template-widget-1">
 		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-widget-1-Master user</include>
 	</include>
@@ -2381,216 +2436,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(weather-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(weather-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(weather-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(weather-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
-			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(weather-widget,2)</ondown>
-			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
-			<onleft>9000</onleft>
-			<onback>9000</onback>
-			<onright>noop</onright>
-			<viewtype label="">list</viewtype>
-			<orientation>horizontal</orientation>
-			<defaultcontrol always="true">0</defaultcontrol>
-			<scrolltime easing="out" tween="sine">240</scrolltime>
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
-			<animation condition="StringCompare(Container(9002).NumItems,1)" effect="slide" end="-1000,0" start="0,0" time="0">conditional</animation>
-			<animation condition="StringCompare(Container(9002).NumItems,2)" effect="slide" end="-1203,0" start="0,0" time="0">conditional</animation>
-			<animation condition="StringCompare(Container(9002).NumItems,3)" effect="slide" end="-1406,0" start="0,0" time="0">conditional</animation>
-			<animation condition="StringCompare(Container(9002).NumItems,4)" effect="slide" end="-1609,0" start="0,0" time="0">conditional</animation>
-			<animation condition="StringCompare(Container(9002).NumItems,5)" effect="slide" end="-1812,0" start="0,0" time="0">conditional</animation>
-			<animation condition="IntegerGreaterThan(Container(9002).NumItems,5)" effect="slide" end="-2015,0" start="0,0" time="0">conditional</animation>
-			<animation condition="IsEmpty(Window.Property(weather-widget)) | StringCompare(Window.Property(weather-widget),1) | [StringCompare(Window.Property(weather-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(weather-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] | [StringCompare(Window.Property(weather-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] | [StringCompare(Window.Property(weather-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]" effect="slide" end="-4000,0" start="0,0" time="0">conditional</animation>
-			<animation condition="IsEmpty(Window.Property(weather-widget)) | StringCompare(Window.Property(weather-widget),1) | [StringCompare(Window.Property(weather-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(weather-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] | [StringCompare(Window.Property(weather-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] | [StringCompare(Window.Property(weather-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]" delay="100" effect="fade" end="100" start="0" time="200">conditional</animation>
-			<animation condition="!IsEmpty(Window.Property(weather-widget)) + !StringCompare(Window.Property(weather-widget),1) + ![StringCompare(Window.Property(weather-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] + ![StringCompare(Window.Property(weather-widget),3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2))] + ![StringCompare(Window.Property(weather-widget),4) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3))] + ![StringCompare(Window.Property(weather-widget),5) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]" effect="fade" end="0" start="100" time="200">conditional</animation>
-			<animation type="visible">
-				<effect delay="100" end="100" start="0" time="200" type="fade" />
-				<effect delay="100" end="0,0" start="600,0" time="200" type="slide" />
-			</animation>
-			<animation type="hidden">
-				<effect end="0" start="100" time="200" type="fade" />
-				<effect end="600,0" start="0,0" time="200" type="slide" />
-			</animation>
-			<itemlayout height="306" width="203">
-				<control type="image">
-					<left>13</left>
-					<top>0</top>
-					<width>183</width>
-					<height>306</height>
-					<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-					<bordersize>0,0,0,33</bordersize>
-					<visible>!True</visible>
-				</control>
-				<control type="group">
-					<visible>!True</visible>
-					<control type="image">
-						<left>155</left>
-						<top>210</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>views/OverlayWatchedWide.png</texture>
-						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
-					</control>
-					<control type="image">
-						<left>155</left>
-						<top>210</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>views/OverlayResumableWide.png</texture>
-						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
-					</control>
-				</control>
-				<control type="group">
-					<visible>True</visible>
-					<control type="label">
-						<top>2</top>
-						<width>203</width>
-						<height>33</height>
-						<font>Font33</font>
-						<align>center</align>
-						<textcolor>TextColor2</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center">keep</aspectratio>
-					</control>
-					<control type="label">
-						<top>249</top>
-						<width>203</width>
-						<height>25</height>
-						<font>Font25</font>
-						<align>center</align>
-						<textcolor>TextColor2</textcolor>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout height="306" width="203">
-				<control type="group">
-					<visible>!True</visible>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>!Control.HasFocus(9002)</visible>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>Control.HasFocus(9002)</visible>
-					</control>
-					<control type="image">
-						<left>155</left>
-						<top>210</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>views/OverlayWatchedWide.png</texture>
-						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
-					</control>
-					<control type="image">
-						<left>155</left>
-						<top>210</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>views/OverlayResumableWide.png</texture>
-						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
-					</control>
-				</control>
-				<control type="group">
-					<visible>True</visible>
-					<control type="label">
-						<top>2</top>
-						<width>203</width>
-						<height>33</height>
-						<font>Font33</font>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>TextColor2</textcolor>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<visible>!Control.HasFocus(9002)</visible>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<visible>Control.HasFocus(9002)</visible>
-					</control>
-					<control type="label">
-						<top>249</top>
-						<width>203</width>
-						<height>25</height>
-						<font>Font25</font>
-						<align>center</align>
-						<textcolor>TextColor2</textcolor>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>
-				</control>
-			</focusedlayout>
-			<content target="">
-				<include>weather-widget</include>
-			</content>
-		</control>
-		<control type="label">
-			<top>1005</top>
-			<right>120</right>
-			<width>1000</width>
-			<height>33</height>
-			<font>Font33</font>
-			<align>right</align>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>Weather Forecast</label>
-			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
-			<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
-			<visible>StringCompare(Window.Property(weather-widget),1) | IsEmpty(Window.Property(weather-widget))</visible>
-			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
-			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
-		</control>
-		<control id="9002" type="list">
-			<left>6605</left>
-			<top>688</top>
-			<width>1218</width>
-			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(movies-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(movies-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(movies-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(movies-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(movies-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(movies-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(movies-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(movies-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(movies-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -2783,14 +2636,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(tvshows-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(tvshows-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(tvshows-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(tvshows-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(tvshows-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(tvshows-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(tvshows-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(tvshows-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(tvshows-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -2983,14 +2836,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(132-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(132-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(132-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(132-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(132-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(132-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(132-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(132-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(132-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -3183,14 +3036,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(1036-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(1036-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(1036-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(1036-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(1036-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(1036-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(1036-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(1036-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(1036-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -3385,14 +3238,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(livetv-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(livetv-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(livetv-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(livetv-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(livetv-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(livetv-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(livetv-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(livetv-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(livetv-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -3426,7 +3279,7 @@
 					<top>0</top>
 					<width>183</width>
 					<height>306</height>
-					<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+					<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 					<bordersize>0,0,0,33</bordersize>
@@ -3467,7 +3320,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 					</control>
 					<control type="label">
@@ -3489,7 +3342,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -3500,7 +3353,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -3539,7 +3392,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>!Control.HasFocus(9002)</visible>
 					</control>
@@ -3548,7 +3401,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Control.HasFocus(9002)</visible>
 					</control>
@@ -3585,14 +3438,14 @@
 			<top>688</top>
 			<width>1218</width>
 			<height>306</height>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(radio-widget,5)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9006</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(radio-widget,4)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9005</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(radio-widget,3)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9004</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">SetProperty(radio-widget,2)</onup>
-			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4)">9003</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(radio-widget,5)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9006</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(radio-widget,4)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9005</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(radio-widget,3)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9004</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">SetProperty(radio-widget,2)</onup>
+			<onup condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + IsEmpty(Container(9000).ListItem.Property(widgetPath.4))">9003</onup>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">SetProperty(radio-widget,2)</ondown>
 			<ondown condition="!IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9003</ondown>
 			<onleft>9000</onleft>
@@ -3626,7 +3479,7 @@
 					<top>0</top>
 					<width>183</width>
 					<height>306</height>
-					<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+					<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 					<bordersize>0,0,0,33</bordersize>
@@ -3667,7 +3520,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 					</control>
 					<control type="label">
@@ -3689,7 +3542,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -3700,7 +3553,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -3739,7 +3592,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true" colordiffuse="88f1f1f1">$INFO[ListItem.Icon]</texture>
+						<texture background="true" colordiffuse="88f1f1f1">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>!Control.HasFocus(9002)</visible>
 					</control>
@@ -3748,7 +3601,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Control.HasFocus(9002)</visible>
 					</control>
@@ -3780,100 +3633,5 @@
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
 		</control>
-	</include>
-	<include name="skinshortcuts-template-onright">
-		<include condition="StringCompare(System.ProfileName,Master user)">skinshortcuts-template-onright-Master user</include>
-	</include>
-	<include name="skinshortcuts-template-onright-Master user">
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(weather-widget)) | StringCompare(Window.Property(weather-widget),1)] | [StringCompare(Window.Property(weather-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(weather-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(weather-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(weather-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(weather-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(weather-widget)) | StringCompare(Window.Property(weather-widget),1)] | [StringCompare(Window.Property(weather-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(weather-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(weather-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(weather-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(weather-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(weather-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(weather-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),weather) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(weather-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(videos-widget)) | StringCompare(Window.Property(videos-widget),1)] | [StringCompare(Window.Property(videos-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(videos-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(videos-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(videos-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(videos-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(videos-widget)) | StringCompare(Window.Property(videos-widget),1)] | [StringCompare(Window.Property(videos-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(videos-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(videos-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(videos-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(videos-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(videos-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(videos-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),videos) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(videos-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(dvd-widget)) | StringCompare(Window.Property(dvd-widget),1)] | [StringCompare(Window.Property(dvd-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(dvd-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(dvd-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(dvd-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(dvd-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(dvd-widget)) | StringCompare(Window.Property(dvd-widget),1)] | [StringCompare(Window.Property(dvd-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(dvd-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(dvd-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(dvd-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(dvd-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(dvd-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(dvd-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),dvd) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(dvd-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(movies-widget)) | StringCompare(Window.Property(movies-widget),1)] | [StringCompare(Window.Property(movies-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(movies-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(movies-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(movies-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(movies-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(movies-widget)) | StringCompare(Window.Property(movies-widget),1)] | [StringCompare(Window.Property(movies-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(movies-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(movies-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(movies-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(movies-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(movies-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(movies-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),movies) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(movies-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(tvshows-widget)) | StringCompare(Window.Property(tvshows-widget),1)] | [StringCompare(Window.Property(tvshows-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(tvshows-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(tvshows-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(tvshows-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(tvshows-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(tvshows-widget)) | StringCompare(Window.Property(tvshows-widget),1)] | [StringCompare(Window.Property(tvshows-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(tvshows-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(tvshows-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(tvshows-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(tvshows-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(tvshows-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(tvshows-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),tvshows) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(tvshows-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(132-widget)) | StringCompare(Window.Property(132-widget),1)] | [StringCompare(Window.Property(132-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(132-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(132-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(132-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(132-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(132-widget)) | StringCompare(Window.Property(132-widget),1)] | [StringCompare(Window.Property(132-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(132-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(132-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(132-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(132-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(132-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(132-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-132) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(132-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(music-widget)) | StringCompare(Window.Property(music-widget),1)] | [StringCompare(Window.Property(music-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(music-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(music-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(music-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(music-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(music-widget)) | StringCompare(Window.Property(music-widget),1)] | [StringCompare(Window.Property(music-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(music-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(music-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(music-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(music-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(music-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(music-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),music) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(music-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(pictures-widget)) | StringCompare(Window.Property(pictures-widget),1)] | [StringCompare(Window.Property(pictures-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(pictures-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(pictures-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(pictures-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(pictures-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(pictures-widget)) | StringCompare(Window.Property(pictures-widget),1)] | [StringCompare(Window.Property(pictures-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(pictures-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(pictures-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(pictures-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(pictures-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(pictures-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(pictures-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),pictures) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(pictures-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(1036-widget)) | StringCompare(Window.Property(1036-widget),1)] | [StringCompare(Window.Property(1036-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(1036-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(1036-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(1036-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(1036-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(1036-widget)) | StringCompare(Window.Property(1036-widget),1)] | [StringCompare(Window.Property(1036-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(1036-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(1036-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(1036-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(1036-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(1036-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(1036-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-1036) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(1036-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31063-widget)) | StringCompare(Window.Property(31063-widget),1)] | [StringCompare(Window.Property(31063-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31063-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31063-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31063-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(31063-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(31063-widget)) | StringCompare(Window.Property(31063-widget),1)] | [StringCompare(Window.Property(31063-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(31063-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(31063-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(31063-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(31063-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(31063-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(31063-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-31063) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(31063-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(settings-widget)) | StringCompare(Window.Property(settings-widget),1)] | [StringCompare(Window.Property(settings-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(settings-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(settings-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(settings-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(settings-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(settings-widget)) | StringCompare(Window.Property(settings-widget),1)] | [StringCompare(Window.Property(settings-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(settings-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(settings-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(settings-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(settings-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(settings-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(settings-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(settings-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(script.globalsearch-widget)) | StringCompare(Window.Property(script.globalsearch-widget),1)] | [StringCompare(Window.Property(script.globalsearch-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(script.globalsearch-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(script.globalsearch-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(script.globalsearch-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(script.globalsearch-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(script.globalsearch-widget)) | StringCompare(Window.Property(script.globalsearch-widget),1)] | [StringCompare(Window.Property(script.globalsearch-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(script.globalsearch-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(script.globalsearch-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(script.globalsearch-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(script.globalsearch-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(script.globalsearch-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(script.globalsearch-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(script.globalsearch-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(13005-widget)) | StringCompare(Window.Property(13005-widget),1)] | [StringCompare(Window.Property(13005-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(13005-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(13005-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(13005-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(13005-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(13005-widget)) | StringCompare(Window.Property(13005-widget),1)] | [StringCompare(Window.Property(13005-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(13005-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(13005-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(13005-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(13005-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(13005-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(13005-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),num-13005) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(13005-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(livetv-widget)) | StringCompare(Window.Property(livetv-widget),1)] | [StringCompare(Window.Property(livetv-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(livetv-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(livetv-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(livetv-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(livetv-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(livetv-widget)) | StringCompare(Window.Property(livetv-widget),1)] | [StringCompare(Window.Property(livetv-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(livetv-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(livetv-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(livetv-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(livetv-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(livetv-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(livetv-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),livetv) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(livetv-widget),5)">9006</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(radio-widget)) | StringCompare(Window.Property(radio-widget),1)] | [StringCompare(Window.Property(radio-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(radio-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(radio-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(radio-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">SetProperty(radio-widget,1)</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + [ [IsEmpty(Window.Property(radio-widget)) | StringCompare(Window.Property(radio-widget),1)] | [StringCompare(Window.Property(radio-widget),2) + IsEmpty(Container(9000).ListItem.Property(widgetPath.1))] | [StringCompare(Window.Property(radio-widget),3) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2))]] | [StringCompare(Window.Property(radio-widget),4) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3))]] | [StringCompare(Window.Property(radio-widget),5) + [IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) | IsEmpty(Container(9000).ListItem.Property(widgetPath.4))]]]">9002</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + StringCompare(Window.Property(radio-widget),2)">9003</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + StringCompare(Window.Property(radio-widget),3)">9004</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + StringCompare(Window.Property(radio-widget),4)">9005</onright>
-		<onright condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),radio) + !IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.1)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.2)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.3)) + !IsEmpty(Container(9000).ListItem.Property(widgetPath.4)) + StringCompare(Window.Property(radio-widget),5)">9006</onright>
 	</include>
 </includes>

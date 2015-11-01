@@ -209,7 +209,19 @@
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$INFO[Container(9002).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),episodes) + IsEmpty(Container(9002).ListItem.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>603</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>66</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9002).ListItem.Label][CR]$INFO[Container(9002).ListItem.Property(StartTime)]</label>
+				<visible>!IsEmpty(Container(9002).ListItem.Property(channelname))</visible>
 			</control>
 			<control type="label">
 				<top>636</top>
@@ -237,7 +249,19 @@
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$INFO[Container(9003).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes) + IsEmpty(Container(9003).ListItem.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>603</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>66</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9003).ListItem.Label][CR]$INFO[Container(9003).ListItem.Property(StartTime)]</label>
+				<visible>!IsEmpty(Container(9003).ListItem.Property(channelname))</visible>
 			</control>
 			<control type="label">
 				<top>636</top>
@@ -265,7 +289,19 @@
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$INFO[Container(9004).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes) + IsEmpty(Container(9004).ListItem.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>603</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>66</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9004).ListItem.Label][CR]$INFO[Container(9004).ListItem.Property(StartTime)]</label>
+				<visible>!IsEmpty(Container(9004).ListItem.Property(channelname))</visible>
 			</control>
 			<control type="label">
 				<top>636</top>
@@ -293,7 +329,19 @@
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$INFO[Container(9005).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes) + IsEmpty(Container(9005).ListItem.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>603</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>66</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9005).ListItem.Label][CR]$INFO[Container(9005).ListItem.Property(StartTime)]</label>
+				<visible>!IsEmpty(Container(9005).ListItem.Property(channelname))</visible>
 			</control>
 			<control type="label">
 				<top>636</top>
@@ -321,7 +369,19 @@
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
 				<label>$INFO[Container(9006).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes) + IsEmpty(Container(9006).ListItem.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>603</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>66</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>$VAR[SubMenuColor]</textcolor>
+				<label>$INFO[Container(9006).ListItem.Label][CR]$INFO[Container(9006).ListItem.Property(StartTime)]</label>
+				<visible>!IsEmpty(Container(9006).ListItem.Property(channelname))</visible>
 			</control>
 			<control type="label">
 				<top>636</top>

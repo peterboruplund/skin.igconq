@@ -51,10 +51,11 @@
 	<backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
 	<background label="Widget 1 fanart">fanart</background>
 	<background label="Current weather fanart">weather</background>
+	<background label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>
 
 	<!-- Parental control -->
-	<override action="globaloverride">
+	<!--override action="globaloverride">
 		<condition>!IsEmpty(Container(9000).ListItem.Property(ParentalControl)) + !SubString(Container(9000).ListItem.Property(ParentalControl),no) + !IsEmpty(Skin.String(passcode)) + StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
 	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
 	    <action>::ACTION::</action>
@@ -67,7 +68,7 @@
 	<override action="globaloverride">
 	    <condition>IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | SubString(Container(9000).ListItem.Property(ParentalControl),no) | IsEmpty(Skin.String(passcode))</condition>
 	    <action>::ACTION::</action>
-	</override>
+	</override-->
 
 	<propertySettings property="ParentalControl" buttonID="600" title="Require password?" showNone="False" imageBrowse="False" />
 	<property property="ParentalControl" label="No">no</property>
