@@ -206,15 +206,18 @@
 						<aspectratio>scale</aspectratio>
 						<font>Font30</font>
 						<align>right</align>
-						<$INFO[Container(50).ListItem.Genre]</label>
+						<label>$INFO[Container(50).ListItem.Genre]</label>
 					</control>
 
+					<!-- Skin helper thumbnail -->
 					<control type="image">
 						<right>0</right>
 						<top>0</top>
 						<width>512</width>
 						<height>460</height>
-						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Poster)]</texture>
+						<visible>IsEmpty(Container(50).ListItem.Plot) + IsEmpty(Container(50).ListItem.Plot)</visible>
 					</control>
 
 				</control>

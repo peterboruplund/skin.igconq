@@ -9,7 +9,6 @@
 		<property name="target"></property>
 
 		<property name="art" tag="property" attribute="name|widgetType" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widget" value="SmartPVR">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</property>
 		<property name="art">$INFO[ListItem.Icon]</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
@@ -253,7 +252,6 @@
 		<property name="target"></property>
 
 		<property name="art" tag="property" attribute="name|widgetType.1" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widget.1" value="SmartPVR">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=actualthumb,thumb&amp;fallback=$INFO[ListItem.Icon]</property>
 		<property name="art">$INFO[ListItem.Icon]</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
@@ -474,7 +472,6 @@
 		<property name="target"></property>
 
 		<property name="art" tag="property" attribute="name|widgetType.2" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widget.2" value="SmartPVR">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=actualthumb,thumb&amp;fallback=$INFO[ListItem.Icon]</property>
 		<property name="art">$INFO[ListItem.Icon]</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
@@ -695,7 +692,6 @@
 		<property name="target"></property>
 
 		<property name="art" tag="property" attribute="name|widgetType.3" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widget.3" value="SmartPVR">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=actualthumb,thumb&amp;fallback=$INFO[ListItem.Icon]</property>
 		<property name="art">$INFO[ListItem.Icon]</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
@@ -916,7 +912,8 @@
 		<property name="target"></property>
 
 		<property name="art" tag="property" attribute="name|widgetType.4" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widget.4" value="SmartPVR">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=actualthumb,thumb&amp;fallback=$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetPath.4" value="pvr://channels/tv/all channel/;reload=$INFO[Window(Home).Property(widgetreload2)]">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType.4" value="pvr">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</property>
 		<property name="art">$INFO[ListItem.Icon]</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
