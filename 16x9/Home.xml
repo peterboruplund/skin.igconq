@@ -11,6 +11,11 @@
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload>Skin.SetBool(SkinHelper.WidgetContainer)</onload>
+	<onload>Skin.SetBool(SmartShortcuts.playlists)</onload>
+	<onload>Skin.SetBool(SmartShortcuts.favorites)</onload>
+	<onload>Skin.SetBool(SmartShortcuts.plex)</onload>
+	<onload>Skin.SetBool(SmartShortcuts.emby)</onload>
+	<onload>Skin.SetBool(SmartShortcuts.netflix)</onload>
 
 	<controls>
 
@@ -39,6 +44,7 @@
 			<randomize>true</randomize>
 			<visible>Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistFanart)</visible>
 			<animation effect="fade" start="100" end="50" time="0" condition="Skin.HasSetting(FadeArtistFanart)">Conditional</animation>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -55,6 +61,7 @@
 			<animation effect="fade" start="80" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<visible>SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) | IsEmpty(Skin.String(CustomBackgroundImage))</visible>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
@@ -65,6 +72,7 @@
 			<imagepath>$VAR[HomeBackgroundImage]</imagepath>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<visible>!SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) + !IsEmpty(Skin.String(CustomBackgroundImage))</visible>
+			<aspectratio>keep</aspectratio>
 		</control>
 
 		<!-- Time -->

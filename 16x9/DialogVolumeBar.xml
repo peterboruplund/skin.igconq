@@ -9,7 +9,7 @@
 			<width>220</width>
 			<height>180</height>
 			<include>DialogZoomAnimation</include>
-			<animation effect="slide" start="0,0" end="470,0" time="100" condition="Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="470,0" time="100" condition="Window.IsActive(notification) | Window.IsActive(extendedprogressdialog)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="0" condition="Window.IsActive(mutebug)">Conditional</animation>
 
 			<!-- Background image -->
@@ -45,6 +45,21 @@
 				<font>Font30</font>
 				<textcolor>DialogColor2</textcolor>
 				<label>$INFO[Control.GetLabel(404),,%]</label>
+				<visible>!Player.Muted</visible>
+			</control>
+
+			<!-- Details - Muted -->
+			<control type="label">
+				<left>40</left>
+				<top>104</top>
+				<width>140</width>
+				<height>27</height>
+				<align>center</align>
+				<scroll>true</scroll>
+				<font>Font30</font>
+				<textcolor>DialogColor2</textcolor>
+				<label>31013</label>
+				<visible>Player.Muted</visible>
 			</control>
 
 			<!-- Progress -->

@@ -216,8 +216,17 @@
 						<width>512</width>
 						<height>460</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Poster)]</texture>
-						<visible>IsEmpty(Container(50).ListItem.Plot) + IsEmpty(Container(50).ListItem.Plot)</visible>
+						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
+						<visible>IsEmpty(Container(50).ListItem.Plot) + IsEmpty(Container(50).ListItem.Plot) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
+					</control>
+					<control type="image">
+						<right>0</right>
+						<top>0</top>
+						<width>512</width>
+						<height>460</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Window(Home).Property(SkinHelper.PVR.Fanart)]</texture>
+						<visible>IsEmpty(Container(50).ListItem.Plot) + IsEmpty(Container(50).ListItem.Plot) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
 					</control>
 
 				</control>
@@ -442,8 +451,16 @@
 						<onclick>SetFocus(50)</onclick>
 						<label>19040</label>
 					</control>
-					<!-- Search -->
+					<!-- Rules -->
 					<control type="button" id="36">
+						<include>OptionButtons</include>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+						<onclick>SetFocus(50)</onclick>
+						<label>Rules</label>
+					</control>
+					<!-- Search -->
+					<control type="button" id="37">
 						<include>OptionButtons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
 						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>

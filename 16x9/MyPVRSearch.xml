@@ -472,8 +472,16 @@
 						<onclick>SetFocus(50)</onclick>
 						<label>19040</label>
 					</control>
-					<!-- Search -->
+					<!-- Rules -->
 					<control type="button" id="36">
+						<include>OptionButtons</include>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+						<onclick>SetFocus(50)</onclick>
+						<label>Rules</label>
+					</control>
+					<!-- Search -->
+					<control type="button" id="37">
 						<include>OptionButtons</include>
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
 						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>

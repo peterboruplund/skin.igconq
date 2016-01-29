@@ -8,8 +8,8 @@
 		<property name="target" tag="property" attribute="name|widgetTarget" />
 		<property name="target"></property>
 
-		<property name="art" tag="property" attribute="name|widgetType" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType" value="episodes">ListItem.Art(tvshow.poster)</property>
+		<property name="art">ListItem.Icon</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -79,11 +79,22 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -145,7 +156,7 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+							<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 							<aspectratio align="center">keep</aspectratio>
 							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 							<bordersize>0,0,0,33</bordersize>
@@ -156,11 +167,33 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture background="true">$SKINSHORTCUTS[art]</texture>
+							<texture background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 							<aspectratio align="center">keep</aspectratio>
 							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 							<bordersize>0,0,0,33</bordersize>
 							<visible>Control.HasFocus(9002)</visible>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<visible>!Control.HasFocus(9002) + IsEmpty($SKINSHORTCUTS[art])</visible>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<visible>Control.HasFocus(9002) + IsEmpty($SKINSHORTCUTS[art])</visible>
 						</control>
 
 						<control type="image">
@@ -225,22 +258,46 @@
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
-			<control type="label">
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$SKINSHORTCUTS[name]</label>
+			<control type="grouplist">
 				<skinshortcuts>visibility</skinshortcuts>
 				<visible>Control.HasFocus(9002) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),1) | IsEmpty(Window.Property($SKINSHORTCUTS[labelID]-widget))</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+
+				<top>1005</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+
+				<control type="image">
+					<width>33</width>
+					<height>33</height>
+					<texture>busy.gif</texture>
+					<visible>Container(9002).IsUpdating</visible>
+				</control>
+
+				<control type="label">
+					<minwidth>10</minwidth>
+					<maxwidth>950</maxwidth>
+					<width>auto</width>
+					<height>33</height>
+					<font>Font33</font>
+					<textcolor>$VAR[SubMenuColor]</textcolor>
+					<label>$SKINSHORTCUTS[name]</label>
+				</control>
 			</control>
 		</controls>
+
+		<variables>
+			<variable name="myvariable">
+				<value condition="$SKINSHORTCUTS[name]">Help</value>
+			</variable>
+		</variables>
 	</other>
 
 	<other include="widget-2">
@@ -251,8 +308,8 @@
 		<property name="target" tag="property" attribute="name|widgetTarget.1" />
 		<property name="target"></property>
 
-		<property name="art" tag="property" attribute="name|widgetType.1" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType.1" value="episodes">ListItem.Art(tvshow.poster)</property>
+		<property name="art">ListItem.Icon</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -317,11 +374,22 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -381,7 +449,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -393,11 +461,35 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
+						<texture background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9003)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!Control.HasFocus(9003) + IsEmpty($SKINSHORTCUTS[art])</visible>
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>Control.HasFocus(9003) + IsEmpty($SKINSHORTCUTS[art])</visible>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
 					</control>
 
@@ -445,20 +537,38 @@
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
-			<control type="label">
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$SKINSHORTCUTS[name]</label>
+			<control type="grouplist">
 				<skinshortcuts>visibility</skinshortcuts>
 				<visible>Control.HasFocus(9003) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),2)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+
+				<top>1005</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+
+				<control type="image">
+					<width>33</width>
+					<height>33</height>
+					<texture>busy.gif</texture>
+					<visible>Container(9003).IsUpdating</visible>
+				</control>
+
+				<control type="label">
+					<minwidth>10</minwidth>
+					<maxwidth>950</maxwidth>
+					<width>auto</width>
+					<height>33</height>
+					<font>Font33</font>
+					<textcolor>$VAR[SubMenuColor]</textcolor>
+					<label>$SKINSHORTCUTS[name]</label>
+				</control>
 			</control>
 		</controls>
 	</other>
@@ -471,8 +581,8 @@
 		<property name="target" tag="property" attribute="name|widgetTarget.2" />
 		<property name="target"></property>
 
-		<property name="art" tag="property" attribute="name|widgetType.2" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType.2" value="episodes">ListItem.Art(tvshow.poster)</property>
+		<property name="art">ListItem.Icon</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -537,11 +647,22 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -601,7 +722,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -613,12 +734,36 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
+						<texture background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9004)</visible>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!Control.HasFocus(9004)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>Control.HasFocus(9004)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -665,20 +810,38 @@
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
-			<control type="label">
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$SKINSHORTCUTS[name]</label>
+			<control type="grouplist">
 				<skinshortcuts>visibility</skinshortcuts>
 				<visible>Control.HasFocus(9004) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),3)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+
+				<top>1005</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+
+				<control type="image">
+					<width>33</width>
+					<height>33</height>
+					<texture>busy.gif</texture>
+					<visible>Container(9004).IsUpdating</visible>
+				</control>
+
+				<control type="label">
+					<minwidth>10</minwidth>
+					<maxwidth>950</maxwidth>
+					<width>auto</width>
+					<height>33</height>
+					<font>Font33</font>
+					<textcolor>$VAR[SubMenuColor]</textcolor>
+					<label>$SKINSHORTCUTS[name]</label>
+				</control>
 			</control>
 		</controls>
 	</other>
@@ -691,8 +854,8 @@
 		<property name="target" tag="property" attribute="name|widgetTarget.3" />
 		<property name="target"></property>
 
-		<property name="art" tag="property" attribute="name|widgetType.3" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType.3" value="episodes">ListItem.Art(tvshow.poster)</property>
+		<property name="art">ListItem.Icon</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -757,11 +920,22 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -821,7 +995,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -833,12 +1007,36 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
+						<texture background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9005)</visible>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!Control.HasFocus(9005)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>Control.HasFocus(9005)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -885,20 +1083,38 @@
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
-			<control type="label">
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$SKINSHORTCUTS[name]</label>
+			<control type="grouplist">
 				<skinshortcuts>visibility</skinshortcuts>
 				<visible>Control.HasFocus(9005) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),4)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+
+				<top>1005</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+
+				<control type="image">
+					<width>33</width>
+					<height>33</height>
+					<texture>busy.gif</texture>
+					<visible>Container(9005).IsUpdating</visible>
+				</control>
+
+				<control type="label">
+					<minwidth>10</minwidth>
+					<maxwidth>950</maxwidth>
+					<width>auto</width>
+					<height>33</height>
+					<font>Font33</font>
+					<textcolor>$VAR[SubMenuColor]</textcolor>
+					<label>$SKINSHORTCUTS[name]</label>
+				</control>
 			</control>
 		</controls>
 	</other>
@@ -911,10 +1127,8 @@
 		<property name="target" tag="property" attribute="name|widgetTarget.4" />
 		<property name="target"></property>
 
-		<property name="art" tag="property" attribute="name|widgetType.4" value="episodes">$INFO[ListItem.Art(tvshow.poster)]</property>
-		<property name="art" tag="property" attribute="name|widgetPath.4" value="pvr://channels/tv/all channel/;reload=$INFO[Window(Home).Property(widgetreload2)]">$INFO[ListItem.Icon]</property>
-		<property name="art" tag="property" attribute="name|widgetType.4" value="pvr">http://localhost:52307/getpvrthumb&amp;title=$INFO[Listitem.Title]&amp;channel=$INFO[ListItem.Property(ChannelName)]&amp;type=thumb&amp;fallback=$INFO[ListItem.Icon]</property>
-		<property name="art">$INFO[ListItem.Icon]</property>
+		<property name="art" tag="property" attribute="name|widgetType.4" value="episodes">ListItem.Art(tvshow.poster)</property>
+		<property name="art">ListItem.Icon</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -977,11 +1191,22 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -1041,7 +1266,7 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$SKINSHORTCUTS[art]</texture>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
@@ -1053,12 +1278,36 @@
 						<top>0</top>
 						<width>183</width>
 						<height>306</height>
-						<texture background="true">$SKINSHORTCUTS[art]</texture>
+						<texture background="true">$INFO[$SKINSHORTCUTS[art]]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 						<bordersize>0,0,0,33</bordersize>
 						<visible>Control.HasFocus(9006)</visible>
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>!Control.HasFocus(9006)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+						<bordersize>0,0,0,33</bordersize>
+						<visible>Control.HasFocus(9006)</visible>
+						<visible>!$SKINSHORTCUTS[isWeather] + IsEmpty($SKINSHORTCUTS[art])</visible>
 					</control>
 
 					<control type="group">
@@ -1105,20 +1354,38 @@
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
 			</control>
 
-			<control type="label">
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$SKINSHORTCUTS[name]</label>
+			<control type="grouplist">
 				<skinshortcuts>visibility</skinshortcuts>
 				<visible>Control.HasFocus(9006) | !Skin.HasSetting(HideSubmenuHeading)</visible>
 				<visible>StringCompare(Window.Property($SKINSHORTCUTS[labelID]-widget),5)</visible>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+
+				<top>1005</top>
+				<right>120</right>
+				<width>1000</width>
+				<height>33</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+
+				<control type="image">
+					<width>33</width>
+					<height>33</height>
+					<texture>busy.gif</texture>
+					<visible>Container(9006).IsUpdating</visible>
+				</control>
+
+				<control type="label">
+					<minwidth>10</minwidth>
+					<maxwidth>950</maxwidth>
+					<width>auto</width>
+					<height>33</height>
+					<font>Font33</font>
+					<textcolor>$VAR[SubMenuColor]</textcolor>
+					<label>$SKINSHORTCUTS[name]</label>
+				</control>
 			</control>
 		</controls>
 	</other>
@@ -1159,4 +1426,17 @@
 			</control>
 		</controls>
 	</other>
+
+	<!--other include="variables">
+		<condition tag="property" attribute="name|background">fanart</condition>
+
+		<property name="path" tag="property" attribute="name|backgroundPlaylist" />
+		<property name="path" tag="property" attribute="name|widgetPath" />
+
+		<variables>
+			<variable name="test">
+				<value>$SKINSHORTCUTS[widgetPath]</value>
+			</variable>
+		</variables>
+	</other-->
 </template>

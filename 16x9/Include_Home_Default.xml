@@ -208,31 +208,7 @@
 				<font>Font33</font>
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9002).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType),episodes) + IsEmpty(Container(9002).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>603</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>66</height>
-				<font>Font33</font>
-				<align>right</align>
-				<aligny>bottom</aligny>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9002).ListItem.Label][CR]$INFO[Container(9002).ListItem.Property(StartTime)]</label>
-				<visible>!IsEmpty(Container(9002).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>636</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>(s$INFO[Container(9002).ListItem.Season]e$INFO[Container(9002).ListItem.Episode]) $INFO[Container(9002).ListItem.Label]</label>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType),episodes)</visible>
+				<label>$VAR[widget1Heading]</label>
 			</control>
 		</control>
 
@@ -248,31 +224,7 @@
 				<font>Font33</font>
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9003).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes) + IsEmpty(Container(9003).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>603</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>66</height>
-				<font>Font33</font>
-				<align>right</align>
-				<aligny>bottom</aligny>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9003).ListItem.Label][CR]$INFO[Container(9003).ListItem.Property(StartTime)]</label>
-				<visible>!IsEmpty(Container(9003).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>636</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>(s$INFO[Container(9003).ListItem.Season]e$INFO[Container(9003).ListItem.Episode]) $INFO[Container(9003).ListItem.Label]</label>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.1),episodes)</visible>
+				<label>$VAR[widget2Heading]</label>
 			</control>
 		</control>
 
@@ -288,31 +240,7 @@
 				<font>Font33</font>
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9004).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes) + IsEmpty(Container(9004).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>603</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>66</height>
-				<font>Font33</font>
-				<align>right</align>
-				<aligny>bottom</aligny>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9004).ListItem.Label][CR]$INFO[Container(9004).ListItem.Property(StartTime)]</label>
-				<visible>!IsEmpty(Container(9004).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>636</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>(s$INFO[Container(9004).ListItem.Season]e$INFO[Container(9004).ListItem.Episode]) $INFO[Container(9004).ListItem.Label]</label>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.2),episodes)</visible>
+				<label>$VAR[widget3Heading]</label>
 			</control>
 		</control>
 
@@ -328,31 +256,7 @@
 				<font>Font33</font>
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9005).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes) + IsEmpty(Container(9005).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>603</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>66</height>
-				<font>Font33</font>
-				<align>right</align>
-				<aligny>bottom</aligny>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9005).ListItem.Label][CR]$INFO[Container(9005).ListItem.Property(StartTime)]</label>
-				<visible>!IsEmpty(Container(9005).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>636</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>(s$INFO[Container(9005).ListItem.Season]e$INFO[Container(9005).ListItem.Episode]) $INFO[Container(9005).ListItem.Label]</label>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.3),episodes)</visible>
+				<label>$VAR[widget4Heading]</label>
 			</control>
 		</control>
 
@@ -368,31 +272,7 @@
 				<font>Font33</font>
 				<align>right</align>
 				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9006).ListItem.Label]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes) + IsEmpty(Container(9006).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>603</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>66</height>
-				<font>Font33</font>
-				<align>right</align>
-				<aligny>bottom</aligny>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>$INFO[Container(9006).ListItem.Label][CR]$INFO[Container(9006).ListItem.Property(StartTime)]</label>
-				<visible>!IsEmpty(Container(9006).ListItem.Property(channelname))</visible>
-			</control>
-			<control type="label">
-				<top>636</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<font>Font33</font>
-				<align>right</align>
-				<textcolor>$VAR[SubMenuColor]</textcolor>
-				<label>(s$INFO[Container(9006).ListItem.Season]e$INFO[Container(9006).ListItem.Episode]) $INFO[Container(9006).ListItem.Label]</label>
-				<visible>StringCompare(Container(9000).ListItem.Property(widgetType.4),episodes)</visible>
+				<label>$VAR[widget5Heading]</label>
 			</control>
 		</control>
 
@@ -479,4 +359,34 @@
 
 	</include>
 
+	<variable name="widget1Heading">
+		<value condition="!IsEmpty(Container(9002).ListItem.Property(channelname)) + SubString(Container(9002).ListItem.Property(type),livechannel)">$INFO[Container(9002).ListItem.Label][CR]$INFO[Container(9002).ListItem.Property(Title)] ($INFO[Container(9002).ListItem.Property(StartTime)] - $INFO[Container(9002).ListItem.Property(EndTime)])[CR]$INFO[Container(9002).ListItem.Property(NextTitle)] ($INFO[Container(9002).ListItem.Property(NextStartTime)] - $INFO[Container(9002).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(9002).ListItem.Property(channelname))">$INFO[Container(9002).ListItem.Label][CR]$INFO[Container(9002).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(9002).ListItem.Season)">(s$INFO[Container(9002).ListItem.Season]e$INFO[Container(9002).ListItem.Episode]) $INFO[Container(9002).ListItem.Label]</value>
+		<value>$INFO[Container(9002).ListItem.Label]</value>
+	</variable>
+	<variable name="widget2Heading">
+		<value condition="!IsEmpty(Container(9003).ListItem.Property(channelname)) + SubString(Container(9003).ListItem.Property(type),livechannel)">$INFO[Container(9003).ListItem.Label][CR]$INFO[Container(9003).ListItem.Property(Title)] ($INFO[Container(9003).ListItem.Property(StartTime)] - $INFO[Container(9003).ListItem.Property(EndTime)])[CR]$INFO[Container(9003).ListItem.Property(NextTitle)] ($INFO[Container(9003).ListItem.Property(NextStartTime)] - $INFO[Container(9003).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(9003).ListItem.Property(channelname))">$INFO[Container(9003).ListItem.Label][CR]$INFO[Container(9003).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(9003).ListItem.Season)">(s$INFO[Container(9003).ListItem.Season]e$INFO[Container(9003).ListItem.Episode]) $INFO[Container(9003).ListItem.Label]</value>
+		<value>$INFO[Container(9003).ListItem.Label]</value>
+	</variable>
+	<variable name="widget3Heading">
+		<value condition="!IsEmpty(Container(9004).ListItem.Property(channelname)) + SubString(Container(9004).ListItem.Property(type),livechannel)">$INFO[Container(9004).ListItem.Label][CR]$INFO[Container(9004).ListItem.Property(Title)] ($INFO[Container(9004).ListItem.Property(StartTime)] - $INFO[Container(9004).ListItem.Property(EndTime)])[CR]$INFO[Container(9004).ListItem.Property(NextTitle)] ($INFO[Container(9004).ListItem.Property(NextStartTime)] - $INFO[Container(9004).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(9004).ListItem.Property(channelname))">$INFO[Container(9004).ListItem.Label][CR]$INFO[Container(9004).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(9004).ListItem.Season)">(s$INFO[Container(9004).ListItem.Season]e$INFO[Container(9004).ListItem.Episode]) $INFO[Container(9004).ListItem.Label]</value>
+		<value>$INFO[Container(9004).ListItem.Label]</value>
+	</variable>
+	<variable name="widget4Heading">
+		<value condition="!IsEmpty(Container(9005).ListItem.Property(channelname)) + SubString(Container(9005).ListItem.Property(type),livechannel)">$INFO[Container(9005).ListItem.Label][CR]$INFO[Container(9005).ListItem.Property(Title)] ($INFO[Container(9005).ListItem.Property(StartTime)] - $INFO[Container(9005).ListItem.Property(EndTime)])[CR]$INFO[Container(9005).ListItem.Property(NextTitle)] ($INFO[Container(9005).ListItem.Property(NextStartTime)] - $INFO[Container(9005).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(9005).ListItem.Property(channelname))">$INFO[Container(9005).ListItem.Label][CR]$INFO[Container(9005).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(9005).ListItem.Season)">(s$INFO[Container(9005).ListItem.Season]e$INFO[Container(9005).ListItem.Episode]) $INFO[Container(9005).ListItem.Label]</value>
+		<value>$INFO[Container(9005).ListItem.Label]</value>
+	</variable>
+	<variable name="widget5Heading">
+		<value condition="!IsEmpty(Container(9006).ListItem.Property(channelname)) + SubString(Container(9006).ListItem.Property(type),livechannel)">$INFO[Container(9006).ListItem.Label][CR]$INFO[Container(9006).ListItem.Property(Title)] ($INFO[Container(9006).ListItem.Property(StartTime)] - $INFO[Container(9006).ListItem.Property(EndTime)])[CR]$INFO[Container(9006).ListItem.Property(NextTitle)] ($INFO[Container(9006).ListItem.Property(NextStartTime)] - $INFO[Container(9006).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(9006).ListItem.Property(channelname))">$INFO[Container(9006).ListItem.Label][CR]$INFO[Container(9006).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(9006).ListItem.Season)">(s$INFO[Container(9006).ListItem.Season]e$INFO[Container(9006).ListItem.Episode]) $INFO[Container(9006).ListItem.Label]</value>
+		<value>$INFO[Container(9006).ListItem.Label]</value>
+	</variable>
 </includes>

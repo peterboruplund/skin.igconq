@@ -556,14 +556,8 @@
 						<!-- Auto update -->
 						<control type="button" id="5">
 							<include>OptionButtons</include>
-							<label>24063</label>
+							<label>10004</label>
 							<visible>Control.IsEnabled(5)</visible>
-						</control>
-						<!-- Notifications -->
-						<control type="radiobutton" id="6">
-							<include>OptionButtons</include>
-							<label>25000</label>
-							<visible>Control.IsEnabled(6)</visible>
 						</control>
 						<!-- Language -->
 						<control type="radiobutton" id="7">

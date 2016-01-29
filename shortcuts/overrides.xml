@@ -49,7 +49,7 @@
 	
 	<!-- Backgrounds -->
 	<backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
-	<background label="Widget 1 fanart">fanart</background>
+	<background label="Widget 1 fanart" icon="busy.gif">fanart</background>
 	<background label="Current weather fanart">weather</background>
 	<background condition="System.HasAddon(script.skin.helper.service)" label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>

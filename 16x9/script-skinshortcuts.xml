@@ -139,6 +139,7 @@
 				<width>1050</width>
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
+				<label2>$INFO[Container(211).ListItem.Property(Hello)]</label2>
 			</control>
 
 			<!-- Change label -->

@@ -45,6 +45,18 @@
 				<textcolor>DialogColor2</textcolor>
 			</control>
 
+			<!-- Progress -->
+			<control type="progress" id="32">
+				<description>Progressbar</description>
+				<left>20</left>
+				<top>150</top>
+				<width>760</width>
+				<height>20</height>
+				<visible>true</visible>
+				<texturebg>common/ScrollBackgroundHorizontal.png</texturebg>
+				<midtexture colordiffuse="DialogOverlayColorFO">common/ScrollbarGripHorizontalFO.png</midtexture>
+			</control>
+
 		</control>
 
 	</controls>
