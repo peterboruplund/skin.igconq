@@ -2,7 +2,7 @@
 <window>
 	<!-- skinsettings -->
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;minitems=20)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav)</onunload>
 
 	<controls>
 
@@ -89,22 +89,28 @@
 
 				<!-- Home items -->
 				<!-- Home submenu-->
+				<control type="button" id="1212">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Edit home screen widgets</label>
+					<onclick>RunScript(script.skinshortcuts,type=setProperty&amp;property=background|background|background|background&amp;value=$INFO[Skin.String(home.fanart.path)]movies.jpg|$INFO[Skin.String(home.fanart.path)]tvshows.jpg|$INFO[Skin.String(home.fanart.path)]video.jpg|$INFO[Skin.String(home.fanart.path)]addons.jpg&amp;labelID=movies|tvshows|videos|vaddons)</onclick>
+					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
+				</control>
 				<control type="button" id="1213">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>31049</label>
-					<onclick>Skin.SetNumeric(mypassword)</onclick>
-					<textcolor>LockedNF</textcolor>
-					<focusedcolor>Locked</focusedcolor>
-					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+					<label>Edit home screen widgets</label>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
 				<control type="button" id="1214">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>31049</label>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=igconq-quicknav)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
 				<!-- Small main menu -->
@@ -145,7 +151,7 @@
 					<onclick>Skin.SetNumeric(mypassword)</onclick>
 					<textcolor>LockedNF</textcolor>
 					<focusedcolor>Locked</focusedcolor>
-					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
+					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode)) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
 				</control>
 				<control type="button" id="1219">
 					<width>1050</width>

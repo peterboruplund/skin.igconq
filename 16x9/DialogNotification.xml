@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<animation effect="slide" start="410,0" time="200">WindowOpen</animation>
+	<animation effect="slide" end="410,0" time="200">WindowClose</animation>
+	<animation effect="slide" end="0,120" time="200" condition="Window.IsActive(extendedprogress)">Conditional</animation>
 	<!-- infodialog -->
 	<controls>
 
-		<control type="group">
-			<centerleft>50%</centerleft>
-			<top>15</top>
-			<width>800</width>
-			<height>180</height>
-			<include>DialogZoomAnimation</include>
+		
+		<control type="image">
+			<right>0</right>
+			<top>70</top>
+			<width>550</width>
+			<height>110</height>
+			<texture>dialogs/Background.png</texture>
+		</control>
 
-			<!-- Background image -->
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>800</width>
-				<height>180</height>
-				<texture border="20">dialogs/DialogBackground.png</texture>
-			</control>
+		<!-- Heading -->
+		<control type="label" id="401">
+			<right>10</right>
+			<top>80</top>
+			<width>530</width>
+			<height>20</height>
+			<align>left</align>
+			<scroll>true</scroll>
+			<font>Font27</font>
+			<textcolor>DialogColor1</textcolor>
+		</control>
 
-			<!-- Heading -->
-			<control type="label" id="401">
-				<left>40</left>
-				<top>50</top>
-				<width>720</width>
-				<height>33</height>
-				<align>center</align>
-				<scroll>true</scroll>
-				<font>Font33</font>
-				<textcolor>DialogColor1</textcolor>
-			</control>
-
-			<!-- Details -->
-			<control type="label" id="402">
-				<left>40</left>
-				<top>104</top>
-				<width>720</width>
-				<height>27</height>
-				<align>center</align>
-				<scroll>true</scroll>
-				<font>Font30</font>
-				<textcolor>DialogColor2</textcolor>
-			</control>
-
+		<!-- Details -->
+		<control type="label" id="402">
+			<right>10</right>
+			<top>100</top>
+			<width>530</width>
+			<height>70</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<scroll>true</scroll>
+			<font>Font25</font>
+			<textcolor>DialogColor2</textcolor>
 		</control>
 
 	</controls>

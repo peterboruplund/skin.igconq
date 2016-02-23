@@ -75,6 +75,15 @@
 					<height>66</height>
 					<textcolor>DialogColor2</textcolor>
 					<label>$INFO[ListItem.Label]</label>
+					<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				<control type="label">
+					<left>25</left>
+					<width>260</width>
+					<height>66</height>
+					<textcolor>DialogColor2</textcolor>
+					<label>$INFO[ListItem.Property(widgetName)]</label>
+					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
 			</itemlayout>
 
@@ -86,6 +95,16 @@
 					<scroll>true</scroll>
 					<label>$INFO[ListItem.Label]</label>
 					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
+					<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
+				</control>
+				<control type="label">
+					<left>25</left>
+					<width>260</width>
+					<height>66</height>
+					<scroll>true</scroll>
+					<label>$INFO[ListItem.Property(widgetName)]</label>
+					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
+					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				<control type="image">
 					<left>290</left>
@@ -140,6 +159,7 @@
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
 				<label2>$INFO[Container(211).ListItem.Property(Hello)]</label2>
+				<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Change label -->
@@ -148,16 +168,8 @@
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32025]</label>
 				<label2>$INFO[Container(211).ListItem.Label]</label2>
+				<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
-
-			<!-- Change background -->
-			<control type="button" id="310">
-				<width>1050</width>
-				<height>66</height>
-				<label>$ADDON[script.skinshortcuts 32045]</label>
-				<label2>$INFO[Container(211).ListItem.Property(BackgroundName)]</label2>
-			</control>
-
 
 			<!-- Change action -->
 			<control type="button" id="307">
@@ -165,68 +177,26 @@
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32027]</label>
 				<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+				<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
-			<!-- Edit sub menu -->
-			<control type="button" id="405">
-				<width>1050</width>
-				<label>$ADDON[script.skinshortcuts 32072]</label>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-			</control>
-
-			<!-- Edit widgets -->
+			<!-- Edit widget -->
 			<control type="button" id="312">
 				<width>1050</width>				
-				<label>$ADDON[script.skinshortcuts 32044] 1</label>
+				<label>$ADDON[script.skinshortcuts 32044]</label>
 				<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<onclick condition="StringCompare(Window.Property(groupname),mainmenu)">SetProperty(customProperty,path)</onclick>
+				<onclick condition="StringCompare(Window.Property(groupname),mainmenu)">SetProperty(customValue,noMeaningfulValue)</onclick>
+				<onclick condition="StringCompare(Window.Property(groupname),mainmenu)">SendClick(404)</onclick>
 			</control>
 
-			<control type="button" id="501">
-				<width>1050</width>				
-				<label>$ADDON[script.skinshortcuts 32044] 2</label>
-				<label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
-				<onclick>SetProperty(widgetID,1)</onclick>
-				<onclick>SendClick(312)</onclick>
-				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName))</visible>
-			</control>
-
-			<control type="button" id="502">
-				<width>1050</width>				
-				<label>$ADDON[script.skinshortcuts 32044] 3</label>
-				<label2>$INFO[Container(211).ListItem.Property(widgetName.2)]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
-				<onclick>SetProperty(widgetID,2)</onclick>
-				<onclick>SendClick(312)</onclick>
-				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName)) + !IsEmpty(Container(211).ListItem.Property(widgetName.1))</visible>
-			</control>
-
-			<control type="button" id="503">
-				<width>1050</width>				
-				<label>$ADDON[script.skinshortcuts 32044] 4</label>
-				<label2>$INFO[Container(211).ListItem.Property(widgetName.3)]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
-				<onclick>SetProperty(widgetID,3)</onclick>
-				<onclick>SendClick(312)</onclick>
-				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName)) + !IsEmpty(Container(211).ListItem.Property(widgetName.1)) + !IsEmpty(Container(211).ListItem.Property(widgetName.2))</visible>
-			</control>
-
-			<control type="button" id="504">
-				<width>1050</width>				
-				<label>$ADDON[script.skinshortcuts 32044] 5</label>
-				<label2>$INFO[Container(211).ListItem.Property(widgetName.4)]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
-				<onclick>SetProperty(widgetID,4)</onclick>
-				<onclick>SendClick(312)</onclick>
-				<visible>!IsEmpty(Container(211).ListItem.Property(widgetName)) + !IsEmpty(Container(211).ListItem.Property(widgetName.1)) + !IsEmpty(Container(211).ListItem.Property(widgetName.2)) + !IsEmpty(Container(211).ListItem.Property(widgetName.3))</visible>
-			</control>
-
-			<control type="button" id="600">
-				<width>1050</width>				
-				<label>Require passcode?</label>
-				<label2>$VAR[passcode]</label2>
-				<visible>StringCompare(Window.Property(groupname), mainmenu) + !IsEmpty(Skin.String(passcode))</visible>
+			<!-- Edit Submenu -->
+			<control type="button" id="405">
+				<width>1050</width>
+				<height>66</height>
+				<label>Edit submenu</label>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Remove -->
@@ -268,6 +238,7 @@
 			<control type="button" id="308">
 				<width>400</width>
 				<label>$ADDON[script.skinshortcuts 32028]</label>
+				<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 		</control>
@@ -278,6 +249,13 @@
 			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200" delay="150">Hidden</animation>
 			<include>WindowBackgroundImage</include>
+		</control>
+
+		<control type="button" id="404">
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>10</width>
+			<label>Hidden button</label>
 		</control>
 
 	</controls>

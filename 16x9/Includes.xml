@@ -2,6 +2,7 @@
 
 	<include file="Defaults.xml" />
 	<include file="Include_Home_Default.xml" />
+	<include file="Include_Home_Lumos.xml" />
 	<include file="Includes_Widgets.xml" />
 	<include file="script-skinshortcuts-includes.xml"/>
 	<include file="Viewtype50.xml" />
@@ -11,6 +12,7 @@
 	<include file="Viewtype54.xml" />
 	<include file="Viewtype55.xml" />
 	<include file="Variables.xml" />
+	<include file="custom_1110_QuickNav.xml" />
 
 	<!-- Fullscreen dimensions -->
 	<include name="FullscreenDimensions">
@@ -134,7 +136,7 @@
 	<include name="Time">
 		<param name="heading">$VAR[HeadingLabel]</param>
 		<definition>
-			<control type="button">
+			<control type="label">
 				<left>120</left>
 				<top>110</top>
 				<width>1680</width>
@@ -150,21 +152,28 @@
 				<visible>Skin.HasSetting(Headings)</visible>
 			</control>
 
-			<control type="button">
-				<left>120</left>
+			<control type="label">
+				<right>120</right>
 				<top>110</top>
 				<width>1680</width>
 				<height>33</height>
 				<aligny>top</aligny>
-				<label />
-				<label2>$INFO[System.Time]</label2>
+				<align>right</align>
+				<label>$VAR[Time]</label>
 				<font>Font33</font>
 				<textcolor>TextColor2</textcolor>
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
 					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
 				</animation>
-				<visible>!Skin.HasSetting(Headings)</visible>
+				<animation effect="slide" start="120,0" end="0,0" time="200">Visible</animation>
+				<animation effect="slide" end="120,0" time="200">Hidden</animation>
+				<visible>!Window.IsVisible(notification) + !Window.IsVisible(extendedprogressdialog)</visible>
 			</control>
+
+            <control type="progress" id="20">
+                <include>HiddenObject</include>
+                <info>Player.Volume</info>
+            </control>
 		</definition>
 	</include>
 
@@ -293,6 +302,30 @@
 				<textcolor>TextColor2</textcolor>
 			</control>
 		</control>
+	</include>
+
+	<!-- Side menu animation -->
+	<include name="SideMenuAnimation">
+		<animation effect="slide" end="0,26" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,19)">Conditional</animation>
+		<animation effect="slide" end="0,52" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,18)">Conditional</animation>
+		<animation effect="slide" end="0,78" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,17)">Conditional</animation>
+		<animation effect="slide" end="0,104" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,16)">Conditional</animation>
+		<animation effect="slide" end="0,130" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,15)">Conditional</animation>
+		<animation effect="slide" end="0,156" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,14)">Conditional</animation>
+		<animation effect="slide" end="0,182" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,13)">Conditional</animation>
+		<animation effect="slide" end="0,208" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,12)">Conditional</animation>
+		<animation effect="slide" end="0,234" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,11)">Conditional</animation>
+		<animation effect="slide" end="0,260" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,10)">Conditional</animation>
+		<animation effect="slide" end="0,286" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,9)">Conditional</animation>
+		<animation effect="slide" end="0,312" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,8)">Conditional</animation>
+		<animation effect="slide" end="0,338" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,7)">Conditional</animation>
+		<animation effect="slide" end="0,364" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,6)">Conditional</animation>
+		<animation effect="slide" end="0,390" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,5)">Conditional</animation>
+		<animation effect="slide" end="0,416" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,4)">Conditional</animation>
+		<animation effect="slide" end="0,442" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,3)">Conditional</animation>
+		<animation effect="slide" end="0,468" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,2)">Conditional</animation>
+		<animation effect="slide" end="0,494" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,1)">Conditional</animation>
+
 	</include>
 
 </includes>

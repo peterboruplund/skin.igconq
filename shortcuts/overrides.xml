@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+	<doNotShareMenu />
 
 	<!-- Movies -->
 	<!-- Recent movies -->
@@ -73,5 +74,10 @@
 	<propertySettings property="ParentalControl" buttonID="600" title="Require password?" showNone="False" imageBrowse="False" />
 	<property property="ParentalControl" label="No">no</property>
 	<property property="ParentalControl" label="Yes">yes</property>
+
+	<override action="globaloverride" group="igconq-quicknav">
+		<action>Action(Close)</action>
+		<action>::ACTION::</action>
+	</override>
 
 </overrides>

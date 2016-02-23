@@ -3,19 +3,12 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;minitems=20)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="Window.Previous(startup)">Skin.Reset(mypassword)</onload>
 	<onload condition="!Window.Previous(startup)">AlarmClock(parental,Skin.Reset(mypassword),2,Silent)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
-	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
-	<onload>Skin.SetBool(SkinHelper.WidgetContainer)</onload>
-	<onload>Skin.SetBool(SmartShortcuts.playlists)</onload>
-	<onload>Skin.SetBool(SmartShortcuts.favorites)</onload>
-	<onload>Skin.SetBool(SmartShortcuts.plex)</onload>
-	<onload>Skin.SetBool(SmartShortcuts.emby)</onload>
-	<onload>Skin.SetBool(SmartShortcuts.netflix)</onload>
 
 	<controls>
 
@@ -27,6 +20,11 @@
 
 		<!-- Background -->
 		<include>skinshortcuts-template-background-fanart</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>white.png</texture>
+		</control>
+
 		<control type="visualisation">
 			<include>FullscreenDimensions</include>
 			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
@@ -83,7 +81,8 @@
 			<include>WindowFadeAnimation</include>
 
 			<!-- Home layout -->
-			<include>HomeDefault</include>
+			<include>HomeLumos</include>
+			<!--include>HomeDefault</include-->
 		</control>
 
 	</controls>

@@ -2,64 +2,30 @@
 <window>
 	<!-- volumebar -->
 	<controls>
-
 		<control type="group">
-			<centerleft>50%</centerleft>
-			<top>15</top>
-			<width>220</width>
-			<height>180</height>
-			<include>DialogZoomAnimation</include>
-			<animation effect="slide" start="0,0" end="470,0" time="100" condition="Window.IsActive(notification) | Window.IsActive(extendedprogressdialog)">Conditional</animation>
-			<animation effect="fade" start="100" end="0" time="0" condition="Window.IsActive(mutebug)">Conditional</animation>
+			<visible>VideoPlayer.IsFullscreen | Window.IsActive(visualisation)</visible>
+			<visible>!Window.IsVisible(notification) + !Window.IsVisible(extendedprogressdialog)</visible>
+			<animation effect="slide" start="300,0" end="0,0" time="200">Visible</animation>
+			<animation effect="slide" end="300,0" time="200">Hidden</animation>
+			<animation effect="slide" start="300,0" end="0,0" time="200">WindowOpen</animation>
+			<animation effect="slide" end="300,0" time="200" delay="200">WindowClose</animation>
 
-			<!-- Background image -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>220</width>
-				<height>180</height>
-				<texture border="20">dialogs/DialogBackground.png</texture>
+				<right>0</right>
+				<top>105</top>
+				<width>300</width>
+				<height>43</height>
+				<texture>dialogs/Background.png</texture>
 			</control>
 
-			<!-- Heading -->
 			<control type="label">
-				<left>40</left>
-				<top>50</top>
-				<width>140</width>
+				<right>0</right>
+				<top>110</top>
+				<width>290</width>
 				<height>33</height>
-				<align>center</align>
-				<scroll>true</scroll>
+				<label>[LIGHT]$LOCALIZE[13376] $INFO[Control.GetLabel(404),,%][/LIGHT]</label>
 				<font>Font33</font>
-				<textcolor>DialogColor1</textcolor>
-				<label>13376</label>
-			</control>
-
-			<!-- Details -->
-			<control type="label">
-				<left>40</left>
-				<top>104</top>
-				<width>140</width>
-				<height>27</height>
-				<align>center</align>
-				<scroll>true</scroll>
-				<font>Font30</font>
-				<textcolor>DialogColor2</textcolor>
-				<label>$INFO[Control.GetLabel(404),,%]</label>
-				<visible>!Player.Muted</visible>
-			</control>
-
-			<!-- Details - Muted -->
-			<control type="label">
-				<left>40</left>
-				<top>104</top>
-				<width>140</width>
-				<height>27</height>
-				<align>center</align>
-				<scroll>true</scroll>
-				<font>Font30</font>
-				<textcolor>DialogColor2</textcolor>
-				<label>31013</label>
-				<visible>Player.Muted</visible>
+				<textcolor>TextColor2</textcolor>
 			</control>
 
 			<!-- Progress -->
