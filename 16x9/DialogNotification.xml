@@ -12,7 +12,7 @@
 			<top>70</top>
 			<width>550</width>
 			<height>110</height>
-			<texture>dialogs/Background.png</texture>
+			<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 		</control>
 
 		<!-- Heading -->
@@ -24,7 +24,6 @@
 			<align>left</align>
 			<scroll>true</scroll>
 			<font>Font27</font>
-			<textcolor>DialogColor1</textcolor>
 		</control>
 
 		<!-- Details -->
@@ -37,7 +36,7 @@
 			<aligny>top</aligny>
 			<scroll>true</scroll>
 			<font>Font25</font>
-			<textcolor>DialogColor2</textcolor>
+			<textcolor>$VAR[DialogColor2]</textcolor>
 		</control>
 
 	</controls>

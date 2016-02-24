@@ -73,7 +73,7 @@
 					<left>25</left>
 					<width>260</width>
 					<height>66</height>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>
@@ -81,7 +81,7 @@
 					<left>25</left>
 					<width>260</width>
 					<height>66</height>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Property(widgetName)]</label>
 					<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 				</control>

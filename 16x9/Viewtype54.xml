@@ -62,7 +62,7 @@
 					<height>45</height>
 					<font>Font42</font>
 					<label>$INFO[ListItem.Album]</label>
-					<textcolor>TextColor1</textcolor>
+					<textcolor>$VAR[TextColor1]</textcolor>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -70,7 +70,7 @@
 					<width>450</width>
 					<height>45</height>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<label>$INFO[ListItem.Artist]</label>
 				</control>
 			</control>
@@ -98,7 +98,7 @@
 						<height>64</height>
 						<font>Font33</font>
 						<label>$VAR[SongLabel]</label>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 					</control>
 				</itemlayout>
 
@@ -108,7 +108,7 @@
 						<height>80</height>
 						<font>Font48</font>
 						<label>$VAR[SongLabel]</label>
-						<textcolor>TextColor1</textcolor>
+						<textcolor>$VAR[TextColor1]</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(54)">Conditional</animation>
 					</control>

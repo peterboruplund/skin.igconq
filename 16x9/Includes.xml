@@ -75,7 +75,7 @@
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture>$VAR[BackgroundImage]</texture>
+			<texture colordiffuse="$INFO[Skin.String(color.background)]">diffuse.png</texture>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 	</include>
@@ -113,21 +113,11 @@
 				<include>FullscreenDimensions</include>
 				<include>VisibleFadeAnimation</include>
 				<fadetime>400</fadetime>
-				<texture background="true" diffuse="diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+				<texture background="true" diffuse="diffuse.png" colordiffuse="$INFO[Skin.String(color.background)]">$INFO[ListItem.Art(fanart)]</texture>
 				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-				<visible>SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) | IsEmpty(Skin.String(CustomBackgroundImage))</visible>
 			</control>
 
-			<control type="image">
-				<include>FullscreenDimensions</include>
-				<include>VisibleFadeAnimation</include>
-				<fadetime>400</fadetime>
-				<colordiffuse>FanartDiffuse</colordiffuse>
-				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-				<visible>!SubString(Skin.String(CustomBackgroundImage),extras/backgrounds/Default.jpg) + !IsEmpty(Skin.String(CustomBackgroundImage))</visible>
-			</control>
 			<visible>[Skin.HasSetting(MovieFanart) + Container.Content(Movies)] | [Skin.HasSetting(TVFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(MusicFanart) + Window.IsVisible(musiclibrary)] | [Skin.HasSetting(WeatherFanart) + Window.IsVisible(weather)] | [Skin.HasSetting(AddonFanart) + [Container.Content(Addons) | Window.IsVisible(addonbrowser)]]</visible>
 		</control>
 	</include>
@@ -142,14 +132,11 @@
 				<width>1680</width>
 				<height>33</height>
 				<aligny>top</aligny>
-				<label>[COLOR TextColor1]$PARAM[heading][/COLOR]</label>
-				<label2>$INFO[System.Time]</label2>
+				<label>$PARAM[heading]</label>
 				<font>Font33</font>
-				<textcolor>TextColor2</textcolor>
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
 					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
 				</animation>
-				<visible>Skin.HasSetting(Headings)</visible>
 			</control>
 
 			<control type="label">
@@ -161,7 +148,7 @@
 				<align>right</align>
 				<label>$VAR[Time]</label>
 				<font>Font33</font>
-				<textcolor>TextColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
 					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
 				</animation>
@@ -218,8 +205,8 @@
 		<width>600</width>
 		<height>45</height>
 		<font>Font48</font>
-		<textcolor>DialogColor2</textcolor>
-		<focusedcolor>DialogColor1</focusedcolor>
+		<textcolor>$VAR[DialogColor2]</textcolor>
+		<focusedcolor>$VAR[DialogColor1]</focusedcolor>
 	</include>
 
 	<!-- Options buttons -->
@@ -227,8 +214,8 @@
 		<width>480</width>
 		<height>54</height>
 		<font>Font48</font>
-		<textcolor>DialogColor2</textcolor>
-		<focusedcolor>DialogColor1</focusedcolor>
+		<textcolor>$VAR[DialogColor2]</textcolor>
+		<focusedcolor>$VAR[DialogColor1]</focusedcolor>
 	</include>
 
 	<!-- Keyboard buttons -->
@@ -291,7 +278,7 @@
 				<align>right</align>
 				<label>$INFO[Container.NumItems]</label>
 				<font>Font25</font>
-				<textcolor>TextColor2</textcolor>
+				<textcolor>$VAR[TextColor2]</textcolor>
 			</control>
 			<control type="label">
 				<width>auto</width>
@@ -299,7 +286,7 @@
 				<align>right</align>
 				<label>$VAR[ContentType]</label>
 				<font>Font33</font>
-				<textcolor>TextColor2</textcolor>
+				<textcolor>$VAR[TextColor2]</textcolor>
 			</control>
 		</control>
 	</include>

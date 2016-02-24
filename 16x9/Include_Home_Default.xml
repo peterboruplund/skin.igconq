@@ -84,7 +84,7 @@
 					<height>120</height>
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font72</font>
-					<textcolor>TextColor1</textcolor>
+					<textcolor>$VAR[TextColor1]</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<visible>![SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
 					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9000)">Conditional</animation>
@@ -171,7 +171,7 @@
 					<height>72</height>
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font42</font>
-					<textcolor>TextColor1</textcolor>
+					<textcolor>$VAR[TextColor1]</textcolor>
 					<shadowcolor>ShadowColor</shadowcolor>
 					<visible>![SubString(Container(9000).ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))]</visible>
 					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>

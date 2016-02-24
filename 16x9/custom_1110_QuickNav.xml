@@ -15,7 +15,7 @@
 				<top>0</top>
 				<width>450</width>
 				<height>1080</height>
-				<texture>dialogs/Background.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<control type="list" id="7000">
@@ -29,10 +29,10 @@
 				</include>
 				<itemlayout width="410" height="52">
 					<control type="label">
-						<animation effect="fade" start="60" end="60" time="0" condition="True">Conditional</animation>
 						<width>410</width>
 						<height>52</height>
 						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<align>center</align>
 					</control>
 				</itemlayout>

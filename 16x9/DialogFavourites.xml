@@ -70,7 +70,7 @@
 					<width>1170</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
@@ -80,7 +80,7 @@
 					<width>1170</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor1</textcolor>
+					<textcolor>$VAR[DialogColor1]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</focusedlayout>

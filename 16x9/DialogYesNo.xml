@@ -32,7 +32,7 @@
 				<height>48</height>
 				<align>center</align>
 				<font>Font48</font>
-				<textcolor>DialogColor1</textcolor>
+				<textcolor>$VAR[DialogColor1]</textcolor>
 			</control>
 
 			<!-- Details -->
@@ -44,7 +44,7 @@
 				<align>center</align>
 				<font>Font42</font>
 				<autoscroll>False</autoscroll>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 			</control>
 
 			<!-- No -->

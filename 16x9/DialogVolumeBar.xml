@@ -15,7 +15,7 @@
 				<top>105</top>
 				<width>300</width>
 				<height>43</height>
-				<texture>dialogs/Background.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<control type="label">
@@ -25,7 +25,7 @@
 				<height>33</height>
 				<label>[LIGHT]$LOCALIZE[13376] $INFO[Control.GetLabel(404),,%][/LIGHT]</label>
 				<font>Font33</font>
-				<textcolor>TextColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 			</control>
 
 			<!-- Progress -->

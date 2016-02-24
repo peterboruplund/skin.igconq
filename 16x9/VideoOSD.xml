@@ -40,7 +40,7 @@
 				<font>Font36</font>
 				<align>center</align>
 				<label>$VAR[PlayerStatus]</label>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 			</control>
 
 			<!-- Pause -->
@@ -85,7 +85,7 @@
 				<font>Font27</font>
 				<align>center</align>
 				<label>[B]$INFO[Player.Chapter,(,/]$INFO[Player.ChapterCount,,)][/B]</label>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 			</control>
 
 		</control>
@@ -118,7 +118,7 @@
 				<width>260</width>
 				<height>60</height>
 				<font>Font27</font>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 				<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
 			</control>
 
@@ -157,7 +157,7 @@
 				<height>60</height>
 				<align>right</align>
 				<font>Font27</font>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 				<label>$INFO[System.Time,$LOCALIZE[142] , / ]$INFO[Player.FinishTime,$LOCALIZE[19081] ]</label>
 			</control>
 

@@ -78,8 +78,8 @@
 			<font>Font33</font>
 			<align>left</align>
 			<aligny>top</aligny>
-			<textcolor>$VAR[SubMenuColor]</textcolor>
-			<label>$VAR[widgetDetails][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
+			<textcolor>$INFO[Skin.String(color.text)]</textcolor>
+			<label>[COLOR $VAR[DialogColor2]]$VAR[widgetDetails][/COLOR][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
 			<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 		</control>
 
@@ -93,7 +93,7 @@
 				<top>0</top>
 				<width>450</width>
 				<height>1080</height>
-				<texture>dialogs/Background.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<control type="list" id="9001">
@@ -109,10 +109,10 @@
 				<onright>9000</onright>
 				<itemlayout width="410" height="52">
 					<control type="label">
-						<animation effect="fade" start="60" end="60" time="0" condition="True">Conditional</animation>
 						<width>410</width>
 						<height>104</height>
 						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<align>center</align>
 					</control>
 				</itemlayout>

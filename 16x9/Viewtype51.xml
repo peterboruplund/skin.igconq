@@ -128,7 +128,7 @@
 					<height>45</height>
 					<font>Font42</font>
 					<label>$INFO[ListItem.TVShowTitle]</label>
-					<textcolor>TextColor1</textcolor>
+					<textcolor>$VAR[TextColor1]</textcolor>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -136,7 +136,7 @@
 					<width>450</width>
 					<height>45</height>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<label>$INFO[ListItem.Title]</label>
 				</control>
 				<control type="label">
@@ -145,7 +145,7 @@
 					<width>450</width>
 					<height>45</height>
 					<font>Font30</font>
-					<textcolor>TextColor3</textcolor>
+					<textcolor>$VAR[TextColor3]</textcolor>
 					<label>$INFO[ListItem.Season,$LOCALIZE[20373] , / ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]</label>
 				</control>
 				<!-- Episode Plot -->
@@ -155,7 +155,7 @@
 					<width>450</width>
 					<height>246</height>
 					<label>$VAR[Plot]</label>
-					<textcolor>TextColor1</textcolor>
+					<textcolor>$VAR[TextColor1]</textcolor>
 					<shadowcolor>TextColor4</shadowcolor>
 					<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
 				</control>
@@ -187,7 +187,7 @@
 						<height>90</height>
 						<font>Font36</font>
 						<label>$VAR[Label1]</label>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 					</control>
 					<!-- Watched status -->
 					<control type="image">
@@ -210,7 +210,7 @@
 						<height>48</height>
 						<font>Font48</font>
 						<label>$VAR[Label1]</label>
-						<textcolor>TextColor1</textcolor>
+						<textcolor>$VAR[TextColor1]</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(51)">Conditional</animation>
 					</control>
@@ -221,7 +221,7 @@
 						<height>27</height>
 						<font>Font27</font>
 						<label>$VAR[Label2]</label>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<shadowcolor>ShadowColor</shadowcolor>
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(51)">Conditional</animation>
 					</control>

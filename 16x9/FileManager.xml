@@ -33,7 +33,7 @@
 				<width>770</width>
 				<height>66</height>
 				<haspath>true</haspath>
-				<textcolor>DialogColor1</textcolor>
+				<textcolor>$VAR[DialogColor1]</textcolor>
 			</control>
 
 			<!-- Seperator -->
@@ -57,13 +57,13 @@
 				<itemlayout height="66" width="770">
 					<control type="label">
 						<width>770</width>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<width>770</width>
 						<align>right</align>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -73,13 +73,13 @@
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(20)">Conditional</animation>
 						<control type="label">
 							<width>770</width>
-							<textcolor>DialogColor1</textcolor>
+							<textcolor>$VAR[DialogColor1]</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<width>770</width>
 							<align>right</align>
-							<textcolor>DialogColor1</textcolor>
+							<textcolor>$VAR[DialogColor1]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</control>
@@ -103,7 +103,7 @@
 					<align>left</align>
 					<font>Font25</font>
 					<label>$INFO[Container(20).NumItems]</label>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 				</control>
 				<control type="label">
 					<width>auto</width>
@@ -111,7 +111,7 @@
 					<align>left</align>
 					<label>31000</label>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>!IntegerGreaterThan(Container(20).NumItems,1)</visible>
 				</control>
 				<control type="label">
@@ -120,7 +120,7 @@
 					<align>left</align>
 					<label>31001</label>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>IntegerGreaterThan(Container(20).NumItems,1)</visible>
 				</control>
 			</control>
@@ -137,7 +137,7 @@
 				<width>770</width>
 				<height>66</height>
 				<haspath>true</haspath>
-				<textcolor>DialogColor1</textcolor>
+				<textcolor>$VAR[DialogColor1]</textcolor>
 			</control>
 
 			<!-- Seperator -->
@@ -161,13 +161,13 @@
 				<itemlayout height="66" width="770">
 					<control type="label">
 						<width>770</width>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<width>770</width>
 						<align>right</align>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
@@ -177,13 +177,13 @@
 						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(21)">Conditional</animation>
 						<control type="label">
 							<width>770</width>
-							<textcolor>DialogColor1</textcolor>
+							<textcolor>$VAR[DialogColor1]</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
 							<width>770</width>
 							<align>right</align>
-							<textcolor>DialogColor1</textcolor>
+							<textcolor>$VAR[DialogColor1]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 					</control>
@@ -207,7 +207,7 @@
 					<align>right</align>
 					<font>Font25</font>
 					<label>$INFO[Container(21).NumItems]</label>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 				</control>
 				<control type="label">
 					<width>auto</width>
@@ -215,7 +215,7 @@
 					<align>right</align>
 					<label>31000</label>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>!IntegerGreaterThan(Container(21).NumItems,1)</visible>
 				</control>
 				<control type="label">
@@ -224,7 +224,7 @@
 					<align>right</align>
 					<label>31001</label>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>IntegerGreaterThan(Container(21).NumItems,1)</visible>
 				</control>
 			</control>

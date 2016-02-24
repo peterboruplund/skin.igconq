@@ -105,7 +105,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>557</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -113,7 +113,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Artist]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -128,7 +128,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>558</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -136,7 +136,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Album]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -151,7 +151,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>515</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -159,7 +159,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Genre]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -174,7 +174,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>20339</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -182,7 +182,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Director]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -197,7 +197,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>20417</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -205,7 +205,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Writer]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -220,7 +220,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>180</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -228,7 +228,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Duration,, mins]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -243,7 +243,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>31017</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -251,7 +251,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.RatingAndVotes]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -266,7 +266,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>563</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -274,7 +274,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Mpaa]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -289,7 +289,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>169</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -297,7 +297,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.VideoResolution]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -309,7 +309,7 @@
 				<width>1170</width>
 				<height>210</height>
 				<label>$VAR[Plot]</label>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 				<autoscroll delay="10000" time="2000" repeat="12000">True</autoscroll>
 			</control>
 
@@ -335,7 +335,7 @@
 					<width>1170</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
 				</control>
 			</itemlayout>
@@ -345,7 +345,7 @@
 					<width>1170</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor1</textcolor>
+					<textcolor>$VAR[DialogColor1]</textcolor>
 					<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
 					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
 				</control>

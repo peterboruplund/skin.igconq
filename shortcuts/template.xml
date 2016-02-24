@@ -142,7 +142,7 @@
 									<font>Font33</font>
 									<align>center</align>
 									<aligny>bottom</aligny>
-									<textcolor>TextColor2</textcolor>
+									<!--textcolor>TextColor2</textcolor-->
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 								<control type="image">
@@ -159,7 +159,7 @@
 									<height>25</height>
 									<font>Font25</font>
 									<align>center</align>
-									<textcolor>TextColor2</textcolor>
+									<!--textcolor>TextColor2</textcolor-->
 									<label>$INFO[ListItem.Label2]</label>
 								</control>
 							</control>
@@ -242,7 +242,7 @@
 								<align>center</align>
 								<aligny>bottom</aligny>
 								<label>$INFO[ListItem.Label]</label>
-								<textcolor>TextColor2</textcolor>
+								<!--textcolor>TextColor2</textcolor-->
 							</control>
 							<control type="image">
 								<left>13</left>
@@ -268,7 +268,7 @@
 								<height>25</height>
 								<font>Font25</font>
 								<align>center</align>
-								<textcolor>TextColor2</textcolor>
+								<!--textcolor>TextColor2</textcolor-->
 								<label>$INFO[ListItem.Label2]</label>
 							</control>
 						</control>

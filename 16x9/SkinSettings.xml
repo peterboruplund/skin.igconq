@@ -55,6 +55,14 @@
 					<textcolor>$VAR[SkinSettingButton11]</textcolor>
 				</control>
 
+				<!-- Colors -->
+				<control type="button" id="14">
+					<width>600</width>
+					<height>66</height>
+					<label>Colors</label>
+					<textcolor>$VAR[SkinSettingButton14]</textcolor>
+				</control>
+
 				<!-- Weather -->
 				<control type="button" id="13">
 					<width>600</width>
@@ -94,7 +102,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Edit home screen widgets</label>
-					<onclick>RunScript(script.skinshortcuts,type=setProperty&amp;property=background|background|background|background&amp;value=$INFO[Skin.String(home.fanart.path)]movies.jpg|$INFO[Skin.String(home.fanart.path)]tvshows.jpg|$INFO[Skin.String(home.fanart.path)]video.jpg|$INFO[Skin.String(home.fanart.path)]addons.jpg&amp;labelID=movies|tvshows|videos|vaddons)</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=setProperty&amp;property=background|background|background|background&amp;value=$INFO[Skin.String(home.fanart.path)]moßvies.jpg|$INFO[Skin.String(home.fanart.path)]tvshåows.jpg|$INFO[Skin.String(home.fanart.path)]videèo.jpg|$INFO[Skin.String(home.fanart.path)]addons.jpg&amp;labelID=movies|tvshows|videos|vaddons)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
 				<control type="button" id="1213">
@@ -224,6 +232,58 @@
 					<visible>ControlGroup(9).HasFocus(11) + Skin.HasSetting(EnableArtistFanart)</visible>
 				</control>
 
+				<!-- Colors -->
+				<!-- Text color -->
+				<control type="button" id="1501">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Text color</label>
+					<label2>$INFO[Skin.String(color.text)]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.text)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Highlight color -->
+				<control type="button" id="1502">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Highlight color</label>
+					<label2>$INFO[Skin.String(color.highlight)]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.highlight)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Selected color -->
+				<control type="button" id="1503">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Selected color</label>
+					<label2>$INFO[Skin.String(color.selected)]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.selected)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Disabled color -->
+				<control type="button" id="1504">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Disabled color</label>
+					<label2>$INFO[Skin.String(color.disabled)]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.disabled)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Background color -->
+				<control type="button" id="1505">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Background color</label>
+					<label2>$INFO[Skin.String(color.background)]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.background)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+
 				<!-- Weather -->
 				<!-- Weather icons-->
 				<control type="button" id="1401">
@@ -328,7 +388,7 @@
 			<width>1240</width>
 			<height>132</height>
 			<label>31051</label>
-			<textcolor>DisabledColor</textcolor>
+			<textcolor>$VAR[DisabledColor]</textcolor>
 			<visible>ControlGroup(9).HasFocus(11) + Skin.HasSetting(HideSettings)</visible>
 		</control>
 	</controls>

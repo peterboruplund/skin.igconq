@@ -92,7 +92,7 @@
 					<width>1050</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
@@ -102,7 +102,7 @@
 					<width>1050</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor1</textcolor>
+					<textcolor>$VAR[DialogColor1]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>Control.HasFocus(3)</visible>
 				</control>
@@ -110,7 +110,7 @@
 					<width>1050</width>
 					<height>58</height>
 					<font>Font36</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>!Control.HasFocus(3)</visible>
 				</control>
@@ -147,7 +147,7 @@
 					<width>1030</width>
 					<height>36</height>
 					<font>Font36</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 				</control>
@@ -157,7 +157,7 @@
 					<width>1030</width>
 					<height>27</height>
 					<font>Font27</font>
-					<textcolor>DialogColor2</textcolor>
+					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 				</control>
 			</itemlayout>
@@ -179,7 +179,7 @@
 						<width>910</width>
 						<height>36</height>
 						<font>Font36</font>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 					</control>
@@ -189,7 +189,7 @@
 						<width>910</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 					</control>
 				</control>
@@ -201,7 +201,7 @@
 						<width>910</width>
 						<height>36</height>
 						<font>Font36</font>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 					</control>
@@ -211,7 +211,7 @@
 						<width>910</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 					</control>
 				</control>

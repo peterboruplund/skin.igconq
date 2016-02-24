@@ -45,7 +45,7 @@
 						<top>12</top>
 						<width>280</width>
 						<align>right</align>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.StartDate]</label>
 					</control>
 
@@ -76,7 +76,7 @@
 						<left>489</left>
 						<top>12</top>
 						<width>634</width>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 
@@ -97,7 +97,7 @@
 						<top>12</top>
 						<width>400</width>
 						<align>right</align>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.Comment]</label>
 					</control>
 
@@ -129,7 +129,7 @@
 						<height>27</height>
 						<font>Font27</font>
 						<align>right</align>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
 					</control>
 
@@ -158,7 +158,7 @@
 						<width>634</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>TextColor2</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 
@@ -211,7 +211,7 @@
 					<align>right</align>
 					<label>$INFO[Container(50).NumItems]</label>
 					<font>Font25</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 				</control>
 
 				<control type="label">
@@ -220,7 +220,7 @@
 					<align>right</align>
 					<label>$VAR[ContentType]</label>
 					<font>Font33</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[TextColor2]</textcolor>
 				</control>
 
 			</control>
@@ -270,7 +270,7 @@
 					<height>72</height>
 					<label>$VAR[CustomMenuHeading]</label>
 					<font>Font72</font>
-					<textcolor>DialogColor1</textcolor>
+					<textcolor>$VAR[DialogColor1]</textcolor>
 				</control>
 
 				<!-- Look controls -->

@@ -26,7 +26,7 @@
 			<width>1175</width>
 			<height>36</height>
 			<font>Font36</font>
-			<textcolor>DialogColor1</textcolor>
+			<textcolor>$VAR[DialogColor1]</textcolor>
 			<label>[B]$INFO[ListItem.Title][/B]</label>
 		</control>
 
@@ -53,7 +53,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>142</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -61,7 +61,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($INFO[ListItem.StartDate])</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -76,7 +76,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>180</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -84,7 +84,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Duration]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -99,7 +99,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>19148</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -107,7 +107,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.ChannelName]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -122,7 +122,7 @@
 						<align>right</align>
 						<font>Font36</font>
 						<label>135</label>
-						<textcolor>DialogColor2</textcolor>
+						<textcolor>$VAR[DialogColor2]</textcolor>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -130,7 +130,7 @@
 						<height>36</height>
 						<font>Font36</font>
 						<label>$INFO[ListItem.Genre]</label>
-						<textcolor>DialogColor1</textcolor>
+						<textcolor>$VAR[DialogColor1]</textcolor>
 					</control>
 				</control>
 
@@ -142,7 +142,7 @@
 				<width>1170</width>
 				<height>210</height>
 				<label>$VAR[Plot]</label>
-				<textcolor>DialogColor2</textcolor>
+				<textcolor>$VAR[DialogColor2]</textcolor>
 			</control>
 
 		</control>
