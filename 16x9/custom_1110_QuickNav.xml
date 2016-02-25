@@ -2,7 +2,6 @@
 <window id="1110" type="dialog">
 	<!-- Quick Nav -->
 	<defaultcontrol always="true">7000</defaultcontrol>
-
 	<controls>
 
 		<!-- Background image -->

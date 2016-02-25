@@ -15,7 +15,7 @@
 			<control type="image">
 				<width>1620</width>
 				<height>274</height>
-				<texture>osd/OSDBack.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Row 1 label -->

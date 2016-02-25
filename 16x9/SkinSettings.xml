@@ -97,14 +97,6 @@
 
 				<!-- Home items -->
 				<!-- Home submenu-->
-				<control type="button" id="1212">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Edit home screen widgets</label>
-					<onclick>RunScript(script.skinshortcuts,type=setProperty&amp;property=background|background|background|background&amp;value=$INFO[Skin.String(home.fanart.path)]moßvies.jpg|$INFO[Skin.String(home.fanart.path)]tvshåows.jpg|$INFO[Skin.String(home.fanart.path)]videèo.jpg|$INFO[Skin.String(home.fanart.path)]addons.jpg&amp;labelID=movies|tvshows|videos|vaddons)</onclick>
-					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
-				</control>
 				<control type="button" id="1213">
 					<width>1050</width>
 					<height>66</height>

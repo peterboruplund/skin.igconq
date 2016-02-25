@@ -30,7 +30,7 @@
 			<control type="image">
 				<width>80</width>
 				<height>60</height>
-				<texture border="1">osd/OSDBack.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Status -->
@@ -48,7 +48,7 @@
 				<left>10</left>
 				<width>60</width>
 				<height>60</height>
-				<texture>osd/OSDPauseNF.png</texture>
+				<texture colordiffuse="$VAR[DialogColor1]">osd/OSDPauseNF.png</texture>
 				<visible>player.paused</visible>
 			</control>
 
@@ -75,7 +75,7 @@
 			<control type="image">
 				<width>140</width>
 				<height>60</height>
-				<texture border="1">osd/OSDBack.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Status -->
@@ -109,7 +109,7 @@
 			<control type="image">
 				<width>1620</width>
 				<height>60</height>
-				<texture border="1">osd/OSDBack.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<!--  Current position/Time remaining -->
@@ -129,9 +129,9 @@
 				<width>920</width>
 				<height>20</height>
 				<info>Player.Progress</info>
-				<texturebg border="2">osd/OSDProgressBack.png</texturebg>
+				<texturebg border="2" colordiffuse="$VAR[DialogColor2]">osd/OSDProgressBack.png</texturebg>
 				<lefttexture>-</lefttexture>
-				<midtexture border="2">osd/OSDProgressBar.png</midtexture>
+				<midtexture border="2" colordiffuse="$VAR[DialogColor1]">osd/OSDProgressBar.png</midtexture>
 				<righttexture>-</righttexture>
 				<overlaytexture>-</overlaytexture>
 			</control>
@@ -143,9 +143,9 @@
 				<width>920</width>
 				<height>20</height>
 				<info>Player.ProgressCache</info>
-				<texturebg colordiffuse="00ffffff" border="2">osd/OSDProgressBack.png</texturebg>
+				<texturebg colordiffuse="$VAR[DialogColor2]" border="2">osd/OSDProgressBack.png</texturebg>
 				<lefttexture>-</lefttexture>
-				<midtexture colordiffuse="66ffffff" border="2">osd/OSDProgressBar.png</midtexture>
+				<midtexture colordiffuse="$VAR[DialogColor1]" border="2">osd/OSDProgressBar.png</midtexture>
 				<righttexture>-</righttexture>
 				<overlaytexture>-</overlaytexture>
 			</control>
@@ -182,7 +182,7 @@
 			<control type="image">
 				<width>1620</width>
 				<height>60</height>
-				<texture border="1">osd/OSDBack.png</texture>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Controls -->
@@ -206,8 +206,8 @@
 					<height>60</height>
 					<onleft>2</onleft>
 					<onright>4</onright>
-					<texturefocus>osd/OSDPrevTrackFO.png</texturefocus>
-					<texturenofocus>osd/OSDPrevTrackNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDPrevTrackNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDPrevTrackNF.png</texturenofocus>
 					<onclick>PlayerControl(Previous)</onclick>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -217,8 +217,8 @@
 					<height>60</height>
 					<onleft>3</onleft>
 					<onright>5</onright>
-					<texturefocus>osd/OSDRewindFO.png</texturefocus>
-					<texturenofocus>osd/OSDRewindNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDRewindNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDRewindNF.png</texturenofocus>
 					<onclick>PlayerControl(Rewind)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
@@ -228,8 +228,8 @@
 					<height>60</height>
 					<onleft>4</onleft>
 					<onright>6</onright>
-					<texturefocus>osd/OSDUpFO.png</texturefocus>
-					<texturenofocus>osd/OSDUpNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDUpNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDUpNF.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -239,8 +239,8 @@
 					<height>60</height>
 					<onleft>5</onleft>
 					<onright>7</onright>
-					<texturefocus>osd/OSDDownFO.png</texturefocus>
-					<texturenofocus>osd/OSDDownNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDDownNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDDownNF.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -250,8 +250,8 @@
 					<height>60</height>
 					<onleft>6</onleft>
 					<onright>8</onright>
-					<texturefocus>osd/OSDForwardFO.png</texturefocus>
-					<texturenofocus>osd/OSDForwardNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDForwardNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDForwardNF.png</texturenofocus>
 					<onclick>PlayerControl(Forward)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
@@ -261,8 +261,8 @@
 					<height>60</height>
 					<onleft>7</onleft>
 					<onright>9</onright>
-					<texturefocus>osd/OSDNextTrackFO.png</texturefocus>
-					<texturenofocus>osd/OSDNextTrackNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDNextTrackNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDNextTrackNF.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -272,10 +272,10 @@
 					<height>60</height>
 					<onleft>8</onleft>
 					<onright>10</onright>
-					<texturefocus>osd/OSDRecordOffFO.png</texturefocus>
-					<texturenofocus>osd/OSDRecordOffNF.png</texturenofocus>
-					<alttexturefocus>osd/OSDRecordOnFO.png</alttexturefocus>
-					<alttexturenofocus>osd/OSDRecordOnNF.png</alttexturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDRecordOffNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDRecordOffNF.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDRecordOnNF.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDRecordOnNF.png</alttexturenofocus>
 					<usealttexture>Player.Recording</usealttexture>
 					<onclick>PlayerControl(Record)</onclick>
 					<visible>Player.CanRecord</visible>
@@ -300,8 +300,8 @@
 				<control type="button" id="10">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSD3DFO.png</texturefocus>
-					<texturenofocus>osd/OSD3DNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSD3DNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSD3DNF.png</texturenofocus>
 					<onclick>StereoMode</onclick>
 					<visible>VideoPlayer.IsStereoscopic</visible>
 				</control>
@@ -309,24 +309,24 @@
 				<control type="button" id="11">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDVideoFO.png</texturefocus>
-					<texturenofocus>osd/OSDVideoNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDVideoNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDVideoNF.png</texturenofocus>
 					<onclick>ActivateWindow(123)</onclick>
 				</control>
 				<!-- Audio Settings -->
 				<control type="button" id="12">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDAudioFO.png</texturefocus>
-					<texturenofocus>osd/OSDAudioNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDAudioNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDAudioNF.png</texturenofocus>
 					<onclick>ActivateWindow(124)</onclick>
 				</control>
 				<!-- Bookmarks -->
 				<control type="button" id="13">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDBookmarksFO.png</texturefocus>
-					<texturenofocus>osd/OSDBookmarksNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDBookmarksNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDBookmarksNF.png</texturenofocus>
 					<onclick>ActivateWindow(125)</onclick>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -334,8 +334,8 @@
 				<control type="button" id="14">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDSubtitlesFO.png</texturefocus>
-					<texturenofocus>osd/OSDSubtitlesNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDSubtitlesNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDSubtitlesNF.png</texturenofocus>
 					<onclick>Close</onclick>
 					<onclick>ActivateWindow(SubtitleSearch)</onclick>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
@@ -344,8 +344,8 @@
 				<control type="button" id="15">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDChannelFO.png</texturefocus>
-					<texturenofocus>osd/OSDChannelNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDChannelNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDChannelNF.png</texturenofocus>
 					<onclick>ActivateWindow(PVROSDChannels)</onclick>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -353,8 +353,8 @@
 				<control type="button" id="16">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDEPGFO.png</texturefocus>
-					<texturenofocus>osd/OSDEPGNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDEPGNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDEPGNF.png</texturenofocus>
 					<onclick>ActivateWindow(PVROSDGuide)</onclick>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -362,8 +362,8 @@
 				<control type="button" id="17">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDTextFO.png</texturefocus>
-					<texturenofocus>osd/OSDTextNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDTextNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDTextNF.png</texturenofocus>
 					<onclick>ActivateWindow(Teletext)</onclick>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
@@ -371,8 +371,8 @@
 				<control type="button" id="18">
 					<width>60</width>
 					<height>60</height>
-					<texturefocus>osd/OSDDvdFO.png</texturefocus>
-					<texturenofocus>osd/OSDDvdNF.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[DialogColor1]">osd/OSDDvdNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[DialogColor2]">osd/OSDDvdNF.png</texturenofocus>
 					<onclick>PlayerControl(ShowVideoMenu)</onclick>
 					<visible>VideoPlayer.HasMenu</visible>
 				</control>

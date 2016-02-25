@@ -10,8 +10,6 @@
 	<controls>
 
 		<control type="group">
-			<visible>!Window.IsActive(seekbar) + !Window.IsActive(videoosd)</visible>
-
 			<!-- Info -->
 			<control type="group">
 				<left>150</left>
@@ -23,7 +21,7 @@
 				<control type="image">
 					<width>1620</width>
 					<height>234</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
 				</control>
 
 				<!-- Title -->
@@ -61,144 +59,147 @@
 
 			</control>
 
-			<!-- Player forwarding/rewinding -->
 			<control type="group">
-				<left>150</left>
-				<top>870</top>
-				<width>80</width>
-				<height>60</height>
-				<visible>player.forwarding | player.rewinding | player.paused</visible>
-
-				<!-- Background -->
-				<control type="image">
+				<visible>!Window.IsActive(seekbar) + !Window.IsActive(videoosd)</visible>
+				<!-- Player forwarding/rewinding -->
+				<control type="group">
+					<left>150</left>
+					<top>870</top>
 					<width>80</width>
 					<height>60</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<visible>player.forwarding | player.rewinding | player.paused</visible>
+
+					<!-- Background -->
+					<control type="image">
+						<width>80</width>
+						<height>60</height>
+						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+					</control>
+
+					<!-- Status -->
+					<control type="label">
+						<width>80</width>
+						<height>60</height>
+						<font>Font36</font>
+						<align>center</align>
+						<label>$VAR[PlayerStatus]</label>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+					</control>
+
+					<!-- Pause -->
+					<control type="image">
+						<left>10</left>
+						<width>60</width>
+						<height>60</height>
+						<texture colordiffuse="$VAR[DialogColor1]">osd/OSDPauseNF.png</texture>
+						<visible>player.paused</visible>
+					</control>
+
 				</control>
 
-				<!-- Status -->
-				<control type="label">
-					<width>80</width>
-					<height>60</height>
-					<font>Font36</font>
-					<align>center</align>
-					<label>$VAR[PlayerStatus]</label>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-				</control>
-
-				<!-- Pause -->
-				<control type="image">
-					<left>10</left>
-					<width>60</width>
-					<height>60</height>
-					<texture>osd/OSDPauseNF.png</texture>
-					<visible>player.paused</visible>
-				</control>
-
-			</control>
-
-			<!-- Player skipping -->
-			<control type="group">
-				<right>150</right>
-				<top>870</top>
-				<width>140</width>
-				<height>60</height>
-				<visible>[Player.DisplayAfterSeek + IntegerGreaterThan(Player.ChapterCount,0)] | IntegerGreaterThan(MusicPlayer.PlaylistLength,0)</visible>
-
-				<!-- Background -->
-				<control type="image">
+				<!-- Player skipping -->
+				<control type="group">
+					<right>150</right>
+					<top>870</top>
 					<width>140</width>
 					<height>60</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<visible>[Player.DisplayAfterSeek + IntegerGreaterThan(Player.ChapterCount,0)] | IntegerGreaterThan(MusicPlayer.PlaylistLength,0)</visible>
+
+					<!-- Background -->
+					<control type="image">
+						<width>140</width>
+						<height>60</height>
+						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+					</control>
+
+					<!-- Status -->
+					<control type="label">
+						<width>140</width>
+						<height>60</height>
+						<font>Font27</font>
+						<align>center</align>
+						<label>[B]$INFO[Player.Chapter,(,/]$INFO[Player.ChapterCount,,)][/B][B]$INFO[MusicPlayer.PlaylistPosition,(,/]$INFO[MusicPlayer.PlaylistLength,,)][/B]</label>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+						<visible>!Window.IsVisible(visualisation)</visible>
+					</control>
+
+					<!-- Status -->
+					<control type="label">
+						<width>140</width>
+						<height>60</height>
+						<font>Font27</font>
+						<align>center</align>
+						<label>[B]$INFO[MusicPlayer.PlaylistPosition,(,/]$INFO[MusicPlayer.PlaylistLength,,)][/B]</label>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+						<visible>Window.IsVisible(visualisation)</visible>
+					</control>
+
 				</control>
 
-				<!-- Status -->
-				<control type="label">
-					<width>140</width>
-					<height>60</height>
-					<font>Font27</font>
-					<align>center</align>
-					<label>[B]$INFO[Player.Chapter,(,/]$INFO[Player.ChapterCount,,)][/B][B]$INFO[MusicPlayer.PlaylistPosition,(,/]$INFO[MusicPlayer.PlaylistLength,,)][/B]</label>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-					<visible>!Window.IsVisible(visualisation)</visible>
-				</control>
-
-				<!-- Status -->
-				<control type="label">
-					<width>140</width>
-					<height>60</height>
-					<font>Font27</font>
-					<align>center</align>
-					<label>[B]$INFO[MusicPlayer.PlaylistPosition,(,/]$INFO[MusicPlayer.PlaylistLength,,)][/B]</label>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-					<visible>Window.IsVisible(visualisation)</visible>
-				</control>
-
-			</control>
-
-			<!-- Progress -->
-			<control type="group">
-				<left>150</left>
-				<top>945</top>
-				<width>1620</width>
-				<height>60</height>
-
-				<!-- Background -->
-				<control type="image">
+				<!-- Progress -->
+				<control type="group">
+					<left>150</left>
+					<top>945</top>
 					<width>1620</width>
 					<height>60</height>
-					<texture border="1">osd/OSDBack.png</texture>
-				</control>
 
-				<!--  Current position/Time remaining -->
-				<control type="label">
-					<left>20</left>
-					<width>260</width>
-					<height>60</height>
-					<font>Font27</font>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-				</control>
+					<!-- Background -->
+					<control type="image">
+						<width>1620</width>
+						<height>60</height>
+						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+					</control>
 
-				<!--  Progress bar -->
-				<control type="progress" id="1">
-					<left>280</left>
-					<top>20</top>
-					<width>920</width>
-					<height>20</height>
-					<info>Player.Progress</info>
-					<texturebg border="2">osd/OSDProgressBack.png</texturebg>
-					<lefttexture>-</lefttexture>
-					<midtexture border="2">osd/OSDProgressBar.png</midtexture>
-					<righttexture>-</righttexture>
-					<overlaytexture>-</overlaytexture>
-				</control>
+					<!--  Current position/Time remaining -->
+					<control type="label">
+						<left>20</left>
+						<width>260</width>
+						<height>60</height>
+						<font>Font27</font>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+						<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+					</control>
 
-				<!--  Cache bar -->
-				<control type="progress" id="1">
-					<left>280</left>
-					<top>20</top>
-					<width>920</width>
-					<height>20</height>
-					<info>Player.ProgressCache</info>
-					<texturebg colordiffuse="00ffffff" border="2">osd/OSDProgressBack.png</texturebg>
-					<lefttexture>-</lefttexture>
-					<midtexture colordiffuse="66ffffff" border="2">osd/OSDProgressBar.png</midtexture>
-					<righttexture>-</righttexture>
-					<overlaytexture>-</overlaytexture>
-				</control>
+					<!--  Progress bar -->
+					<control type="progress" id="1">
+						<left>280</left>
+						<top>20</top>
+						<width>920</width>
+						<height>20</height>
+						<info>Player.Progress</info>
+						<texturebg border="2" colordiffuse="$VAR[DialogColor2]">osd/OSDProgressBack.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture border="2" colordiffuse="$VAR[DialogColor1]">osd/OSDProgressBar.png</midtexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+					</control>
 
-				<!-- Current Time/End Time -->
-				<control type="label">
-					<left>1001</left>
-					<width>600</width>
-					<height>60</height>
-					<align>right</align>
-					<font>Font27</font>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[System.Time,$LOCALIZE[142] , / ]$INFO[Player.FinishTime,$LOCALIZE[19081] ]</label>
-				</control>
+					<!--  Cache bar -->
+					<control type="progress" id="1">
+						<left>280</left>
+						<top>20</top>
+						<width>920</width>
+						<height>20</height>
+						<info>Player.ProgressCache</info>
+						<texturebg colordiffuse="$VAR[DialogColor2]" border="2">osd/OSDProgressBack.png</texturebg>
+						<lefttexture>-</lefttexture>
+						<midtexture colordiffuse="$VAR[DialogColor1]" border="2">osd/OSDProgressBar.png</midtexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+					</control>
 
+					<!-- Current Time/End Time -->
+					<control type="label">
+						<left>1001</left>
+						<width>600</width>
+						<height>60</height>
+						<align>right</align>
+						<font>Font27</font>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+						<label>$INFO[System.Time,$LOCALIZE[142] , / ]$INFO[Player.FinishTime,$LOCALIZE[19081] ]</label>
+					</control>
+
+				</control>
 			</control>
 
 		</control>

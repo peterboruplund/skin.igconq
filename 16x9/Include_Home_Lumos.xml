@@ -84,6 +84,13 @@
 		</control>
 
 		<!-- Submenu -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture colordiffuse="44000000">dialogs/DialogTextBackground.png</texture>
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<visible>Control.HasFocus(9001)</visible>
+		</control>
 		<control type="group">
 			<left>-450</left>
 			<top>0</top>
@@ -107,6 +114,7 @@
 				</include>
 
 				<onright>9000</onright>
+				<onback>9000</onback>
 				<itemlayout width="410" height="52">
 					<control type="label">
 						<width>410</width>

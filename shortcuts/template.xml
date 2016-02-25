@@ -357,6 +357,9 @@
 				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.Season)">(s$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Season]e$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Episode]) $INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label]</value>
 				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label]</value>
 			</variable>
+			<variable name="widgetBackground">
+				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+			</variable>
 		</variables>
 	</other>
 </template>
