@@ -480,13 +480,4 @@
 		<value>$VAR[TextColor1]</value>
 	</variable>
 
-
-	<!-- 'Lumos' Varaibles -->
-	<variable name="Time">
-		<value condition="Window.IsVisible(VolumeBar)">[LIGHT]$LOCALIZE[13376] $INFO[Control.GetLabel(20),,%][/LIGHT]  $INFO[System.Time]</value>		
-		<value>$INFO[System.Time]</value>
-	</variable>
-
-
-
 </includes>

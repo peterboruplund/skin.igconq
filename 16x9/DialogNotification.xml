@@ -2,41 +2,43 @@
 <window>
 	<animation effect="slide" start="410,0" time="200">WindowOpen</animation>
 	<animation effect="slide" end="410,0" time="200">WindowClose</animation>
-	<animation effect="slide" end="0,120" time="200" condition="Window.IsActive(extendedprogress)">Conditional</animation>
 	<!-- infodialog -->
 	<controls>
-
+		<control type="group">
+			<animation effect="slide" end="0,50" time="200" condition="Window.IsActive(volumebar)" reversible="True">Conditional</animation>
 		
-		<control type="image">
-			<right>0</right>
-			<top>70</top>
-			<width>550</width>
-			<height>110</height>
-			<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
-		</control>
+			<control type="image">
+				<right>0</right>
+				<top>110</top>
+				<width>550</width>
+				<height>110</height>
+				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+			</control>
 
-		<!-- Heading -->
-		<control type="label" id="401">
-			<right>10</right>
-			<top>80</top>
-			<width>530</width>
-			<height>20</height>
-			<align>left</align>
-			<scroll>true</scroll>
-			<font>Font27</font>
-		</control>
+			<!-- Heading -->
+			<control type="label" id="401">
+				<right>10</right>
+				<top>120</top>
+				<width>530</width>
+				<height>20</height>
+				<align>left</align>
+				<scroll>true</scroll>
+				<font>Font27</font>
+			</control>
 
-		<!-- Details -->
-		<control type="label" id="402">
-			<right>10</right>
-			<top>100</top>
-			<width>530</width>
-			<height>70</height>
-			<align>left</align>
-			<aligny>top</aligny>
-			<scroll>true</scroll>
-			<font>Font25</font>
-			<textcolor>$VAR[DialogColor2]</textcolor>
+			<!-- Details -->
+			<control type="label" id="402">
+				<right>10</right>
+				<top>140</top>
+				<width>530</width>
+				<height>70</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<scroll>true</scroll>
+				<font>Font25</font>
+				<textcolor>$VAR[DialogColor2]</textcolor>
+			</control>
+
 		</control>
 
 	</controls>

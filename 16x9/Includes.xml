@@ -146,7 +146,7 @@
 				<height>33</height>
 				<aligny>top</aligny>
 				<align>right</align>
-				<label>$VAR[Time]</label>
+				<label>$INFO[System.Time]</label>
 				<font>Font33</font>
 				<textcolor>$VAR[DialogColor2]</textcolor>
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
@@ -154,7 +154,7 @@
 				</animation>
 				<animation effect="slide" start="120,0" end="0,0" time="200">Visible</animation>
 				<animation effect="slide" end="120,0" time="200">Hidden</animation>
-				<visible>!Window.IsVisible(notification) + !Window.IsVisible(extendedprogressdialog)</visible>
+				<visible>!Window.IsVisible(notification) + !Window.IsVisible(extendedprogressdialog) + !Window.IsVisible(volumebar)</visible>
 			</control>
 
             <control type="progress" id="20">

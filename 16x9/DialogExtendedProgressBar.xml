@@ -3,13 +3,13 @@
 	<!-- extendedprogressdialog -->
 	<animation effect="slide" start="410,0" time="200">WindowOpen</animation>
 	<animation effect="slide" end="410,0" time="200">WindowClose</animation>
-
 	<controls>
 		<control type="group">
+			<animation effect="slide" end="0,50" time="200" condition="Window.IsActive(volumebar)">Conditional</animation>
 			<animation effect="slide" end="0,120" time="200" condition="Window.IsActive(notification)">Conditional</animation>
 			<control type="image">
 				<right>0</right>
-				<top>70</top>
+				<top>110</top>
 				<width>550</width>
 				<height>110</height>
 				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
@@ -18,7 +18,7 @@
 			<!-- Heading -->
 			<control type="label" id="30">
 				<right>10</right>
-				<top>80</top>
+				<top>120</top>
 				<width>530</width>
 				<height>20</height>
 				<align>left</align>
@@ -29,7 +29,7 @@
 			<!-- Details -->
 			<control type="label" id="31">
 				<right>10</right>
-				<top>100</top>
+				<top>140</top>
 				<width>530</width>
 				<height>70</height>
 				<align>left</align>
@@ -43,7 +43,7 @@
 			<control type="progress" id="32">
 				<description>Progressbar</description>
 				<right>0</right>
-				<top>179</top>
+				<top>219</top>
 				<width>550</width>
 				<height>2</height>
 				<visible>true</visible>
