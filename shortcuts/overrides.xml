@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
-	<doNotShareMenu />
-
 	<!-- Movies -->
 	<!-- Recent movies -->
 	<widget label="Recent movies" type="movies" target="video" path="plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]">RecentMovies</widget>
@@ -71,9 +69,10 @@
 	    <action>::ACTION::</action>
 	</override-->
 
-	<propertySettings property="ParentalControl" buttonID="600" title="Require password?" showNone="False" imageBrowse="False" />
-	<property property="ParentalControl" label="No">no</property>
-	<property property="ParentalControl" label="Yes">yes</property>
+	<!-- Autoscroll -->
+	<propertySettings property="autoscroll" buttonID="600" templateonly="True" title="Autoscroll" />
+	<property property="autoscroll" label="When not focused">on</property>
+	<property property="autoscroll" label="When not focused and inactive">always</property>
 
 	<override action="globaloverride" group="igconq-quicknav">
 		<action>Action(Close)</action>

@@ -13,7 +13,7 @@
 			<control type="image">
 				<width>790</width>
 				<height>695</height>
-				<texture>osd/OSDSettingsBack.png</texture>
+				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Heading label -->

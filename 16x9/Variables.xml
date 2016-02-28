@@ -2,38 +2,54 @@
 <includes>
 	<!-- Colors -->
 	<variable name="DialogColor1">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.highlight)]</value>
-		<value>DialogColor1</value>
+		<value condition="!IsEmpty(Skin.String(color.highlight)) + !StringCompare(Skin.String(color.highlight),None)">$INFO[Skin.String(color.highlight)]</value>
+		<value>ffffffff</value>
 	</variable>
 
 	<variable name="DialogColor2">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.text)]</value>
-		<value>DialogColor2</value>
+		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
+		<value>66ffffff</value>
 	</variable>
 
 	<variable name="SelectedColor">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.selected)]</value>
-		<value>SelectedColor</value>
+		<value condition="!IsEmpty(Skin.String(color.selected)) + !StringCompare(Skin.String(color.selected),None)">$INFO[Skin.String(color.selected)]</value>
+		<value>ffeb9e17</value>
 	</variable>
 
 	<variable name="DisabledColor">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.disabled)]</value>
-		<value>DisabledColor</value>
+		<value condition="!IsEmpty(Skin.String(color.disabled)) + !StringCompare(Skin.String(color.disabled),None)">$INFO[Skin.String(color.disabled)]</value>
+		<value>ffa10000</value>
 	</variable>
 
 	<variable name="TextColor1">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.highlight)]</value>
+		<value condition="!IsEmpty(Skin.String(color.highlight)) + !StringCompare(Skin.String(color.highlight),None)">$INFO[Skin.String(color.highlight)]</value>
 		<value>TextColor1</value>
 	</variable>
 
 	<variable name="TextColor2">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.text)]</value>
+		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
 		<value>TextColor2</value>
 	</variable>
 
 	<variable name="TextColor3">
-		<value condition="!IsEmpty(Skin.String(color.text))">$INFO[Skin.String(color.text)]</value>
+		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
 		<value>TextColor3</value>
+	</variable>
+
+	<variable name="BackgroundColor">
+		<value condition="!IsEmpty(Skin.String(color.background)) + !StringCompare(Skin.String(color.background),None)">$INFO[Skin.String(color.background)]</value>
+		<value>ff3285ff</value>
+	</variable>
+
+	<variable name="FanartColor">
+		<value condition="!IsEmpty(Skin.String(color.fanart)) + !StringCompare(Skin.String(color.fanart),None)">$INFO[Skin.String(color.fanart)]</value>
+		<value condition="!IsEmpty(Skin.String(color.background)) + !StringCompare(Skin.String(color.background),None)">$INFO[Skin.String(color.background)]</value>
+		<value>ff3285ff</value>
+	</variable>
+
+	<variable name="OverlayColor">
+		<value condition="!IsEmpty(Skin.String(color.overlay)) + !StringCompare(Skin.String(color.overlay),None)">$INFO[Skin.String(color.overlay)]</value>
+		<value>cc000000</value>
 	</variable>
 	
 	<variable name="MainMenuFocus">

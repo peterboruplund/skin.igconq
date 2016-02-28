@@ -101,7 +101,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>Edit home screen widgets</label>
+					<label>31049</label>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
@@ -109,7 +109,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>31049</label>
+					<label>Customize quick-nav</label>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=igconq-quicknav)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
@@ -231,7 +231,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Text color</label>
-					<label2>$INFO[Skin.String(color.text)]</label2>
+					<label2>$VAR[DialogColor2]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.text)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -241,7 +241,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Highlight color</label>
-					<label2>$INFO[Skin.String(color.highlight)]</label2>
+					<label2>$VAR[DialogColor1]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.highlight)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -251,7 +251,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Selected color</label>
-					<label2>$INFO[Skin.String(color.selected)]</label2>
+					<label2>$VAR[SelectedColor]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.selected)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -261,7 +261,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Disabled color</label>
-					<label2>$INFO[Skin.String(color.disabled)]</label2>
+					<label2>$VAR[DisabledColor]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.disabled)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -271,8 +271,28 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Background color</label>
-					<label2>$INFO[Skin.String(color.background)]</label2>
+					<label2>$VAR[BackgroundColor]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.background)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Fanart color -->
+				<control type="button" id="1506">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Fanart color</label>
+					<label2>$VAR[FanartColor]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.fanart)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<!-- Overlay color -->
+				<control type="button" id="1507">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Overlay color</label>
+					<label2>$VAR[OverlayColor]</label2>
+					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.overlay)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
 

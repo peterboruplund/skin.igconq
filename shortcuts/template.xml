@@ -1,18 +1,22 @@
 <template>
 
 	<other include="widget">
+		<condition tag="property" attribute="name|widget" />
 		<property name="id" tag="mainmenuid" />
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
 
 		<property name="path" tag="property" attribute="name|widgetPath" />
-		<property name="name" tag="property" attribute="name|widgetName" />
 		<property name="target" tag="property" attribute="name|widgetTarget" />
 		<property name="target"></property>
 
-		<!--property name="art" tag="property" attribute="name|widgetType" value="episodes">ListItem.Art(tvshow.poster)</property>
-		<property name="art">ListItem.Icon</property-->
 		<property name="art" tag="property" attribute="name|widgetType" value="episodes">Art(tvshow.poster)</property>
 		<property name="art">Icon</property>
+
+		<!-- Autoscroll -->
+		<property name="autoscroll" tag="property" attribute="name|autoscroll" value="on">True</property>
+		<property name="autoscroll">False</property>
+		<property name="autoscroll-inactive" tag="property" attribute="name|autoscroll" value="always">True</property>
+		<property name="autoscroll-inactive">False</property>
 
 		<property name="top" tag="property" attribute="name|widgetType" value="episodes">250</property>
 		<property name="top" tag="property" attribute="name|widgetType" value="tvshows">250</property>
@@ -25,6 +29,7 @@
 		<property name="labelID" tag="property" attribute="name|labelID" />
 
 		<controls>
+			<description>isWeather: $SKINSHORTCUTS[isWeather]</description>
 			<control type="group">
 				<left>103</left>
 				<top>-306</top>
@@ -65,7 +70,6 @@
 				<control type="fixedlist" id="800$SKINSHORTCUTS[id]">
 					<width>203</width>
 					<height>1530</height>
-					
 
 					<focusposition>3</focusposition>
 					
@@ -81,7 +85,7 @@
 					<animation effect="fade" start="100" end="0" time="100" delay="200" condition="!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="100" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
 
-					<autoscroll time="7000" delay="7000" repeat="7000">!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | System.IdleTime(180)</autoscroll>
+					<autoscroll time="7000" delay="7000" repeat="7000">[!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [$SKINSHORTCUTS[autoscroll] | $SKINSHORTCUTS[autoscroll-inactive]]] | [System.IdleTime(180) + $SKINSHORTCUTS[autoscroll-inactive]]</autoscroll>
 
 					<itemlayout width="203" height="306">
 						<control type="group">
@@ -249,6 +253,367 @@
 					</focusedlayout>
 
 					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
+				</control>
+
+				<control type="group">
+					<top>918</top>
+					<control type="group">
+						<visible>!$SKINSHORTCUTS[isWeather]</visible>
+						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.$SKINSHORTCUTS[art]]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<fadetime>200</fadetime>
+						</control>
+
+						<control type="image">
+							<left>155</left>
+							<top>$SKINSHORTCUTS[top]</top>
+							<width>35</width>
+							<height>49</height>
+							<texture>views/OverlayWatchedWide.png</texture>
+							<visible>IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.Property(resumetime)) + !IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.PlayCount)</visible>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<left>155</left>
+							<top>$SKINSHORTCUTS[top]</top>
+							<width>35</width>
+							<height>49</height>
+							<texture>views/OverlayResumableWide.png</texture>
+							<visible>!IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.Property(resumetime))</visible>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+
+					<control type="group">
+						<visible>$SKINSHORTCUTS[isWeather]</visible>
+						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+						<control type="label">
+							<top>2</top>
+							<width>203</width>
+							<height>33</height>
+							<font>Font33</font>
+							<align>center</align>
+							<aligny>bottom</aligny>
+							<!--textcolor>TextColor2</textcolor-->
+							<label>$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.$SKINSHORTCUTS[art]]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="label">
+							<top>249</top>
+							<width>203</width>
+							<height>25</height>
+							<font>Font25</font>
+							<align>center</align>
+							<!--textcolor>TextColor2</textcolor-->
+							<label>$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label2]</label>
+						</control>
+					</control>
+
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture>busy.gif</texture>
+						<aspectratio>center</aspectratio>
+						<visible>Container(800$SKINSHORTCUTS[id]).IsUpdating + !IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</visible>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>$SKINSHORTCUTS[top]</top>
+						<width>36</width>
+						<height>36</height>
+						<texture>busy-small.gif</texture>
+						<aspectratio>center</aspectratio>
+						<visible>Container(800$SKINSHORTCUTS[id]).IsUpdating + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</visible>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<left>13</left>
+						<top>0</top>
+						<width>183</width>
+						<height>306</height>
+						<texture>DefaultIconError.png</texture>
+						<aspectratio>center</aspectratio>
+						<visible>!Container(800$SKINSHORTCUTS[id]).IsUpdating + !IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</visible>
+					</control>
+				</control>
+			</control>
+		</controls>
+	</other>
+
+	<other include="widget">
+		<property name="id" tag="mainmenuid" />
+		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
+
+		<property name="path">$INCLUDE[skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]]</property>
+
+		<property name="art">Icon</property>
+
+		<property name="itemLabel" tag="label" />
+		<property name="itemAction" tag="property" attribute="name|path" />
+		<property name="itemIcon" tag="icon" />
+		<property name="itemIcon" tag="thumb" />
+		<property name="itemIcon" tag="icon">DefaultShortcut.png</property>
+
+		<!-- Autoscroll -->
+		<property name="autoscroll" tag="property" attribute="name|autoscroll" value="on">True</property>
+		<property name="autoscroll">False</property>
+		<property name="autoscroll-inactive" tag="property" attribute="name|autoscroll" value="always">True</property>
+		<property name="autoscroll-inactive">False</property>
+
+		<property name="top">210</property>		
+
+		<property name="isWeather">False</property>
+
+		<controls>
+			<control type="group">
+				<left>103</left>
+				<top>-306</top>
+				<animation effect="slide" end="-609,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(-4).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="-406,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="-203,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="0,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="203,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(0).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="406,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="609,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="812,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="1015,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="1218,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="1421,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="1624,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="1827,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="2030,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="2233,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(10).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="2436,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(11).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="slide" end="2839,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap(12).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+
+				<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-4).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="40" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="40" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="20" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="10" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+
+				<visible>StringCompare(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(0).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | StringCompare(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+
+				<control type="fixedlist" id="800$SKINSHORTCUTS[id]">
+					<width>203</width>
+					<height>1530</height>
+
+					<focusposition>3</focusposition>
+					
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+
+					<viewtype label="">list</viewtype>
+					<orientation>vertical</orientation>
+					<defaultcontrol always="true">0</defaultcontrol>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<!--skinshortcuts>visibility</skinshortcuts-->
+
+					<animation effect="fade" start="100" end="0" time="100" delay="200" condition="!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="100" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+
+					<autoscroll time="7000" delay="7000" repeat="7000">[!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [$SKINSHORTCUTS[autoscroll] | $SKINSHORTCUTS[autoscroll-inactive]]] | [System.IdleTime(180) + $SKINSHORTCUTS[autoscroll-inactive]]</autoscroll>
+
+					<itemlayout width="203" height="306">
+						<control type="group">
+							<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							<animation type="Visible" condition="!$SKINSHORTCUTS[isWeather]">
+								<effect type="fade" start="0" end="100" time="200" />
+								<effect type="rotatey" start="180" end="0" center="101.5,153" time="200" />
+							</animation>
+							<animation type="Hidden" condition="!$SKINSHORTCUTS[isWeather]">
+								<effect type="fade" start="100" end="0" time="200" />
+								<effect type="rotatey" start="0" end="-180" center="101.5,153" time="200" />
+							</animation>
+
+							<control type="group">
+								<visible>!$SKINSHORTCUTS[isWeather]</visible>
+
+								<control type="image">
+									<left>13</left>
+									<top>0</top>
+									<width>183</width>
+									<height>306</height>
+									<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+									<aspectratio align="center">keep</aspectratio>
+									<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+									<bordersize>0,0,0,33</bordersize>
+								</control>
+
+								<control type="image">
+									<left>155</left>
+									<top>$SKINSHORTCUTS[top]</top>
+									<width>35</width>
+									<height>49</height>
+									<texture>views/OverlayWatchedWide.png</texture>
+									<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+								</control>
+								<control type="image">
+									<left>155</left>
+									<top>$SKINSHORTCUTS[top]</top>
+									<width>35</width>
+									<height>49</height>
+									<texture>views/OverlayResumableWide.png</texture>
+									<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+								</control>
+							</control>
+
+							<control type="group">
+								<visible>$SKINSHORTCUTS[isWeather]</visible>
+								<control type="label">
+									<top>2</top>
+									<width>203</width>
+									<height>33</height>
+									<font>Font33</font>
+									<align>center</align>
+									<aligny>bottom</aligny>
+									<!--textcolor>TextColor2</textcolor-->
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="image">
+									<left>13</left>
+									<top>0</top>
+									<width>183</width>
+									<height>306</height>
+									<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+									<aspectratio align="center">keep</aspectratio>
+								</control>
+								<control type="label">
+									<top>249</top>
+									<width>203</width>
+									<height>25</height>
+									<font>Font25</font>
+									<align>center</align>
+									<!--textcolor>TextColor2</textcolor-->
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+							</control>
+						</control>
+					</itemlayout>
+
+					<focusedlayout width="203" height="306">
+						<control type="group">
+							<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							<visible>!$SKINSHORTCUTS[isWeather]</visible>
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+								<bordersize>0,0,0,33</bordersize>
+								<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							</control>
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+								<bordersize>0,0,0,33</bordersize>
+								<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							</control>
+
+							<control type="image">
+								<left>155</left>
+								<top>$SKINSHORTCUTS[top]</top>
+								<width>35</width>
+								<height>49</height>
+								<texture>views/OverlayWatchedWide.png</texture>
+								<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+							</control>
+							<control type="image">
+								<left>155</left>
+								<top>$SKINSHORTCUTS[top]</top>
+								<width>35</width>
+								<height>49</height>
+								<texture>views/OverlayResumableWide.png</texture>
+								<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+							</control>
+						</control>
+
+						<control type="group">
+							<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							<visible>$SKINSHORTCUTS[isWeather]</visible>
+							<control type="label">
+								<top>2</top>
+								<width>203</width>
+								<height>33</height>
+								<font>Font33</font>
+								<align>center</align>
+								<aligny>bottom</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<!--textcolor>TextColor2</textcolor-->
+							</control>
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							</control>
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+							</control>
+							<control type="label">
+								<top>249</top>
+								<width>203</width>
+								<height>25</height>
+								<font>Font25</font>
+								<align>center</align>
+								<!--textcolor>TextColor2</textcolor-->
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<content>
+						<item id="0">
+							<label>[B]$SKINSHORTCUTS[itemLabel][/B]</label>
+							<onclick>$SKINSHORTCUTS[itemAction]</onclick>
+							<icon>$SKINSHORTCUTS[itemIcon]</icon>
+						</item>
+						<include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</include>
+					</content>
 				</control>
 
 				<control type="group">

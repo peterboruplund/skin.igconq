@@ -5,7 +5,6 @@
 	<include>DialogZoomAnimation</include>
 
 	<controls>
-
 		<!-- Background -->
 		<include>DialogBackgroundImage</include>
 

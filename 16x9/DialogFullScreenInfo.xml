@@ -21,7 +21,7 @@
 				<control type="image">
 					<width>1620</width>
 					<height>234</height>
-					<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+					<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 				</control>
 
 				<!-- Title -->
@@ -73,7 +73,7 @@
 					<control type="image">
 						<width>80</width>
 						<height>60</height>
-						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 					</control>
 
 					<!-- Status -->
@@ -109,7 +109,7 @@
 					<control type="image">
 						<width>140</width>
 						<height>60</height>
-						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 					</control>
 
 					<!-- Status -->
@@ -147,7 +147,7 @@
 					<control type="image">
 						<width>1620</width>
 						<height>60</height>
-						<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 					</control>
 
 					<!--  Current position/Time remaining -->

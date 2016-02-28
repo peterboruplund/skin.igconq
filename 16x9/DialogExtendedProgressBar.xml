@@ -3,6 +3,7 @@
 	<!-- extendedprogressdialog -->
 	<animation effect="slide" start="410,0" time="200">WindowOpen</animation>
 	<animation effect="slide" end="410,0" time="200">WindowClose</animation>
+	<zorder>100</zorder>
 	<controls>
 		<control type="group">
 			<animation effect="slide" end="0,70" time="200" condition="Window.IsActive(volumebar)">Conditional</animation>
@@ -12,7 +13,7 @@
 				<top>90</top>
 				<width>550</width>
 				<height>75</height>
-				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Heading -->
@@ -35,8 +36,7 @@
 				<align>left</align>
 				<aligny>top</aligny>
 				<scroll>true</scroll>
-				<font>Font25</font>
-				<textcolor>$VAR[DialogColor2]</textcolor>
+				<font>Font27-Light</font>
 			</control>
 
 			<!-- Progress -->

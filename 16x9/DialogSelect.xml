@@ -57,7 +57,7 @@
 			<left>690</left>
 			<centertop>50%</centertop>
 			<width>20</width>
-			<height>720</height>
+			<height>692</height>
 			<onleft>5</onleft>
 			<onright condition="Control.IsVisible(3)">3</onright>
 			<onright condition="Control.IsVisible(6)">6</onright>

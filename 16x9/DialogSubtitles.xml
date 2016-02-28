@@ -216,7 +216,7 @@
 			<top>926</top>
 			<width>600</width>
 			<height>66</height>
-			<onleft>noop</onleft>
+			<onleft>150</onleft>
 			<onright>noop</onright>
 			<onup>120</onup>
 			<ondown>noop</ondown>

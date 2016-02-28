@@ -15,9 +15,9 @@
 			<defaultcontrol>1</defaultcontrol>
 			<include>skinshortcuts-template-oncontrol</include>
 			<onclick condition="StringCompare(Container(9000).CurrentItem,1)">ActivateWindow(Music)</onclick>
-			<onleft>ActivateWindow(1110)</onleft>
+			<onleft>noop</onleft>
 			<onright>noop</onright>
-			<oninfo>Control.SetFocus(9001)</oninfo>
+			<oninfo condition="!IsEmpty(Container(9000).ListItem.Property(widget))">Control.SetFocus(9001,0)</oninfo>
 			<orientation>horizontal</orientation>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
 
@@ -78,65 +78,71 @@
 			<font>Font33</font>
 			<align>left</align>
 			<aligny>top</aligny>
-			<textcolor>$INFO[Skin.String(color.text)]</textcolor>
-			<label>[COLOR $VAR[DialogColor2]]$VAR[widgetDetails][/COLOR][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
+			<label>$VAR[widgetDetails][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
 			<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 		</control>
 
 		<!-- Submenu -->
-		<control type="image">
-			<include>FullscreenDimensions</include>
-			<texture colordiffuse="44000000">dialogs/DialogTextBackground.png</texture>
-			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-			<visible>Control.HasFocus(9001)</visible>
-		</control>
-		<control type="group">
-			<left>-450</left>
-			<top>0</top>
-			<animation effect="slide" start="0,0" end="450,0" time="200" condition="Control.HasFocus(9001)">Conditional</animation>
+		<control type="group" id="9002">
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>450</width>
-				<height>1080</height>
-				<texture colordiffuse="$INFO[Skin.String(color.background)]">dialogs/Background.png</texture>
+				<include>FullscreenDimensions</include>
+				<texture colordiffuse="44000000">dialogs/DialogTextBackground.png</texture>
+				<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<visible>Control.HasFocus(9001)</visible>
 			</control>
+			<control type="group">
+				<left>-450</left>
+				<top>0</top>
+				<animation effect="slide" start="0,0" end="450,0" time="200" condition="ControlGroup(9002).HasFocus">Conditional</animation>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>450</width>
+					<height>1080</height>
+					<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+				</control>
 
-			<control type="list" id="9001">
-				<left>20</left>
-				<top>20</top>
-				<width>410</width>
-				<height>1040</height>
+				<control type="list" id="9001">
+					<left>20</left>
+					<top>20</top>
+					<width>410</width>
+					<height>1040</height>
 
-				<include name="SideMenuAnimation">
-					<param name="containerID">9001</param>
-				</include>
+					<include name="SideMenuAnimation">
+						<param name="containerID">9001</param>
+					</include>
 
-				<onright>9000</onright>
-				<onback>9000</onback>
-				<itemlayout width="410" height="52">
-					<control type="label">
-						<width>410</width>
-						<height>104</height>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-						<align>center</align>
-					</control>
-				</itemlayout>
-				<focusedlayout width="410" height="52">
-					<control type="label">
-						<width>410</width>
-						<height>104</height>
-						<label>$INFO[ListItem.Label]</label>
-						<align>center</align>
-					</control>
-				</focusedlayout>
-				<content>
-					<include>skinshortcuts-submenu</include>
-				</content>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<itemlayout width="410" height="52">
+						<control type="label">
+							<width>410</width>
+							<height>52</height>
+							<label>[LIGHT]$INFO[ListItem.Label][/LIGHT]</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+							<align>center</align>
+						</control>
+					</itemlayout>
+					<focusedlayout width="410" height="52">
+						<control type="label">
+							<width>410</width>
+							<height>52</height>
+							<label>$INFO[ListItem.Label]</label>
+							<align>center</align>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>[B]$INFO[Container(9000).ListItem.Label][/B]</label>
+							<onclick>$INFO[Container(9000).ListItem.Property(path)]</onclick>
+						</item>
+						<include>skinshortcuts-submenu</include>
+					</content>
+				</control>
 			</control>
 		</control>
 		
 	</include>
+
 </includes>

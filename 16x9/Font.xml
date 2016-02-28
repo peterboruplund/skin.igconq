@@ -41,6 +41,13 @@
 			<linespacing>1.3</linespacing>
 		</font>
 		<font>
+			<name>Font27-Light</name>
+			<filename>Comfortaa-Light.ttf</filename>
+			<size>25</size>
+			<linespacing>1.3</linespacing>
+			<style>lighten</style>
+		</font>
+		<font>
 			<name>Font25</name>
 			<filename>Comfortaa-Light.ttf</filename>
 			<size>23</size>

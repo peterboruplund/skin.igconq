@@ -7,17 +7,15 @@
 	<controls>
 
 		<!-- Background -->
-		<control type="image">
-			<left>0</left>
-			<top>220</top>
-			<width>1920</width>
-			<height>860</height>
-			<texture border="20">dialogs/DialogBackground.png</texture>
-		</control>
+		<include>DialogBackgroundImage</include>
+
+		<include name="Time">
+			<param name="heading">$INFO[Control.GetLabel(311)]</param>
+		</include>
 
 		<!-- Heading -->
 		<control type="label" id="311">
-			<left>150</left>
+			<left>-150000</left>
 			<top>296</top>
 			<width>1620</width>
 			<height>72</height>

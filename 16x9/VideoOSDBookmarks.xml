@@ -22,7 +22,7 @@
 				<control type="image">
 					<width>324</width>
 					<height>242</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 				</control>
 				<control type="image">
 					<left>6</left>
@@ -46,12 +46,13 @@
 				<control type="image">
 					<width>324</width>
 					<height>242</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+					<visible>Control.HasFocus(11)</visible>
 				</control>
 				<control type="image">
 					<width>324</width>
 					<height>242</height>
-					<texture border="1">osd/OSDBack.png</texture>
+					<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 				</control>
 				<control type="image">
 					<left>6</left>
@@ -83,7 +84,7 @@
 			<control type="image">
 				<width>1620</width>
 				<height>60</height>
-				<texture border="1">osd/OSDBack.png</texture>
+				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 			</control>
 
 			<!-- Button grouplist -->
