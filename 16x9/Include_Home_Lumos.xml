@@ -14,7 +14,6 @@
 			<focusposition>2</focusposition>
 			<defaultcontrol>1</defaultcontrol>
 			<include>skinshortcuts-template-oncontrol</include>
-			<onclick condition="StringCompare(Container(9000).CurrentItem,1)">ActivateWindow(Music)</onclick>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
 			<oninfo condition="!IsEmpty(Container(9000).ListItem.Property(widget))">Control.SetFocus(9001,0)</oninfo>
@@ -58,13 +57,6 @@
 			</focusedlayout>
 
 			<content>
-				<item>
-					<label>Search</label>
-					<icon>DefaultMusicSearch.png</icon>
-					<onclick>ActivateWindow(Music,"plugin://plugin.audio.cherrymusic",return)</onclick>
-					<property name="igconq">True</property>
-					<property name="submenuVisibility">igConqSearchItem</property>
-				</item>
 				<include>skinshortcuts-mainmenu</include>
 			</content>
 		</control>
