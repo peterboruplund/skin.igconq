@@ -3,7 +3,7 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
 	<onload>noop</onload>

@@ -2,7 +2,7 @@
 <window>
 	<!-- skinsettings -->
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onunload>
 
 	<controls>
 

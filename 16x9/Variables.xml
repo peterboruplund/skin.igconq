@@ -496,4 +496,11 @@
 		<value>$VAR[TextColor1]</value>
 	</variable>
 
+	<variable name="hubWidgetDetails">
+		<value condition="!IsEmpty(Container(7002).ListItem.Property(channelname)) + SubString(Container(7002).ListItem.Property(type),livechannel)">$INFO[Container(7002).ListItem.Label][CR]$INFO[Container(7002).ListItem.Property(Title)] ($INFO[Container(7002).ListItem.Property(StartTime)] - $INFO[Container(7002).ListItem.Property(EndTime)])[CR]$INFO[Container(7002).ListItem.Property(NextTitle)] ($INFO[Container(7002).ListItem.Property(NextStartTime)] - $INFO[Container(7002).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(7002).ListItem.Property(channelname))">$INFO[Container(7002).ListItem.Label][CR]$INFO[Container(7002).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(7002).ListItem.Season)">(s$INFO[Container(7002).ListItem.Season]e$INFO[Container(7002).ListItem.Episode]) $INFO[Container(7002).ListItem.Label]</value>
+		<value>$INFO[Container(7002).ListItem.Label]</value>
+	</variable>
+
 </includes>

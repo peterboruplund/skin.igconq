@@ -75,6 +75,15 @@
 					<height>66</height>
 					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
+					<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
+				</control>
+				<control type="label">
+					<left>25</left>
+					<width>260</width>
+					<height>66</height>
+					<textcolor>$VAR[DialogColor2]</textcolor>
+					<label>$INFO[ListItem.Property(widgetName)]</label>
+					<visible>SubString(Window.Property(groupname),.1,Right)</visible>
 				</control>
 			</itemlayout>
 
@@ -86,6 +95,16 @@
 					<scroll>true</scroll>
 					<label>$INFO[ListItem.Label]</label>
 					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
+					<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
+				</control>
+				<control type="label">
+					<left>25</left>
+					<width>260</width>
+					<height>66</height>
+					<scroll>true</scroll>
+					<label>$INFO[ListItem.Property(widgetName)]</label>
+					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
+					<visible>SubString(Window.Property(groupname),.1,Right)</visible>
 				</control>
 				<control type="image">
 					<left>290</left>
@@ -139,6 +158,7 @@
 				<width>1050</width>
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
+				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
 			<!-- Change label -->
@@ -147,6 +167,7 @@
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32025]</label>
 				<label2>$INFO[Container(211).ListItem.Label]</label2>
+				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
 			<!-- Change action -->
@@ -155,6 +176,7 @@
 				<height>66</height>
 				<label>$ADDON[script.skinshortcuts 32027]</label>
 				<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
 			<!-- Edit widget -->
@@ -162,7 +184,10 @@
 				<width>1050</width>				
 				<label>$ADDON[script.skinshortcuts 32044]</label>
 				<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SetProperty(customProperty,path)</onclick>
+				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SetProperty(customValue,randomValueSoTheMenuItemWillSave)</onclick>
+				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SendClick(404)</onclick>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
 			<!-- Change autoscroll option -->
@@ -170,7 +195,7 @@
 				<width>1050</width>
 				<height>66</height>
 				<label>Autoscroll option</label>
-				<label2>$INFO[Window.Property(autoscroll)]</label2>
+				<label2>$INFO[Container(211).ListItem.Property(autoscroll)]</label2>
 				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(widget))</visible>
 			</control>
 
@@ -180,6 +205,14 @@
 				<height>66</height>
 				<label>Edit submenu</label>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Edit hub widgets -->
+			<control type="button" id="406">
+				<width>1050</width>
+				<height>66</height>
+				<label>Edit hub widgets</label>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Container(211).ListItem.Property(widget))</visible>
 			</control>
 
 			<!-- Remove -->
