@@ -1,5 +1,6 @@
 <template>
 	<other include="hub">
+		<property name="id" tag="mainmenuid" />
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
 		<property name="itemLabel" tag="label" />
 		<property name="itemAction" tag="property" attribute="name|path" />
@@ -62,7 +63,7 @@
 				</content>
 			</control>
 
-			<control type="list" id="7001">
+			<control type="list" id="800$SKINSHORTCUTS[id]">
 				<visible>StringCompare(Window(Home).Property(currentMenu),$SKINSHORTCUTS[submenuVisibility])</visible>
 				<left>-150000</left>
 				<top>-150000</top>
@@ -75,6 +76,66 @@
 				<content>
 					<include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]-1</include>
 				</content>
+			</control>
+
+			<control type="list" id="7002">
+				<visible>StringCompare(Window(Home).Property(currentMenu),$SKINSHORTCUTS[submenuVisibility])</visible>
+				<animation effect="fade" start="100" end="70" time="200" condition="!Control.HasFocus(7002)">Conditional</animation>
+				<animation effect="fade" start="70" end="100" time="200" condition="Control.HasFocus(7002)">Conditional</animation>
+				<left>430</left>
+				<top>10</top>
+				<width>305</width>
+				<height>460</height>
+				<onleft>7000</onleft>
+				<onback>7000</onback>
+				<onup>Control.Message(800$SKINSHORTCUTS[id],movedown)</onup>
+				<ondown>Control.Message(800$SKINSHORTCUTS[id],moveup)</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="305" height="460">
+					<control type="image">
+						<width>305</width>
+						<height>460</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
+						<visible>!IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
+					</control>
+					<control type="image">
+						<width>305</width>
+						<height>460</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout width="305" height="460">
+					<control type="image">
+						<width>305</width>
+						<height>460</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
+						<visible>!IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
+					</control>
+					<control type="image">
+						<width>305</width>
+						<height>460</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
+					</control>
+				</focusedlayout>
+				<content target="$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetTarget)]">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetPath)]</content>
+			</control>
+
+			<control type="label">
+				<visible>StringCompare(Window(Home).Property(currentMenu),$SKINSHORTCUTS[submenuVisibility]) + Control.HasFocus(7002)</visible>
+				<top>360</top>
+				<left>765</left>
+				<width>1000</width>
+				<height>280</height>
+				<font>Font33</font>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetName)][/LIGHT]</label>
 			</control>
 		</controls>
 	</other>

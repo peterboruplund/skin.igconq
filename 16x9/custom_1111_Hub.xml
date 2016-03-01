@@ -14,8 +14,6 @@
 		<control type="group">
 			<left>592</left>
 			<top>310</top>
-			<include>skinshortcuts-template-hub</include>
-
 			<control type="image">
 				<left>420</left>
 				<top>0</top>
@@ -23,52 +21,8 @@
 				<height>480</height>
 				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
 			</control>
-			<control type="list" id="7002">
-				<animation effect="fade" start="100" end="70" time="200" condition="!Control.HasFocus(7002)">Conditional</animation>
-				<animation effect="fade" start="70" end="100" time="200" condition="Control.HasFocus(7002)">Conditional</animation>
-				<left>430</left>
-				<top>10</top>
-				<width>305</width>
-				<height>460</height>
-				<onleft>7000</onleft>
-				<onback>7000</onback>
-				<onup>Control.Message(7001,movedown)</onup>
-				<ondown>Control.Message(7001,moveup)</ondown>
-				<orientation>horizontal</orientation>
-				<itemlayout width="305" height="460">
-					<control type="image">
-						<width>305</width>
-						<height>460</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
-						<visible>!IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
-					</control>
-					<control type="image">
-						<width>305</width>
-						<height>460</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="305" height="460">
-					<control type="image">
-						<width>305</width>
-						<height>460</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
-						<visible>!IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
-					</control>
-					<control type="image">
-						<width>305</width>
-						<height>460</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
-					</control>
-				</focusedlayout>
-				<content target="$INFO[Container(7001).ListItem.Property(widgetTarget)]">$INFO[Container(7001).ListItem.Property(widgetPath)]</content>
-			</control>
+
+			<include>skinshortcuts-template-hub</include>
 
 			<control type="image">
 				<left>430</left>
@@ -89,18 +43,6 @@
 				<visible>!Container(7002).IsUpdating + !IntegerGreaterThan(Container(7002).NumItems,0)</visible>
 			</control>
 
-			<!-- Widget details -->
-			<control type="label">
-				<visible>Control.HasFocus(7002)</visible>
-				<top>360</top>
-				<left>765</left>
-				<width>1000</width>
-				<height>280</height>
-				<font>Font33</font>
-				<align>left</align>
-				<aligny>bottom</aligny>
-				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(7001).ListItem.Property(widgetName)][/LIGHT]</label>
-			</control>
 		</control>
 	</controls>
 
