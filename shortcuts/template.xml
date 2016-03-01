@@ -111,6 +111,18 @@
 									<aspectratio align="center">keep</aspectratio>
 									<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 									<bordersize>0,0,0,33</bordersize>
+									<visible>!IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
+								</control>
+								<control type="image">
+									<left>13</left>
+									<top>0</top>
+									<width>183</width>
+									<height>306</height>
+									<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+									<aspectratio align="center">keep</aspectratio>
+									<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+									<bordersize>0,0,0,33</bordersize>
+									<visible>IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
 								</control>
 
 								<control type="image">
@@ -178,6 +190,7 @@
 								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 								<bordersize>0,0,0,33</bordersize>
 								<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+								<visible>!IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
 							</control>
 							<control type="image">
 								<left>13</left>
@@ -189,6 +202,32 @@
 								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 								<bordersize>0,0,0,33</bordersize>
 								<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+								<visible>!IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
+							</control>
+
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+								<bordersize>0,0,0,33</bordersize>
+								<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+								<visible>IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
+							</control>
+							<control type="image">
+								<left>13</left>
+								<top>0</top>
+								<width>183</width>
+								<height>306</height>
+								<texture background="true">$INFO[ListItem.Icon]</texture>
+								<aspectratio align="center">keep</aspectratio>
+								<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+								<bordersize>0,0,0,33</bordersize>
+								<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+								<visible>IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
 							</control>
 
 							<control type="image">
@@ -271,6 +310,19 @@
 							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 							<bordersize>0,0,0,33</bordersize>
 							<fadetime>200</fadetime>
+							<visible>!IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.$SKINSHORTCUTS[art])</visible>
+						</control>
+						<control type="image">
+							<left>13</left>
+							<top>0</top>
+							<width>183</width>
+							<height>306</height>
+							<texture colordiffuse="88f1f1f1" background="true">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Icon]</texture>
+							<aspectratio align="center">keep</aspectratio>
+							<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
+							<bordersize>0,0,0,33</bordersize>
+							<fadetime>200</fadetime>
+							<visible>IsEmpty(Container(800$SKINSHORTCUTS[id]).ListItem.$SKINSHORTCUTS[art])</visible>
 						</control>
 
 						<control type="image">
@@ -432,7 +484,7 @@
 
 					<viewtype label="">list</viewtype>
 					<orientation>vertical</orientation>
-					<defaultcontrol always="true">0</defaultcontrol>
+					<defaultcontrol>0</defaultcontrol>
 					<scrolltime tween="sine" easing="out">200</scrolltime>
 					<!--skinshortcuts>visibility</skinshortcuts-->
 
@@ -611,6 +663,7 @@
 							<label>[B]$SKINSHORTCUTS[itemLabel][/B]</label>
 							<onclick>$SKINSHORTCUTS[itemAction]</onclick>
 							<icon>$SKINSHORTCUTS[itemIcon]</icon>
+							<property name="path">$SKINSHORTCUTS[itemAction]</property>
 						</item>
 						<include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</include>
 					</content>
