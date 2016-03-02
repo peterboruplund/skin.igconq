@@ -23,267 +23,180 @@
 				<visible>Skin.HasSetting(ShowCurve)</visible>
 			</control>
 
-			<!-- Start date -->
-			<control type="label">
+			<!-- Episode Info -->
+			<control type="group">
 				<left>120</left>
-				<top>170</top>
-				<width>800</width>
-				<height>33</height>
-				<aligny>top</aligny>
-				<font>Font33</font>
-				<label>$INFO[ListItem.StartDate]</label>
+				<top>190</top>
+
+				<!-- Episode image -->
+				<control type="group">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>452</width>
+						<height>286</height>
+						<fadetime>200</fadetime>
+						<texture>$VAR[PVRChannelIcon]</texture>
+						<aspectratio aligny="center">keep</aspectratio>
+					</control>
+				</control>
+
+				<!-- Season & Episode Info -->
+				<control type="label">
+					<left>0</left>
+					<top>314</top>
+					<width>500</width>
+					<height>45</height>
+					<font>Font42</font>
+					<label>$INFO[ListItem.TVShowTitle]</label>
+					<textcolor>$VAR[TextColor1]</textcolor>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>366</top>
+					<width>450</width>
+					<height>45</height>
+					<font>Font33</font>
+					<textcolor>$VAR[TextColor2]</textcolor>
+					<label>$INFO[ListItem.Title]</label>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>420</top>
+					<width>450</width>
+					<height>45</height>
+					<font>Font30</font>
+					<textcolor>$VAR[TextColor3]</textcolor>
+					<label>$INFO[ListItem.Season,$LOCALIZE[20373] , / ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]</label>
+				</control>
+				<!-- Episode Plot -->
+				<control type="textbox">
+					<left>0</left>
+					<top>474</top>
+					<width>450</width>
+					<height>246</height>
+					<label>$VAR[Plot]</label>
+					<textcolor>$VAR[TextColor1]</textcolor>
+					<shadowcolor>TextColor4</shadowcolor>
+					<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+				</control>
+
 			</control>
 
 			<!-- List -->
-			<control type="list" id="50">
-				<left>120</left>
-				<top>226</top>
-				<width>1020</width>
-				<height>648</height>
-				<onup>50</onup>
-				<ondown>50</ondown>
-				<onleft>3000</onleft>
-				<onright>70</onright>
-				<pagecontrol>70</pagecontrol>
-				<preloaditems>2</preloaditems>
-				<viewtype label="535">list</viewtype>				
+			<control type="fixedlist" id="50">
+				<left>750</left>
+				<centertop>50%</centertop>
+				<width>1050</width>
+				<height>720</height>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<onleft>60</onleft>
+				<onright condition="!Skin.HasSetting(KioskMode)">3001</onright>
+				<pagecontrol>60</pagecontrol>
+				<focusposition>3</focusposition>
+				<orientation>vertical</orientation>
+				<viewtype label="535">list</viewtype>
 				<scrolltime tween="sine" easing="out">240</scrolltime>
 
-				<itemlayout width="1020" height="108">
-
-					<!-- Channel image -->
-					<control type="image">
-						<left>9</left>
-						<top>9</top>
-						<width>90</width>
+				<itemlayout height="90" width="1050">
+					<control type="label">
+						<left>32</left>
+						<top>0</top>
+						<width>1018</width>
 						<height>90</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true" fallback="pvr/defaultchannel.png">$VAR[PVRChannelIcon]</texture>
-					</control>
-
-					<!-- Channel number -->
-					<control type="label">
-						<left>118</left>
-						<width>88</width>
-						<height>108</height>
+						<font>Font36</font>
+						<label>$INFO[ListItem.ChannelName]</label>
 						<textcolor>$VAR[TextColor2]</textcolor>
-						<label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
 					</control>
-
-					<!-- Channel name -->
 					<control type="label">
-						<left>218</left>
-						<top>12</top>
-						<width>802</width>
-						<height>36</height>
-						<textcolor>$VAR[TextColor2]</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-
-					<!-- Program name -->
-					<control type="label">
-						<left>218</left>
-						<top>54</top>
-						<width>802</width>
+						<left>32</left>
+						<top>70</top>
+						<width>1018</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>HomeNF</textcolor>
-						<label>$INFO[ListItem.Title]</label>
+						<textcolor>$VAR[TextColor2]</textcolor>
+						<label>[LIGHT]$INFO[ListItem.StartTime]:[/LIGHT] $INFO[ListItem.Title]</label>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(50)">Conditional</animation>
 					</control>
-
-					<!-- Recording image -->
+					<!-- Watched status -->
 					<control type="image">
-						<right>5</right>
-						<top>40</top>
-						<width>30</width>
-						<height>30</height>
-						<texture>pvr/Recording.png</texture>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-
-					<!-- Timer image -->
-					<control type="image">
-						<right>0</right>
-						<top>36</top>
-						<width>38</width>
-						<height>40</height>
-						<texture>pvr/Timer.png</texture>
-						<visible>[ListItem.HasTimer | ListItem.HasTimerSchedule] + !ListItem.IsRecording</visible>
-					</control>
-
-					<!-- Progress -->
-					<control type="progress">
-						<left>218</left>
-						<top>93</top>
-						<width>783</width>
-						<height>6</height>
+						<left>0</left>
+						<top>38</top>
+						<width>14</width>
+						<height>14</height>
+						<texture>$VAR[StatusOverlay]</texture>
 						<colordiffuse>OverlayColorNF</colordiffuse>
-						<texturebg border="2">osd/OSDProgressBack.png</texturebg>
-						<lefttexture>-</lefttexture>
-						<midtexture border="2">osd/OSDProgressBar.png</midtexture>
-						<righttexture>-</righttexture>
-						<info>ListItem.Progress</info>
-						<visible>ListItem.HasEpg</visible>
+						<animation effect="fade" start="50" end="50" condition="true">Conditional</animation>
+						<visible>Skin.HasSetting(WatchedFlags)</visible>
 					</control>
-
 				</itemlayout>
 
-				<focusedlayout width="1020" height="108">
-
-					<!-- Background -->
-					<control type="image">
-						<width>1020</width>
-						<height>108</height>
-						<texture border="2">pvr/ProgressBack.png</texture>
-					</control>
-
-					<!-- Channel image -->
-					<control type="image">
-						<left>9</left>
-						<top>9</top>
-						<width>90</width>
-						<height>90</height>
-						<aspectratio>keep</aspectratio>
-						<texture background="true" fallback="pvr/defaultchannel.png">$VAR[PVRChannelIcon]</texture>
-					</control>
-
-					<!-- Channel number -->
+				<focusedlayout height="180" width="1050">
 					<control type="label">
-						<left>116</left>
-						<width>88</width>
-						<height>108</height>
-						<label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+						<left>32</left>
+						<top>43</top>
+						<width>1018</width>
+						<height>48</height>
+						<font>Font48</font>
+						<label>$INFO[ListItem.ChannelName]</label>
+						<textcolor>$VAR[TextColor1]</textcolor>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(50)">Conditional</animation>
 					</control>
-
-					<!-- Channel name -->
 					<control type="label">
-						<left>218</left>
-						<top>12</top>
-						<width>802</width>
-						<height>36</height>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-
-					<!-- Program name -->
-					<control type="label">
-						<left>218</left>
-						<top>54</top>
-						<width>802</width>
+						<left>32</left>
+						<top>100</top>
+						<width>1018</width>
 						<height>27</height>
 						<font>Font27</font>
-						<textcolor>$VAR[TextColor2]</textcolor>
-						<label>$INFO[ListItem.Title]</label>
+						<label>[LIGHT]$INFO[ListItem.StartTime]:[/LIGHT] $INFO[ListItem.Title]</label>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(50)">Conditional</animation>
 					</control>
-
-					<!-- Recording image -->
+					<control type="label">
+						<left>32</left>
+						<top>127</top>
+						<width>1018</width>
+						<height>27</height>
+						<font>Font27</font>
+						<label>[LIGHT]$INFO[ListItem.NextStartTime]:[/LIGHT] $INFO[ListItem.NextTitle]</label>
+						<shadowcolor>ShadowColor</shadowcolor>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+					<!-- Watched status -->
 					<control type="image">
-						<right>5</right>
-						<top>40</top>
-						<width>30</width>
-						<height>30</height>
-						<texture>pvr/Recording.png</texture>
-						<visible>ListItem.IsRecording</visible>
-					</control>
-
-					<!-- Timer image -->
-					<control type="image">
-						<right>0</right>
-						<top>36</top>
-						<width>38</width>
-						<height>40</height>
-						<texture>pvr/Timer.png</texture>
-						<visible>[ListItem.HasTimer | ListItem.HasTimerSchedule] + !ListItem.IsRecording</visible>
-					</control>
-
-					<!-- Progress -->
-					<control type="progress">
-						<left>218</left>
-						<top>93</top>
-						<width>783</width>
-						<height>6</height>
+						<left>0</left>
+						<top>61</top>
+						<width>14</width>
+						<height>14</height>
+						<texture>$VAR[StatusOverlay]</texture>
 						<colordiffuse>OverlayColorFO</colordiffuse>
-						<texturebg border="2">osd/OSDProgressBack.png</texturebg>
-						<lefttexture>-</lefttexture>
-						<midtexture border="2">osd/OSDProgressBar.png</midtexture>
-						<righttexture>-</righttexture>
-						<info>ListItem.Progress</info>
-						<visible>ListItem.HasEpg</visible>
+						<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="true" condition="!Control.HasFocus(50)">Conditional</animation>
+						<visible>Skin.HasSetting(WatchedFlags)</visible>
 					</control>
-
 				</focusedlayout>
 
 			</control>
 
-			<!-- Scrollbar -->
-			<control type="scrollbar" id="70">
-				<left>1152</left>
-				<top>226</top>
+			<!-- Scrollbar (list) -->
+			<control type="scrollbar" id="60">
+				<left>690</left>
+				<centertop>50%</centertop>
 				<width>20</width>
-				<height>648</height>
-				<onleft>50</onleft>
+				<height>720</height>
+				<onleft>3000</onleft>
+				<onright>50</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 				<colordiffuse>OverlayColorNF</colordiffuse>
-				<texturesliderbackground border="6,1,8,1">common/ScrollBackground.png</texturesliderbackground>
-				<texturesliderbar border="8,1,6,1">common/ScrollbarGripNF.png</texturesliderbar>
-				<texturesliderbarfocus border="8,1,6,1" colordiffuse="DialogOverlayColorFO">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<texturesliderbackground border="11,1,1,1">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="11,1,1,1">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="11,1,1,1" colordiffuse="DialogOverlayColorFO">common/ScrollbarGripFO.png</texturesliderbarfocus>
 				<textureslidernib>-</textureslidernib>
 				<textureslidernibfocus>-</textureslidernibfocus>
 				<visible>!Skin.HasSetting(Scrollbars)</visible>
-			</control>
-
-			<!-- Channel preview & info -->
-			<control type="group">
-				<right>120</right>
-				<top>246</top>
-				<width>512</width>
-
-				<!-- Program name -->
-				<control type="label">
-					<width>512</width>
-					<label>$INFO[Container(50).ListItem.Title]</label>
-				</control>
-
-				<control type="group">
-					<top>76</top>
-					<visible>Container(50).ListItem.HasEpg</visible>
-
-					<!-- Plot -->
-					<control type="textbox">
-						<width>512</width>
-						<height>460</height>
-						<align>justify</align>
-						<font>Font25</font>
-						<textcolor>$VAR[TextColor1]</textcolor>
-						<shadowcolor>ShadowColor</shadowcolor>
-						<info>Container(50).ListItem.Plot</info>
-					</control>
-
-					<!-- Next program -->
-					<control type="label">
-						<right>0</right>
-						<top>504</top>
-						<width>512</width>
-						<height>30</height>
-						<aspectratio>keep</aspectratio>
-						<font>Font30</font>
-						<align>right</align>
-						<label>$INFO[Container(50).ListItem.NextTitle,$LOCALIZE[19031]: ,][CR]$INFO[Container(50).ListItem.NextStartTime, (,)]</label>
-					</control>
-					<!-- Next program time -->
-					<control type="label">
-						<right>0</right>
-						<top>540</top>
-						<width>512</width>
-						<height>30</height>
-						<aspectratio>keep</aspectratio>
-						<font>Font30</font>
-						<align>right</align>
-						<label>$INFO[Container(50).ListItem.NextStartTime]</label>
-					</control>
-
-				</control>
-
 			</control>
 
 			<!-- Channel count -->

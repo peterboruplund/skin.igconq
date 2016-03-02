@@ -12,6 +12,10 @@
 				<width>410</width>
 				<height>480</height>
 				<onright>7002</onright>
+				<onup>noop</onup>
+				<ondown>Close</ondown>
+				<onclick>Close</onclick>
+				<onclick>$INFO[ListItem.Property(path)]</onclick>
 				<itemlayout width="410" height="48">
 					<control type="image">
 						<width>410</width>
@@ -58,12 +62,13 @@
 					<item>
 						<label>[B]$SKINSHORTCUTS[itemLabel][/B]</label>
 						<onclick>$SKINSHORTCUTS[itemAction]</onclick>
+						<property name="path">$SKINSHORTCUTS[itemAction]</property>
 					</item>
 					<include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</include>
 				</content>
 			</control>
 
-			<control type="list" id="800$SKINSHORTCUTS[id]">
+			<control type="list" id="600$SKINSHORTCUTS[id]">
 				<visible>StringCompare(Window(Home).Property(currentMenu),$SKINSHORTCUTS[submenuVisibility])</visible>
 				<left>-150000</left>
 				<top>-150000</top>
@@ -88,8 +93,9 @@
 				<height>460</height>
 				<onleft>7000</onleft>
 				<onback>7000</onback>
-				<onup>Control.Message(800$SKINSHORTCUTS[id],movedown)</onup>
-				<ondown>Control.Message(800$SKINSHORTCUTS[id],moveup)</ondown>
+				<onright condition="!IntegerGreaterThan(Container(7002).NumItems,0)">Control.Message(600$SKINSHORTCUTS[id],moveup)</onright>
+				<onup>Control.Message(600$SKINSHORTCUTS[id],movedown)</onup>
+				<ondown>Control.Message(600$SKINSHORTCUTS[id],moveup)</ondown>
 				<orientation>horizontal</orientation>
 				<itemlayout width="305" height="460">
 					<control type="image">
@@ -123,7 +129,7 @@
 						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(7002).IsUpdating</visible>
 					</control>
 				</focusedlayout>
-				<content target="$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetTarget)]">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetPath)]</content>
+				<content target="$INFO[Container(600$SKINSHORTCUTS[id]).ListItem.Property(widgetTarget)]">$INFO[Container(600$SKINSHORTCUTS[id]).ListItem.Property(widgetPath)]</content>
 			</control>
 
 			<control type="label">
@@ -135,7 +141,7 @@
 				<font>Font33</font>
 				<align>left</align>
 				<aligny>bottom</aligny>
-				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Property(widgetName)][/LIGHT]</label>
+				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(600$SKINSHORTCUTS[id]).ListItem.Property(widgetName)][/LIGHT]</label>
 			</control>
 		</controls>
 	</other>
@@ -213,17 +219,20 @@
 
 					<focusposition>3</focusposition>
 					
-					<onup>noop</onup>
-					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onback>9000</onback>
+					<onfocus>9000</onfocus>
 
 					<viewtype label="">list</viewtype>
 					<orientation>vertical</orientation>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime tween="sine" easing="out">200</scrolltime>
-					<!--skinshortcuts>visibility</skinshortcuts-->
 
 					<animation effect="fade" start="100" end="0" time="100" delay="200" condition="!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="100" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+					<animation effect="fade" start="100" end="100" time="0" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
 
 					<autoscroll time="7000" delay="7000" repeat="7000">[!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [$SKINSHORTCUTS[autoscroll] | $SKINSHORTCUTS[autoscroll-inactive]]] | [System.IdleTime(180) + $SKINSHORTCUTS[autoscroll-inactive]]</autoscroll>
 
@@ -438,7 +447,7 @@
 					<top>918</top>
 					<control type="group">
 						<visible>!$SKINSHORTCUTS[isWeather]</visible>
-						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | Window.IsVisible(1111)</visible>
 
 						<control type="image">
 							<left>13</left>
@@ -487,7 +496,7 @@
 
 					<control type="group">
 						<visible>$SKINSHORTCUTS[isWeather]</visible>
-						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | Window.IsVisible(1111)</visible>
 						<control type="label">
 							<top>2</top>
 							<width>203</width>
@@ -618,9 +627,13 @@
 					<height>1530</height>
 
 					<focusposition>3</focusposition>
-					
-					<onup>noop</onup>
-					<ondown>noop</ondown>
+
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onback>9000</onback>
+					<onfocus>9000</onfocus>
 
 					<viewtype label="">list</viewtype>
 					<orientation>vertical</orientation>
@@ -629,7 +642,7 @@
 					<!--skinshortcuts>visibility</skinshortcuts-->
 
 					<animation effect="fade" start="100" end="0" time="100" delay="200" condition="!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
-					<animation effect="fade" start="0" end="100" time="100" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+					<animation effect="fade" start="100" end="100" time="0" condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
 
 					<autoscroll time="7000" delay="7000" repeat="7000">[!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [$SKINSHORTCUTS[autoscroll] | $SKINSHORTCUTS[autoscroll-inactive]]] | [System.IdleTime(180) + $SKINSHORTCUTS[autoscroll-inactive]]</autoscroll>
 
@@ -812,7 +825,7 @@
 				<control type="group">
 					<top>918</top>
 					<control type="group">
-						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+						<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) | Window.IsVisible(1111)</visible>
 
 						<control type="image">
 							<left>13</left>
@@ -883,7 +896,7 @@
 		<property name="id" tag="mainmenuid" />
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
 		<controls>
-			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentMenu,$INFO[Container(9000).ListItem.Property(submenuVisibility)],Home)</onup>
+			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentMenu,$SKINSHORTCUTS[submenuVisibility],Home)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1) + !IsEmpty(Container(9000).ListItem.Property(widget))">ActivateWindow(1111)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">Control.Message(800$SKINSHORTCUTS[id],movedown)</onup>
 			<ondown condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,Container(800$SKINSHORTCUTS[id]).NumItems)">Control.Message(800$SKINSHORTCUTS[id],moveup)</ondown>

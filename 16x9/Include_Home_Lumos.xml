@@ -16,7 +16,6 @@
 			<include>skinshortcuts-template-oncontrol</include>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
-			<oninfo condition="!IsEmpty(Container(9000).ListItem.Property(widget))">Control.SetFocus(9001,0)</oninfo>
 			<orientation>horizontal</orientation>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
 

@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="1111">
+<window id="1111" type="dialog">
 	<!-- Quick Nav -->
 	<defaultcontrol always="true">7000</defaultcontrol>
 	<controls>
 
 		<!-- Background image -->
-		<include>WindowBackgroundImage</include>
+		<!--include>WindowBackgroundImage</include-->
 
 		<include name="Time">
 			<param name="heading">Hub</param>
 		</include>
 
 		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,-200" end="0,0" time="200" />
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,-200" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
 			<left>592</left>
 			<top>310</top>
 			<control type="image">

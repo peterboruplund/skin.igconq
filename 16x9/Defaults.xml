@@ -175,4 +175,8 @@
 		<pulseonselect>no</pulseonselect>
 	</default>
 
+	<default type="fixedlist">
+		<preloaditems>2</preloaditems>
+	</default>
+
 </includes>
