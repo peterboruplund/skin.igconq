@@ -190,13 +190,23 @@
 				<visible>StringCompare(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
-			<!-- Change autoscroll option -->
-			<control type="button" id="600">
+			<!-- Change size option -->
+			<control type="button" id="601">
 				<width>1050</width>
 				<height>66</height>
-				<label>Autoscroll option</label>
-				<label2>$INFO[Container(211).ListItem.Property(autoscroll)]</label2>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Window.Property(widget))</visible>
+				<label>Size</label>
+				<label2>$VAR[skinshortcuts-size]</label2>
+				<enable>!StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Change autoscroll option -->
+			<control type="radiobutton" id="600">
+				<width>1050</width>
+				<height>66</height>
+				<label>Autoscroll</label>
+				<selected>!IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Container(211).ListItem.Property(widget))</visible>
 			</control>
 
 			<!-- Edit Submenu -->

@@ -4,8 +4,18 @@
 	<defaultcontrol always="true">7000</defaultcontrol>
 	<controls>
 
-		<!-- Background image -->
-		<!--include>WindowBackgroundImage</include-->
+		<!-- Fanart -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<include>VisibleFadeAnimation</include>
+			<include>WindowFadeAnimation</include>
+			<fadetime>400</fadetime>
+			<colordiffuse>FanartDiffuse</colordiffuse>
+			<!--texture background="true" diffuse="diffuse.png" colordiffuse="$VAR[FanartColor]">$INFO[ListItem.Art(fanart)]</texture-->
+			<texture background="true">$INFO[Container(50).ListItem.Art(fanart)]</texture>
+			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+		</control>
 
 		<include name="Time">
 			<param name="heading">Hub</param>
@@ -39,7 +49,7 @@
 				<height>460</height>
 				<texture>busy.gif</texture>
 				<aspectratio>center</aspectratio>
-				<visible>Container(7002).IsUpdating</visible>
+				<visible>Container(50).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<left>430</left>
@@ -48,7 +58,7 @@
 				<height>460</height>
 				<texture>DefaultIconError.png</texture>
 				<aspectratio>center</aspectratio>
-				<visible>!Container(7002).IsUpdating + !IntegerGreaterThan(Container(7002).NumItems,0)</visible>
+				<visible>!Container(50).IsUpdating + !IntegerGreaterThan(Container(50).NumItems,0)</visible>
 			</control>
 
 		</control>

@@ -503,4 +503,9 @@
 		<value>$INFO[Container(7002).ListItem.Label]</value>
 	</variable>
 
+	<variable name="skinshortcuts-size">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(poster))">Poster</value>
+		<value>Square</value>
+	</variable>
+
 </includes>

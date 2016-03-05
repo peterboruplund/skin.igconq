@@ -27,13 +27,14 @@
 
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<!--include>VisibleFadeAnimation</include-->
+			<include>VisibleFadeAnimation</include>
 			<fadetime>400</fadetime>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			<!--texture background="true" diffuse="diffuse.png" colordiffuse="$VAR[FanartColor]">$VAR[widgetBackground]</texture-->
 			<texture background="true">$VAR[widgetBackground]</texture>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<visible>!Window.IsActive(1111)</visible>
 		</control>
 
 		<!-- Time -->
@@ -41,20 +42,10 @@
 			<visible>!Window.IsVisible(1111)</visible>
 			<include>Time</include>
 		</control>
-
-		<!-- Main controls -->
-		<control type="group">
-			<include>WindowFadeAnimation</include>
-
-			<animation type="Conditional" condition="Window.IsActive(1111)">
-				<effect type="slide" start="0,0" end="0,200" time="200" />
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-
-			<!-- Home layout -->
-			<include>HomeLumos</include>
-			<!--include>HomeDefault</include-->
-		</control>
+		
+		<!-- Home layout -->
+		<include>HomeLumos</include>
+		<!--include>HomeDefault</include-->
 
 	</controls>
 

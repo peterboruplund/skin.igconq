@@ -83,7 +83,7 @@
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture colordiffuse="$VAR[BackgroundColor]">diffuse.png</texture>
+			<texture>$VAR[BackgroundImage]</texture>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 	</include>

@@ -70,9 +70,10 @@
 	</override-->
 
 	<!-- Autoscroll -->
-	<propertySettings property="autoscroll" buttonID="600" templateonly="True" title="Autoscroll" />
-	<property property="autoscroll" label="When not focused">on</property>
-	<property property="autoscroll" label="When not focused and inactive">always</property>
+	<propertySettings toggle="autoscroll" buttonID="600" templateonly="True" title="Autoscroll" />
+
+	<!-- Size -->
+	<propertySettings toggle="poster" buttonID="601" templateonly="True" title="Autoscroll" />
 
 	<override action="globaloverride" group="igconq-quicknav">
 		<action>Action(Close)</action>
