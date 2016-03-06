@@ -193,20 +193,49 @@
 			<!-- Change size option -->
 			<control type="button" id="601">
 				<width>1050</width>
-				<height>66</height>
-				<label>Size</label>
-				<label2>$VAR[skinshortcuts-size]</label2>
-				<enable>!StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<height>40</height>
+				<label>  -  Size</label>
+				<label2>$INFO[Container(211).ListItem.Property(layout)]</label2>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Change artwork -->
+			<control type="button" id="602">
+				<width>1050</width>
+				<height>40</height>
+				<label>  -  Artwork</label>
+				<label2>$INFO[Container(211).ListItem.Property(widgetArt)]</label2>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Shadow -->
+			<control type="radiobutton" id="603">
+				<width>1050</width>
+				<height>40</height>
+				<label>  -  Shadow</label>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<selected>IsEmpty(Container(211).ListItem.Property(shadow))</selected>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Change autoscroll option -->
 			<control type="radiobutton" id="600">
 				<width>1050</width>
-				<height>66</height>
-				<label>Autoscroll</label>
+				<height>40</height>
+				<label>  -  Autoscroll</label>
 				<selected>!IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Container(211).ListItem.Property(widget))</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Edit hub widgets -->
+			<control type="button" id="406">
+				<width>1050</width>
+				<height>40</height>
+				<label>  -  Hub widgets</label>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget))</enable>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Edit Submenu -->
@@ -215,14 +244,6 @@
 				<height>66</height>
 				<label>Edit submenu</label>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-			</control>
-
-			<!-- Edit hub widgets -->
-			<control type="button" id="406">
-				<width>1050</width>
-				<height>66</height>
-				<label>Edit hub widgets</label>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + !IsEmpty(Container(211).ListItem.Property(widget))</visible>
 			</control>
 
 			<!-- Remove -->
@@ -282,6 +303,17 @@
 			<width>10</width>
 			<label>Hidden button</label>
 		</control>
+
+		<control type="wraplist" id="8000">
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>100</width>
+			<height>100</height>
+			<itemlayout height="100" width="100" />
+			<focusedlayout height="100" width="100" />
+			<content>$INFO[Container(211).ListItem.Property(widgetPath)]</content>
+		</control>
+
 
 	</controls>
 

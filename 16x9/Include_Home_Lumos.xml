@@ -69,6 +69,7 @@
 
 			<!-- Widget details -->
 			<control type="label">
+				<animation effect="slide" end="133,0" time="0" condition="StringCompare(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
 				<top>900</top>
 				<left>520</left>
 				<width>1000</width>

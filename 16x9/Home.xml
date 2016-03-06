@@ -40,7 +40,9 @@
 		<!-- Time -->
 		<control type="group">
 			<visible>!Window.IsVisible(1111)</visible>
-			<include>Time</include>
+			<include name="Time">
+				<param name="heading"></param>
+			</include>
 		</control>
 		
 		<!-- Home layout -->
