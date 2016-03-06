@@ -22,14 +22,37 @@
 		</include>
 
 		<control type="group">
-			<animation type="WindowOpen">
+			<!-- Lumos animation -->
+			<animation type="WindowOpen" condition="IsEmpty(Skin.String(menuStyle))">
 				<effect type="slide" start="0,-200" end="0,0" time="200" />
 				<effect type="fade" start="0" end="100" time="200" />
 			</animation>
-			<animation type="WindowClose">
+			<animation type="WindowClose" condition="IsEmpty(Skin.String(menuStyle))">
 				<effect type="slide" start="0,0" end="0,-200" time="200" />
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
+
+			<!-- Horizontal animation -->
+			<animation type="WindowOpen" condition="StringCompare(Skin.String(menuStyle),horizontal)">
+				<effect type="slide" start="0,200" end="0,0" time="200" />
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			<animation type="WindowClose" condition="StringCompare(Skin.String(menuStyle),horizontal)">
+				<effect type="slide" start="0,0" end="0,200" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<!-- Vertical animation -->
+			<animation type="WindowOpen" condition="StringCompare(Skin.String(menuStyle),vertical)">
+				<effect type="slide" start="-200,0" end="0,0" time="200" />
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			<animation type="WindowClose" condition="StringCompare(Skin.String(menuStyle),vertical)">
+				<effect type="slide" start="0,0" end="-200,0" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+
 			<left>592</left>
 			<top>310</top>
 			<control type="image">

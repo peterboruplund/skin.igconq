@@ -3,12 +3,6 @@
 
 	<include name="HomeLumos">
 		<control type="group">
-			<include>WindowFadeAnimation</include>
-			<animation type="Conditional" condition="Window.IsActive(1111)">
-				<effect type="slide" start="0,0" end="0,200" time="200" />
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-
 			<!-- Widgets -->
 			<include>skinshortcuts-template-lumos</include>
 

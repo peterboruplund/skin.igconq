@@ -156,7 +156,7 @@
 			<!-- Change shortcut -->
 			<control type="button" id="401">
 				<width>1050</width>
-				<height>66</height>
+				<height>60</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
 				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
@@ -164,8 +164,8 @@
 			<!-- Change label -->
 			<control type="button" id="305">
 				<width>1050</width>
-				<height>66</height>
-				<label>$ADDON[script.skinshortcuts 32025]</label>
+				<height>40</height>
+				<label>  -  $ADDON[script.skinshortcuts 32025]</label>
 				<label2>$INFO[Container(211).ListItem.Label]</label2>
 				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
@@ -173,15 +173,24 @@
 			<!-- Change action -->
 			<control type="button" id="307">
 				<width>1050</width>
-				<height>66</height>
-				<label>$ADDON[script.skinshortcuts 32027]</label>
+				<height>40</height>
+				<label>  -  $ADDON[script.skinshortcuts 32027]</label>
 				<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
 				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
 			</control>
 
+			<!-- Change Thumbnail -->
+			<control type="button" id="306">
+				<width>1050</width>
+				<height>40</height>
+				<label>  -  Choose thumbnail</label>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
+			</control>
+
 			<!-- Edit widget -->
 			<control type="button" id="312">
-				<width>1050</width>				
+				<width>1050</width>		
+				<height>60</height>		
 				<label>$ADDON[script.skinshortcuts 32044]</label>
 				<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
 				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SetProperty(customProperty,path)</onclick>
@@ -195,9 +204,9 @@
 				<width>1050</width>
 				<height>40</height>
 				<label>  -  Size</label>
-				<label2>$INFO[Container(211).ListItem.Property(layout)]</label2>
+				<label2>$VAR[skinshortcuts-size]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
 			</control>
 
 			<!-- Change artwork -->
@@ -205,9 +214,8 @@
 				<width>1050</width>
 				<height>40</height>
 				<label>  -  Artwork</label>
-				<label2>$INFO[Container(211).ListItem.Property(widgetArt)]</label2>
+				<label2>$VAR[skinshortcuts-art]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Shadow -->
@@ -226,22 +234,22 @@
 				<height>40</height>
 				<label>  -  Autoscroll</label>
 				<selected>!IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
 			</control>
 
 			<!-- Edit hub widgets -->
 			<control type="button" id="406">
 				<width>1050</width>
-				<height>40</height>
-				<label>  -  Hub widgets</label>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget))</enable>
+				<height>60</height>
+				<label>Choose hub widgets</label>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) | !IsEmpty(Skin.String(menuStyle))</enable>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Edit Submenu -->
 			<control type="button" id="405">
 				<width>1050</width>
-				<height>66</height>
+				<height>60</height>
 				<label>Edit submenu</label>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
@@ -249,14 +257,14 @@
 			<!-- Remove -->
 			<control type="button" id="302">
 				<width>1050</width>
-				<height>66</height>
+				<height>60</height>
 				<label>-</label>
 			</control>
 
 			<!-- Add item -->
 			<control type="button" id="301">
 				<width>1050</width>
-				<height>66</height>
+				<height>60</height>
 				<label>$ADDON[script.skinshortcuts 32000]</label>
 			</control>
 

@@ -2,7 +2,8 @@
 <window>
 	<!-- skinsettings -->
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onunload>
+	<onunload condition="StringCompare(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1&amp;minitems=20)</onunload>
+	<onunload condition="!StringCompare(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onunload>
 
 	<controls>
 
@@ -55,14 +56,6 @@
 					<textcolor>$VAR[SkinSettingButton11]</textcolor>
 				</control>
 
-				<!-- Colors -->
-				<control type="button" id="14">
-					<width>600</width>
-					<height>66</height>
-					<label>Colors</label>
-					<textcolor>$VAR[SkinSettingButton14]</textcolor>
-				</control>
-
 				<!-- Weather -->
 				<control type="button" id="13">
 					<width>600</width>
@@ -105,26 +98,8 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
 				</control>
-				<control type="button" id="1214">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Customize quick-nav</label>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=igconq-quicknav)</onclick>
-					<visible>ControlGroup(9).HasFocus(10) + [StringCompare(Skin.String(mypassword),Skin.String(passcode)) | IsEmpty(Skin.String(passcode))]</visible>
-				</control>
-				<!-- Small main menu -->
-				<control type="radiobutton" id="1215">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Classic main menu (3 items)</label>
-					<onclick>Skin.ToggleSetting(SmallMainMenu)</onclick>
-					<selected>Skin.HasSetting(SmallMainMenu)</selected>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
 				<!-- Reset all -->
-				<control type="button" id="1216">
+				<control type="button" id="1214">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -132,6 +107,33 @@
 					<label>$ADDON[script.skinshortcuts 32037]</label>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
+
+				<!-- Main menu style -->
+				<control type="button" id="1215">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick condition="IsEmpty(Skin.String(menuStyle))">Skin.SetString(menuStyle,vertical)</onclick>
+					<onclick condition="StringCompare(Skin.String(menuStyle),vertical)">Skin.SetString(menuStyle,horizontal)</onclick>
+					<onclick condition="StringCompare(Skin.String(menuStyle),horizontal)">Skin.Reset(menuStyle)</onclick>
+					<onclick>SetProperty(skinshortcuts-reloadmainmenu,True,Home)</onclick>
+					<label>Main menu style</label>
+					<label2>$VAR[menuStyle]</label2>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
+
+				<!-- Small main menu -->
+				<control type="radiobutton" id="1216">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Classic main menu (3 items)</label>
+					<onclick>Skin.ToggleSetting(SmallMainMenu)</onclick>
+					<selected>Skin.HasSetting(SmallMainMenu)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+					<visible>StringCompare(Skin.String(menuStyle),vertical)</visible>
+				</control>
+
 				<!-- Hide submenu headings -->
 				<control type="radiobutton" id="1217">
 					<width>1050</width>
@@ -141,33 +143,7 @@
 					<onclick>Skin.ToggleSetting(HideSubmenuHeading)</onclick>
 					<selected>Skin.HasSetting(HideSubmenuHeading)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
-				<!-- Set passcode -->
-				<control type="button" id="1218">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Change menu passcode</label>
-					<onclick>Skin.SetNumeric(mypassword)</onclick>
-					<textcolor>LockedNF</textcolor>
-					<focusedcolor>Locked</focusedcolor>
-					<visible>ControlGroup(9).HasFocus(10) + !IsEmpty(Skin.String(passcode)) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</visible>
-				</control>
-				<control type="button" id="1219">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Change menu passcode</label>
-					<onclick>Skin.SetNumeric(passcode)</onclick>
-					<visible>ControlGroup(9).HasFocus(10) + StringCompare(Skin.String(mypassword),Skin.String(passcode)) + !IsEmpty(Skin.String(passcode))</visible>
-				</control>
-				<control type="button" id="1220">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Set menu passcode</label>
-					<onclick>Skin.SetNumeric(passcode)</onclick>
-					<visible>ControlGroup(9).HasFocus(10) + IsEmpty(Skin.String(passcode))</visible>
+					<visible>!IsEmpty(Skin.String(menuStyle))</visible>
 				</control>
 
 
@@ -223,77 +199,15 @@
 					<selected>Skin.HasSetting(FadeArtistFanart)</selected>
 					<visible>ControlGroup(9).HasFocus(11) + Skin.HasSetting(EnableArtistFanart)</visible>
 				</control>
-
-				<!-- Colors -->
-				<!-- Text color -->
-				<control type="button" id="1501">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Text color</label>
-					<label2>$VAR[DialogColor2]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.text)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
-				<!-- Highlight color -->
-				<control type="button" id="1502">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Highlight color</label>
-					<label2>$VAR[DialogColor1]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.highlight)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
-				<!-- Selected color -->
-				<control type="button" id="1503">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Selected color</label>
-					<label2>$VAR[SelectedColor]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.selected)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
-				<!-- Disabled color -->
-				<control type="button" id="1504">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Disabled color</label>
-					<label2>$VAR[DisabledColor]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.disabled)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
-				<!-- Background color -->
-				<control type="button" id="1505">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Background color</label>
-					<label2>$VAR[BackgroundColor]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.background)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
-				<!-- Fanart color -->
-				<control type="button" id="1506">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>Fanart color</label>
-					<label2>$VAR[FanartColor]</label2>
-					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.fanart)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
-				</control>
 				<!-- Overlay color -->
-				<control type="button" id="1507">
+				<control type="button" id="1007">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Overlay color</label>
 					<label2>$VAR[OverlayColor]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.overlay)</onclick>
-					<visible>ControlGroup(9).HasFocus(14)</visible>
+					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 
 				<!-- Weather -->

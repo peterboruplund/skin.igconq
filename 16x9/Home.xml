@@ -3,7 +3,8 @@
 	<!-- home -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onload>
+	<onload condition="StringCompare(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1&amp;minitems=20)</onload>
+	<onload condition="!StringCompare(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onload>
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
@@ -46,8 +47,29 @@
 		</control>
 		
 		<!-- Home layout -->
-		<include>HomeLumos</include>
-		<!--include>HomeDefault</include-->
+		<control type="group">
+			<include>WindowFadeAnimation</include>
+			<!-- Lumos/Horizontal -->
+			<animation type="Conditional" condition="Window.IsActive(1111) + IsEmpty(Skin.String(menuStyle))">
+				<effect type="slide" start="0,0" end="0,200" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<include condition="IsEmpty(Skin.String(menuStyle))">HomeLumos</include>
+
+			<animation type="Conditional" condition="Window.IsActive(1111) + StringCompare(Skin.String(menuStyle),horizontal)">
+				<effect type="slide" start="0,0" end="0,-200" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<include condition="StringCompare(Skin.String(menuStyle),horizontal)">HomeHorizontal</include>
+
+			<!-- Vertical -->
+			<animation type="Conditional" condition="Window.IsActive(1111) + StringCompare(Skin.String(menuStyle),vertical)">
+				<effect type="slide" start="0,0" end="200,0" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<include condition="StringCompare(Skin.String(menuStyle),vertical)">HomeDefault</include>
+			
+		</control>
 
 	</controls>
 

@@ -2,36 +2,43 @@
 <includes>
 	<!-- Colors -->
 	<variable name="DialogColor1">
+		<value>DialogColor1</value>
 		<value condition="!IsEmpty(Skin.String(color.highlight)) + !StringCompare(Skin.String(color.highlight),None)">$INFO[Skin.String(color.highlight)]</value>
 		<value>ffffffff</value>
 	</variable>
 
 	<variable name="DialogColor2">
+		<value>DialogColor2</value>
 		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
 		<value>66ffffff</value>
 	</variable>
 
 	<variable name="SelectedColor">
+		<value>SelectedColor</value>
 		<value condition="!IsEmpty(Skin.String(color.selected)) + !StringCompare(Skin.String(color.selected),None)">$INFO[Skin.String(color.selected)]</value>
 		<value>ffeb9e17</value>
 	</variable>
 
 	<variable name="DisabledColor">
+		<value>DisabledColor</value>
 		<value condition="!IsEmpty(Skin.String(color.disabled)) + !StringCompare(Skin.String(color.disabled),None)">$INFO[Skin.String(color.disabled)]</value>
 		<value>ffa10000</value>
 	</variable>
 
 	<variable name="TextColor1">
+		<value>TextColor1</value>
 		<value condition="!IsEmpty(Skin.String(color.highlight)) + !StringCompare(Skin.String(color.highlight),None)">$INFO[Skin.String(color.highlight)]</value>
 		<value>TextColor1</value>
 	</variable>
 
 	<variable name="TextColor2">
+		<value>TextColor2</value>
 		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
 		<value>TextColor2</value>
 	</variable>
 
 	<variable name="TextColor3">
+		<value>TextColor3</value>
 		<value condition="!IsEmpty(Skin.String(color.text)) + !StringCompare(Skin.String(color.text),None)">$INFO[Skin.String(color.text)]</value>
 		<value>TextColor3</value>
 	</variable>
@@ -496,6 +503,12 @@
 		<value>$VAR[TextColor1]</value>
 	</variable>
 
+	<variable name="menuStyle">
+		<value condition="IsEmpty(Skin.String(menuStyle))">Cross-bar</value>
+		<value condition="StringCompare(Skin.String(menuStyle),vertical)">Vertical</value>
+		<value condition="StringCompare(Skin.String(menuStyle),horizontal)">Horizontal</value>
+	</variable>
+
 	<variable name="hubWidgetDetails">
 		<value condition="!IsEmpty(Container(7002).ListItem.Property(channelname)) + SubString(Container(7002).ListItem.Property(type),livechannel)">$INFO[Container(7002).ListItem.Label][CR]$INFO[Container(7002).ListItem.Property(Title)] ($INFO[Container(7002).ListItem.Property(StartTime)] - $INFO[Container(7002).ListItem.Property(EndTime)])[CR]$INFO[Container(7002).ListItem.Property(NextTitle)] ($INFO[Container(7002).ListItem.Property(NextStartTime)] - $INFO[Container(7002).ListItem.Property(NextEndTime)])</value>
 		<value condition="!IsEmpty(Container(7002).ListItem.Property(channelname))">$INFO[Container(7002).ListItem.Label][CR]$INFO[Container(7002).ListItem.Property(StartTime)]</value>
@@ -504,8 +517,31 @@
 	</variable>
 
 	<variable name="skinshortcuts-size">
-		<value condition="!IsEmpty(Container(211).ListItem.Property(poster))">Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(layout),tall)">Tall</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(layout),wide)">Wide</value>
 		<value>Square</value>
+	</variable>
+
+	<variable name="skinshortcuts-art">
+		<value condition="Container(8000).IsUpdating">Examining available artwork</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(poster))">Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.poster))">TV Show Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(season.poster))">Season Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(fanart))">Fanart</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(season.fanart))">Season Fanart</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(banner))">Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.banner))">TV Show Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(season.banner))">Season Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(clearlogo))">Clear Logo</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.clearlogo))">TV Show Clear Logo</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(clearart))">Clear Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.clearart))">TV Show Clear Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(characterart))">Character Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.characterart))">TV Show Character Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(landscape))">Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.landscape))">TV Show Landscape</value>
+
+		<value>Icon</value>
 	</variable>
 
 </includes>
