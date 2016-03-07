@@ -2,6 +2,7 @@
 <window id="1111" type="dialog">
 	<!-- Quick Nav -->
 	<defaultcontrol always="true">7000</defaultcontrol>
+	<include>skinshortcuts-template-hubWidgetReloadTrick</include>
 	<controls>
 
 		<!-- Fanart -->
@@ -53,10 +54,10 @@
 			</animation>
 
 
-			<left>592</left>
+			<left>265</left>
 			<top>310</top>
 			<control type="image">
-				<left>420</left>
+				<left>830</left>
 				<top>0</top>
 				<width>325</width>
 				<height>480</height>
@@ -64,24 +65,8 @@
 			</control>
 
 			<include>skinshortcuts-template-hub</include>
-
-			<control type="image">
-				<left>430</left>
-				<top>10</top>
-				<width>305</width>
-				<height>460</height>
-				<texture>busy.gif</texture>
-				<aspectratio>center</aspectratio>
-				<visible>Container(50).IsUpdating</visible>
-			</control>
-			<control type="image">
-				<left>430</left>
-				<top>10</top>
-				<width>305</width>
-				<height>460</height>
-				<texture>DefaultIconError.png</texture>
-				<aspectratio>center</aspectratio>
-				<visible>!Container(50).IsUpdating + !IntegerGreaterThan(Container(50).NumItems,0)</visible>
+			<control type="group" id="50">
+				<include>skinshortcuts-template-hubWidgets</include>
 			</control>
 
 		</control>

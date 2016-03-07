@@ -10,6 +10,8 @@
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
 	<onload>noop</onload>
 
+	<include>skinshortcuts-template-widgetReloadTrick</include>
+
 	<controls>
 
 		<!-- Hidden control to load weather conditions -->
@@ -70,6 +72,9 @@
 			<include condition="StringCompare(Skin.String(menuStyle),vertical)">HomeDefault</include>
 			
 		</control>
+
+		<!-- Test labels -->
+		<!--include>skinshortcuts-template-testLabels</include-->
 
 	</controls>
 
