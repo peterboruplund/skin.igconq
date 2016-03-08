@@ -194,7 +194,7 @@
 						<visible>IsEmpty(ListItem.Art(tvshow.poster)) + !Container(600$SKINSHORTCUTS[id]).IsUpdating</visible>
 					</control>
 				</focusedlayout>
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window(Home).Property(refresh600$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window(Home).Property(refresh600$SKINSHORTCUTS[id])]</content>
 			</control>
 
 			<control type="image">
@@ -397,7 +397,7 @@
 						</control>
 					</focusedlayout>
 
-					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 				</control>
 
 				<control type="group">
@@ -676,7 +676,7 @@
 						</control>
 					</focusedlayout>
 
-					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 				</control>
 
 				<control type="group">
@@ -978,7 +978,7 @@
 
 					</focusedlayout>
 
-					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 				</control>
 
 				<control type="group">
@@ -1276,7 +1276,7 @@
 
 					</focusedlayout>
 
-					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+					<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 				</control>
 
 				<control type="group">
@@ -1809,7 +1809,7 @@
 					</control>
 				</focusedlayout>
 
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 			</control>
 
 			<control type="grouplist">
@@ -2002,7 +2002,7 @@
 					</control>
 				</focusedlayout>
 
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 			</control>
 
 			<control type="grouplist">
@@ -2152,7 +2152,7 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 
 			</control>
 		</controls>
@@ -2300,7 +2300,7 @@
 					</control>
 				</focusedlayout>
 
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]?$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
 
 			</control>
 		</controls>
@@ -2398,10 +2398,10 @@
 		<controls>
 			<control type="label">
 				<left>300</left>
-				<top>$MATHS[100 + (50 * $SKINSHORTCUTS[id])]</top>
-				<width>500</width>
+				<top>$PYTHON[100 + (50 * int( id ) )]</top>
+				<width>5000</width>
 				<height>50</height>
-				<label>800$SKINSHORTCUTS[id] = $INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</label>
+				<label>$PYTHON['&amp;' if path in '?' else '?']igconq= - $SKINSHORTCUTS[path]</label>
 			</control>
 		</controls>
 	</other>
