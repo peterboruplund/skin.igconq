@@ -544,4 +544,26 @@
 		<value>Icon</value>
 	</variable>
 
+	<variable name="skinshortcuts-fallbackart">
+		<value condition="Container(8000).IsUpdating">Examining available artwork</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(poster))">Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.poster))">TV Show Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(season.poster))">Season Poster</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(fanart))">Fanart</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(season.fanart))">Season Fanart</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(banner))">Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.banner))">TV Show Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(season.banner))">Season Banner</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(clearlogo))">Clear Logo</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.clearlogo))">TV Show Clear Logo</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(clearart))">Clear Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.clearart))">TV Show Clear Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(characterart))">Character Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.characterart))">TV Show Character Art</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(landscape))">Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.landscape))">TV Show Landscape</value>
+
+		<value>Icon</value>
+	</variable>
+
 </includes>

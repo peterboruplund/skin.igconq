@@ -129,4 +129,97 @@
 		</item>
 	</include>
 
+	<include name="widget-image">
+		<param name="aligny">bottom</param>
+		<definition>
+			<control type="image">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="$PARAM[colordiffuse]" background="true" fallback="$PARAM[fallback]">$PARAM[art]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
+				<bordertexture border="1,1,1,36">$PARAM[shadow]</bordertexture>
+				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+
+	<include name="widget-content">
+		<definition>
+			<content target="$PARAM[target]">$PARAM[path]</content>
+		</definition>
+	</include>
+
+	<include name="widget-static">
+		<definition>
+			<content>
+				<item id="0">
+					<label>[B]$PARAM[itemLabel][/B]</label>
+					<onclick>$PARAM[itemAction]</onclick>
+					<icon>$PARAM[itemIcon]</icon>
+					<property name="path">$PARAM[itemAction]</property>
+				</item>
+				<include>$PARAM[include]</include>
+			</content>
+		</definition>
+	</include>
+
+	<include name="widget-movement">
+		<definition>
+			<animation effect="slide" end="-203,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-2).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-1).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap.Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(1).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(1).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(2).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(2).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(3).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(3).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(4).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(4).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(5).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(5).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(6).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(6).Property(id),$PARAM[id])">Conditional</animation>
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(7).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(7).Property(id),$PARAM[id])">Conditional</animation> 
+			<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(8).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(8).Property(id),$PARAM[id])">Conditional</animation> 
+
+			<!-- Slide it back right if there's a wide widget in the way -->
+			<animation effect="slide" end="-142,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-2).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(-2).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="-142,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-1).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(-1).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="-142,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap.Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap.Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="StringCompare(Container(9000).ListItemNoWrap.Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(1).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(1).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(2).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(2).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(3).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(3).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(4).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(4).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(5).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(5).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(6).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(6).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(7).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(7).Property(layout),wide)">Conditional</animation>
+			<animation effect="slide" end="142,0" time="100" condition="!IntegerGreaterThan(Container(9000).ListItemNoWrap(8).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(8).Property(layout),wide)">Conditional</animation>
+		</definition>
+	</include>
+
+	<include name="widget-movement-wide">
+		<animation effect="slide" end="-345,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-2).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap(-1).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IntegerGreaterThan(Container(9000).ListItemNoWrap.Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(1).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(1).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(2).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(2).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(3).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(3).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(4).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(4).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(5).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(5).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(6).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(6).Property(id),$PARAM[id])">Conditional</animation>
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(7).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(7).Property(id),$PARAM[id])">Conditional</animation> 
+		<animation effect="slide" end="-203,0" time="100" condition="IsEmpty(Container(9000).ListItemNoWrap(8).Property(id)) | IntegerGreaterThan(Container(9000).ListItemNoWrap(8).Property(id),$PARAM[id])">Conditional</animation>
+
+		<animation effect="slide" end="-142,0" time="100" condition="[StringCompare(Container(9000).ListItemNoWrap(-2).Property(id),$PARAM[id]) | IntegerGreaterThan(Container(9000).ListItemNoWrap(-2).Property(id),$PARAM[id])] + StringCompare(Container(9000).ListItemNoWrap(-2).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="-142,0" time="100" condition="[StringCompare(Container(9000).ListItemNoWrap(-1).Property(id),$PARAM[id]) | IntegerGreaterThan(Container(9000).ListItemNoWrap(-1).Property(id),$PARAM[id])] + StringCompare(Container(9000).ListItemNoWrap(-1).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap.Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap.Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap.Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(1).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(1).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(1).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(2).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(2).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(2).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(3).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(3).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(3).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(4).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(4).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(4).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(5).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(5).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(5).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(6).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(6).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(6).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(7).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(7).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(7).Property(layout),wide)">Conditional</animation>
+		<animation effect="slide" end="142,0" time="100" condition="!StringCompare(Container(9000).ListItemNoWrap(8).Property(id),$PARAM[id]) + !IntegerGreaterThan(Container(9000).ListItemNoWrap(8).Property(id),$PARAM[id]) + StringCompare(Container(9000).ListItemNoWrap(8).Property(layout),wide)">Conditional</animation>
+	</include>
+
 </includes>
