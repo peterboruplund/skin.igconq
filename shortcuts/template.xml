@@ -1134,13 +1134,14 @@
 		<condition tag="property" attribute="name|widgetPath" />
 		
 		<propertyGroup>mainmenuWidgets</propertyGroup>
+		<propertyGroup>lumosLayout</propertyGroup>
 
 		<controls>
 			<control type="list" id="800$SKINSHORTCUTS[id]">
-				<left>2605</left>
-				<top>608</top>
-				<width>1218</width>
-				<height>306</height>
+				<left>$SKINSHORTCUTS[containerLeft]</left>
+				<top>$SKINSHORTCUTS[containerTop]</top>
+				<width>$SKINSHORTCUTS[containerWidth]</width>
+				<height>$SKINSHORTCUTS[layoutHeight]</height>
 
 				<onleft>9000</onleft>
 				<onback>9000</onback>
@@ -1151,12 +1152,18 @@
 				<scrolltime tween="sine" easing="out">240</scrolltime>
 				<skinshortcuts>visibility</skinshortcuts>
 
-				<animation effect="slide" start="0,0" end="-1000,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-1203,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-1406,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-1609,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
+				<!-- Layout slide -->
+				<animation effect="slide" start="0,0" end="-1000,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-1203,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-1406,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-1609,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+
+				<!-- Wide layout slide -->
+				<animation effect="slide" start="0,0" end="-1325,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-1670,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
 
 				<animation type="visible">
 					<effect type="fade" start="0" end="100" time="200" delay="100" />
@@ -1167,114 +1174,148 @@
 					<effect type="slide" start="0,0" end="600,0" time="200" />
 				</animation>
 
-				<itemlayout width="203" height="306">
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-					</control>
-					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
-					</control>
+				<itemlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
+					<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+						<description>Primary art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback"></param>
+						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible"></param>
+					</include>
+					<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+						<description>Fallback art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback"></param>
+						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+					</include>
+					<include name="widget-image">
+						<description>Catch-all art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback">DefaultShortcut.png</param>
+						<param name="art">$INFO[ListItem.Icon]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+					</include>
 
-					<control type="group">
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
-							<width>35</width>
-							<height>49</height>
-							<texture>views/OverlayWatchedWide.png</texture>
-							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
-						</control>
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
-							<width>35</width>
-							<height>49</height>
-							<texture>views/OverlayResumableWide.png</texture>
-							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
-						</control>
+					<control type="image">
+						<left>$PYTHON[int(imageWidth) - 45]</left>
+						<top>$PYTHON[int(imageHeight) - 50]</top>
+						<width>35</width>
+						<height>49</height>
+						<texture>views/OverlayWatchedWide.png</texture>
+						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 					</control>
-
+					<control type="image">
+						<left>$PYTHON[int(imageWidth) - 45]</left>
+						<top>$PYTHON[int(imageHeight) - 50]</top>
+						<width>35</width>
+						<height>49</height>
+						<texture>views/OverlayResumableWide.png</texture>
+						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+					</control>
 				</itemlayout>
 
-				<focusedlayout width="203" height="306">
-					<control type="group">
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
+				<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
+						<control type="group">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<description>Primary art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible"></param>
+							</include>
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<description>Fallback art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+							</include>
+							<include name="widget-image">
+								<description>Catch-all art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback">DefaultShortcut.png</param>
+								<param name="art">$INFO[ListItem.Icon]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+							</include>
+							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
+						</control>
+						<control type="group">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<description>Primary art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible"></param>
+							</include>
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<description>Fallback art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+							</include>
+							<include name="widget-image">
+								<description>Catch-all art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback">DefaultShortcut.png</param>
+								<param name="art">$INFO[ListItem.Icon]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+							</include>
 							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
 						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
-						</control>
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id]) + IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
-						</control>
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>Control.HasFocus(800$SKINSHORTCUTS[id]) + IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
-						</control>
-
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
+							<left>$PYTHON[int(imageWidth) - 45]</left>
+							<top>$PYTHON[int(imageHeight) - 50]</top>
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayWatchedWide.png</texture>
 							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
+							<left>$PYTHON[int(imageWidth) - 45]</left>
+							<top>$PYTHON[int(imageHeight) - 50]</top>
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayResumableWide.png</texture>
 							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
 						</control>
-					</control>
 				</focusedlayout>
 
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
@@ -1438,13 +1479,14 @@
 		<condition tag="property" attribute="name|widgetPath" />
 
 		<propertyGroup>mainmenuWidgets</propertyGroup>
+		<propertyGroup>lumosLayout</propertyGroup>
 
 		<controls>
 			<control type="list" id="800$SKINSHORTCUTS[id]">
-				<left>-1894</left>
-				<top>300</top>
-				<width>1712</width>
-				<height>306</height>
+				<left>$SKINSHORTCUTS[containerLeftHorizontal]</left>
+				<top>$SKINSHORTCUTS[containerTopHorizontal]</top>
+				<width>$SKINSHORTCUTS[containerWidthHorizontal]</width>
+				<height>$SKINSHORTCUTS[layoutHeight]</height>
 				<onup>noop</onup>
 				<ondown>9000</ondown>
 				<onleft>noop</onleft>
@@ -1456,123 +1498,167 @@
 				<scrolltime tween="sine" easing="out">240</scrolltime>
 				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="100" >Visible</animation>
-				<animation effect="slide" start="0,0" end="2749,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2642,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2535,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2428,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2321,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2214,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,6)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2107,0" time="0" condition="StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,7)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2000,0" time="0" condition="IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,7)">conditional</animation>
+				
+				<!-- Layout slide -->
+				<animation effect="slide" start="0,0" end="2812,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2710.5,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2609,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2507.5,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2406,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2304.5,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,6)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2203,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,7)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2101.5,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,8)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2000,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,8)">conditional</animation>
 
-				<itemlayout width="214" height="306">
+				<!-- Wide layout slide -->
+				<animation effect="slide" start="0,0" end="2690,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2517.5,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2345,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2172.5,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2000,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
+
+				<itemlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
+					<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+						<description>Primary art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback"></param>
+						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible"></param>
+					</include>
+					<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+						<description>Fallback art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback"></param>
+						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+					</include>
+					<include name="widget-image">
+						<description>Catch-all art</description>
+						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+						<param name="colordiffuse">88f1f1f1</param>
+						<param name="fallback">DefaultShortcut.png</param>
+						<param name="art">$INFO[ListItem.Icon]</param>
+						<param name="aspectratio">keep</param>
+						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+						<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+					</include>
+
 					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
+						<left>$PYTHON[int(imageWidth) - 45]</left>
+						<top>$PYTHON[int(imageHeight) - 50]</top>
+						<width>35</width>
+						<height>49</height>
+						<texture>views/OverlayWatchedWide.png</texture>
+						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 					</control>
 					<control type="image">
-						<left>13</left>
-						<top>0</top>
-						<width>183</width>
-						<height>306</height>
-						<texture colordiffuse="88f1f1f1" background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-						<bordersize>0,0,0,33</bordersize>
-						<visible>IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
+						<left>$PYTHON[int(imageWidth) - 45]</left>
+						<top>$PYTHON[int(imageHeight) - 50]</top>
+						<width>35</width>
+						<height>49</height>
+						<texture>views/OverlayResumableWide.png</texture>
+						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
 					</control>
-
-					<control type="group">
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
-							<width>35</width>
-							<height>49</height>
-							<texture>views/OverlayWatchedWide.png</texture>
-							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
-						</control>
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
-							<width>35</width>
-							<height>49</height>
-							<texture>views/OverlayResumableWide.png</texture>
-							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
-						</control>
-					</control>
-
 				</itemlayout>
 
-				<focusedlayout width="214" height="306">
-					<control type="group">
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
+				<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
+						<control type="group">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<description>Primary art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible"></param>
+							</include>
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<description>Fallback art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+							</include>
+							<include name="widget-image">
+								<description>Catch-all art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse"></param>
+								<param name="fallback">DefaultShortcut.png</param>
+								<param name="art">$INFO[ListItem.Icon]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+							</include>
+							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
+						</control>
+						<control type="group">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<description>Primary art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible"></param>
+							</include>
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<description>Fallback art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback"></param>
+								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
+							</include>
+							<include name="widget-image">
+								<description>Catch-all art</description>
+								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
+								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
+								<param name="colordiffuse">88f1f1f1</param>
+								<param name="fallback">DefaultShortcut.png</param>
+								<param name="art">$INFO[ListItem.Icon]</param>
+								<param name="aspectratio">keep</param>
+								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
+							</include>
 							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
 						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture background="true">$INFO[ListItem.$SKINSHORTCUTS[art]]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
-						</control>
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id]) + IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
-						</control>
-						<control type="image">
-							<left>13</left>
-							<top>0</top>
-							<width>183</width>
-							<height>306</height>
-							<texture background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<bordertexture border="1,1,1,36">$SKINSHORTCUTS[shadow]</bordertexture>
-							<bordersize>0,0,0,33</bordersize>
-							<visible>Control.HasFocus(800$SKINSHORTCUTS[id]) + IsEmpty(ListItem.$SKINSHORTCUTS[art])</visible>
-						</control>
-
-						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
+							<left>$PYTHON[int(imageWidth) - 45]</left>
+							<top>$PYTHON[int(imageHeight) - 50]</top>
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayWatchedWide.png</texture>
 							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						<control type="image">
-							<left>155</left>
-							<top>$SKINSHORTCUTS[top]</top>
+							<left>$PYTHON[int(imageWidth) - 45]</left>
+							<top>$PYTHON[int(imageHeight) - 50]</top>
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayResumableWide.png</texture>
 							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
 						</control>
-					</control>
 				</focusedlayout>
 
 				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
@@ -1602,6 +1688,8 @@
 		<property name="id" tag="mainmenuid" />
 		<property name="labelID" tag="property" attribute="name|labelID" />
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
+
+		<property name="layout" tag="property" attribute="name|layout" />
 
 		<property name="autoscroll" tag="property" attribute="name|autoscroll" />
 		<property name="autoscroll">False</property>
@@ -1663,6 +1751,22 @@
 		<property name="imageEmpty">square-empty.png</property>
 		<property name="layoutFocus">4</property>
 		<property name="layoutMovement">widget-movement</property>
+
+		<!-- Vertical menu -->
+		<property name="containerWidth" tag="property" attribute="name|layout" value="wide">1035</property>
+		<property name="containerWidth">1218</property>
+		<property name="containerTop" tag="property" attribute="name|layout" value="tall">608</property>
+		<property name="containerTop">695</property>
+		<property name="containerLeft" tag="property" attribute="name|layout" value="wide">2788</property>
+		<property name="containerLeft">2605</property>
+
+		<!-- Horizontal menu -->
+		<property name="containerWidthHorizontal" tag="property" attribute="name|layout" value="wide">1725</property>
+		<property name="containerWidthHorizontal">1827</property>
+		<property name="containerTopHorizontal" tag="property" attribute="name|layout" value="tall">300</property>
+		<property name="containerTopHorizontal">387</property>
+		<property name="containerLeftHorizontal" tag="property" attribute="name|layout" value="wide">-1902.5</property>
+		<property name="containerLeftHorizontal">-1953.5</property>
 
 		<!-- Python snippets -->
 		<property name="primary-art">'widget-fakelandscape' if art in 'FAKELANDSCAPE' else 'widget-faketvlandscape' if art in 'FAKETVLANDSCAPE' else 'widget-image'</property>
