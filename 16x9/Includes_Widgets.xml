@@ -146,6 +146,62 @@
 		</definition>
 	</include>
 
+	<include name="widget-fakelandscape">
+		<param name="aligny">bottom</param>
+		<definition>
+			<control type="image">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="$PARAM[colordiffuse]" background="true" fallback="$PARAM[fallback]">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
+				<bordertexture border="1,1,1,36">$PARAM[shadow]</bordertexture>
+				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+			<control type="image">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="$PARAM[colordiffuse]" background="true" fallback="$PARAM[fallback]">$INFO[ListItem.Art(clearlogo)]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
+				<bordertexture border="1,1,1,36">noop</bordertexture>
+				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+
+	<include name="widget-faketvlandscape">
+		<param name="aligny">bottom</param>
+		<definition>
+			<control type="image">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="$PARAM[colordiffuse]" background="true" fallback="$PARAM[fallback]">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
+				<bordertexture border="1,1,1,36">$PARAM[shadow]</bordertexture>
+				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+			<control type="image">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture colordiffuse="$PARAM[colordiffuse]" background="true" fallback="$PARAM[fallback]">$INFO[ListItem.Art(tvshow.clearlogo)]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
+				<bordertexture border="1,1,1,36">noop</bordertexture>
+				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+
 	<include name="widget-content">
 		<definition>
 			<content target="$PARAM[target]">$PARAM[path]</content>

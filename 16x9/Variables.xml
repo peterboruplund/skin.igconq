@@ -540,6 +540,8 @@
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.characterart))">TV Show Character Art</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(landscape))">Landscape</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),Art(tvshow.landscape))">TV Show Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),FAKELANDSCAPE)">Fake Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetArt),FAKETVLANDSCAPE)">Fake TV Show Landscape</value>
 
 		<value>Icon</value>
 	</variable>
@@ -562,6 +564,8 @@
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.characterart))">TV Show Character Art</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(landscape))">Landscape</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),Art(tvshow.landscape))">TV Show Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),FAKELANDSCAPE)">Fake Landscape</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(widgetFallbackArt),FAKETVLANDSCAPE)">Fake TV Show Landscape</value>
 
 		<value>Icon</value>
 	</variable>

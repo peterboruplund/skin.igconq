@@ -99,6 +99,8 @@
 	<property property="widgetArt" condition="!IsEmpty(Container(8000).ListItem.Art(tvshow.characterart)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.characterart))" label="TV Show Character Art">Art(tvshow.characterart)</property>
 	<property property="widgetArt" condition="!IsEmpty(Container(8000).ListItem.Art(landscape)) | !IsEmpty(Container(8000).ListItem(2).Art(landscape))" label="Landscape">Art(landscape)</property>
 	<property property="widgetArt" condition="!IsEmpty(Container(8000).ListItem.Art(tvshow.landscape)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.landscape))" label="TV Show Landscape">Art(tvshow.landscape)</property>
+	<property property="widgetArt" condition="[!IsEmpty(Container(8000).ListItem.Art(fanart)) | !IsEmpty(Container(8000).ListItem(2).Art(fanart))] + [!IsEmpty(Container(8000).ListItem.Art(clearlogo)) | !IsEmpty(Container(8000).ListItem(2).Art(clearlogo))]" label="Fake Landscape">FAKELANDSCAPE</property>
+	<property property="widgetArt" condition="[!IsEmpty(Container(8000).ListItem.Art(fanart)) | !IsEmpty(Container(8000).ListItem(2).Art(fanart))] + [!IsEmpty(Container(8000).ListItem.Art(tvshow.clearlogo)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.clearlogo))]" label="Fake TV Show Landscape">FAKETVLANDSCAPE</property>
 
 	<!-- Fallback Artwork -->
 	<propertySettings property="widgetFallbackArt" buttonID="603" templateonly="True" showNone="False" title="Fallback Artwork" />
@@ -120,6 +122,8 @@
 	<property property="widgetFallbackArt" condition="!IsEmpty(Container(8000).ListItem.Art(tvshow.characterart)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.characterart))" label="TV Show Character Art">Art(tvshow.characterart)</property>
 	<property property="widgetFallbackArt" condition="!IsEmpty(Container(8000).ListItem.Art(landscape)) | !IsEmpty(Container(8000).ListItem(2).Art(landscape))" label="Landscape">Art(landscape)</property>
 	<property property="widgetFallbackArt" condition="!IsEmpty(Container(8000).ListItem.Art(tvshow.landscape)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.landscape))" label="TV Show Landscape">Art(tvshow.landscape)</property>
+	<property property="widgetFallbackArt" condition="[!IsEmpty(Container(8000).ListItem.Art(fanart)) | !IsEmpty(Container(8000).ListItem(2).Art(fanart))] + [!IsEmpty(Container(8000).ListItem.Art(clearlogo)) | !IsEmpty(Container(8000).ListItem(2).Art(clearlogo))]" label="Fake Landscape">FAKELANDSCAPE</property>
+	<property property="widgetFallbackArt" condition="[!IsEmpty(Container(8000).ListItem.Art(fanart)) | !IsEmpty(Container(8000).ListItem(2).Art(fanart))] + [!IsEmpty(Container(8000).ListItem.Art(tvshow.clearlogo)) | !IsEmpty(Container(8000).ListItem(2).Art(tvshow.clearlogo))]" label="Fake TV Show Landscape">FAKETVLANDSCAPE</property>
 
 	<!-- Shadow -->
 	<propertySettings toggle="shadow" buttonID="604" templateonly="True" />

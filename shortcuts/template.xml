@@ -115,7 +115,7 @@
 							</animation>
 
 							<control type="group">
-								<include name="widget-image">
+								<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -126,7 +126,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible"></param>
 								</include>
-								<include name="widget-image">
+								<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -135,7 +135,7 @@
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
+									<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 								</include>
 								<include name="widget-image">
 									<description>Catch-all art</description>
@@ -146,7 +146,7 @@
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
+									<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
 								</include>
 
 								<control type="image">
@@ -171,7 +171,7 @@
 
 					<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<include name="widget-image">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -182,7 +182,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="widget-image">
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -191,7 +191,7 @@
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 								<param name="aspectratio">keep</param>
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
 							<include name="widget-image">
 								<description>Catch-all art</description>
@@ -202,7 +202,7 @@
 								<param name="art">$INFO[ListItem.Icon]</param>
 								<param name="aspectratio">keep</param>
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
 							</include>
 
 							<control type="image">
@@ -798,7 +798,7 @@
 							</animation>
 
 							<control type="group">
-								<include name="widget-image">
+								<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -809,7 +809,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible"></param>
 								</include>
-								<include name="widget-image">
+								<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -818,7 +818,7 @@
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
+									<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 								</include>
 								<include name="widget-image">
 									<description>Catch-all art</description>
@@ -829,7 +829,7 @@
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
+									<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
 								</include>
 
 								<control type="image">
@@ -854,9 +854,7 @@
 
 					<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<!--visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible-->
-
-							<include name="widget-image">
+							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -867,7 +865,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="widget-image">
+							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -876,7 +874,7 @@
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 								<param name="aspectratio">keep</param>
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
+								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
 							<include name="widget-image">
 								<description>Catch-all art</description>
@@ -887,7 +885,7 @@
 								<param name="art">$INFO[ListItem.Icon]</param>
 								<param name="aspectratio">keep</param>
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
-								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
+								<param name="visible">[ $PYTHON[$SKINSHORTCUTS[secondary-visibility]] ] + [ $PYTHON[$SKINSHORTCUTS[fallback-visibility]] ]</param>
 							</include>
 
 							<control type="image">
@@ -1617,6 +1615,8 @@
 
 		<property name="art" tag="property" attribute="name|widgetArt" />
 		<property name="art2" tag="property" attribute="name|widgetFallbackArt" />
+		<property name="art">Icon</property>
+		<property name="art2">Icon</property>
 
 		<!-- Shadow value is inverted, so it is enabled by default -->
 		<property name="shadow" tag="property" attribute="name|shadow" value="True">noop</property>
@@ -1663,6 +1663,12 @@
 		<property name="imageEmpty">square-empty.png</property>
 		<property name="layoutFocus">4</property>
 		<property name="layoutMovement">widget-movement</property>
+
+		<!-- Python snippets -->
+		<property name="primary-art">'widget-fakelandscape' if art in 'FAKELANDSCAPE' else 'widget-faketvlandscape' if art in 'FAKETVLANDSCAPE' else 'widget-image'</property>
+		<property name="secondary-art">'widget-fakelandscape' if art2 in 'FAKELANDSCAPE' else 'widget-faketvlandscape' if art2 in 'FAKETVLANDSCAPE' else 'widget-image'</property>
+		<property name="secondary-visibility">'IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(clearlogo))' if art in 'FAKELANDSCAPE' else 'IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(tvshow.clearlogo))' if art in 'FAKETVLANDSCAPE' else 'IsEmpty(ListItem.%s)' %(art)</property>
+		<property name="fallback-visibility">'IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(clearlogo))' if art2 in 'FAKELANDSCAPE' else 'IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(tvshow.clearlogo))' if art2 in 'FAKETVLANDSCAPE' else 'IsEmpty(ListItem.%s)' %(art2)</property>
 
 	</propertyGroup>
 
