@@ -206,7 +206,7 @@
 				<label>  -  Size</label>
 				<label2>$VAR[skinshortcuts-size]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
+				<visible>IsEmpty(Skin.String(menuStyle))</visible>
 			</control>
 
 			<!-- Change artwork -->
@@ -233,7 +233,6 @@
 				<label>  -  Shadow</label>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
 				<selected>IsEmpty(Container(211).ListItem.Property(shadow))</selected>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Change autoscroll option -->
@@ -242,7 +241,7 @@
 				<height>40</height>
 				<label>  -  Autoscroll</label>
 				<selected>!IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
+				<visible>IsEmpty(Skin.String(menuStyle))</visible>
 			</control>
 
 			<!-- Edit hub widgets -->

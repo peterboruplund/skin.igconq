@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="1111" type="dialog">
-	<!-- Quick Nav -->
-	<defaultcontrol always="true">7000</defaultcontrol>
+<window id="1111" type="window">
+
+	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>skinshortcuts-template-hubWidgetReloadTrick</include>
 	<controls>
+
+		<!-- Background -->
+		<include>WindowBackgroundImage</include>
 
 		<!-- Fanart -->
 		<control type="image">
@@ -13,63 +16,74 @@
 			<fadetime>400</fadetime>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			<!--texture background="true" diffuse="diffuse.png" colordiffuse="$VAR[FanartColor]">$INFO[ListItem.Art(fanart)]</texture-->
-			<texture background="true">$INFO[Container(50).ListItem.Art(fanart)]</texture>
+			<texture background="true">$VAR[hubWidgetBackground]</texture>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 
 		<include name="Time">
-			<param name="heading">Hub</param>
+			<param name="heading">$INFO[Window(Home).Property(currentName)] Hub</param>
 		</include>
 
 		<control type="group">
-			<!-- Lumos animation -->
-			<animation type="WindowOpen" condition="IsEmpty(Skin.String(menuStyle))">
-				<effect type="slide" start="0,-200" end="0,0" time="200" />
-				<effect type="fade" start="0" end="100" time="200" />
-			</animation>
-			<animation type="WindowClose" condition="IsEmpty(Skin.String(menuStyle))">
-				<effect type="slide" start="0,0" end="0,-200" time="200" />
-				<effect type="fade" start="100" end="0" time="200" />
+			<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(1000)">WindowClose</animation>>
+			<animation type="WindowClose" reversible="false" condition="Control.HasFocus(1000)">
+				<effect type="fade" start="100" end="0" time="200" delay="300" />
+				<effect type="slide" end="200,0" time="200" />
+				<effect type="slide" start="0,0" end="-200,0" time="200" delay="200" tween="bounce" />
 			</animation>
 
-			<!-- Horizontal animation -->
-			<animation type="WindowOpen" condition="StringCompare(Skin.String(menuStyle),horizontal)">
-				<effect type="slide" start="0,200" end="0,0" time="200" />
-				<effect type="fade" start="0" end="100" time="200" />
-			</animation>
-			<animation type="WindowClose" condition="StringCompare(Skin.String(menuStyle),horizontal)">
-				<effect type="slide" start="0,0" end="0,200" time="200" />
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
+			<include>skinshortcuts-template-hubLumosMenu</include>
+			<include>skinshortcuts-template-hubLumosWidgets</include>
+			<include>skinshortcuts-template-hubLumos</include>
 
-			<!-- Vertical animation -->
-			<animation type="WindowOpen" condition="StringCompare(Skin.String(menuStyle),vertical)">
-				<effect type="slide" start="-200,0" end="0,0" time="200" />
-				<effect type="fade" start="0" end="100" time="200" />
-			</animation>
-			<animation type="WindowClose" condition="StringCompare(Skin.String(menuStyle),vertical)">
-				<effect type="slide" start="0,0" end="-200,0" time="200" />
-				<effect type="fade" start="100" end="0" time="200" />
-			</animation>
-
-
-			<left>265</left>
-			<top>310</top>
-			<control type="image">
-				<left>830</left>
-				<top>0</top>
-				<width>325</width>
-				<height>480</height>
-				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+			<!-- Home indicator -->
+			<control type="group">
+				<left>1711</left>
+				<top>699</top>
+				<animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus(1000)">Conditional</animation>
+				<include name="widget-movement">
+					<param name="id">0</param>
+				</include>
+				<include name="widget-image">
+					<description>Empty artwork</description>
+					<param name="width">183</param>
+					<param name="height">219</param>
+					<param name="colordiffuse" />
+					<param name="fallback" />
+					<param name="art">DefaultFolderBack.png</param>
+					<param name="aspectratio">keep</param>
+					<param name="shadow" />
+					<param name="visible"></param>
+				</include>
 			</control>
 
-			<include>skinshortcuts-template-hub</include>
-			<control type="group" id="50">
-				<include>skinshortcuts-template-hubWidgets</include>
+			<!-- Widget details -->
+			<control type="label">
+				<animation effect="slide" end="133,0" time="0" condition="StringCompare(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
+				<top>900</top>
+				<left>520</left>
+				<width>1000</width>
+				<height>280</height>
+				<font>Font33</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
+				<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 			</control>
-
 		</control>
+
+		<control type="button" id="1000">
+			<onfocus>close</onfocus>
+			<onclick>close</onclick>
+			<label>Close</label>
+			<left>-10000</left>
+			<top>-10000</top>
+			<width>1</width>
+			<height>1</height>
+		</control>
+
 	</controls>
 
 </window>
