@@ -154,6 +154,7 @@
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
 					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
 				</animation>
+				<visible>!Skin.HasSetting(Headings)</visible>
 			</control>
 
 			<control type="label">
@@ -173,11 +174,6 @@
 				<animation effect="slide" end="120,0" time="200">Hidden</animation>
 				<visible>!Window.IsVisible(notification) + !Window.IsVisible(extendedprogressdialog) + !Window.IsVisible(volumebar)</visible>
 			</control>
-
-            <control type="progress" id="20">
-                <include>HiddenObject</include>
-                <info>Player.Volume</info>
-            </control>
 		</definition>
 	</include>
 

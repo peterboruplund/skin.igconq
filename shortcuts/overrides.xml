@@ -1,50 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
-	<!-- Movies -->
-	<!-- Recent movies -->
-	<widget label="Recent movies" type="movies" target="video" path="plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]">RecentMovies</widget>
-	<widgetdefault labelID="movies">RecentMovies</widgetdefault>
-	<!-- Recommended movies -->
-	<widget label="Recommended movies" type="movies" target="video" path="plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]">RecommendedMovies</widget>
-	<!-- Random movies -->
-	<widget label="Random movies" type="movies" target="video" path="plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]">RandomMovies</widget>
-	<!-- Smart(ish) movies -->
-	<widget label="Smart(ish) movies" type="movies" target="video" path="plugin://service.smartish.widgets?type=movies&amp;reload=$INFO[Window.Property(smartish.movies)]">SmartMovies</widget>
-
-	<!-- Episodes -->
-	<!-- Recent episodes -->
-	<widget label="Recent episodes" type="episodes" target="video" path="plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]">RecentEpisodes</widget>
-	<widgetdefault labelID="tvshows">RecentEpisodes</widgetdefault>
-	<!-- Recommended Recommended episodes -->
-	<widget label="Recommended episodes" type="episodes" target="video" path="plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]">RecommendedEpisodes</widget>
-	<!-- Random episodes -->
-	<widget label="Random episodes" type="episodes" target="video" path="plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]">RandomEpisodes</widget>
-	<!-- Smart(ish) episodes -->
-	<widget label="Smart(ish) episodes" type="episodes" target="video" path="plugin://service.smartish.widgets?type=episodes&amp;reload=$INFO[Window.Property(smartish.episodes)]">SmartEpisodes</widget>
-
-	<!-- Albums -->
-	<!-- Recent albums -->
-	<widget label="Recent albums" type="albums" target="music" path="plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]">RecentAlbums</widget>
-	<widgetdefault labelID="132">RecentAlbums</widgetdefault>
-	<!-- Recommended albums -->
-	<widget label="Recommended albums" type="albums" target="music" path="plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]">RecommendedAlbums</widget>
-	<!-- Random albums -->
-	<widget label="Random albums" type="albums" target="music" path="plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window.Property(randomalbums)]">RandomAlbums</widget>
-	<!-- Smart(ish) albums -->
-	<widget label="Smart(ish) albums" type="albums" target="music" path="plugin://service.smartish.widgets?type=albums&amp;reload=$INFO[Window.Property(smartish.albums)]">SmartAlbums</widget>
-
 	<!-- Weather -->
 	<widget label="Weather Forecast" type="custom" path="$INCLUDE[weather-widget]">WeatherWidget</widget>
 	<widgetdefault labelID="weather">WeatherWidget</widgetdefault>
-	
-	<!-- Favourites -->
-	<widget label="Favourites" type="custom" path="$INCLUDE[favourites-widget]">Favourites</widget>
-	<widgetdefault labelID="1036">Favourites</widgetdefault>
-	
-	<!-- PVR -->
-	<widget label="Smart(ish) PVR" type="custom" path="plugin://service.smartish.widgets?type=pvr&amp;reload=$INFO[Window.Property(smartish.pvr)]">SmartPVR</widget>
-	<widgetdefault labelID="livetv">SmartPVR</widgetdefault>
-	<widgetdefault labelID="radio">SmartPVR</widgetdefault>
 	
 	<!-- Backgrounds -->
 	<backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
@@ -52,22 +10,6 @@
 	<background label="Current weather fanart">weather</background>
 	<background condition="System.HasAddon(script.skin.helper.service)" label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
 	<background label="::PLAYLIST::" condition="[Condition]">fanart</background>
-
-	<!-- Parental control -->
-	<!--override action="globaloverride">
-		<condition>!IsEmpty(Container(9000).ListItem.Property(ParentalControl)) + !SubString(Container(9000).ListItem.Property(ParentalControl),no) + !IsEmpty(Skin.String(passcode)) + StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
-	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
-	    <action>::ACTION::</action>
-	</override>
-	<override action="globaloverride">
-	    <condition>!IsEmpty(Container(9000).ListItem.Property(ParentalControl)) + !SubString(Container(9000).ListItem.Property(ParentalControl),no) + !IsEmpty(Skin.String(passcode)) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))</condition>
-	    <action>Skin.SetNumeric(mypassword)</action>
-	    <action>AlarmClock(parental,Skin.Reset(mypassword),3,Silent)</action>
-	</override>
-	<override action="globaloverride">
-	    <condition>IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | SubString(Container(9000).ListItem.Property(ParentalControl),no) | IsEmpty(Skin.String(passcode))</condition>
-	    <action>::ACTION::</action>
-	</override-->
 
 	<!-- Autoscroll -->
 	<propertySettings toggle="autoscroll" buttonID="600" templateonly="True" title="Autoscroll" />

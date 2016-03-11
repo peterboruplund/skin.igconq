@@ -516,6 +516,18 @@
 		<value>$INFO[Container(7002).ListItem.Label]</value>
 	</variable>
 
+	<variable name="skinshortcuts-window">
+		<value condition="SubString(Window.Property(groupname),.1,Right)">Customise Hub Widgets</value>
+		<value condition="!StringCompare(Window.Property(groupname),mainmenu)">Customise Hub Menu</value>
+		<value>$ADDON[script.skinshortcuts 32071]</value>
+	</variable>
+
+	<variable name="skinshortcuts-itemlabel">
+		<value condition="SubString(Window.Property(groupname),.1,Right) + IsEmpty(ListItem.Property(widgetName))">$ADDON[script.skinshortcuts 32013]</value>
+		<value condition="SubString(Window.Property(groupname),.1,Right)">$INFO[ListItem.Property(widgetName)]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+
 	<variable name="skinshortcuts-size">
 		<value condition="StringCompare(Container(211).ListItem.Property(layout),tall)">Tall</value>
 		<value condition="StringCompare(Container(211).ListItem.Property(layout),wide)">Wide</value>

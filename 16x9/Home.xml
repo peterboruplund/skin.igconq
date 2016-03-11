@@ -37,12 +37,10 @@
 			<texture background="true">$VAR[widgetBackground]</texture>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-			<visible>!Window.IsActive(1111)</visible>
 		</control>
 
 		<!-- Time -->
 		<control type="group">
-			<visible>!Window.IsVisible(1111)</visible>
 			<include name="Time">
 				<param name="heading"></param>
 			</include>
@@ -58,6 +56,29 @@
 
 		<!-- Test labels -->
 		<!--include>skinshortcuts-template-testLabels</include-->
+
+		<!-- RSS -->
+		<control type="image">
+			<right>0</right>
+			<bottom>0</bottom>
+			<width>1920</width>
+			<height>37</height>
+			<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+			<include>WindowFadeAnimation</include>
+		</control>
+		<control type="rss" id="1">
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>1920</width>
+			<height>35</height>
+			<font>Font30</font>
+			<textcolor>TextColor2</textcolor>
+			<headlinecolor>TextColor2</headlinecolor>
+			<titlecolor>TextColor2</titlecolor>
+			<urlset>1</urlset>
+			<include>WindowFadeAnimation</include>
+		</control>
 
 	</controls>
 

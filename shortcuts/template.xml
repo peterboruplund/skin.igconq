@@ -100,7 +100,7 @@
 					<defaultcontrol>0</defaultcontrol>
 					<scrolltime tween="sine" easing="out">200</scrolltime>
 
-					<autoscroll time="7000" delay="7000" repeat="7000">!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + $SKINSHORTCUTS[autoscroll]</autoscroll>
+					<autoscroll time="7000" delay="7000" repeat="7000">!StringCompare(Container(9000).ListItem.Property(labelID),$SKINSHORTCUTS[labelID]) + $SKINSHORTCUTS[autoscroll]</autoscroll>
 
 					<itemlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
@@ -226,7 +226,7 @@
 
 					<include name="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
-						<param name="path">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</param>
+						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
 						<param name="itemAction">$SKINSHORTCUTS[itemAction]</param>
 						<param name="itemIcon">$SKINSHORTCUTS[itemIcon]</param>
@@ -385,7 +385,7 @@
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 									<param name="aspectratio">keep</param>
-									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+									<param name="shadow"></param>
 									<param name="visible"></param>
 								</include>
 								<include name="widget-image">
@@ -396,7 +396,7 @@
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
-									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+									<param name="shadow"></param>
 									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
 								</include>
 								<include name="widget-image">
@@ -407,7 +407,7 @@
 									<param name="fallback">DefaultShortcut.png</param>
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
-									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+									<param name="shadow"></param>
 									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
 								</include>
 
@@ -443,7 +443,7 @@
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 								<param name="aspectratio">keep</param>
-								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="shadow"></param>
 								<param name="visible"></param>
 							</include>
 							<include name="widget-image">
@@ -454,7 +454,7 @@
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 								<param name="aspectratio">keep</param>
-								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="shadow"></param>
 								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
 							</include>
 							<include name="widget-image">
@@ -465,7 +465,7 @@
 								<param name="fallback">DefaultShortcut.png</param>
 								<param name="art">$INFO[ListItem.Icon]</param>
 								<param name="aspectratio">keep</param>
-								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
+								<param name="shadow"></param>
 								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art]) + IsEmpty(ListItem.$SKINSHORTCUTS[art2])</param>
 							</include>
 
@@ -909,7 +909,7 @@
 
 					<include name="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
-						<param name="path">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</param>
+						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
 						<param name="itemAction">$SKINSHORTCUTS[itemAction]</param>
 						<param name="itemIcon">$SKINSHORTCUTS[itemIcon]</param>
@@ -1318,7 +1318,7 @@
 						</control>
 				</focusedlayout>
 
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</content>
 			</control>
 
 			<control type="grouplist">
@@ -1661,7 +1661,7 @@
 						</control>
 				</focusedlayout>
 
-				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</content>
+				<content target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</content>
 
 			</control>
 		</controls>
@@ -1719,6 +1719,12 @@
 
 		<property name="widgetInclude" tag="property" attribute="name|widgetPath">widget-content</property>
 		<property name="widgetInclude">widget-static</property>
+
+		<!-- Python snippets -->
+		<property name="autoreload">autoreloadStringAnd %( id ) if path in 'plugin' and path in '?' else autoreloadStringAnd %( id ) if path in 'plugin' else ''</property>
+		<property name="autoreloadStringAnd">&amp;igConq=$INFO[Window.Property(refresh800%s)]</property>
+		<property name="autoreloadStringQuestion">?igConq=$INFO[Window.Property(refresh800%s)]</property>
+
 	</propertyGroup>
 
 	<propertyGroup name="LumosLayout">
@@ -1829,7 +1835,7 @@
 				<top>$PYTHON[100 + (50 * int( id ) )]</top>
 				<width>5000</width>
 				<height>50</height>
-				<label>$PYTHON['&amp;' if path in '?' else '?']igconq= - $SKINSHORTCUTS[path]</label>
+				<label>$PYTHON[$SKINSHORTCUTS[autoreload]] - $SKINSHORTCUTS[path]</label>
 			</control>
 		</controls>
 	</other>

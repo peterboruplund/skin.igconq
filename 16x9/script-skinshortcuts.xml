@@ -20,7 +20,7 @@
 		</control>
 
 		<include name="Time">
-			<param name="heading">$INFO[Control.GetLabel(500)]</param>
+			<param name="heading">$VAR[skinshortcuts-window]</param>
 		</include>
 
 		<!-- Heading -->
@@ -74,16 +74,7 @@
 					<width>260</width>
 					<height>66</height>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
-				</control>
-				<control type="label">
-					<left>25</left>
-					<width>260</width>
-					<height>66</height>
-					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[ListItem.Property(widgetName)]</label>
-					<visible>SubString(Window.Property(groupname),.1,Right)</visible>
+					<label>$VAR[skinshortcuts-itemlabel]</label>
 				</control>
 			</itemlayout>
 
@@ -93,18 +84,8 @@
 					<width>260</width>
 					<height>66</height>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[skinshortcuts-itemlabel]</label>
 					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
-					<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
-				</control>
-				<control type="label">
-					<left>25</left>
-					<width>260</width>
-					<height>66</height>
-					<scroll>true</scroll>
-					<label>$INFO[ListItem.Property(widgetName)]</label>
-					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
-					<visible>SubString(Window.Property(groupname),.1,Right)</visible>
 				</control>
 				<control type="image">
 					<left>290</left>
@@ -207,6 +188,7 @@
 				<label2>$VAR[skinshortcuts-size]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
 				<visible>IsEmpty(Skin.String(menuStyle))</visible>
+				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
 			<!-- Change artwork -->
@@ -216,6 +198,7 @@
 				<label>  -  Artwork</label>
 				<label2>$VAR[skinshortcuts-art]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 			<!-- Fallback artwork -->
 			<control type="button" id="603">
@@ -224,6 +207,7 @@
 				<label>  -  Fallback Artwork</label>
 				<label2>$VAR[skinshortcuts-fallbackart]</label2>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
 			<!-- Shadow -->
@@ -233,6 +217,7 @@
 				<label>  -  Shadow</label>
 				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
 				<selected>IsEmpty(Container(211).ListItem.Property(shadow))</selected>
+				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
 			<!-- Change autoscroll option -->
@@ -244,21 +229,22 @@
 				<visible>IsEmpty(Skin.String(menuStyle))</visible>
 			</control>
 
-			<!-- Edit hub widgets -->
-			<control type="button" id="406">
-				<width>1050</width>
-				<height>60</height>
-				<label>Choose hub widgets</label>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) | !IsEmpty(Skin.String(menuStyle))</enable>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
-			</control>
-
 			<!-- Edit Submenu -->
 			<control type="button" id="405">
 				<width>1050</width>
 				<height>60</height>
-				<label>Edit submenu</label>
+				<label>Edit hub menu</label>
 				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+			</control>
+
+			<!-- Edit hub widgets -->
+			<control type="button" id="406">
+				<width>1050</width>
+				<height>40</height>
+				<label>  -  Choose hub widgets</label>
+				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) | !IsEmpty(Skin.String(menuStyle))</enable>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
 			<!-- Remove -->
@@ -268,12 +254,7 @@
 				<label>-</label>
 			</control>
 
-			<!-- Add item -->
-			<control type="button" id="301">
-				<width>1050</width>
-				<height>60</height>
-				<label>$ADDON[script.skinshortcuts 32000]</label>
-			</control>
+
 
 		</control>
 
@@ -288,6 +269,13 @@
 			<onup>9000</onup>
 			<ondown>noop</ondown>
 			<orientation>horizontal</orientation>
+
+			<!-- Add item -->
+			<control type="button" id="301">
+				<width>200</width>
+				<height>60</height>
+				<label>$ADDON[script.skinshortcuts 32000]</label>
+			</control>
 
 			<!-- OK Button -->
 			<control type="button" id="10">
