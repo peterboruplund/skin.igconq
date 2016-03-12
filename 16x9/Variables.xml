@@ -43,11 +43,6 @@
 		<value>TextColor3</value>
 	</variable>
 
-	<variable name="BackgroundColor">
-		<value condition="!IsEmpty(Skin.String(color.background)) + !StringCompare(Skin.String(color.background),None)">$INFO[Skin.String(color.background)]</value>
-		<value>ff3285ff</value>
-	</variable>
-
 	<variable name="FanartColor">
 		<value condition="!IsEmpty(Skin.String(color.fanart)) + !StringCompare(Skin.String(color.fanart),None)">$INFO[Skin.String(color.fanart)]</value>
 		<value condition="!IsEmpty(Skin.String(color.background)) + !StringCompare(Skin.String(color.background),None)">$INFO[Skin.String(color.background)]</value>
@@ -58,46 +53,11 @@
 		<value condition="!IsEmpty(Skin.String(color.overlay)) + !StringCompare(Skin.String(color.overlay),None)">$INFO[Skin.String(color.overlay)]</value>
 		<value>cc000000</value>
 	</variable>
-	
-	<variable name="MainMenuFocus">
-		<value>6</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[1])">1</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[2])">2</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[3])">3</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[4])">4</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[5])">5</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[6])">6</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[7])">7</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[8])">8</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[9])">9</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[10])">10</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[11])">11</value>
-		<value condition="SubString(Skin.String(MainMenuFocus),[12])">12</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[13])">13</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[14])">14</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[15])">15</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[16])">16</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[17])">17</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[18])">18</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[19])">19</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[20])">20</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[21])">21</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[22])">22</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[23])">23</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[24])">24</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[25])">25</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[26])">26</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[27])">27</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[28])">28</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[29])">29</value>
-		<value condition="StringCompare(Skin.String(MainMenuFocus),$NUM[30])">30</value>
-		<value>5</value>
-	</variable>
 
 	<variable name="HeadingLabel">
 		<value condition="Container.Content(movies) + Skin.HasSetting(Headings)">$LOCALIZE[342]</value>
 		<value condition="Container.Content(tvshows) + Skin.HasSetting(Headings)">$LOCALIZE[20343]</value>
-		<value condition="Container.Content(seasons) + Skin.HasSetting(Headings)">$LOCALIZE[3309002]</value>
+		<value condition="Container.Content(seasons) + Skin.HasSetting(Headings)">$LOCALIZE[33054]</value>
 		<value condition="Container.Content(episodes) + Skin.HasSetting(Headings)">$LOCALIZE[20360]</value>
 		<value condition="Container.Content(musicvideos) + Skin.HasSetting(Headings)">$LOCALIZE[20389]</value>
 		<value condition="Container.Content(genres) + Skin.HasSetting(Headings)">$LOCALIZE[135]</value>
@@ -138,39 +98,10 @@
 	</variable>
 
 	<variable name="BackgroundImage">
+		<value condition="StringCompare(Window.Property(xmlfile),Home.xml) + !IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Container(9000).ListItem.Property(background)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),custom_1111_Hub.xml) + !IsEmpty(Window(Home).Property(currentBackground))">$INFO[Window(Home).Property(currentBackground)]</value>
 		<value condition="!IsEmpty(Skin.String(CustomBackgroundImage))">$INFO[Skin.String(CustomBackgroundImage)]</value>
 		<value>special://skin/extras/backgrounds/Default.jpg</value>
-	</variable>
-
-	<variable name="HomeBackgroundImage">
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),fanart)">$INFO[Container(9010).ListItem.Art(fanart)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Background),weather)">$VAR[weatherFanart]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
-		<value condition="!IsEmpty(Container(9000).ListItem.Property(Background))">$INFO[Container(9000).ListItem.Property(Background)]</value>
-		<value>transparent.png</value>
-	</variable>
-
-	<variable name="SubMenuHeading">
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),VideoAddons) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[1037]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecentMovies) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31031]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecommendedMovies) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31032]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RandomMovies) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31054]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecentEpisodes) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31035]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecommendedEpisodes) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31036]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RandomEpisodes) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31055]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecentAlbums) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31038]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RecommendedAlbums) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31039]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),RandomAlbums) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[31056]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),MusicAddons) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[1038]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),PictureAddons) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[1039]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),ProgramAddons) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[1043]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),Favourites) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(HideSubmenuHeading)">$LOCALIZE[1036]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(Widget),Playlist) + !IsEmpty(Container(9002).ListItem.Label) + !Skin.HasSetting(Hide_Widget_Headings)">$INFO[Container(9002).ListItem.Label]</value>
-	</variable>
-
-	<variable name="SubMenuColor">
-		<!--value condition="!Control.HasFocus(9002)">$VAR[TextColor2]</value>
-		<value>$VAR[TextColor1]</value-->
-		<value>$VAR[TextColor2]</value>
 	</variable>
 
 	<variable name="Plot">
@@ -335,11 +266,6 @@
 		<value>$VAR[DialogColor2]</value>
 	</variable>
 
-	<variable name="SkinSettingButton14">
-		<value condition="ControlGroup(9).HasFocus(14)">$VAR[DialogColor1]</value>
-		<value>$VAR[DialogColor2]</value>
-	</variable>
-
 	<variable name="Label1">
 		<value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -483,24 +409,6 @@
 	<variable name="weatherIcons">
 		<value condition="!IsEmpty(Skin.String(weatherIcons.path))">$INFO[Skin.String(weatherIcons.path)]</value>
 		<value>resource://resource.images.weathericons.default/</value>
-	</variable>
-
-	<variable name="weatherFanart">
-		<value condition="!IsEmpty(Skin.String(weatherFanart.path))">$INFO[Skin.String(weatherFanart.path)]</value>
-	</variable>
-
-	<variable name="passcode">
-		<value condition="[IsEmpty(Container(211).ListItem.Property(ParentalControl)) | SubString(Container(211).ListItem.Property(ParentalControl),no)]">No</value>
-		<value>Yes</value>
-	</variable>
-
-	<variable name="HomeNF">
-		<value condition="SubString(ListItem.Property(ParentalControl),yes) + !StringCompare(Skin.String(mypassword),Skin.String(passcode))">salmon</value>
-		<value>HomeNF</value>
-	</variable>
-
-	<variable name="HomeFocus">
-		<value>$VAR[TextColor1]</value>
 	</variable>
 
 	<variable name="menuStyle">

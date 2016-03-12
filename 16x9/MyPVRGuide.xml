@@ -1214,7 +1214,7 @@
 						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
 						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 						<onclick>SetFocus(50)</onclick>
-						<label>Rules</label>
+						<label>$LOCALIZE[31022]</label>
 					</control>
 					<!-- Search -->
 					<control type="button" id="37">

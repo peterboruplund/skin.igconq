@@ -1,26 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
 	<shortcut>
-		<action>ActivateWindow(FileManager)</action>
-		<label>7</label>
-		<label2>32034</label2>
 		<defaultID>7</defaultID>
+		<label>7</label>
+		<label2>Common menu item</label2>
 		<icon>DefaultFolder.png</icon>
 		<thumb />
+		<action>ActivateWindow(FileManager)</action>
 	</shortcut>
 	<shortcut>
-		<action>ActivateWindow(Profiles)</action>
-		<label>13200</label>
-		<label2>32034</label2>
 		<defaultID>13200</defaultID>
-		<icon>UnknownUser.png</icon>
+		<label>13200</label>
+		<label2>Common menu item</label2>
+		<icon>DefaultUser.png</icon>
 		<thumb />
+		<action>ActivateWindow(Profiles)</action>
 	</shortcut>
 	<shortcut>
-		<action>ActivateWindow(SystemInfo)</action>
-		<label>10007</label>
-		<label2>32034</label2>
 		<defaultID>10007</defaultID>
+		<label>10007</label>
+		<label2>Common menu item</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
+		<action>ActivateWindow(SystemInfo)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>14111</defaultID>
+		<label>14111</label>
+		<label2>Common menu item</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(EventLog,events://,return)</action>
 	</shortcut>
 </shortcuts>

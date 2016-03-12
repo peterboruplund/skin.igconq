@@ -13,7 +13,6 @@
 	<include file="Viewtype54.xml" />
 	<include file="Viewtype55.xml" />
 	<include file="Variables.xml" />
-	<include file="custom_1110_QuickNav.xml" />
 
 	<!-- Fullscreen dimensions -->
 	<include name="FullscreenDimensions">
@@ -82,10 +81,12 @@
 			<visible>Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistFanart)</visible>
 			<animation effect="fade" start="100" end="50" time="0" condition="Skin.HasSetting(FadeArtistFanart)">Conditional</animation>
 		</control>
-		<control type="image">
+		<control type="multiimage">
 			<include>FullscreenDimensions</include>
-			<texture>$VAR[BackgroundImage]</texture>
+			<imagepath>$VAR[BackgroundImage]</imagepath>
 			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<timeperimage>10000</timeperimage>
+			<fadetime>200</fadetime>
 		</control>
 	</include>
 
@@ -211,15 +212,6 @@
 			<effect type="zoom" start="100" end="70" center="auto" time="100" />
 			<effect type="fade" start="100" end="0" time="100" />
 		</animation>
-	</include>
-
-	<!-- Shutdown buttons -->
-	<include name="ShutdownButtons">
-		<width>600</width>
-		<height>45</height>
-		<font>Font48</font>
-		<textcolor>$VAR[DialogColor2]</textcolor>
-		<focusedcolor>$VAR[DialogColor1]</focusedcolor>
 	</include>
 
 	<!-- Options buttons -->

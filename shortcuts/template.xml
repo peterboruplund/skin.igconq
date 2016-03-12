@@ -39,7 +39,7 @@
 						<onclick>noop</onclick>
 						<property name="igconq">True</property>
 					</item>
-					<include>skinshortcuts-group-$SKINSHORTCUTS[labelID]-1</include>
+					<include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]-1</include>
 				</content>
 			</control>
 		</controls>
@@ -302,6 +302,12 @@
 		</controls>
 	</submenuOther>
 
+	<other include="hubOnControl">
+		<controls>
+			<Description>Empty template in case there are no widgets defined for any hub</Description>
+		</controls>
+	</other>
+
 	<other include="hubLumosMenu">
 		<!-- Hub - menu items -->
 
@@ -494,7 +500,7 @@
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
 						<param name="itemAction">$SKINSHORTCUTS[itemAction]</param>
 						<param name="itemIcon">$SKINSHORTCUTS[itemIcon]</param>
-						<param name="include">skinshortcuts-group-$SKINSHORTCUTS[labelID]</param>
+						<param name="include">skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</param>
 					</include>
 				</control>
 
@@ -913,7 +919,7 @@
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
 						<param name="itemAction">$SKINSHORTCUTS[itemAction]</param>
 						<param name="itemIcon">$SKINSHORTCUTS[itemIcon]</param>
-						<param name="include">skinshortcuts-group-$SKINSHORTCUTS[labelID]</param>
+						<param name="include">skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</param>
 					</include>
 				</control>
 
@@ -1690,6 +1696,7 @@
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
 
 		<property name="layout" tag="property" attribute="name|layout" />
+		<property name="layout">square</property>
 
 		<property name="autoscroll" tag="property" attribute="name|autoscroll" />
 		<property name="autoscroll">False</property>
@@ -1699,7 +1706,7 @@
 		<property name="path" tag="property" attribute="name|widgetPath" />
 		<property name="target" tag="property" attribute="name|widgetTarget" />
 		<property name="target"></property>
-		<property name="path">$INCLUDE[skinshortcuts-group-$SKINSHORTCUTS[labelID]]</property>
+		<property name="path">$INCLUDE[skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]]</property>
 
 		<property name="art" tag="property" attribute="name|widgetArt" />
 		<property name="art2" tag="property" attribute="name|widgetFallbackArt" />
@@ -1786,10 +1793,12 @@
 		<property name="id" tag="mainmenuid" />
 		<property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
 		<property name="label" tag="label" />
+		<property name="background" tag="property" attribute="name|background" />
 		<controls>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentMenu,$SKINSHORTCUTS[submenuVisibility],Home)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentMenu.1,$SKINSHORTCUTS[submenuVisibility].1,Home)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentName,$SKINSHORTCUTS[label],Home)</onup>
+			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">SetProperty(currentBackground,$SKINSHORTCUTS[background],Home)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1) + !IsEmpty(Container(9000).ListItem.Property(widget))">ActivateWindow(1111)</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,1)">Control.Message(800$SKINSHORTCUTS[id],movedown)</onup>
 			<ondown condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !StringCompare(Container(800$SKINSHORTCUTS[id]).CurrentItem,Container(800$SKINSHORTCUTS[id]).NumItems)">Control.Message(800$SKINSHORTCUTS[id],moveup)</ondown>
@@ -1853,7 +1862,7 @@
 				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label]</value>
 			</variable>
 			<variable name="widgetBackground">
-				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus(800$SKINSHORTCUTS[id]) | IsEmpty(Skin.String(menuStyle))]">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
 			</variable>
 		</variables>
 	</other>

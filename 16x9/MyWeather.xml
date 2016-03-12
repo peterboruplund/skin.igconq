@@ -292,7 +292,7 @@
 						<!-- Location control -->
 						<control type="spincontrolex" id="3">
 							<width>640</width>
-							<label>$LOCALIZE[35500]:</label>
+							<label>$LOCALIZE[31069]:</label>
 							<include>OptionButtons</include>
 						</control>
 						<!-- Refresh -->

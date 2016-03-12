@@ -16,8 +16,6 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#Misc labels
-
 msgctxt "#31000"
 msgid "Item"
 msgstr ""
@@ -106,12 +104,43 @@ msgctxt "#31021"
 msgid "Home"
 msgstr ""
 
+#: /16x9/MyPVRChannels.xml:365 /16x9/MyPVRGuide.xml:1217 /16x9/MyPVRRecordings.xml:394 /16x9/MyPVRSearch.xml:415
+#: /16x9/MyPVRTimers.xml:349
+msgctxt "#31022"
+msgid "Rules"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml:246
+msgctxt "#31023"
+msgid "Edit hub menu"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml:254
+msgctxt "#31024"
+msgid "Choose hub widgets"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml:237
+msgctxt "#31025"
+msgid "Autoscroll"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml:227
+msgctxt "#31026"
+msgid "Shadow"
+msgstr ""
+
 msgctxt "#31027"
 msgid "Show background video"
 msgstr ""
 
 msgctxt "#31028"
 msgid "Show background visualisation"
+msgstr ""
+
+#: /16x9/script-skinshortcuts.xml:217
+msgctxt "#31029"
+msgid "Fallback Artwork"
 msgstr ""
 
 msgctxt "#31030"
@@ -126,6 +155,11 @@ msgctxt "#31032"
 msgid "Recommended movies"
 msgstr ""
 
+#: /16x9/script-skinshortcuts.xml:208
+msgctxt "#31033"
+msgid "Artwork"
+msgstr ""
+
 msgctxt "#31034"
 msgid "Enable Artist Slideshow"
 msgstr ""
@@ -136,6 +170,11 @@ msgstr ""
 
 msgctxt "#31036"
 msgid "Recommended episodes"
+msgstr ""
+
+#: /16x9/SkinSettings.xml:120
+msgctxt "#31037"
+msgid "Main menu style"
 msgstr ""
 
 msgctxt "#31038"
@@ -186,6 +225,11 @@ msgctxt "#31049"
 msgid "Customise Home Menu"
 msgstr ""
 
+#: /16x9/SkinSettings.xml:130
+msgctxt "#31050"
+msgid "Classic main menu (3 items)"
+msgstr ""
+
 msgctxt "#31051"
 msgid "Settings can be accessed from the Shutdown menu or by rebooting XBMC!"
 msgstr ""
@@ -230,6 +274,11 @@ msgctxt "#31061"
 msgid "Enable Horizontal home layout"
 msgstr ""
 
+#: /16x9/SkinSettings.xml:207
+msgctxt "#31062"
+msgid "Overlay color"
+msgstr ""
+
 msgctxt "#31063"
 msgid "Addons"
 msgstr ""
@@ -244,4 +293,19 @@ msgstr ""
 
 msgctxt "#31066"
 msgid "Cinema Exp."
+msgstr ""
+
+#: /16x9/SkinSettings.xml:219
+msgctxt "#31067"
+msgid "Weather icons"
+msgstr ""
+
+#: /16x9/SkinSettings.xml:230
+msgctxt "#31068"
+msgid "Weather fanart"
+msgstr ""
+
+#: /16x9/MyWeather.xml:295
+msgctxt "#31069"
+msgid "Location"
 msgstr ""

@@ -66,7 +66,7 @@
 	<include name="weather-widget">
 		<item>
 			<onclick>noop</onclick>
-			<label>Now</label>
+			<label>$LOCALIZE[19030]</label>
 			<label2>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] ($INFO[Window(Weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits])</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Current.OutlookIcon)]</icon>
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Current.FanartCode)]</property>
@@ -171,6 +171,20 @@
 				<bordersize>0,0,0,33</bordersize>
 				<visible>$PARAM[visible]</visible>
 			</control>
+			<control type="textbox">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>FFFFFFFF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font30</font>
+				<visible>!IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+				<visible>$PARAM[visible]</visible>
+			</control>
 		</definition>
 	</include>
 
@@ -197,6 +211,20 @@
 				<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspectratio]</aspectratio>
 				<bordertexture border="1,1,1,36">noop</bordertexture>
 				<bordersize>0,0,0,33</bordersize>
+				<visible>$PARAM[visible]</visible>
+			</control>
+			<control type="textbox">
+				<left>13</left>
+				<top>0</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>FFFFFFFF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font30</font>
+				<visible>!IsEmpty(ListItem.Art(fanart)) + IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
 				<visible>$PARAM[visible]</visible>
 			</control>
 		</definition>

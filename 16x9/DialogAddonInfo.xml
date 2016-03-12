@@ -233,7 +233,7 @@
 				<visible>Control.IsEnabled(6)</visible>
 			</control>
 			<!-- Enable/Disable Addon button -->
-				<control type="button" id="7">
+			<control type="button" id="7">
 				<width>231</width>
 				<label>24021</label>
 				<visible>Control.IsEnabled(7)</visible>

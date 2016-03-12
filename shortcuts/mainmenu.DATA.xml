@@ -1,6 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
 	<shortcut>
+		<defaultID>script.globalsearch</defaultID>
+		<label>137</label>
+		<label2>Custom shortcut</label2>
+		<icon>DefaultMusicSearch.png</icon>
+		<thumb />
+		<action>RunScript(script.globalsearch)</action>
+	</shortcut>
+	<shortcut>
 		<defaultID>weather</defaultID>
 		<label>12600</label>
 		<label2>Common Shortcut</label2>
@@ -15,14 +23,6 @@
 		<icon>DefaultVideo.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,root)</action>
-	</shortcut>
-	<shortcut>
-		<defaultID>dvd</defaultID>
-		<label>32032</label>
-		<label2>Common Shortcut</label2>
-		<icon>DefaultDVDFull.png</icon>
-		<thumb />
-		<action>XBMC.PlayDVD()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>movies</defaultID>
@@ -41,12 +41,12 @@
 		<action>ActivateWindow(Videos,TVShowTitles,return)</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>albums</defaultID>
-		<label>132</label>
+		<defaultID>livetv</defaultID>
+		<label>32022</label>
 		<label2>Common Shortcut</label2>
-		<icon>DefaultMusicAlbums.png</icon>
+		<icon>DefaultTVShows.png</icon>
 		<thumb />
-		<action>ActivateWindow(MusicLibrary,Albums,return)</action>
+		<action>ActivateWindow(TVGuide)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>music</defaultID>
@@ -57,20 +57,28 @@
 		<action>ActivateWindow(Music,root)</action>
 	</shortcut>
 	<shortcut>
+		<defaultID>albums</defaultID>
+		<label>132</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultMusicAlbums.png</icon>
+		<thumb />
+		<action>ActivateWindow(MusicLibrary,Albums,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>radio</defaultID>
+		<label>32087</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(RadioGuide)</action>
+	</shortcut>
+	<shortcut>
 		<defaultID>pictures</defaultID>
 		<label>10002</label>
 		<label2>Common Shortcut</label2>
 		<icon>DefaultPicture.png</icon>
 		<thumb />
 		<action>ActivateWindow(Pictures)</action>
-	</shortcut>
-	<shortcut>
-		<defaultID>1036</defaultID>
-		<label>1036</label>
-		<label2>Common Shortcut</label2>
-		<icon>DefaultShortcut.png</icon>
-		<thumb />
-		<action>ActivateWindow(favourites)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>31063</defaultID>
@@ -81,20 +89,28 @@
 		<action>ActivateWindow(Programs,Addons,return)</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>settings</defaultID>
-		<label>10004</label>
+		<defaultID>1036</defaultID>
+		<label>1036</label>
 		<label2>Common Shortcut</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
-		<action>ActivateWindow(Settings)</action>
+		<action>ActivateWindow(favourites)</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>script.globalsearch</defaultID>
-		<label>137</label>
-		<label2>Custom shortcut</label2>
-		<icon>DefaultShortcut.png</icon>
+		<defaultID>dvd</defaultID>
+		<label>32032</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultDVDFull.png</icon>
 		<thumb />
-		<action>RunScript(script.globalsearch)</action>
+		<action>XBMC.PlayDVD()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>settings</defaultID>
+		<label>10004</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultAddonHelper.png</icon>
+		<thumb />
+		<action>ActivateWindow(Settings)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>shutdown</defaultID>
@@ -103,21 +119,5 @@
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
 		<action>ShutDown</action>
-	</shortcut>
-	<shortcut>
-		<defaultID>livetv</defaultID>
-		<label>32022</label>
-		<label2>Common Shortcut</label2>
-		<icon>DefaultTVShows.png</icon>
-		<thumb />
-		<action>ActivateWindow(TVGuide)</action>
-	</shortcut>
-	<shortcut>
-		<defaultID>radio</defaultID>
-		<label>32087</label>
-		<label2>Common Shortcut</label2>
-		<icon>DefaultTVShows.png</icon>
-		<thumb />
-		<action>ActivateWindow(RadioGuide)</action>
 	</shortcut>
 </shortcuts>

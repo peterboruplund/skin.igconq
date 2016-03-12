@@ -71,7 +71,7 @@
 				<font>Font33</font>
 				<align>left</align>
 				<aligny>top</aligny>
-				<label>$VAR[widgetDetails][CR][I][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT][/I]</label>
+				<label>$VAR[widgetDetails][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
 				<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 			</control> 
 		</control>

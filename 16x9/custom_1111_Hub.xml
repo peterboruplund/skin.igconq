@@ -22,7 +22,7 @@
 		</control>
 
 		<include name="Time">
-			<param name="heading">$INFO[Window(Home).Property(currentName)] Hub</param>
+			<param name="heading">$INFO[Window(Home).Property(currentBackground)] Hub</param>
 		</include>
 
 		<control type="group">
@@ -77,7 +77,7 @@
 		<control type="button" id="1000">
 			<onfocus>close</onfocus>
 			<onclick>close</onclick>
-			<label>Close</label>
+			<label>$LOCALIZE[15067]</label>
 			<left>-10000</left>
 			<top>-10000</top>
 			<width>1</width>

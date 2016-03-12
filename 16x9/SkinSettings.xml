@@ -60,7 +60,7 @@
 				<control type="button" id="13">
 					<width>600</width>
 					<height>66</height>
-					<label>Weather</label>
+					<label>$LOCALIZE[8]</label>
 					<textcolor>$VAR[SkinSettingButton13]</textcolor>
 				</control>
 
@@ -117,7 +117,7 @@
 					<onclick condition="StringCompare(Skin.String(menuStyle),vertical)">Skin.SetString(menuStyle,horizontal)</onclick>
 					<onclick condition="StringCompare(Skin.String(menuStyle),horizontal)">Skin.Reset(menuStyle)</onclick>
 					<onclick>SetProperty(skinshortcuts-reloadmainmenu,True,Home)</onclick>
-					<label>Main menu style</label>
+					<label>$LOCALIZE[31037]</label>
 					<label2>$VAR[menuStyle]</label2>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
@@ -127,7 +127,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>Classic main menu (3 items)</label>
+					<label>$LOCALIZE[31050]</label>
 					<onclick>Skin.ToggleSetting(SmallMainMenu)</onclick>
 					<selected>Skin.HasSetting(SmallMainMenu)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
@@ -204,7 +204,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>Overlay color</label>
+					<label>$LOCALIZE[31062]</label>
 					<label2>$VAR[OverlayColor]</label2>
 					<onclick>RunScript(script.skin.helper.service,action=colorpicker,skinstring=color.overlay)</onclick>
 					<visible>ControlGroup(9).HasFocus(11)</visible>
@@ -216,7 +216,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>Weather icons</label>
+					<label>$LOCALIZE[31067]</label>
 					<label2>$INFO[Skin.String(weatherIcons.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,property=weatherIcons&amp;type=resource.images.weathericons)</onclick>
 					<visible>ControlGroup(9).HasFocus(13)</visible>
@@ -227,7 +227,7 @@
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<onclick>RunScript(script.image.resource.select,property=weatherFanart&amp;type=resource.images.weatherfanart)</onclick>
-					<label>Weather fanart</label>
+					<label>$LOCALIZE[31068]</label>
 					<label2>$INFO[Skin.String(weatherFanart.name)]</label2>
 					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
