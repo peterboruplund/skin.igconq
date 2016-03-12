@@ -1728,7 +1728,7 @@
 		<property name="widgetInclude">widget-static</property>
 
 		<!-- Python snippets -->
-		<property name="autoreload">autoreloadStringAnd %( id ) if path in 'plugin' and path in '?' else autoreloadStringAnd %( id ) if path in 'plugin' else ''</property>
+		<property name="autoreload">autoreloadStringAnd %( id ) if path in 'plugin' and path in '?' else autoreloadStringQuestion %( id ) if path in 'plugin' else ''</property>
 		<property name="autoreloadStringAnd">&amp;igConq=$INFO[Window.Property(refresh800%s)]</property>
 		<property name="autoreloadStringQuestion">?igConq=$INFO[Window.Property(refresh800%s)]</property>
 
