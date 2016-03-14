@@ -496,7 +496,7 @@
 
 					<include name="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
-						<param name="path">$SKINSHORTCUTS[path]$PYTHON['&amp;' if path in '?' else '?']igconq=$INFO[Window.Property(refresh800$SKINSHORTCUTS[id])]</param>
+						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
 						<param name="itemAction">$SKINSHORTCUTS[itemAction]</param>
 						<param name="itemIcon">$SKINSHORTCUTS[itemIcon]</param>
@@ -1728,7 +1728,7 @@
 		<property name="widgetInclude">widget-static</property>
 
 		<!-- Python snippets -->
-		<property name="autoreload">autoreloadStringAnd %( id ) if path in 'plugin' and path in '?' else autoreloadStringQuestion %( id ) if path in 'plugin' else ''</property>
+		<property name="autoreload">'' if path in 'script.extendedinfo?' else autoreloadStringAnd %( id ) if path in 'plugin' and path in '?' else autoreloadStringQuestion %( id ) if path in 'plugin' else ''</property>
 		<property name="autoreloadStringAnd">&amp;igConq=$INFO[Window.Property(refresh800%s)]</property>
 		<property name="autoreloadStringQuestion">?igConq=$INFO[Window.Property(refresh800%s)]</property>
 
