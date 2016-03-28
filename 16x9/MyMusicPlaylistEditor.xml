@@ -217,7 +217,7 @@
 						<label>31000</label>
 						<font>Font33</font>
 						<textcolor>$VAR[TextColor2]</textcolor>
-						<visible>!IntegerGreaterThan(Container(50).NumItems,1)</visible>
+						<visible>!Integer.IsGreater(Container(50).NumItems,1)</visible>
 					</control>
 					<control type="label">
 						<width>auto</width>
@@ -226,7 +226,7 @@
 						<label>31001</label>
 						<font>Font33</font>
 						<textcolor>$VAR[TextColor2]</textcolor>
-						<visible>IntegerGreaterThan(Container(50).NumItems,1)</visible>
+						<visible>Integer.IsGreater(Container(50).NumItems,1)</visible>
 					</control>
 				</control>
 
@@ -426,7 +426,7 @@
 						<label>31000</label>
 						<font>Font33</font>
 						<textcolor>$VAR[TextColor2]</textcolor>
-						<visible>!IntegerGreaterThan(Container(100).NumItems,1)</visible>
+						<visible>!Integer.IsGreater(Container(100).NumItems,1)</visible>
 					</control>
 					<control type="label">
 						<width>auto</width>
@@ -435,7 +435,7 @@
 						<label>31001</label>
 						<font>Font33</font>
 						<textcolor>$VAR[TextColor2]</textcolor>
-						<visible>IntegerGreaterThan(Container(100).NumItems,1)</visible>
+						<visible>Integer.IsGreater(Container(100).NumItems,1)</visible>
 					</control>
 				</control>
 

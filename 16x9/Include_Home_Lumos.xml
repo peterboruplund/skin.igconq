@@ -22,22 +22,22 @@
 
 				<itemlayout width="203" height="306">
 					<control type="group">
-						<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="40" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="50" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="60" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="50" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="40" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="30" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="20" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="10" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="5" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
-						<animation effect="fade" start="100" end="0" time="0" condition="StringCompare(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="30" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="40" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="50" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="50" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="40" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="30" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="10" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="5" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="5" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
 
 						<control type="image">
-							<visible>!IsEmpty(ListItem.Property(igconq))</visible>
+							<visible>!String.IsEmpty(ListItem.Property(igconq))</visible>
 							<width>203</width>
 							<height>306</height>
 							<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -48,7 +48,7 @@
 
 				<focusedlayout width="203" height="306">
 					<control type="image">
-						<visible>!IsEmpty(ListItem.Property(igconq))</visible>
+						<visible>!String.IsEmpty(ListItem.Property(igconq))</visible>
 						<width>203</width>
 						<height>306</height>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
@@ -63,7 +63,7 @@
 
 			<!-- Widget details -->
 			<control type="label">
-				<animation effect="slide" end="133,0" time="0" condition="StringCompare(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
+				<animation effect="slide" end="133,0" time="0" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
 				<top>900</top>
 				<left>520</left>
 				<width>1000</width>
@@ -72,7 +72,7 @@
 				<align>left</align>
 				<aligny>top</aligny>
 				<label>$VAR[widgetDetails][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
-				<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 			</control> 
 		</control>
 		

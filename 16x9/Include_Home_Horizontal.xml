@@ -12,7 +12,8 @@
 			<ondown>SetProperty(currentMenu,$INFO[Container(9000).ListItem.Property(submenuVisibility)],Home)</ondown>
 			<ondown>SetProperty(currentMenu.1,$INFO[Container(9000).ListItem.Property(submenuVisibility),,.1],Home)</ondown>
 			<ondown>SetProperty(currentName,$INFO[Container(9000).ListItem.Label],Home)</ondown>
-			<ondown>ActivateWindow(1111)</ondown>
+			<ondown condition="Skin.HasSetting(enableHubs)">ActivateWindow(1111)</ondown>
+			<ondown condition="!Skin.HasSetting(enableHubs)">9001</ondown>
 			<onup>9002</onup>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
@@ -53,6 +54,57 @@
 
 		</control>
 
+		<!-- Sub menu -->
+		<control type="fixedlist" id="9001">
+			<left>-70</left>
+			<top>850</top>
+			<width>2060</width>
+			<height>360</height>
+			<onup>9000</onup>
+			<ondown>noop</ondown>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<focusposition>2</focusposition>
+			<orientation>horizontal</orientation>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<scrolltime tween="sine" easing="out">240</scrolltime>
+			<visible allowhiddenfocus="true">Control.HasFocus(9001)</visible>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="320" tween="sine" easing="in" />
+			</animation>
+
+			<itemlayout width="400" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>400</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font30</font>
+					<textcolor>HomeNF</textcolor>
+				</control>
+			</itemlayout>
+
+			<focusedlayout width="460" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>460</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font42</font>
+					<textcolor>TextColor1</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+				</control>
+			</focusedlayout>
+
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+
+		</control>
+
 		<!-- Widgets -->
 		<control type="group" id="9002">
 			<include>skinshortcuts-template-horizontal</include>
@@ -68,7 +120,7 @@
 			<align>center</align>
 			<aligny>top</aligny>
 			<label>$VAR[widgetDetails]</label>
-			<visible>!StringCompare(Container(9000).ListItem.Property(widget),WeatherWidget) + ControlGroup(9002).HasFocus</visible>
+			<visible>!String.IsEqual(Container(9000).ListItem.Property(widget),WeatherWidget) + ControlGroup(9002).HasFocus</visible>
 		</control>
 
 		<!-- Widget Heading -->

@@ -2,8 +2,8 @@
 <window>
 	<!-- settingscategory -->
 	<backgroundcolor>0x00000000</backgroundcolor>
-	<onload condition="IsEmpty(Window(settings).Property(ChangeSettingsLevel))">SetFocus(3)</onload>
-	<onload condition="!IsEmpty(Window(settings).Property(ChangeSettingsLevel))">SetFocus(20)</onload>
+	<onload condition="String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">SetFocus(3)</onload>
+	<onload condition="!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">SetFocus(20)</onload>
 	<onload condition="Window.Previous(skinsettings)">Right</onload>
 
 
@@ -30,7 +30,7 @@
 			<height>1040</height>
 			<texture border="40,0,0,0">common/Curve.png</texture>
 			<visible>Skin.HasSetting(ShowCurve)</visible>
-			<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(5).HasFocus + IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(5).HasFocus + String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
 		</control>
 
 		<!-- Time -->
@@ -52,7 +52,7 @@
 				<label>480</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(appearancesettings) + IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>Window.IsActive(appearancesettings) + String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
@@ -60,7 +60,7 @@
 				<label>480</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(appearancesettings) | !IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>!Window.IsActive(appearancesettings) | !String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
 			<!-- Videos -->
 			<control type="button">
@@ -205,7 +205,7 @@
 				<label>22082</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
 			<!-- More -->
 			<control type="button">
@@ -214,7 +214,7 @@
 				<label>22082</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>!IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
 
 		</control>
@@ -231,7 +231,7 @@
 			<onup>noop</onup>
 			<ondown>noop</ondown>
 			<orientation>vertical</orientation>
-			<visible>IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+			<visible>String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 		</control>
 
 		<!-- Dummy main list -->
@@ -242,7 +242,7 @@
 			<height>726</height>
 			<itemgap>34</itemgap>
 			<orientation>vertical</orientation>
-			<visible>!IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+			<visible>!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 
 			<!-- Addons -->
 			<control type="button">
@@ -287,7 +287,7 @@
 			<height>60</height>
 			<colordiffuse>OverlayColorFO</colordiffuse>
 			<texture border="6,1,8,1">common/ScrollBackground.png</texture>
-			<animation effect="fade" start="100" end="50" time="0" condition="ControlGroup(5).HasFocus | !IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
+			<animation effect="fade" start="100" end="50" time="0" condition="ControlGroup(5).HasFocus | !String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
 		</control>
 
 		<!-- Sub list -->
@@ -322,7 +322,7 @@
 			<focusedcolor>$VAR[TextColor1]</focusedcolor>
 			<invalidcolor>TextColor4</invalidcolor>
 			<disabledcolor>TextColor4</disabledcolor>
-			<visible allowhiddenfocus="true">!IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+			<visible allowhiddenfocus="true">!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 		</control>
 
 		<!-- Settings level button arrow -->
@@ -332,7 +332,7 @@
 			<width>35</width>
 			<height>66</height>
 			<texture>common/ArrowDownFO.png</texture>
-			<visible>!IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+			<visible>!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 		</control>
 
 		<!-- Sub list indicator -->
@@ -343,7 +343,7 @@
 			<height>60</height>
 			<colordiffuse>OverlayColorFO</colordiffuse>
 			<texture border="6,1,8,1">common/ScrollBackground.png</texture>
-			<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(5).HasFocus + IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(5).HasFocus + String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">Conditional</animation>
 		</control>
 
 		<!-- Settings description -->
@@ -364,7 +364,7 @@
 			<label>10047</label>
 			<textcolor>$VAR[TextColor1]</textcolor>
 			<shadowcolor>TextColor4</shadowcolor>
-			<visible>!IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+			<visible>!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 		</control>
 
 		<!-- Default label -->

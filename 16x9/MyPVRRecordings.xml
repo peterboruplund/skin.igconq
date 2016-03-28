@@ -25,7 +25,7 @@
 
 			<!-- Skin helper image -->
 			<control type="group">
-				<visible>IsEmpty(Container(50).ListItem.Plot)</visible>
+				<visible>String.IsEmpty(Container(50).ListItem.Plot)</visible>
 				<control type="image">
 					<left>120</left>
 					<top>225</top>
@@ -36,7 +36,7 @@
 					<aspectratio align="center">keep</aspectratio>
 					<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 					<bordersize>0,0,0,33</bordersize>
-					<visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster))</visible>
+					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster))</visible>
 				</control>
 				<control type="image">
 					<left>120</left>
@@ -48,7 +48,7 @@
 					<aspectratio align="center">keep</aspectratio>
 					<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
 					<bordersize>0,0,0,33</bordersize>
-					<visible>IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster)) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster)) + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
 				</control>
 			</control>
 
@@ -56,7 +56,7 @@
 			<control type="group">
 				<left>120</left>
 				<top>190</top>
-				<visible>!IsEmpty(Container(50).ListItem.Plot) | StringCompare(Container(50).ListItem.Label,..)</visible>
+				<visible>!String.IsEmpty(Container(50).ListItem.Plot) | String.IsEqual(Container(50).ListItem.Label,..)</visible>
 
 				<!-- Episode image -->
 				<control type="group">
@@ -294,7 +294,7 @@
 				<!-- Look controls -->
 				<control type="grouplist" id="3000">
 					<left>20</left>
-					<top>20</top>
+					<top>15</top> <!-- -5 because there is one spacer -->
 					<width>410</width>
 					<height>1040</height>
 					<onup>noop</onup>
@@ -347,16 +347,16 @@
 						<left>0</left>
 						<top>0</top>
 						<width>410</width>
-						<height>3</height>
-						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+						<height>10</height>
+						<texture>transparent.png</texture>
 					</control>
 
 					<!-- Channels -->
 					<control type="button" id="100">
 						<height>52</height>
 						<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
 						<onclick>SetFocus(10)</onclick>
 						<label>19019</label>
 					</control>
@@ -365,39 +365,39 @@
 						<height>52</height>
 						<label>22020</label>
 						<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 						<onclick>SetFocus(10)</onclick>
 					</control>
 					<!-- Recordings -->
 					<control type="button" id="103">
 						<height>52</height>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 						<onclick>SetFocus(10)</onclick>
 						<label>19163</label>
 					</control>
 					<!-- Timers -->
 					<control type="button" id="35">
 						<height>52</height>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 						<onclick>SetFocus(50)</onclick>
 						<label>19040</label>
 					</control>
 					<!-- Rules -->
 					<control type="button" id="36">
 						<height>52</height>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 						<onclick>SetFocus(50)</onclick>
 						<label>$LOCALIZE[31022]</label>
 					</control>
 					<!-- Search -->
 					<control type="button" id="37">
 						<height>52</height>
-						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
-						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+						<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 						<onclick>SetFocus(50)</onclick>
 						<label>137</label>
 					</control>

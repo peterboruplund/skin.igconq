@@ -63,7 +63,7 @@
 				<effect type="zoom" start="100" end="90" center="auto" easing="in" time="200"/>
 				<effect type="fade" start="100" end="0" time="200"/>
 			</animation>
-			<visible>IntegerGreaterThan(MusicPlayer.PlaylistLength,0)</visible>
+			<visible>Integer.IsGreater(MusicPlayer.PlaylistLength,0)</visible>
 
 			<!-- Background -->
 			<control type="image">
@@ -280,8 +280,8 @@
 					<height>60</height>
 					<texturefocus>osd/OSDLyricsFO.png</texturefocus>
 					<texturenofocus>osd/OSDLyricsNF.png</texturenofocus>
-					<onclick condition="IsEmpty(Skin.String(LyricAddon))">Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(LyricAddon))">XBMC.RunScript($INFO[Skin.String(LyricAddon)])</onclick>
+					<onclick condition="String.IsEmpty(Skin.String(LyricAddon))">Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(LyricAddon))">XBMC.RunScript($INFO[Skin.String(LyricAddon)])</onclick>
 				</control>
 				<!-- Playlist -->
 				<control type="button" id="10">

@@ -309,3 +309,13 @@ msgstr ""
 msgctxt "#31069"
 msgid "Location"
 msgstr ""
+
+#: /16x9/SkinSettings.xml:154
+msgctxt "#31070"
+msgid "Enable hubs"
+msgstr ""
+
+#: /16x9/Variables.xml:497
+msgctxt "#31071"
+msgid "Edit sub menu"
+msgstr ""

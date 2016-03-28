@@ -69,7 +69,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.StartTime)</visible>
+					<visible>!String.IsEmpty(ListItem.StartTime)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -92,7 +92,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.ChannelName)</visible>
+					<visible>!String.IsEmpty(ListItem.ChannelName)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -115,7 +115,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Duration)</visible>
+					<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -138,7 +138,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Genre)</visible>
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -161,7 +161,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.PlotOutline)</visible>
+					<visible>!String.IsEmpty(ListItem.PlotOutline)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>

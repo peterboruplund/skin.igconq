@@ -40,7 +40,7 @@
 			<height>600</height>
 			<texture>$INFO[ListItem.Icon]</texture>
 			<aspectratio aligny="center">keep</aspectratio>
-			<visible>!SubString(ListItem.Icon,Default) + !SubString(Control.GetLabel(416),*)</visible>
+			<visible>!String.Contains(ListItem.Icon,Default) + !String.Contains(Control.GetLabel(416),*)</visible>
 		</control>
 		<control type="image">
 			<left>150</left>
@@ -49,7 +49,7 @@
 			<height>600</height>
 			<texture flipx="true">$INFO[ListItem.Icon]</texture>
 			<aspectratio aligny="center">keep</aspectratio>
-			<visible>!SubString(ListItem.Icon,Default) + SubString(Control.GetLabel(416),*)</visible>
+			<visible>!String.Contains(ListItem.Icon,Default) + String.Contains(Control.GetLabel(416),*)</visible>
 		</control>
 		<control type="image">
 			<left>150</left>
@@ -59,7 +59,7 @@
 			<texture>$INFO[ListItem.Icon]</texture>
 			<colordiffuse>OverlayColorFO</colordiffuse>
 			<aspectratio aligny="center">keep</aspectratio>
-			<visible>SubString(ListItem.Icon,Default)</visible>
+			<visible>String.Contains(ListItem.Icon,Default)</visible>
 		</control>
 		<control type="image">
 			<left>150</left>
@@ -69,7 +69,7 @@
 			<texture>$INFO[ListItem.FileNameAndPath]</texture>
 			<colordiffuse>OverlayColorFO</colordiffuse>
 			<aspectratio aligny="center">keep</aspectratio>
-			<visible>StringCompare(ListItem.Path,special://skin/extras/backgrounds/)</visible>
+			<visible>String.IsEqual(ListItem.Path,special://skin/extras/backgrounds/)</visible>
 		</control>
 
 		<!-- Scrollbar -->

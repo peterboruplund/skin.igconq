@@ -11,18 +11,42 @@
 			<!-- Background -->
 			<include>DialogBackgroundImage</include>
 
+			<!-- Heading -->
 			<include name="Time">
 				<param name="heading">$INFO[Control.GetLabel(2)]</param>
 			</include>
 
-			<!-- Grouplist -->
-			<control type="grouplist" id="5">
+			<!-- Game Controller -->
+            <control type="gamecontroller" id="31">
+				<left>150</left>
+				<top>322</top>
+				<width>405</width>
+				<height>405</height>
+            </control>
+
+			<!-- Controllers Grouplist -->
+			<control type="grouplist" id="3">
 				<left>600</left>
 				<top>200</top>
-				<width>1200</width>
+				<width>550</width>
 				<height>720</height>
 				<itemgap>0</itemgap>
 				<onleft>9001</onleft>
+				<onright>5</onright>
+				<onup>noop</onup>
+				<ondown>9001</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+			</control>
+
+			<!-- Controller Buttons Grouplist -->
+			<control type="grouplist" id="5">
+				<left>1200</left>
+				<top>200</top>
+				<width>550</width>
+				<height>720</height>
+				<itemgap>0</itemgap>
+				<onleft>3</onleft>
 				<onright>9001</onright>
 				<onup>noop</onup>
 				<ondown>9001</ondown>
@@ -45,41 +69,9 @@
 				<width>1200</width>
 				<height>66</height>
 			</control>
-
-			<!-- Default radiobutton -->
-			<control type="radiobutton" id="8">
+			<control type="button" id="10">
 				<width>1200</width>
 				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<!-- Default spincontrolex -->
-			<control type="spincontrolex" id="9">
-				<width>1200</width>
-				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<!-- Default edit -->
-			<control type="edit" id="12">
-				<width>1200</width>
-				<height>66</height>
-			</control>
-
-			<!-- Default slider -->
-			<control type="sliderex" id="13"> 
-				<width>1200</width>
-				<height>66</height>
-				<texturesliderbar border="10,0,10,0">osd/OSDSliderBack.png</texturesliderbar>
-				<textureslidernib border="10,0,10,0">osd/OSDSliderNib.png</textureslidernib>
-				<textureslidernibfocus border="10,0,10,0">osd/OSDSliderNib.png</textureslidernibfocus>
-			</control>
-
-			<!-- Default image -->
-			<control type="image" id="11">
-				<width>1200</width>
-				<height>20</height>
-				<texture border="1,12,1,1" colordiffuse="DialogOverlayColorNF">common/ScrollBackgroundHorizontal.png</texture>
 			</control>
 
 			<!-- Button grouplist -->
@@ -90,24 +82,33 @@
 				<itemgap>30</itemgap>
 				<onleft>noop</onleft>
 				<onright>noop</onright>
-				<onup>5</onup>
+				<onup>3</onup>
 				<ondown>noop</ondown>
 				<defaultcontrol>28</defaultcontrol>
 				<orientation>horizontal</orientation>
 
+				<!-- Help Button -->
+				<control type="button" id="17">
+					<width>Auto</width>
+					<label>$LOCALIZE[10043]</label>
+				</control>
+
 				<!-- OK Button -->
-				<control type="button" id="28">
+				<control type="button" id="18">
 					<width>Auto</width>
+					<label>$LOCALIZE[186]</label>
 				</control>
 
-				<!-- Cancel Button -->
-				<control type="button" id="29">
+				<!-- Reset Button -->
+				<control type="button" id="19">
 					<width>Auto</width>
+					<label>$LOCALIZE[10035]</label>
 				</control>
 
-				<!-- Clear Button -->
-				<control type="button" id="30">
+				<!-- Get More Button -->
+				<control type="button" id="20">
 					<width>Auto</width>
+					<label>$LOCALIZE[21452]</label>
 				</control>
 
 			</control>

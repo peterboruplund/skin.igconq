@@ -65,7 +65,7 @@
 	<include name="WindowBackgroundImage">
 		<control type="visualisation">
 			<include>FullscreenDimensions</include>
-			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>
 		<control type="videowindow">
 			<include>FullscreenDimensions</include>
@@ -84,7 +84,7 @@
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<imagepath>$VAR[BackgroundImage]</imagepath>
-			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<timeperimage>10000</timeperimage>
 			<fadetime>200</fadetime>
 		</control>
@@ -93,7 +93,7 @@
 	<!-- Dialog background image -->
 	<include name="DialogBackgroundImage">
 		<!-- Background -->
-		<include>WindowBackgroundImage</include>
+		<include condition="!Window.IsVisible(FullScreenVideo)">WindowBackgroundImage</include>
 		<!--control type="image">
 			<include>FullscreenDimensions</include>
 			<texture colordiffuse="44000000">dialogs/DialogTextBackground.png</texture>
@@ -132,8 +132,8 @@
 				<colordiffuse>FanartDiffuse</colordiffuse>
 				<!--texture background="true" diffuse="diffuse.png" colordiffuse="$VAR[FanartColor]">$INFO[ListItem.Art(fanart)]</texture-->
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			</control>
 
 			<visible>[Skin.HasSetting(MovieFanart) + Container.Content(Movies)] | [Skin.HasSetting(TVFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(MusicFanart) + Window.IsVisible(musiclibrary)] | [Skin.HasSetting(WeatherFanart) + Window.IsVisible(weather)] | [Skin.HasSetting(AddonFanart) + [Container.Content(Addons) | Window.IsVisible(addonbrowser)]]</visible>
@@ -275,7 +275,7 @@
 			<align>right</align>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+			<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 			<control type="label">
 				<top>3</top>
 				<width>auto</width>
@@ -298,25 +298,25 @@
 
 	<!-- Side menu animation -->
 	<include name="SideMenuAnimation">
-		<animation effect="slide" end="0,26" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,19)">Conditional</animation>
-		<animation effect="slide" end="0,52" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,18)">Conditional</animation>
-		<animation effect="slide" end="0,78" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,17)">Conditional</animation>
-		<animation effect="slide" end="0,104" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,16)">Conditional</animation>
-		<animation effect="slide" end="0,130" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,15)">Conditional</animation>
-		<animation effect="slide" end="0,156" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,14)">Conditional</animation>
-		<animation effect="slide" end="0,182" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,13)">Conditional</animation>
-		<animation effect="slide" end="0,208" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,12)">Conditional</animation>
-		<animation effect="slide" end="0,234" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,11)">Conditional</animation>
-		<animation effect="slide" end="0,260" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,10)">Conditional</animation>
-		<animation effect="slide" end="0,286" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,9)">Conditional</animation>
-		<animation effect="slide" end="0,312" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,8)">Conditional</animation>
-		<animation effect="slide" end="0,338" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,7)">Conditional</animation>
-		<animation effect="slide" end="0,364" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,6)">Conditional</animation>
-		<animation effect="slide" end="0,390" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,5)">Conditional</animation>
-		<animation effect="slide" end="0,416" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,4)">Conditional</animation>
-		<animation effect="slide" end="0,442" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,3)">Conditional</animation>
-		<animation effect="slide" end="0,468" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,2)">Conditional</animation>
-		<animation effect="slide" end="0,494" time="0" condition="StringCompare(Container($PARAM[containerID]).NumItems,1)">Conditional</animation>
+		<animation effect="slide" end="0,26" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,19)">Conditional</animation>
+		<animation effect="slide" end="0,52" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,18)">Conditional</animation>
+		<animation effect="slide" end="0,78" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,17)">Conditional</animation>
+		<animation effect="slide" end="0,104" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,16)">Conditional</animation>
+		<animation effect="slide" end="0,130" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,15)">Conditional</animation>
+		<animation effect="slide" end="0,156" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,14)">Conditional</animation>
+		<animation effect="slide" end="0,182" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,13)">Conditional</animation>
+		<animation effect="slide" end="0,208" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,12)">Conditional</animation>
+		<animation effect="slide" end="0,234" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,11)">Conditional</animation>
+		<animation effect="slide" end="0,260" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,10)">Conditional</animation>
+		<animation effect="slide" end="0,286" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,9)">Conditional</animation>
+		<animation effect="slide" end="0,312" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,8)">Conditional</animation>
+		<animation effect="slide" end="0,338" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,7)">Conditional</animation>
+		<animation effect="slide" end="0,364" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,6)">Conditional</animation>
+		<animation effect="slide" end="0,390" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,5)">Conditional</animation>
+		<animation effect="slide" end="0,416" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,4)">Conditional</animation>
+		<animation effect="slide" end="0,442" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,3)">Conditional</animation>
+		<animation effect="slide" end="0,468" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,2)">Conditional</animation>
+		<animation effect="slide" end="0,494" time="0" condition="String.IsEqual(Container($PARAM[containerID]).NumItems,1)">Conditional</animation>
 
 	</include>
 

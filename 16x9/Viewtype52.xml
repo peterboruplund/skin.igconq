@@ -43,10 +43,10 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 						<colordiffuse>OverlayColorNF</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>SubString(ListItem.Icon,Default)</visible>
+						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="group">
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						<control type="image">
 							<left>23</left>
 							<top>135</top>
@@ -93,10 +93,10 @@
 						<colordiffuse>OverlayColorFO</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<animation effect="zoom" start="60" end="100" center="202,300" time="300" tween="back" easing="out" reversible="false">Focus</animation>
-						<visible>SubString(ListItem.Icon,Default)</visible>
+						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="group">
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						<animation effect="zoom" start="60" end="100" center="202,300" time="300" tween="back" easing="out" reversible="false">Focus</animation>
 						<control type="image">
 							<left>11</left>

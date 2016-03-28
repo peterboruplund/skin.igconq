@@ -3,7 +3,7 @@
 	<!-- settings -->
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol>9000</defaultcontrol>
-	<onload condition="!IsEmpty(Window(settings).Property(ChangeSettingsLevel))">ClearProperty(ChangeSettingsLevel)</onload>
+	<onload condition="!String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))">ClearProperty(ChangeSettingsLevel)</onload>
 
 	<controls>
 

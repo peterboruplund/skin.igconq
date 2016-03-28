@@ -68,7 +68,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Property(Addon.Type))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(Addon.Type))</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -91,7 +91,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(Addon.Creator))</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -114,7 +114,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Property(Addon.Version))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(Addon.Version))</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -137,7 +137,7 @@
 				<!--control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Property(Addon.Rating))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(Addon.Rating))</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -160,7 +160,7 @@
 				<control type="group">
 					<height>112</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Property(Addon.Summary))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(Addon.Summary))</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -201,7 +201,7 @@
 			<top>912</top>
 			<width>1620</width>
 			<height>66</height>
-			<itemgap>0</itemgap>
+			<itemgap>30</itemgap>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
 			<onup>50</onup>
@@ -210,45 +210,45 @@
 
 			<!-- Launch Addon Button -->
 				<control type="button" id="12">
-				<width>231</width>
+				<width>Auto</width>
 				<label>518</label>
 				<visible>Control.IsEnabled(12)</visible>
 			</control>
 			<!-- Configure Addon Button -->
 				<control type="button" id="9">
-				<width>231</width>
+				<width>Auto</width>
 				<label>24020</label>
 				<visible>Control.IsEnabled(9)</visible>
 			</control>
 			<!-- Update Addon Button -->
 				<control type="button" id="8">
-				<width>231</width>
+				<width>Auto</width>
 				<label>24069</label>
 				<visible>Control.IsEnabled(8)</visible>
 			</control>
 			<!-- Install/UnInstall Addon button -->
 			<control type="button" id="6">
-				<width>231</width>
+				<width>Auto</width>
 				<label>24022</label>
 				<visible>Control.IsEnabled(6)</visible>
 			</control>
 			<!-- Enable/Disable Addon button -->
 			<control type="button" id="7">
-				<width>231</width>
+				<width>Auto</width>
 				<label>24021</label>
 				<visible>Control.IsEnabled(7)</visible>
 			</control>
-			<!-- Rollback Button -->
-			<control type="button" id="11">
-				<width>231</width>
-				<label>24048</label>
-				<visible>Control.IsEnabled(11)</visible>
-			</control>
 			<!-- Changelog Button -->
 			<control type="button" id="10">
-				<width>231</width>
+				<width>Auto</width>
 				<label>24036</label>
 				<visible>Control.IsEnabled(10)</visible>
+			</control>
+			<!-- Auto-update Button -->
+			<control type="radiobutton" id="13">
+				<width>250</width>
+				<label>24048</label>
+				<visible>Control.IsEnabled(13)</visible>
 			</control>
 
 		</control>

@@ -114,7 +114,7 @@
 				<!-- Look controls -->
 				<control type="grouplist" id="3001">
 					<left>20</left>
-					<top>20</top>
+					<top>10</top> <!-- -10 because there are two spacers -->
 					<width>410</width>
 					<height>1040</height>
 					<onup>noop</onup>
@@ -181,8 +181,8 @@
 						<left>0</left>
 						<top>0</top>
 						<width>410</width>
-						<height>2</height>
-						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+						<height>10</height>
+						<texture>transparent.png</texture>
 					</control>
 
 
@@ -228,8 +228,8 @@
 						<left>0</left>
 						<top>0</top>
 						<width>410</width>
-						<height>2</height>
-						<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+						<height>10</height>
+						<texture colordiffuse="$VAR[OverlayColor]">transparent.png</texture>
 					</control>
 
 
@@ -237,8 +237,8 @@
 					<control type="button" id="91">
 						<label>13350</label>
 						<height>52</height>
-						<onclick condition="!StringCompare(Playlist.Length(video),0)">ActivateWindow(videoplaylist)</onclick>
-						<visible>!StringCompare(Playlist.Length(video),0)</visible>
+						<onclick condition="!String.IsEqual(Playlist.Length(video),0)">ActivateWindow(videoplaylist)</onclick>
+						<visible>!String.IsEqual(Playlist.Length(video),0)</visible>
 					</control>
 					<!-- Update library -->
 					<control type="togglebutton" id="20">

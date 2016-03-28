@@ -30,7 +30,7 @@
 				<preloaditems>4</preloaditems>
 				<viewtype label="Wall">icon</viewtype>
 				<scrolltime tween="sine" easing="out">240</scrolltime>
-				<visible>[SubString(Container.FolderPath,videodb://movies/titles/) | SubString(Container.FolderPath,videodb://tvshows/titles/)] + !Container.Content(episodes)</visible>
+				<visible>[String.Contains(Container.FolderPath,videodb://movies/titles/) | String.Contains(Container.FolderPath,videodb://tvshows/titles/)] + !Container.Content(episodes)</visible>
 
 				<itemlayout width="270" height="333">
 					<control type="image">
@@ -40,10 +40,10 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 						<colordiffuse>OverlayColorNF</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>SubString(ListItem.Icon,Default)</visible>
+						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="group">
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						<control type="image">
 							<left>34</left>
 							<width>202</width>
@@ -84,10 +84,10 @@
 						<height>300</height>
 						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<visible>SubString(ListItem.Icon,Default)</visible>
+						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="group">
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						<control type="image">
 							<left>34</left>
 							<width>202</width>

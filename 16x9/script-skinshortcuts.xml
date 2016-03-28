@@ -139,7 +139,7 @@
 				<width>1050</width>
 				<height>60</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
-				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
+				<visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
 			<!-- Change label -->
@@ -148,7 +148,7 @@
 				<height>40</height>
 				<label>  -  $ADDON[script.skinshortcuts 32025]</label>
 				<label2>$INFO[Container(211).ListItem.Label]</label2>
-				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
+				<visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
 			<!-- Change action -->
@@ -157,7 +157,7 @@
 				<height>40</height>
 				<label>  -  $ADDON[script.skinshortcuts 32027]</label>
 				<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
-				<visible>!SubString(Window.Property(groupname),.1,Right)</visible>
+				<visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
 			<!-- Change Thumbnail -->
@@ -166,7 +166,7 @@
 				<height>40</height>
 				<label>  -  $LOCALIZE[20019]</label>
 				<label2>$INFO[Container(211).ListItem.Icon]</label2>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) + IsEmpty(Skin.String(menuStyle))</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Skin.String(menuStyle),lumos)</visible>
 			</control>
 
 			<!-- Change background -->
@@ -175,7 +175,7 @@
 				<height>40</height>
 				<label>  -  $ADDON[script.skinshortcuts 32045]</label>
 				<label2>$INFO[Container(211).ListItem.Property(Background)]</label2>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Edit widget -->
@@ -184,10 +184,10 @@
 				<height>60</height>		
 				<label>$ADDON[script.skinshortcuts 32044]</label>
 				<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SetProperty(customProperty,path)</onclick>
-				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SetProperty(customValue,randomValueSoTheMenuItemWillSave)</onclick>
-				<onclick condition="SubString(Window.Property(groupname),.1,Right)">SendClick(404)</onclick>
-				<visible>StringCompare(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),.1,Right)</visible>
+				<onclick condition="String.EndsWith(Window.Property(groupname),.1)">SetProperty(customProperty,path)</onclick>
+				<onclick condition="String.EndsWith(Window.Property(groupname),.1)">SetProperty(customValue,randomValueSoTheMenuItemWillSave)</onclick>
+				<onclick condition="String.EndsWith(Window.Property(groupname),.1)">SendClick(404)</onclick>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
 			<!-- Change size option -->
@@ -196,8 +196,8 @@
 				<height>40</height>
 				<label>  -  $LOCALIZE[289]</label>
 				<label2>$VAR[skinshortcuts-size]</label2>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
-				<visible>IsEmpty(Skin.String(menuStyle))</visible>
+				<enable>!String.IsEmpty(Container(211).ListItem.Property(widget)) + !String.IsEqual(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
@@ -207,7 +207,8 @@
 				<height>40</height>
 				<label>  -  $LOCALIZE[31033]</label>
 				<label2>$VAR[skinshortcuts-art]</label2>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<enable>!String.IsEmpty(Container(211).ListItem.Property(widget)) + !String.IsEqual(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 			<!-- Fallback artwork -->
@@ -216,7 +217,8 @@
 				<height>40</height>
 				<label>  -  $LOCALIZE[31029]</label>
 				<label2>$VAR[skinshortcuts-fallbackart]</label2>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<enable>!String.IsEmpty(Container(211).ListItem.Property(widget)) + !String.IsEqual(Container(211).ListItem.Property(widget),WeatherWidget) + !Container(8000).IsUpdating</enable>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
@@ -225,8 +227,9 @@
 				<width>1050</width>
 				<height>40</height>
 				<label>  -  $LOCALIZE[31026]</label>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) + !StringCompare(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
-				<selected>IsEmpty(Container(211).ListItem.Property(shadow))</selected>
+				<enable>!String.IsEmpty(Container(211).ListItem.Property(widget)) + !String.IsEqual(Container(211).ListItem.Property(widget),WeatherWidget)</enable>
+				<selected>String.IsEmpty(Container(211).ListItem.Property(shadow))</selected>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 
@@ -235,16 +238,17 @@
 				<width>1050</width>
 				<height>40</height>
 				<label>  -  $LOCALIZE[31025]</label>
-				<selected>!IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
-				<visible>IsEmpty(Skin.String(menuStyle))</visible>
+				<selected>!String.IsEmpty(Container(211).ListItem.Property(autoscroll))</selected>
+				<visible>String.IsEqual(Skin.String(menuStyle),lumos)</visible>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
-			<!-- Edit Submenu -->
+			<!-- Edit Hub menu -->
 			<control type="button" id="405">
 				<width>1050</width>
 				<height>60</height>
-				<label>$LOCALIZE[31023]</label>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<label>$VAR[skinshortcuts-submenubutton]</label>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 			</control>
 
 			<!-- Edit hub widgets -->
@@ -252,8 +256,8 @@
 				<width>1050</width>
 				<height>40</height>
 				<label>  -  $LOCALIZE[31024]</label>
-				<enable>!IsEmpty(Container(211).ListItem.Property(widget)) | !IsEmpty(Skin.String(menuStyle))</enable>
-				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<enable>!String.IsEmpty(Container(211).ListItem.Property(widget)) | !String.IsEqual(Skin.String(menuStyle),lumos)</enable>
+				<visible>String.IsEqual(Window.Property(groupname),mainmenu) + [Skin.HasSetting(enableHubs) | String.IsEqual(Skin.String(menuStyle),lumos)]</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
 

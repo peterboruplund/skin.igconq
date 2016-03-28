@@ -2,9 +2,9 @@
 <window>
 	<!-- movieinformation -->
 	<defaultcontrol always="true">8</defaultcontrol>
-	<onload condition="StringCompare(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onload>
+	<onload condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onload>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
-	<onunload condition="StringCompare(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onunload>
+	<onunload condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onunload>
 	<include>DialogZoomAnimation</include>
 
 	<controls>
@@ -13,18 +13,13 @@
 		<include>DialogBackgroundImage</include>
 
 		<!-- Heading -->
-		<control type="label">
-			<left>150</left>
-			<top>96</top>
-			<width>1620</width>
-			<height>72</height>
-			<font>Font72</font>
-			<label>$VAR[VideoInfoLabel]</label>
-		</control>
+		<include name="Time">
+			<param name="heading">$VAR[VideoInfoLabel]</param>
+		</include>
 
 		<!-- Poster image -->
 		<control type="group">
-			<visible>!StringCompare(Control.GetLabel(5),$LOCALIZE[207]) + !SubString(ListItem.Icon,Default)</visible>
+			<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207]) + !String.Contains(ListItem.Icon,Default)</visible>
 			<control type="image">
 				<left>150</left>
 				<top>225</top>
@@ -46,7 +41,7 @@
 
 		<!-- Actor image -->
 		<control type="group">
-			<visible>StringCompare(Control.GetLabel(5),$LOCALIZE[207])</visible>
+			<visible>String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
 			<control type="image">
 				<left>150</left>
 				<top>225</top>
@@ -56,7 +51,7 @@
 				<aspectratio aligny="center">keep</aspectratio>
 				<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
 				<bordersize>0,0,0,66</bordersize>
-				<visible>!SubString(Container(50).ListItem.Icon,Default)</visible>
+				<visible>!String.Contains(Container(50).ListItem.Icon,Default)</visible>
 			</control>
 			<control type="image">
 				<left>150</left>
@@ -66,7 +61,7 @@
 				<texture colordiffuse="00ffffff">$INFO[Container(50).ListItem.Icon]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
 				<bordertexture border="21,21,21,150">views/OverlayEffect.png</bordertexture>
-				<visible>!SubString(Container(50).ListItem.Icon,Default) + Skin.HasSetting(Overlays)</visible>
+				<visible>!String.Contains(Container(50).ListItem.Icon,Default) + Skin.HasSetting(Overlays)</visible>
 			</control>
 			<control type="image">
 				<left>120</left>
@@ -76,7 +71,7 @@
 				<texture>$INFO[Container(50).ListItem.Icon]</texture>
 				<colordiffuse>OverlayColorFO</colordiffuse>
 				<aspectratio aligny="center">keep</aspectratio>
-				<visible>SubString(Container(50).ListItem.Icon,Default)</visible>
+				<visible>String.Contains(Container(50).ListItem.Icon,Default)</visible>
 			</control>
 		</control>
 
@@ -84,7 +79,7 @@
 		<control type="group">
 			<left>600</left>
 			<top>235</top>
-			<visible>!StringCompare(Control.GetLabel(5),$LOCALIZE[207])</visible>
+			<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
 
 			<!-- Details -->
 			<control type="grouplist">
@@ -98,7 +93,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Artist)</visible>
+					<visible>!String.IsEmpty(ListItem.Artist)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -121,7 +116,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Album)</visible>
+					<visible>!String.IsEmpty(ListItem.Album)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -144,7 +139,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Genre)</visible>
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -167,7 +162,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Director)</visible>
+					<visible>!String.IsEmpty(ListItem.Director)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -190,7 +185,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Writer)</visible>
+					<visible>!String.IsEmpty(ListItem.Writer)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -213,7 +208,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Duration)</visible>
+					<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -236,7 +231,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.RatingAndVotes)</visible>
+					<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -259,7 +254,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.Mpaa)</visible>
+					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -282,7 +277,7 @@
 				<control type="group">
 					<height>36</height>
 					<width>1170</width>
-					<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
 					<control type="label">
 						<width>200</width>
 						<height>36</height>
@@ -328,7 +323,7 @@
 			<orientation>vertical</orientation>
 			<viewtype label="">list</viewtype>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
-			<visible allowhiddenfocus="true">StringCompare(Control.GetLabel(5),$LOCALIZE[207])</visible>
+			<visible allowhiddenfocus="true">String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
 
 			<itemlayout width="1170" height="58">
 				<control type="label">
@@ -359,39 +354,39 @@
 			<top>912</top>
 			<width>1620</width>
 			<height>66</height>
-			<itemgap>0</itemgap>
+			<itemgap>30</itemgap>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
-			<onup condition="StringCompare(Control.GetLabel(5),$LOCALIZE[207])">50</onup>
+			<onup condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">50</onup>
 			<ondown>noop</ondown>
 			<orientation>horizontal</orientation>
 
 			<!-- Play/Browse Button -->
 			<control type="togglebutton" id="8">
-				<width>231</width>
+				<width>Auto</width>
 				<label>208</label>
 				<altlabel>1024</altlabel>
 				<usealttexture>Container.Content(TVShows)</usealttexture>
 			</control>
 			<!-- Cast Button -->
 			<control type="button" id="5">
-				<width>231</width>
+				<width>Auto</width>
 				<label>206</label>
-				<onclick condition="StringCompare(Control.GetLabel(5),$LOCALIZE[207])">SetFocus(50)</onclick>
+				<onclick condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SetFocus(50)</onclick>
 			</control>
 			<!-- Refresh Button -->
 			<control type="button" id="6">
-				<width>231</width>
+				<width>Auto</width>
 				<label>184</label>
 			</control>
 			<!-- Get Thumb Button -->
 			<control type="button" id="10">
-				<width>231</width>
+				<width>Auto</width>
 				<label>13511</label>
 			</control>
 			<!-- Artwork Downloader Button -->
 			<control type="button" id="20">
-				<width>231</width>
+				<width>Auto</width>
 				<label>31043</label>
 				<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 				<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
@@ -399,13 +394,13 @@
 			</control>
 			<!-- Trailer Button -->
 			<control type="button" id="11">
-				<width>231</width>
+				<width>Auto</width>
 				<label>20410</label>
-				<visible>!IsEmpty(ListItem.Trailer)</visible>
+				<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 			</control>
 			<!-- Cinema Experience Button -->
 			<control type="button" id="21">
-				<width>231</width>
+				<width>Auto</width>
 				<label>31066</label>
 				<onclick>Dialog.Close(MovieInformation)</onclick>
 				<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
