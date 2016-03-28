@@ -2,6 +2,7 @@
 
 - Home screen fixes
 - Hubs disabled by default for classic menu styles
+- Vertical menu enabled by default
 - All 'left menus' updated to igConq style
 - Fix Auto-Update button in addon info
 - Fix music info dialog

@@ -48,7 +48,7 @@
 		<!-- Home layout -->
 		<control type="group">
 			<include>WindowFadeAnimation</include>
-			<include condition="String.IsEmpty(Skin.String(menuStyle))">HomeDefault</include>
+			<include condition="String.IsEmpty(Skin.String(menuStyle)) | String.IsEqual(Skin.String(menuStyle),vertical)">HomeDefault</include>
 			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)">HomeHorizontal</include>
 			<include condition="String.IsEqual(Skin.String(menuStyle),lumos)">HomeLumos</include>
 		</control>
