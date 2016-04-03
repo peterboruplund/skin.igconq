@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<animation effect="slide" start="410,0" time="200">WindowOpen</animation>
+	<animation effect="slide" end="410,0" time="200">WindowClose</animation>
+	<zorder>100</zorder>
+	<defaultcontrol>3012</defaultcontrol>
+	<!-- infodialog -->
+	<controls>
+		<control type="group">
+			<animation effect="slide" end="0,70" time="200" condition="Window.IsActive(volumebar)" reversible="True">Conditional</animation>
+			<animation effect="slide" end="0,105" time="200" condition="Window.IsActive(notification)" reversible="True">Conditional</animation>
+		
+			<control type="image">
+				<right>0</right>
+				<top>90</top>
+				<width>550</width>
+				<height>105</height>
+				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+			</control>
+
+			<!-- Title -->
+			<control type="label">
+				<right>10</right>
+				<top>100</top>
+				<width>530</width>
+				<height>20</height>
+				<align>left</align>
+				<scroll>true</scroll>
+				<font>Font27</font>
+				<label>$ADDON[service.nextup.notification 30008]</label>
+			</control>
+
+			<!-- Next episode -->
+			<control type="label" id="402">
+				<right>10</right>
+				<top>125</top>
+				<width>530</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<scroll>true</scroll>
+				<font>Font27-Light</font>
+				<label>$INFO[Control.GetLabel(3015),s,]$INFO[Control.GetLabel(3016),e,)] $INFO[Control.GetLabel(3000)]</label>
+			</control>
+
+			<!-- Watch now -->
+			<control type="button" id="3012">
+				<right>10</right>
+				<top>155</top>
+				<width>530</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>Font27-Light</font>
+				<label>Click OK to watch now</label>
+				<onback>SendClick(3013)</onback>
+			</control>
+
+		</control>
+
+		<!-- Stop watching -->
+		<control type="label" id="3013">
+			<left>-10000</left>
+			<top>-10000</top>
+			<width>260</width>
+			<height>20</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>Font27</font>
+			<label>222</label>
+		</control>
+
+        <!-- Season -->
+        <control type="label" id="3015">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+            <label>-</label>
+        </control>
+
+        <!-- Episode -->
+        <control type="label" id="3016">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+            <label>-</label>
+        </control>
+
+		<!-- Episode name -->
+		<control type="label" id="3000">
+			<left>-10000</left>
+			<top>-10000</top>
+			<width>1620</width>
+			<height>72</height>
+			<font>Font72</font>
+			<textcolor>$VAR[DialogColor1]</textcolor>
+			<label>-</label>
+		</control>
+
+	</controls>
+
+</window>
