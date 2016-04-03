@@ -29,7 +29,7 @@
 				<height>1040</height>
 				<onright>Close</onright>
 
-				<include name="SideMenuAnimation">
+				<include content="SideMenuAnimation">
 					<param name="containerID">7000</param>
 				</include>
 

@@ -19,7 +19,7 @@
 		</control>
 
 		<!-- Time -->
-		<include name="Time">
+		<include content="Time">
 			<param name="heading">$LOCALIZE[7]</param>
 		</include>
 

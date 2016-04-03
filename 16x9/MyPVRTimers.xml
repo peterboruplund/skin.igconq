@@ -267,7 +267,7 @@
 					<defaultcontrol always="true">99</defaultcontrol>
 					<visible allowhiddenfocus="true">ControlGroup(3000).HasFocus()</visible>
 
-					<include name="SideMenuAnimation">
+					<include content="SideMenuAnimation">
 						<param name="containerID">3000</param>
 					</include>
 

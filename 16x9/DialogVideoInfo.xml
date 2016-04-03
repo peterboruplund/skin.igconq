@@ -13,7 +13,7 @@
 		<include>DialogBackgroundImage</include>
 
 		<!-- Heading -->
-		<include name="Time">
+		<include content="Time">
 			<param name="heading">$VAR[VideoInfoLabel]</param>
 		</include>
 

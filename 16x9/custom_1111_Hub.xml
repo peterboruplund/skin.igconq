@@ -21,7 +21,7 @@
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
 		</control>
 
-		<include name="Time">
+		<include content="Time">
 			<param name="heading">$INFO[Window(Home).Property(currentName)] Hub</param>
 		</include>
 
@@ -43,10 +43,10 @@
 				<left>1711</left>
 				<top>699</top>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus(1000)">Conditional</animation>
-				<include name="widget-movement">
+				<include content="widget-movement">
 					<param name="id">0</param>
 				</include>
-				<include name="widget-image">
+				<include content="widget-image">
 					<description>Empty artwork</description>
 					<param name="width">183</param>
 					<param name="height">219</param>

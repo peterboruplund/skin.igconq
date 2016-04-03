@@ -59,7 +59,7 @@
 				<left>1930</left>
 				<top>$SKINSHORTCUTS[layoutTop]</top>
 
-				<include name="$SKINSHORTCUTS[layoutMovement]">
+				<include content="$SKINSHORTCUTS[layoutMovement]">
 					<param name="id">$SKINSHORTCUTS[id]</param>
 				</include>
 
@@ -115,7 +115,7 @@
 							</animation>
 
 							<control type="group">
-								<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -126,7 +126,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible"></param>
 								</include>
-								<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -137,7 +137,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 								</include>
-								<include name="widget-image">
+								<include content="widget-image">
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -171,7 +171,7 @@
 
 					<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -182,7 +182,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -193,7 +193,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -224,7 +224,7 @@
 						</control>
 					</focusedlayout>
 
-					<include name="$SKINSHORTCUTS[widgetInclude]">
+					<include content="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
 						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
@@ -237,7 +237,7 @@
 				<control type="group">
 					<top>$PYTHON[int( imageHeight ) * int( layoutFocus )]</top>
 
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Empty artwork</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -248,7 +248,7 @@
 						<param name="shadow"></param>
 						<param name="visible">!IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Updating</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -260,7 +260,7 @@
 						<param name="shadow"></param>
 						<param name="visible">Container(800$SKINSHORTCUTS[id]).IsUpdating + !IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Widget failure</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -332,7 +332,7 @@
 				<left>1930</left>
 				<top>$SKINSHORTCUTS[layoutTop]</top>
 
-				<include name="$SKINSHORTCUTS[layoutMovement]">
+				<include content="$SKINSHORTCUTS[layoutMovement]">
 					<param name="id">0</param>
 				</include>
 
@@ -383,7 +383,7 @@
 							</animation>
 
 							<control type="group">
-								<include name="widget-image">
+								<include content="widget-image">
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -394,7 +394,7 @@
 									<param name="shadow"></param>
 									<param name="visible"></param>
 								</include>
-								<include name="widget-image">
+								<include content="widget-image">
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -405,7 +405,7 @@
 									<param name="shadow"></param>
 									<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
 								</include>
-								<include name="widget-image">
+								<include content="widget-image">
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -441,7 +441,7 @@
 						<control type="group">
 							<!--visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible-->
 
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -452,7 +452,7 @@
 								<param name="shadow"></param>
 								<param name="visible"></param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -463,7 +463,7 @@
 								<param name="shadow"></param>
 								<param name="visible">IsEmpty(ListItem.$SKINSHORTCUTS[art])</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -494,7 +494,7 @@
 						</control>
 					</focusedlayout>
 
-					<include name="$SKINSHORTCUTS[widgetInclude]">
+					<include content="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
 						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
@@ -507,7 +507,7 @@
 				<control type="group">
 					<top>$PYTHON[int( imageHeight ) * int( layoutFocus )]</top>
 
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Empty artwork</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -518,7 +518,7 @@
 						<param name="shadow"></param>
 						<param name="visible">!IntegerGreaterThan(Container(8000).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Updating</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -530,7 +530,7 @@
 						<param name="shadow"></param>
 						<param name="visible">Container(8000).IsUpdating + !IntegerGreaterThan(Container(8000).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Widget failure</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -580,7 +580,7 @@
 				<left>1930</left>
 				<top>-306</top>
 
-				<include name="widget-movement">
+				<include content="widget-movement">
 					<param name="id">$SKINSHORTCUTS[id]</param>
 				</include>
 
@@ -751,7 +751,7 @@
 				<left>1930</left>
 				<top>$SKINSHORTCUTS[layoutTop]</top>
 
-				<include name="$SKINSHORTCUTS[layoutMovement]">
+				<include content="$SKINSHORTCUTS[layoutMovement]">
 					<param name="id">$SKINSHORTCUTS[id]</param>
 				</include>
 
@@ -804,7 +804,7 @@
 							</animation>
 
 							<control type="group">
-								<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+								<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -815,7 +815,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible"></param>
 								</include>
-								<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+								<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -826,7 +826,7 @@
 									<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 									<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 								</include>
-								<include name="widget-image">
+								<include content="widget-image">
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -860,7 +860,7 @@
 
 					<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -871,7 +871,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -882,7 +882,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -913,7 +913,7 @@
 						</control>
 					</focusedlayout>
 
-					<include name="$SKINSHORTCUTS[widgetInclude]">
+					<include content="$SKINSHORTCUTS[widgetInclude]">
 						<param name="target">$SKINSHORTCUTS[target]</param>
 						<param name="path">$SKINSHORTCUTS[path]$PYTHON[$SKINSHORTCUTS[autoreload]]</param>
 						<param name="itemLabel">$SKINSHORTCUTS[itemLabel]</param>
@@ -926,7 +926,7 @@
 				<control type="group">
 					<top>$PYTHON[int( imageHeight ) * int( layoutFocus )]</top>
 
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Empty artwork</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -937,7 +937,7 @@
 						<param name="shadow"></param>
 						<param name="visible">!IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Updating</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -949,7 +949,7 @@
 						<param name="shadow"></param>
 						<param name="visible">Container(800$SKINSHORTCUTS[id]).IsUpdating + !IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,0)</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Widget failure</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1181,7 +1181,7 @@
 				</animation>
 
 				<itemlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
-					<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+					<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 						<description>Primary art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1192,7 +1192,7 @@
 						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 						<param name="visible"></param>
 					</include>
-					<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+					<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 						<description>Fallback art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1203,7 +1203,7 @@
 						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 						<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Catch-all art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1235,7 +1235,7 @@
 
 				<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1246,7 +1246,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1257,7 +1257,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1271,7 +1271,7 @@
 							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1282,7 +1282,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1293,7 +1293,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1524,7 +1524,7 @@
 				<animation effect="slide" start="0,0" end="2000,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
 
 				<itemlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
-					<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+					<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 						<description>Primary art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1535,7 +1535,7 @@
 						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 						<param name="visible"></param>
 					</include>
-					<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+					<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 						<description>Fallback art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1546,7 +1546,7 @@
 						<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 						<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 					</include>
-					<include name="widget-image">
+					<include content="widget-image">
 						<description>Catch-all art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1578,7 +1578,7 @@
 
 				<focusedlayout width="$SKINSHORTCUTS[layoutWidth]" height="$SKINSHORTCUTS[layoutHeight]">
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1589,7 +1589,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1600,7 +1600,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1614,7 +1614,7 @@
 							<visible>Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
 						<control type="group">
-							<include name="$PYTHON[$SKINSHORTCUTS[primary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[primary-art]]">
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1625,7 +1625,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible"></param>
 							</include>
-							<include name="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
+							<include content="$PYTHON[$SKINSHORTCUTS[secondary-art]]">
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
@@ -1636,7 +1636,7 @@
 								<param name="shadow">$SKINSHORTCUTS[shadow]</param>
 								<param name="visible">$PYTHON[$SKINSHORTCUTS[secondary-visibility]]</param>
 							</include>
-							<include name="widget-image">
+							<include content="widget-image">
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>

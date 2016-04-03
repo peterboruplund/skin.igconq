@@ -9,7 +9,7 @@
 		<!-- Background -->
 		<include>DialogBackgroundImage</include>
 
-		<include name="Time">
+		<include content="Time">
 			<param name="heading">$INFO[Control.GetLabel(311)]</param>
 		</include>
 

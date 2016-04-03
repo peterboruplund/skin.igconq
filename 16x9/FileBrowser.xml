@@ -19,7 +19,7 @@
 			<visible>Skin.HasSetting(ShowCurve)</visible>
 		</control>
 
-		<include name="Time">
+		<include content="Time">
 			<param name="heading">$INFO[Control.GetLabel(411)]</param>
 		</include>
 
