@@ -104,8 +104,7 @@ msgctxt "#31021"
 msgid "Home"
 msgstr ""
 
-#: /16x9/MyPVRChannels.xml:365 /16x9/MyPVRGuide.xml:1217 /16x9/MyPVRRecordings.xml:394 /16x9/MyPVRSearch.xml:415
-#: /16x9/MyPVRTimers.xml:349
+#: /16x9/MyPVRChannels.xml:365 /16x9/MyPVRGuide.xml:1217 /16x9/MyPVRRecordings.xml:394 /16x9/MyPVRSearch.xml:415 /16x9/MyPVRTimers.xml:349
 msgctxt "#31022"
 msgid "Rules"
 msgstr ""
@@ -318,4 +317,14 @@ msgstr ""
 #: /16x9/Variables.xml:497
 msgctxt "#31071"
 msgid "Edit sub menu"
+msgstr ""
+
+#: /16x9/script-nextup-notification-StillWatchingInfo.xml:31
+msgctxt "#31072"
+msgid "Still there?"
+msgstr ""
+
+#: /16x9/script-nextup-notification-StillWatchingInfo.xml:56
+msgctxt "#31073"
+msgid "Click OK to keep watching"
 msgstr ""

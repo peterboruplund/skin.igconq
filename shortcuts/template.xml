@@ -350,7 +350,7 @@
 				<animation effect="fade" start="100" end="5" time="0" condition="!IsEmpty(Container(9000).ListItemNoWrap(8).Property(igconq))">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="0" condition="!IsEmpty(Container(9000).ListItemNoWrap(9).Property(igconq))">Conditional</animation>
 
-				<visible>!IsEmpty(Container(9000).ListItemNoWrap(-3).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(-2).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(-1).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(0).Property(igconq))) | StringCompare(Container(9000).ListItemNoWrap(1).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(2).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(3).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(4).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(5).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(6).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(7).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(8).Property(igconq))) | !IsEmpty(Container(9000).ListItemNoWrap(9).Property(igconq)))</visible>
+				<visible>!IsEmpty(Container(9000).ListItemNoWrap(-3).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(-2).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(-1).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(0).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(1).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(2).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(3).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(4).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(5).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(6).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(7).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(8).Property(igconq)) | !IsEmpty(Container(9000).ListItemNoWrap(9).Property(igconq))</visible>
 
 				<control type="fixedlist" id="8000">
 					<visible>StringCompare(Window(Home).Property(currentMenu),$SKINSHORTCUTS[submenuVisibility])</visible>
@@ -1862,7 +1862,7 @@
 				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Label]</value>
 			</variable>
 			<variable name="widgetBackground">
-				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus(800$SKINSHORTCUTS[id]) | IsEmpty(Skin.String(menuStyle))]">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
+				<value condition="StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus(800$SKINSHORTCUTS[id]) | String.IsEqual(Skin.String(menuStyle),lumos)]">$INFO[Container(800$SKINSHORTCUTS[id]).ListItem.Art(fanart)]</value>
 			</variable>
 		</variables>
 	</other>

@@ -7,8 +7,9 @@
     <!-- infodialog -->
     <controls>
         <control type="group">
-            <animation effect="slide" end="0,70" time="200" condition="Window.IsActive(volumebar)" reversible="True">Conditional</animation>
-            <animation effect="slide" end="0,105" time="200" condition="Window.IsActive(notification)" reversible="True">Conditional</animation>
+            <animation effect="slide" end="0,70" time="200" condition="Window.IsActive(volumebar)">Conditional</animation>
+            <animation effect="slide" end="0,85" time="200" condition="Window.IsActive(notification)">Conditional</animation>
+            <animation effect="slide" end="0,85" time="200" condition="Window.IsActive(extendedprogressdialog)">Conditional</animation>
         
             <control type="image">
                 <right>0</right>
@@ -27,7 +28,7 @@
                 <align>left</align>
                 <scroll>true</scroll>
                 <font>Font27</font>
-                <label>$ADDON[service.nextup.notification 30012]</label>
+                <label>$LOCALIZE[31072]</label>
             </control>
 
             <!-- Next episode -->
@@ -40,7 +41,7 @@
                 <aligny>top</aligny>
                 <scroll>true</scroll>
                 <font>Font27-Light</font>
-                <label>$INFO[Control.GetLabel(4008),s,]$INFO[Control.GetLabel(4009),e,)] $INFO[Control.GetLabel(4010)]</label>
+                <label>($INFO[Control.GetLabel(4008),s,]$INFO[Control.GetLabel(4009),e,]) $INFO[Control.GetLabel(4010)]</label>
             </control>
 
             <!-- Still watching -->
@@ -52,14 +53,14 @@
                 <align>left</align>
                 <aligny>top</aligny>
                 <font>Font27-Light</font>
-                <label>Click OK to keep watching</label>
+                <label>$LOCALIZE[31073]</label>
                 <onback>SendClick(4013)</onback>
             </control>
 
         </control>
 
         <!-- Stop watching -->
-        <control type="label" id="4013">
+        <control type="button" id="4013">
             <left>-10000</left>
             <top>-10000</top>
             <width>260</width>
@@ -92,6 +93,40 @@
 
         <!-- Episode name -->
         <control type="label" id="4010">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+        </control>
+
+        <!-- Not displayed by us, but required by the script -->
+        <control type="label" id="4000">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+        </control>
+        <control type="label" id="4003">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+        </control>
+        <control type="label" id="4004">
+            <left>-10000</left>
+            <top>-10000</top>
+            <width>1620</width>
+            <height>72</height>
+            <font>Font72</font>
+            <textcolor>$VAR[DialogColor1]</textcolor>
+        </control>
+        <control type="textbox" id="4006">
             <left>-10000</left>
             <top>-10000</top>
             <width>1620</width>
