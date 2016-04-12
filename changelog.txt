@@ -1,10 +1,18 @@
-[B]17.0.2[/B]
+17.0.3   (12th April 2016)
+
+- Cross-bar and hub usability improvements
+- Dialog background tweaks
+- Add missing icons
+- Skinned Audio DSP Manager dialog
+- Experimental animated poster support (enable from skin settings)
+
+17.0.2   (7th April 2016)
 
 - Skinned 'Nextup Notification Service'
 - Fixes
 - Krypton changes to up 2016-04-02
 
-[B]17.0.1[/B]
+17.0.1
 
 - Home screen fixes
 - Hubs disabled by default for classic menu styles
@@ -14,7 +22,7 @@
 - Fix music info dialog
 - Krypton changes up to 2016-03-18
 
-[B]17.0.0[/B] For Krypton
+17.0.0 For Krypton
 
 - First 'igConq' release
 
