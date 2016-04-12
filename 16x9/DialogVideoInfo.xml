@@ -5,406 +5,414 @@
 	<onload condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onload>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
 	<onunload condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SendClick(50)</onunload>
-	<include>DialogZoomAnimation</include>
 
 	<controls>
+		<!-- Window Background -->
+		<include condition="!Window.IsVisible(FullScreenVideo)">WindowFadeBackgroundImage</include>
 
-		<!-- Background -->
-		<include>DialogBackgroundImage</include>
-
-		<!-- Heading -->
-		<include content="Time">
-			<param name="heading">$VAR[VideoInfoLabel]</param>
-		</include>
-
-		<!-- Poster image -->
 		<control type="group">
-			<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207]) + !String.Contains(ListItem.Icon,Default)</visible>
-			<control type="image">
-				<left>150</left>
-				<top>225</top>
-				<width>405</width>
-				<height>600</height>
-				<fadetime>100</fadetime>
-				<texture>$VAR[VideoInfoImage]</texture>
-				<aspectratio aligny="center">scale</aspectratio>
-			</control>
-			<control type="image">
-				<left>150</left>
-				<top>225</top>
-				<width>405</width>
-				<height>600</height>
-				<texture>views/OverlayPosterFO.png</texture>
-				<visible>Skin.HasSetting(Overlays)</visible>
-			</control>
-		</control>
 
-		<!-- Actor image -->
-		<control type="group">
-			<visible>String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
-			<control type="image">
-				<left>150</left>
-				<top>225</top>
-				<width>405</width>
-				<height>666</height>
-				<texture>$INFO[Container(50).ListItem.Icon]</texture>
-				<aspectratio aligny="center">keep</aspectratio>
-				<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
-				<bordersize>0,0,0,66</bordersize>
-				<visible>!String.Contains(Container(50).ListItem.Icon,Default)</visible>
-			</control>
-			<control type="image">
-				<left>150</left>
-				<top>225</top>
-				<width>405</width>
-				<height>600</height>
-				<texture colordiffuse="00ffffff">$INFO[Container(50).ListItem.Icon]</texture>
-				<aspectratio aligny="center">keep</aspectratio>
-				<bordertexture border="21,21,21,150">views/OverlayEffect.png</bordertexture>
-				<visible>!String.Contains(Container(50).ListItem.Icon,Default) + Skin.HasSetting(Overlays)</visible>
-			</control>
-			<control type="image">
-				<left>120</left>
-				<top>225</top>
-				<width>405</width>
-				<height>600</height>
-				<texture>$INFO[Container(50).ListItem.Icon]</texture>
-				<colordiffuse>OverlayColorFO</colordiffuse>
-				<aspectratio aligny="center">keep</aspectratio>
-				<visible>String.Contains(Container(50).ListItem.Icon,Default)</visible>
-			</control>
-		</control>
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
 
-		<!-- Info -->
-		<control type="group">
-			<left>600</left>
-			<top>235</top>
-			<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
+			<!-- Dialog Background -->
+			<include>DialogBackgroundImage</include>
 
-			<!-- Details -->
-			<control type="grouplist">
-				<width>1170</width>
-				<height>336</height>
-				<itemgap>12</itemgap>
-				<orientation>vertical</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$VAR[VideoInfoLabel]</param>
+			</include>
 
-				<!-- Artist -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Artist)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>557</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Artist]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
+			<!-- Poster image -->
+			<control type="group">
+				<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207]) + !String.Contains(ListItem.Icon,Default)</visible>
+				<control type="image">
+					<left>150</left>
+					<top>225</top>
+					<width>405</width>
+					<height>600</height>
+					<fadetime>100</fadetime>
+					<texture>$VAR[VideoInfoImage]</texture>
+					<aspectratio aligny="center">scale</aspectratio>
 				</control>
-
-				<!-- Album -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Album)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>558</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Album]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
+				<control type="image">
+					<left>150</left>
+					<top>225</top>
+					<width>405</width>
+					<height>600</height>
+					<texture>views/OverlayPosterFO.png</texture>
+					<visible>Skin.HasSetting(Overlays)</visible>
 				</control>
-
-				<!-- Genre -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Genre)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>515</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Genre]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Director -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Director)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>20339</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Director]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Writer -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Writer)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>20417</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Writer]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Duration -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Duration)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>180</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Duration,, mins]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Rating -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>31017</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.RatingAndVotes]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Mpaa Rating -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>563</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.Mpaa]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
-				<!-- Resolution -->
-				<control type="group">
-					<height>36</height>
-					<width>1170</width>
-					<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
-					<control type="label">
-						<width>200</width>
-						<height>36</height>
-						<align>right</align>
-						<font>Font36</font>
-						<label>169</label>
-						<textcolor>$VAR[DialogColor2]</textcolor>
-					</control>
-					<control type="label">
-						<left>220</left>
-						<width>950</width>
-						<height>36</height>
-						<font>Font36</font>
-						<label>$INFO[ListItem.VideoResolution]</label>
-						<textcolor>$VAR[DialogColor1]</textcolor>
-					</control>
-				</control>
-
 			</control>
 
-			<!-- Plot -->
-			<control type="textbox">
-				<top>370</top>
-				<width>1170</width>
-				<height>210</height>
-				<label>$VAR[Plot]</label>
-				<textcolor>$VAR[DialogColor2]</textcolor>
-				<autoscroll delay="10000" time="2000" repeat="12000">True</autoscroll>
+			<!-- Actor image -->
+			<control type="group">
+				<visible>String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
+				<control type="image">
+					<left>150</left>
+					<top>225</top>
+					<width>405</width>
+					<height>666</height>
+					<texture>$INFO[Container(50).ListItem.Icon]</texture>
+					<aspectratio aligny="center">keep</aspectratio>
+					<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+					<bordersize>0,0,0,66</bordersize>
+					<visible>!String.Contains(Container(50).ListItem.Icon,Default)</visible>
+				</control>
+				<control type="image">
+					<left>150</left>
+					<top>225</top>
+					<width>405</width>
+					<height>600</height>
+					<texture colordiffuse="00ffffff">$INFO[Container(50).ListItem.Icon]</texture>
+					<aspectratio aligny="center">keep</aspectratio>
+					<bordertexture border="21,21,21,150">views/OverlayEffect.png</bordertexture>
+					<visible>!String.Contains(Container(50).ListItem.Icon,Default) + Skin.HasSetting(Overlays)</visible>
+				</control>
+				<control type="image">
+					<left>120</left>
+					<top>225</top>
+					<width>405</width>
+					<height>600</height>
+					<texture>$INFO[Container(50).ListItem.Icon]</texture>
+					<colordiffuse>OverlayColorFO</colordiffuse>
+					<aspectratio aligny="center">keep</aspectratio>
+					<visible>String.Contains(Container(50).ListItem.Icon,Default)</visible>
+				</control>
 			</control>
 
-		</control>
+			<!-- Info -->
+			<control type="group">
+				<left>600</left>
+				<top>235</top>
+				<visible>!String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
 
-		<!-- Cast -->
-		<control type="list" id="50">
-			<left>600</left>
-			<top>235</top>
-			<width>1170</width>
-			<height>580</height>
-			<onup>noop</onup>
-			<ondown>9000</ondown>
-			<onleft>9000</onleft>
-			<onright>9000</onright>
-			<orientation>vertical</orientation>
-			<viewtype label="">list</viewtype>
-			<scrolltime tween="sine" easing="out">240</scrolltime>
-			<visible allowhiddenfocus="true">String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
-
-			<itemlayout width="1170" height="58">
-				<control type="label">
+				<!-- Details -->
+				<control type="grouplist">
 					<width>1170</width>
-					<height>58</height>
-					<font>Font36</font>
+					<height>336</height>
+					<itemgap>12</itemgap>
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+
+					<!-- Artist -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Artist)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>557</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Artist]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Album -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Album)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>558</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Album]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Genre -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Genre)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>515</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Genre]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Director -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Director)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>20339</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Director]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Writer -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Writer)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>20417</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Writer]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Duration -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>180</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Duration,, mins]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Rating -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>31017</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.RatingAndVotes]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Mpaa Rating -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>563</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.Mpaa]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+					<!-- Resolution -->
+					<control type="group">
+						<height>36</height>
+						<width>1170</width>
+						<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
+						<control type="label">
+							<width>200</width>
+							<height>36</height>
+							<align>right</align>
+							<font>Font36</font>
+							<label>169</label>
+							<textcolor>$VAR[DialogColor2]</textcolor>
+						</control>
+						<control type="label">
+							<left>220</left>
+							<width>950</width>
+							<height>36</height>
+							<font>Font36</font>
+							<label>$INFO[ListItem.VideoResolution]</label>
+							<textcolor>$VAR[DialogColor1]</textcolor>
+						</control>
+					</control>
+
+				</control>
+
+				<!-- Plot -->
+				<control type="textbox">
+					<top>370</top>
+					<width>1170</width>
+					<height>210</height>
+					<label>$VAR[Plot]</label>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
+					<autoscroll delay="10000" time="2000" repeat="12000">True</autoscroll>
 				</control>
-			</itemlayout>
 
-			<focusedlayout width="1170" height="58">
-				<control type="label">
-					<width>1170</width>
-					<height>58</height>
-					<font>Font36</font>
-					<textcolor>$VAR[DialogColor1]</textcolor>
-					<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
-					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
+			</control>
+
+			<!-- Cast -->
+			<control type="list" id="50">
+				<left>600</left>
+				<top>235</top>
+				<width>1170</width>
+				<height>580</height>
+				<onup>noop</onup>
+				<ondown>9000</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+				<viewtype label="">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible allowhiddenfocus="true">String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])</visible>
+
+				<itemlayout width="1170" height="58">
+					<control type="label">
+						<width>1170</width>
+						<height>58</height>
+						<font>Font36</font>
+						<textcolor>$VAR[DialogColor2]</textcolor>
+						<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+
+				<focusedlayout width="1170" height="58">
+					<control type="label">
+						<width>1170</width>
+						<height>58</height>
+						<font>Font36</font>
+						<textcolor>$VAR[DialogColor1]</textcolor>
+						<label>[B]$INFO[ListItem.Label][/B] - $INFO[ListItem.Label2]</label>
+						<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+				</focusedlayout>
+
+			</control>
+
+			<!-- Button grouplist -->
+			<control type="grouplist" id="9000">
+				<left>150</left>
+				<top>912</top>
+				<width>1620</width>
+				<height>66</height>
+				<itemgap>30</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">50</onup>
+				<ondown>noop</ondown>
+				<orientation>horizontal</orientation>
+
+				<!-- Play/Browse Button -->
+				<control type="togglebutton" id="8">
+					<width>Auto</width>
+					<label>208</label>
+					<altlabel>1024</altlabel>
+					<usealttexture>Container.Content(TVShows)</usealttexture>
 				</control>
-			</focusedlayout>
+				<!-- Cast Button -->
+				<control type="button" id="5">
+					<width>Auto</width>
+					<label>206</label>
+					<onclick condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SetFocus(50)</onclick>
+				</control>
+				<!-- Refresh Button -->
+				<control type="button" id="6">
+					<width>Auto</width>
+					<label>184</label>
+				</control>
+				<!-- Get Thumb Button -->
+				<control type="button" id="10">
+					<width>Auto</width>
+					<label>13511</label>
+				</control>
+				<!-- Artwork Downloader Button -->
+				<control type="button" id="20">
+					<width>Auto</width>
+					<label>31043</label>
+					<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+					<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
+				</control>
+				<!-- Trailer Button -->
+				<control type="button" id="11">
+					<width>Auto</width>
+					<label>20410</label>
+					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+				</control>
+				<!-- Cinema Experience Button -->
+				<control type="button" id="21">
+					<width>Auto</width>
+					<label>31066</label>
+					<onclick>Dialog.Close(MovieInformation)</onclick>
+					<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
+					<visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible>
+				</control>
 
-		</control>
-
-		<!-- Button grouplist -->
-		<control type="grouplist" id="9000">
-			<left>150</left>
-			<top>912</top>
-			<width>1620</width>
-			<height>66</height>
-			<itemgap>30</itemgap>
-			<onleft>noop</onleft>
-			<onright>noop</onright>
-			<onup condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">50</onup>
-			<ondown>noop</ondown>
-			<orientation>horizontal</orientation>
-
-			<!-- Play/Browse Button -->
-			<control type="togglebutton" id="8">
-				<width>Auto</width>
-				<label>208</label>
-				<altlabel>1024</altlabel>
-				<usealttexture>Container.Content(TVShows)</usealttexture>
-			</control>
-			<!-- Cast Button -->
-			<control type="button" id="5">
-				<width>Auto</width>
-				<label>206</label>
-				<onclick condition="String.IsEqual(Control.GetLabel(5),$LOCALIZE[207])">SetFocus(50)</onclick>
-			</control>
-			<!-- Refresh Button -->
-			<control type="button" id="6">
-				<width>Auto</width>
-				<label>184</label>
-			</control>
-			<!-- Get Thumb Button -->
-			<control type="button" id="10">
-				<width>Auto</width>
-				<label>13511</label>
-			</control>
-			<!-- Artwork Downloader Button -->
-			<control type="button" id="20">
-				<width>Auto</width>
-				<label>31043</label>
-				<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-				<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-				<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
-			</control>
-			<!-- Trailer Button -->
-			<control type="button" id="11">
-				<width>Auto</width>
-				<label>20410</label>
-				<visible>!String.IsEmpty(ListItem.Trailer)</visible>
-			</control>
-			<!-- Cinema Experience Button -->
-			<control type="button" id="21">
-				<width>Auto</width>
-				<label>31066</label>
-				<onclick>Dialog.Close(MovieInformation)</onclick>
-				<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
-				<visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible>
 			</control>
 
 		</control>

@@ -2,11 +2,18 @@
 <window>
 	<!-- profilesettings -->
 	<defaultcontrol always="true">5</defaultcontrol>
-	<include>DialogZoomAnimation</include>
 
 	<controls>
+		<!-- Window Background -->
+		<include condition="!Window.IsVisible(FullScreenVideo)">WindowFadeBackgroundImage</include>
+
 		<control type="group">
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
+
+			<!-- Dialog Background -->
+			<include>DialogBackgroundImage</include>
 
 			<!-- Background -->
 			<include>DialogBackgroundImage</include>
