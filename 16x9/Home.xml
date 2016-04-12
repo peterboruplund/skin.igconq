@@ -5,6 +5,11 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1&amp;minitems=20)</onload>
 	<onload condition="!String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|igconq-quicknav&amp;levels=1)</onload>
+
+	<!-- Set correct control as focused in cross-bar homescreen -->
+	<include condition="String.IsEqual(Skin.String(menuStyle),lumos)">skinshortcuts-template-lumos-onload</include>
+	
+	<!-- Smart(ish) Widgets -->
 	<onload>Skin.SetBool(enable.smartish.widgets)</onload>
 	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>

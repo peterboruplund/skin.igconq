@@ -8,7 +8,7 @@
 
 			<!-- Main list -->
 			<control type="fixedlist" id="9000">
-				<left>-100</left>
+				<left>-1000000</left>
 				<top>612</top>
 				<width>2030</width>
 				<height>306</height>
@@ -63,15 +63,15 @@
 
 			<!-- Widget details -->
 			<control type="label">
-				<animation effect="slide" end="133,0" time="0" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
+				<animation effect="slide" end="133,0" time="200" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
 				<top>900</top>
-				<left>520</left>
+				<left>522</left>
 				<width>1000</width>
 				<height>280</height>
 				<font>Font33</font>
 				<align>left</align>
 				<aligny>top</aligny>
-				<label>$VAR[widgetDetails][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
+				<label>$VAR[widgetDetails,,[CR]][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
 				<visible>!String.IsEqual(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
 			</control> 
 		</control>

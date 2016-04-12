@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1111" type="window">
 
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">8000</defaultcontrol>
 	<include>skinshortcuts-template-hubWidgetReloadTrick</include>
 	<controls>
 
@@ -61,16 +61,15 @@
 
 			<!-- Widget details -->
 			<control type="label">
-				<animation effect="slide" end="133,0" time="0" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
+				<animation effect="slide" end="133,0" time="200" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
 				<top>900</top>
-				<left>520</left>
+				<left>522</left>
 				<width>1000</width>
 				<height>280</height>
 				<font>Font33</font>
 				<align>left</align>
 				<aligny>top</aligny>
-				<label>$VAR[hubWidgetDetails][CR][CR][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
-				<visible>!String.IsEqual(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
+				<label>$VAR[hubWidgetDetails,,[CR]][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
 			</control>
 		</control>
 
