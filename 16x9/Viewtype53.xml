@@ -55,7 +55,7 @@
 							<width>202</width>
 							<height>300</height>
 							<colordiffuse>DiffusePosterNF</colordiffuse>
-							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<texture background="true">$VAR[animatedPosterThumb]</texture>
 							<aspectratio align="center">scale</aspectratio>
 						</control>
 						<control type="image">
@@ -98,7 +98,7 @@
 							<left>34</left>
 							<width>202</width>
 							<height>300</height>
-							<texture background="true">$INFO[ListItem.Thumb]</texture>
+							<texture background="true">$VAR[animatedPosterThumb]</texture>
 							<aspectratio align="center">scale</aspectratio>
 						</control>
 						<control type="image">
