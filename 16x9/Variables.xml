@@ -510,4 +510,9 @@
 		<value>$LOCALIZE[31071]</value>
 	</variable>
 
+	<!-- Keyboard autocompletion" -->
+	<variable name="keyboard-autocompletion">
+		<value condition="System.HasAddon(plugin.program.autocompletion)">plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=12</value>
+	</variable>
+
 </includes>

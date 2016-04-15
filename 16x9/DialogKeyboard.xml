@@ -32,7 +32,7 @@
 			<!-- Left grouplist -->
 			<control type="grouplist" id="9000">
 				<left>150</left>
-				<top>428</top>
+				<top>228</top>
 				<width>360</width>
 				<height>660</height>
 				<itemgap>6</itemgap>
@@ -40,6 +40,7 @@
 				<ondown>312</ondown>
 				<orientation>vertical</orientation>
 				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<animation effect="slide" end="0,200" time="200" condition="Integer.IsEqual(Container(6000).NumItems,0)">Conditional</animation>
 
 				<!-- Layout -->
 				<control type="button" id="309">
@@ -96,7 +97,8 @@
 			<!-- Keys -->
 			<control type="group">
 				<left>600</left>
-				<top>428</top>
+				<top>228</top>
+				<animation effect="slide" end="0,200" time="200" condition="Integer.IsEqual(Container(6000).NumItems,0)">Conditional</animation>
 
 				<!-- First row -->
 				<control type="grouplist" id="1000">
@@ -489,12 +491,65 @@
 					<width>968</width>
 					<height>74</height>
 					<onup>32</onup>
-					<ondown>9001</ondown>
+					<ondown>6000</ondown>
 					<scroll>true</scroll>
 					<font>Font48</font>
 					<textcolor>$VAR[DialogColor1]</textcolor>
 				</control>
 
+			</control>
+
+			<!-- Autocompletion -->
+			<control type="panel" id="6000">
+				<left>150</left>
+				<top>753</top>
+				<width>1620</width>
+				<height>160</height>
+				<onleft>6000</onleft>
+				<onright>6000</onright>
+				<onup>312</onup>
+				<ondown>9001</ondown>
+				<onback>noop</onback>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<animation type="conditional" reversible="true" condition="Integer.IsEqual(Container(6000).NumItems,0)">
+					<effect type="slide" end="0,200" time="200" />
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+				<itemlayout height="50" width="405">
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>405</width>
+						<height>50</height>
+						<align>center</align>
+						<textcolor>$VAR[textcolor2]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50" width="405">
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>405</width>
+						<height>50</height>
+						<align>center</align>
+						<textcolor>$VAR[textcolor1]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(6000)</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>405</width>
+						<height>50</height>
+						<align>center</align>
+						<textcolor>$VAR[textcolor2]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(6000)</visible>
+					</control>
+				</focusedlayout>
+				<content>$VAR[keyboard-autocompletion]</content>
 			</control>
 
 			<!-- Button grouplist -->
@@ -505,7 +560,7 @@
 				<itemgap>0</itemgap>
 				<onleft>noop</onleft>
 				<onright>noop</onright>
-				<onup>312</onup>
+				<onup>6000</onup>
 				<ondown>noop</ondown>
 				<orientation>horizontal</orientation>
 
