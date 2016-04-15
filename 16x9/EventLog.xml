@@ -92,7 +92,7 @@
 			<width>20</width>
 			<height>720</height>
 			<onleft condition="!Skin.HasSetting(KioskMode)">3001</onleft>
-			<onright>50</onright>
+			<onright>570</onright>
 			<showonepage>false</showonepage>
 			<orientation>vertical</orientation>
 			<colordiffuse>OverlayColorNF</colordiffuse>
