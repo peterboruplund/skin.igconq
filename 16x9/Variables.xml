@@ -428,14 +428,13 @@
 
 	<!-- Animated posters - Icon image as fallback -->
 	<variable name="animatedPosterIcon">
-		<value condition="Skin.HasSetting(AnimatedPosters) + !String.IsEmpty(Window(Home).Property(SkinHelper.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.AnimatedPoster)]</value>
-		<value condition="Skin.HasSetting(AnimatedPosters) + !String.IsEmpty(ListItem.Art(animatedposter))">$INFO[ListItem.Art(animatedposter)]</value>
+		<value condition="Skin.HasSetting(AnimatedPosters) + !String.IsEqual(ListItem.Art(animatedposter),)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 
 	<!-- Animated posters - Thumb image as fallback, not using window property -->
 	<variable name="animatedPosterThumb">
-		<value condition="Skin.HasSetting(AnimatedPosters) + !String.IsEmpty(ListItem.Art(animatedposter))">$INFO[ListItem.Art(animatedposter)]</value>
+		<value condition="Skin.HasSetting(AnimatedPosters) + !String.IsEqual(ListItem.Art(animatedposter),)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 
