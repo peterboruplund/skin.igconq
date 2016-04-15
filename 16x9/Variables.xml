@@ -337,6 +337,7 @@
 	</variable>
 
 	<variable name="Label2">
+		<value condition="ListItem.IsCollection + !Control.IsVisible(51)">$INFO[Window(Home).Property(SkinHelper.MovieSet.Year)] &#8226; $INFO[Window(Home).Property(SkinHelper.MovieSet.Count),, $LOCALIZE[20342]] $INFO[Window(Home).Property(SkinHelper.MovieSet.UnwatchedCount),(, unwatched)]</value>
 		<value condition="Container.Content(movies) + !String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Year] &#8226; $INFO[ListItem.Genre]</value>
 		<value condition="Container.Content(movies) + !String.IsEmpty(ListItem.Year) + String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Year]</value>
 		<value condition="Container.Content(movies) + String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
