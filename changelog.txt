@@ -1,3 +1,9 @@
+17.0.4   (17th April 2016)
+
+- Appearance fixes includind headings and music osd
+- Updated animated poster support
+- Add support for keyboard autocompletion plugin
+
 17.0.3   (12th April 2016)
 
 - Cross-bar and hub usability improvements
