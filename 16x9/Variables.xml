@@ -266,6 +266,11 @@
 		<value>$VAR[DialogColor2]</value>
 	</variable>
 
+	<variable name="SkinSettingButton14">
+		<value condition="ControlGroup(9).HasFocus(14)">$VAR[DialogColor1]</value>
+		<value>$VAR[DialogColor2]</value>
+	</variable>
+
 	<variable name="Label1">
 		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -512,7 +517,8 @@
 
 	<!-- Keyboard autocompletion" -->
 	<variable name="keyboard-autocompletion">
-		<value condition="System.HasAddon(plugin.program.autocompletion)">plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=12</value>
+		<value condition="!System.HasAddon(plugin.program.autocompletion) | System.HasHiddenInput">-</value>
+   		<value>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=12</value>
 	</variable>
 
 </includes>

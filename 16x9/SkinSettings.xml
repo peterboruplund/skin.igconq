@@ -71,6 +71,15 @@
 					<label>128</label>
 					<textcolor>$VAR[SkinSettingButton12]</textcolor>
 				</control>
+
+				<!-- Addons -->
+				<control type="button" id="14">
+					<width>600</width>
+					<height>66</height>
+					<label>Addons</label>
+					<textcolor>$VAR[SkinSettingButton14]</textcolor>
+				</control>
+
 			</control>
 
 			<!-- Right grouplist -->
@@ -158,6 +167,23 @@
 					<visible>!String.IsEqual(Skin.String(menuStyle),lumos)</visible>
 				</control>
 
+				<!-- Backup and restore -->
+				<control type="button" id="1219">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
+					<label>$ADDON[script.skin.helper.service 32028]</label>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
+				<control type="button" id="1220">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
+					<label>$ADDON[script.skin.helper.service 32032]</label>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
 
 				<!-- Background -->
 				<!-- Custom image -->
@@ -332,6 +358,100 @@
 					<label>31058</label>
 					<onclick>Skin.ResetSettings</onclick>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
+				</control>
+
+				<!-- Addons -->
+				<!-- Required -->
+				<control type="label" id="1401">
+					<width>1200</width>
+					<height>62</height>
+					<font>Font33</font>
+					<align>left</align>
+					<label>[I]Required Add-ons[/I]</label>
+					<textcolor>$VAR[TextColor2]</textcolor>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1402">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>Skin Shortcuts</label>
+					<onclick>InstallAddon(script.skinshortcuts)</onclick>
+					<selected>System.HasAddon(script.skinshortcuts)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+
+				<!-- Recommended -->
+				<control type="label" id="1403">
+					<width>1200</width>
+					<height>62</height>
+					<font>Font33</font>
+					<align>left</align>
+					<label>[I]Recommended Add-ons[/I]</label>
+					<textcolor>$VAR[TextColor2]</textcolor>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1404">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>Skin Helper Service</label>
+					<onclick>InstallAddon(script.skin.helper.service)</onclick>
+					<selected>System.HasAddon(script.skin.helper.service)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1405">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>AutoCompletion for virtual keyboard</label>
+					<onclick>InstallAddon(plugin.program.autocompletion)</onclick>
+					<selected>System.HasAddon(plugin.program.autocompletion)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1406">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>Image Resource Select</label>
+					<onclick>InstallAddon(script.image.resource.select)</onclick>
+					<selected>System.HasAddon(script.image.resource.select)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+
+				<!-- Supported -->
+				<control type="label" id="1407">
+					<width>1200</width>
+					<height>62</height>
+					<font>Font33</font>
+					<align>left</align>
+					<label>[I]Supported Add-ons[/I]</label>
+					<textcolor>$VAR[TextColor2]</textcolor>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1408">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>Next Up Notification</label>
+					<onclick>InstallAddon(service.nextup.notification)</onclick>
+					<selected>System.HasAddon(service.nextup.notification)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="radiobutton" id="1409">
+					<width>1030</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>Artist Slideshow</label>
+					<onclick>InstallAddon(script.artistslideshow)</onclick>
+					<selected>System.HasAddon(script.artistslideshow)</selected>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
 
 			</control>
