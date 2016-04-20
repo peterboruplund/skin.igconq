@@ -79,9 +79,9 @@
 			<width>1050</width>
 			<height>696</height>
 			<onup>6</onup>
-			<ondown>5</ondown>
+			<ondown>9001</ondown>
 			<onleft>60</onleft>
-			<onright>6</onright>
+			<onright>9001</onright>
 			<orientation>vertical</orientation>
 			<viewtype label="list">list</viewtype>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
@@ -125,9 +125,9 @@
 			<width>1050</width>
 			<height>672</height>
 			<onup>noop</onup>
-			<ondown>5</ondown>
+			<ondown>3</ondown>
 			<onleft>60</onleft>
-			<onright>5</onright>
+			<onright>9001</onright>
 			<orientation>vertical</orientation>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
@@ -149,7 +149,6 @@
 					<font>Font36</font>
 					<textcolor>$VAR[DialogColor2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
-					<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 				</control>
 				<control type="label">
 					<left>140</left>
@@ -158,7 +157,7 @@
 					<height>27</height>
 					<font>Font27</font>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+					<label>$INFO[ListItem.Label2]</label>
 				</control>
 			</itemlayout>
 
@@ -181,7 +180,6 @@
 						<font>Font36</font>
 						<textcolor>$VAR[DialogColor1]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 					</control>
 					<control type="label">
 						<left>140</left>
@@ -190,7 +188,7 @@
 						<height>27</height>
 						<font>Font27</font>
 						<textcolor>$VAR[DialogColor1]</textcolor>
-						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</control>
 				<control type="group">
@@ -203,7 +201,6 @@
 						<font>Font36</font>
 						<textcolor>$VAR[DialogColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.Property(Addon.Summary))">Conditional</animation>
 					</control>
 					<control type="label">
 						<left>140</left>
@@ -212,23 +209,36 @@
 						<height>27</height>
 						<font>Font27</font>
 						<textcolor>$VAR[DialogColor2]</textcolor>
-						<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</control>
 			</focusedlayout>
 
 		</control>
 
-		<!-- Get more button -->
-		<control type="button" id="5">
+		<!-- Button grouplist -->
+		<control type="grouplist" id="9001">
 			<left>750</left>
 			<top>926</top>
-			<width>400</width>
-			<height>66</height>
+			<width>1200</width>
+			<itemgap>30</itemgap>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
 			<onup>3</onup>
 			<ondown>noop</ondown>
+			<defaultcontrol>28</defaultcontrol>
+			<orientation>horizontal</orientation>
+
+			<!-- Cancel Button -->
+			<control type="button" id="7">
+				<width>Auto</width>
+			</control>
+
+			<!-- Get more Button -->
+			<control type="button" id="5">
+				<width>Auto</width>
+			</control>
+
 		</control>
 
 	</controls>
