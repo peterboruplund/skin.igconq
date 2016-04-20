@@ -5,18 +5,15 @@
 
 	<controls>
 		<!-- Window Background -->
-		<include condition="!Window.IsVisible(FullScreenVideo)">WindowFadeBackgroundImage</include>
+		<include condition="!Window.IsVisible(FullScreenVideo)">WindowBackgroundImage</include>
+
+		<!-- Dialog Background -->
+		<include condition="Window.IsVisible(FullScreenVideo)">DialogBackgroundImage</include>
 
 		<control type="group">
 			<!-- Animation -->
 			<include>DialogZoomAnimation</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
-
-			<!-- Dialog Background -->
-			<include>DialogBackgroundImage</include>
-
-			<!-- Background -->
-			<include>DialogBackgroundImage</include>
 
 			<include content="Time">
 				<param name="heading">$INFO[Control.GetLabel(2)]</param>
