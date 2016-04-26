@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1112" type="window">
+	<controls>
+
+		<!-- Background -->
+		<control type="image" id="120">
+			<include>FullscreenDimensions</include>
+			<texture>$VAR[BackgroundImage]</texture>
+			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
+		</control>
+
+		<!-- Fanart -->
+		<control type="image" id="100">
+			<include>FullscreenDimensions</include>
+			<include>VisibleFadeAnimation</include>
+			<include>WindowFadeAnimation</include>
+			<fadetime>400</fadetime>
+			<!--colordiffuse>FanartDiffuse</colordiffuse-->
+			<aspectratio>keep</aspectratio>s
+			<texture background="true" />
+		</control>
+
+		<!-- Time and date -->
+		<control type="group" id="1000">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="-200,0" end="0,0" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="slide" start="0,0" end="-200,0" time="200" />
+			</animation>
+
+			<!-- Background -->
+			<control type="image">
+				<left>0</left>
+				<top>750</top>
+				<width>520</width>
+				<height>120</height>
+				<texture colordiffuse="$VAR[OverlayColor]">dialogs/Background.png</texture>
+			</control>
+
+			<!-- Time -->
+			<control type="label">
+				<left>50</left>
+				<top>760</top>
+				<width>450</width>
+				<height>60</height>
+				<align>right</align>
+				<label>$INFO[System.Time]</label>
+				<font>Font72</font>
+				<textcolor>$VAR[DialogColor1]</textcolor>
+			</control>
+
+			<!-- Date -->
+			<control type="label">
+				<left>50</left>
+				<top>820</top>
+				<width>450</width>
+				<height>40</height>
+				<align>right</align>
+				<label>$INFO[System.Date]</label>
+				<font>Font33</font>
+				<textcolor>$VAR[DialogColor2]</textcolor>
+			</control>
+		</control>
+
+
+		<control type="group">
+			<left>530</left>
+			<top>750</top>
+
+			<visible>!String.IsEmpty(Window.Property(widgetVisible))</visible>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="500" />
+				<effect type="slide" start="200,0" end="0,0" time="500" tween="quadratic" easing="out" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="500" />
+				<effect type="slide" start="0,0" end="200,0" time="500" tween="quadratic" easing="in" />
+			</animation>
+
+
+			<!-- Icon -->
+			<control type="group">
+				<left>0</left>
+				<top>0</top>
+				<width>120</width>
+				<height>120</height>
+
+				<!-- Image -->
+				<control type="image" id="200">
+					<left>20</left>
+					<top>20</top>
+					<width>80</width>
+					<height>80</height>
+					<texture>logo.png</texture>
+				</control>
+				<!-- Weather image -->
+				<control type="image" id="201">
+					<left>10</left>
+					<top>10</top>
+					<width>100</width>
+					<height>100</height>
+					<texture>$VAR[weatherIcons]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
+				</control>
+			</control>
+
+			<!-- Information -->
+			<control type="label" id="210">
+				<left>130</left>
+				<top>20</top>
+				<height>40</height>
+				<width>1240</width>
+				<label>-</label>
+				<font>Font36</font>
+			</control>
+			<control type="label" id="220">
+				<left>130</left>
+				<top>70</top>
+				<height>30</height>
+				<width>1240</width>
+				<label>-</label>
+				<font>Font33</font>
+			</control>
+		</control>
+
+		<!-- Hidden list to enable multi-image backgrounds -->
+		<control type="list" id="110">
+			<left>-10000</left>
+			<top>-10000</top>
+			<width>1</width>
+			<height>1</height>
+			<itemlayout width="1" height="1" />
+			<focusedlayout width="1" height="1" />
+		</control>
+
+	</controls>
+
+</window>
