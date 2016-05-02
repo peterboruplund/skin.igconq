@@ -1,7 +1,7 @@
 17.0.5   (2nd May 2016)
 - Fixes for backgrounds, select dialog
 - Allow installing supported addons from skin settings
-- Krypton changes up to 2016-05-01
+- Krypton changes up to 2016-05-02
 
 17.0.4   (17th April 2016)
 
