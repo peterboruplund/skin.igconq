@@ -1,3 +1,8 @@
+17.0.5   (2nd May 2016)
+- Fixes for backgrounds, select dialog
+- Allow installing supported addons from skin settings
+- Krypton changes up to 2016-05-01
+
 17.0.4   (17th April 2016)
 
 - Appearance fixes includind headings and music osd
@@ -16,7 +21,7 @@
 
 - Skinned 'Nextup Notification Service'
 - Fixes
-- Krypton changes to up 2016-04-02
+- Krypton changes up to 2016-04-02
 
 17.0.1
 
