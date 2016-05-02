@@ -42,43 +42,43 @@
 			<itemgap>34</itemgap>
 			<orientation>vertical</orientation>
 
-			<!-- Appearance -->
+			<!-- Interface -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>480</label>
+				<label>31074</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
-			<!-- Videos -->
+			<!-- Player -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>3</label>
+				<label>16003</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
-			<!-- Music -->
+			<!-- Library -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>2</label>
+				<label>14022</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
-			<!-- Pictures -->
+			<!-- TV -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>1</label>
+				<label>31015</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
-			<!-- Weather -->
+			<!-- Service -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>8</label>
+				<label>Services</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
@@ -87,22 +87,6 @@
 				<width>300</width>
 				<height>42</height>
 				<label>13000</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor3]</textcolor>
-			</control>
-			<!-- Service -->
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>14036</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor3]</textcolor>
-			</control>
-			<!-- PVR -->
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>31015</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>

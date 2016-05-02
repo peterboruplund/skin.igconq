@@ -328,3 +328,8 @@ msgstr ""
 msgctxt "#31073"
 msgid "Click OK to keep watching"
 msgstr ""
+
+#: /16x9/Settings.xml:54
+msgctxt "#31074"
+msgid "Interface"
+msgstr ""

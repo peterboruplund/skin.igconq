@@ -45,91 +45,96 @@
 			<itemgap>34</itemgap>
 			<orientation>vertical</orientation>
 
-			<!-- Appearance -->
+			<!-- Interface -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>480</label>
+				<label>31074</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(appearancesettings) + String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>Window.IsActive(InterfaceSettings) + String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>480</label>
+				<label>31074</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(appearancesettings) | !String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
+				<visible>!Window.IsActive(InterfaceSettings) | !String.IsEmpty(Window(settings).Property(ChangeSettingsLevel))</visible>
 			</control>
-			<!-- Videos -->
+
+			<!-- Player -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>3</label>
+				<label>16003</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(videossettings)</visible>
+				<visible>Window.IsActive(PlayerSettings)</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>3</label>
+				<label>16003</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(videossettings)</visible>
+				<visible>!Window.IsActive(PlayerSettings)</visible>
 			</control>
-			<!-- Music -->
+
+			<!-- Library -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>2</label>
+				<label>14022</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(musicsettings)</visible>
+				<visible>Window.IsActive(LibrarySettings)</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>2</label>
+				<label>14022</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(musicsettings)</visible>
+				<visible>!Window.IsActive(LibrarySettings)</visible>
 			</control>
-			<!-- Pictures -->
+
+			<!-- TV -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>1</label>
+				<label>31015</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(picturessettings)</visible>
+				<visible>Window.IsActive(pvrsettings)</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>1</label>
+				<label>31015</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(picturessettings)</visible>
+				<visible>!Window.IsActive(pvrsettings)</visible>
 			</control>
-			<!-- Weather -->
+
+			<!-- Services -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>8</label>
+				<label>14036</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(weathersettings)</visible>
+				<visible>Window.IsActive(servicesettings)</visible>
 			</control>
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>8</label>
+				<label>14036</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(weathersettings)</visible>
+				<visible>!Window.IsActive(servicesettings)</visible>
 			</control>
+
 			<!-- System -->
 			<control type="button">
 				<width>300</width>
@@ -147,41 +152,8 @@
 				<textcolor>$VAR[TextColor3]</textcolor>
 				<visible>!Window.IsActive(systemsettings)</visible>
 			</control>
-			<!-- Service -->
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>14036</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(servicesettings)</visible>
-			</control>
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>14036</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(servicesettings)</visible>
-			</control>
-			<!-- PVR -->
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>31015</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor1]</textcolor>
-				<visible>Window.IsActive(pvrsettings)</visible>
-			</control>
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>31015</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor3]</textcolor>
-				<visible>!Window.IsActive(pvrsettings)</visible>
-			</control>
-			<!-- System info -->
+
+			<!-- System Info -->
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
@@ -198,6 +170,7 @@
 				<textcolor>$VAR[TextColor3]</textcolor>
 				<visible>!Window.IsActive(systeminfo)</visible>
 			</control>
+
 			<!-- More -->
 			<control type="button">
 				<width>300</width>

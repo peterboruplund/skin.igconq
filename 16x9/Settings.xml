@@ -47,66 +47,71 @@
 			<ondown>noop</ondown>
 			<orientation>vertical</orientation>
 
-			<!-- Appearance -->
+			<!-- Interface -->
 			<control type="button" id="1">
 				<width>300</width>
 				<height>42</height>
-				<label>480</label>
+				<label>31074</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(appearancesettings)</onclick>
-				<onright>ActivateWindow(appearancesettings)</onright>
+				<onclick>ActivateWindow(InterfaceSettings)</onclick>
+				<onright>ActivateWindow(InterfaceSettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
-			<!-- Videos -->
+
+			<!-- Player -->
 			<control type="button" id="2">
 				<width>300</width>
 				<height>42</height>
-				<label>3</label>
+				<label>16003</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(videossettings)</onclick>
-				<onright>ActivateWindow(videossettings)</onright>
+				<onclick>ActivateWindow(PlayerSettings)</onclick>
+				<onright>ActivateWindow(PlayerSettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
-			<!-- Music -->
+
+			<!-- Library -->
 			<control type="button" id="3">
 				<width>300</width>
 				<height>42</height>
-				<label>2</label>
+				<label>14022</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(musicsettings)</onclick>
-				<onright>ActivateWindow(musicsettings)</onright>
+				<onclick>ActivateWindow(LibrarySettings)</onclick>
+				<onright>ActivateWindow(LibrarySettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
-			<!-- Pictures -->
+
+			<!-- TV -->
 			<control type="button" id="4">
 				<width>300</width>
 				<height>42</height>
-				<label>1</label>
+				<label>31015</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(picturessettings)</onclick>
-				<onright>ActivateWindow(picturessettings)</onright>
+				<onclick>ActivateWindow(pvrsettings)</onclick>
+				<onright>ActivateWindow(pvrsettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
-			<!-- Weather -->
+
+			<!-- Services -->
 			<control type="button" id="5">
 				<width>300</width>
 				<height>42</height>
-				<label>8</label>
+				<label>14036</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(weathersettings)</onclick>
-				<onright>ActivateWindow(weathersettings)</onright>
+				<onclick>ActivateWindow(servicesettings)</onclick>
+				<onright>ActivateWindow(servicesettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
+
 			<!-- System -->
 			<control type="button" id="6">
 				<width>300</width>
@@ -119,32 +124,9 @@
 				<onright>ActivateWindow(systemsettings)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
-			<!-- Service -->
-			<control type="button" id="7">
-				<width>300</width>
-				<height>42</height>
-				<label>14036</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor2]</textcolor>
-				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(servicesettings)</onclick>
-				<onright>ActivateWindow(servicesettings)</onright>
-				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-			</control>
-			<!-- PVR -->
-			<control type="button" id="8">
-				<width>300</width>
-				<height>42</height>
-				<label>31015</label>
-				<font>Font42</font>
-				<textcolor>$VAR[TextColor2]</textcolor>
-				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<onclick>ActivateWindow(pvrsettings)</onclick>
-				<onright>ActivateWindow(pvrsettings)</onright>
-				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
-			</control>
+
 			<!-- System info -->
-			<control type="button" id="9">
+			<control type="button" id="7">
 				<width>300</width>
 				<height>42</height>
 				<label>130</label>
@@ -156,7 +138,7 @@
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
 			<!-- More -->
-			<control type="button" id="10">
+			<control type="button" id="8">
 				<width>300</width>
 				<height>42</height>
 				<label>22082</label>
