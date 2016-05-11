@@ -16,26 +16,9 @@
 			<include>DialogBackgroundImage</include>
 
 			<!-- Heading -->
-			<control type="label">
-				<left>150</left>
-				<top>96</top>
-				<width>1620</width>
-				<height>72</height>
-				<font>Font72</font>
-				<textcolor>$VAR[DialogColor1]</textcolor>
-				<label>24003</label>
-			</control>
-
-			<!-- Name -->
-			<control type="label">
-				<left>150</left>
-				<top>235</top>
-				<width>430</width>
-				<height>36</height>
-				<font>Font36</font>
-				<textcolor>$VAR[DialogColor1]</textcolor>
-				<label>[B]$INFO[ListItem.Property(Addon.Name)][/B]</label>
-			</control>
+			<include content="Time">
+				<param name="heading">$INFO[ListItem.AddonName]</param>
+			</include>
 
 			<!-- Image -->
 			<control type="group">
@@ -44,7 +27,7 @@
 					<top>322</top>
 					<width>405</width>
 					<height>405</height>
-					<texture>$INFO[ListItem.Art(fanart)]</texture>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
 					<aspectratio aligny="center">keep</aspectratio>
 				</control>
 				<control type="image">
@@ -74,13 +57,13 @@
 					<control type="group">
 						<height>36</height>
 						<width>1170</width>
-						<visible>!String.IsEmpty(ListItem.Property(Addon.Type))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonType)</visible>
 						<control type="label">
 							<width>200</width>
 							<height>36</height>
 							<align>right</align>
 							<font>Font36</font>
-							<label>21863</label>
+							<label>467</label>
 							<textcolor>$VAR[DialogColor2]</textcolor>
 						</control>
 						<control type="label">
@@ -88,7 +71,7 @@
 							<width>950</width>
 							<height>36</height>
 							<font>Font36</font>
-							<label fallback="416">$INFO[ListItem.Property(Addon.Type)]</label>
+							<label fallback="416">$INFO[ListItem.AddonType]</label>
 							<textcolor>$VAR[DialogColor1]</textcolor>
 						</control>
 					</control>
@@ -97,7 +80,7 @@
 					<control type="group">
 						<height>36</height>
 						<width>1170</width>
-						<visible>!String.IsEmpty(ListItem.Property(Addon.Creator))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonCreator)</visible>
 						<control type="label">
 							<width>200</width>
 							<height>36</height>
@@ -111,7 +94,7 @@
 							<width>950</width>
 							<height>36</height>
 							<font>Font36</font>
-							<label fallback="416">$INFO[ListItem.Property(Addon.Creator)]</label>
+							<label fallback="416">$INFO[ListItem.AddonCreator]</label>
 							<textcolor>$VAR[DialogColor1]</textcolor>
 						</control>
 					</control>
@@ -120,7 +103,7 @@
 					<control type="group">
 						<height>36</height>
 						<width>1170</width>
-						<visible>!String.IsEmpty(ListItem.Property(Addon.Version))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonVersion)</visible>
 						<control type="label">
 							<width>200</width>
 							<height>36</height>
@@ -134,7 +117,7 @@
 							<width>950</width>
 							<height>36</height>
 							<font>Font36</font>
-							<label fallback="416">$INFO[ListItem.Property(Addon.Version)]</label>
+							<label fallback="416">$INFO[ListItem.AddonVersion]</label>
 							<textcolor>$VAR[DialogColor1]</textcolor>
 						</control>
 					</control>
@@ -166,7 +149,7 @@
 					<control type="group">
 						<height>112</height>
 						<width>1170</width>
-						<visible>!String.IsEmpty(ListItem.Property(Addon.Summary))</visible>
+						<visible>!String.IsEmpty(ListItem.AddonSummary)</visible>
 						<control type="label">
 							<width>200</width>
 							<height>36</height>
@@ -183,7 +166,7 @@
 							<font>Font36</font>
 							<aligny>top</aligny>
 							<wrapmultiline>true</wrapmultiline>
-							<label fallback="416">$INFO[ListItem.Property(Addon.Summary)]</label>
+							<label fallback="416">$INFO[ListItem.AddonSummary]</label>
 							<textcolor>$VAR[DialogColor1]</textcolor>
 						</control>
 					</control>
@@ -196,7 +179,7 @@
 					<width>1170</width>
 					<height>210</height>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[ListItem.Property(Addon.Description)]</label>
+					<label>$INFO[ListItem.AddonDescription]</label>
 				</control>
 
 			</control>
