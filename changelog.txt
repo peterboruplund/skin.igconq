@@ -1,3 +1,8 @@
+17.0.6   (11th May 2016)
+- Fix add-on info dialog
+- Default color tweaks
+- Settings layout tweaks
+
 17.0.5   (2nd May 2016)
 - Fixes for backgrounds, select dialog
 - Allow installing supported addons from skin settings
