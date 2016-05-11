@@ -74,6 +74,14 @@
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
+			<!-- Profiles -->
+			<control type="button">
+				<width>300</width>
+				<height>42</height>
+				<label>13200</label>
+				<font>Font42</font>
+				<textcolor>$VAR[TextColor3]</textcolor>
+			</control>
 			<!-- Service -->
 			<control type="button">
 				<width>300</width>

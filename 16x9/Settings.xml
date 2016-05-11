@@ -99,8 +99,21 @@
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
 
-			<!-- Services -->
+			<!-- Profiles -->
 			<control type="button" id="5">
+				<width>300</width>
+				<height>42</height>
+				<label>13200</label>
+				<font>Font42</font>
+				<textcolor>$VAR[TextColor2]</textcolor>
+				<focusedcolor>$VAR[TextColor1]</focusedcolor>
+				<onclick>ActivateWindow(profiles)</onclick>
+				<onright>ActivateWindow(profiles)</onright>
+				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+			</control>
+
+			<!-- Services -->
+			<control type="button" id="6">
 				<width>300</width>
 				<height>42</height>
 				<label>14036</label>
@@ -113,7 +126,7 @@
 			</control>
 
 			<!-- System -->
-			<control type="button" id="6">
+			<control type="button" id="7">
 				<width>300</width>
 				<height>42</height>
 				<label>13000</label>
@@ -126,7 +139,7 @@
 			</control>
 
 			<!-- System info -->
-			<control type="button" id="7">
+			<control type="button" id="8">
 				<width>300</width>
 				<height>42</height>
 				<label>130</label>
@@ -137,8 +150,9 @@
 				<onright>ActivateWindow(systeminfo)</onright>
 				<animation effect="fade" start="100" end="70" time="0" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
 			</control>
+
 			<!-- More -->
-			<control type="button" id="8">
+			<control type="button" id="10">
 				<width>300</width>
 				<height>42</height>
 				<label>22082</label>
@@ -178,19 +192,6 @@
 				<onright>ActivateWindow(addonbrowser)</onright>
 				<onclick>ActivateWindow(addonbrowser)</onclick>
 			</control>
-			<!-- Profiles -->
-			<control type="button" id="8002">
-				<width>970</width>
-				<height>42</height>
-				<font>Font33</font>
-				<label>13200</label>
-				<textcolor>$VAR[TextColor2]</textcolor>
-				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<invalidcolor>TextColor4</invalidcolor>
-				<disabledcolor>TextColor4</disabledcolor>
-				<onright>ActivateWindow(profiles)</onright>
-				<onclick>ActivateWindow(profiles)</onclick>
-			</control>
 			<!-- File manager -->
 			<control type="button" id="8003">
 				<width>970</width>
@@ -205,19 +206,17 @@
 				<onclick>ActivateWindow(filemanager)</onclick>
 			</control>
 			<!-- Settings level -->
-			<control type="button" id="8004">
+			<control type="button" id="9">
 				<width>970</width>
 				<height>42</height>
-				<font>Font33</font>
 				<label>31016</label>
+				<font>Font33</font>
 				<textcolor>$VAR[TextColor2]</textcolor>
 				<focusedcolor>$VAR[TextColor1]</focusedcolor>
-				<invalidcolor>TextColor4</invalidcolor>
-				<disabledcolor>TextColor4</disabledcolor>
 				<onright>SetProperty(ChangeSettingsLevel,true)</onright>
-				<onright>ActivateWindow(appearancesettings)</onright>
+				<onright>ActivateWindow(InterfaceSettings)</onright>
 				<onclick>SetProperty(ChangeSettingsLevel,true)</onclick>
-				<onclick>ActivateWindow(appearancesettings)</onclick>
+				<onclick>ActivateWindow(InterfaceSettings)</onclick>
 			</control>
 
 		</control>

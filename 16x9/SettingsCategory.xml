@@ -117,6 +117,15 @@
 				<visible>!Window.IsActive(pvrsettings)</visible>
 			</control>
 
+			<!-- Profile -->
+			<control type="button">
+				<width>300</width>
+				<height>42</height>
+				<label>13200</label>
+				<font>Font42</font>
+				<textcolor>$VAR[TextColor3]</textcolor>
+			</control>
+
 			<!-- Services -->
 			<control type="button">
 				<width>300</width>
@@ -222,14 +231,6 @@
 				<width>300</width>
 				<height>42</height>
 				<label>24001</label>
-				<font>Font33</font>
-				<textcolor>$VAR[TextColor3]</textcolor>
-			</control>
-			<!-- Profiles -->
-			<control type="button">
-				<width>300</width>
-				<height>42</height>
-				<label>13200</label>
 				<font>Font33</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>
