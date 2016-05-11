@@ -2,7 +2,7 @@
 
 	<!-- Default colours -->
 	<color name="TextColor1">ffffffff</color>
-	<color name="TextColor2">66ffffff</color>
+	<color name="TextColor2">88ffffff</color>
 	<color name="TextColor3">44ffffff</color>
 	<color name="TextColor4">64000000</color>
 	<color name="ShadowColor">44000000</color>
@@ -17,7 +17,7 @@
 	
 	<!-- Dialog colors -->
 	<color name="DialogColor1">ffffffff</color>
-	<color name="DialogColor2">66ffffff</color>
+	<color name="DialogColor2">88ffffff</color>
 	<color name="DisabledColor">ffa10000</color>
 	<color name="InvalidColor">ffa10000</color>
 	<color name="DialogOverlayColorFO">ffffffff</color>
