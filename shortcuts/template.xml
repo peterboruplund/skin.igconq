@@ -1209,7 +1209,7 @@
 				<animation effect="slide" start="0,0" end="-1406,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,3)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-1609,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="-1812,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="$PYTHON['True' if layout != 'wide' else 'False'] + IntegerGreaterThan(Container(800$SKINSHORTCUTS[id]).NumItems,5)">conditional</animation>
 
 				<!-- Wide layout slide -->
 				<animation effect="slide" start="0,0" end="-1325,0" time="0" condition="$PYTHON['True' if layout == 'wide' else 'False'] + StringCompare(Container(800$SKINSHORTCUTS[id]).NumItems,1)">conditional</animation>
