@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+	<contextmenu>
+		<!-- Enable context menu on control 211 -->
+		<enableon>211</enableon>
+		<enableon>303</enableon>
+		<enableon>304</enableon>
+
+		<!-- Add enable/disable controls -->
+		<item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),False)">$LOCALIZE[24021]</item>
+		<item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">$LOCALIZE[24022]</item>
+	</contextmenu>
+
 	<!-- Weather widget -->
 	<widget label="Weather Forecast" type="custom" path="$INCLUDE[weather-widget]">WeatherWidget</widget>
 
