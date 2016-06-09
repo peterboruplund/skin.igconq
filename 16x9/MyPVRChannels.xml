@@ -15,11 +15,11 @@
 
 			<!-- Curve -->
 			<control type="image">
-				<left>20</left>
+				<right>20</right>
 				<top>20</top>
-				<width>1220</width>
+				<width>1280</width>
 				<height>1040</height>
-				<texture flipx="true" border="0,0,40,0">common/Curve.png</texture>
+				<texture border="40,0,0,0">common/Curve.png</texture>
 				<visible>Skin.HasSetting(ShowCurve)</visible>
 			</control>
 
@@ -102,7 +102,7 @@
 				<itemlayout height="90" width="1050">
 					<control type="label">
 						<left>32</left>
-						<top>0</top>
+						<top>-12</top>
 						<width>1018</width>
 						<height>90</height>
 						<font>Font36</font>
@@ -111,7 +111,7 @@
 					</control>
 					<control type="label">
 						<left>32</left>
-						<top>70</top>
+						<top>58</top>
 						<width>1018</width>
 						<height>27</height>
 						<font>Font27</font>
