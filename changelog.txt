@@ -1,3 +1,8 @@
+17.0.7   (9th June 2016)
+- Fixes - with thanks to meccs
+- PVR Channels view fixes
+- Horizontal home screen curve
+
 17.0.6   (11th May 2016)
 - Fix add-on info dialog
 - Default color tweaks
