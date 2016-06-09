@@ -2,6 +2,15 @@
 <includes>
 
 	<include name="HomeHorizontal">
+		<!-- Curve -->
+		<control type="image">
+			<left>20</left>
+			<top>765</top>
+			<width>1880</width>
+			<height>295</height>
+			<texture border="0,40,0,0">common/CurveHorzHome.png</texture>
+			<visible>Skin.HasSetting(ShowCurve)</visible>
+		</control>
 
 		<!-- Main list -->
 		<control type="wraplist" id="9000">
