@@ -137,6 +137,7 @@
 		<focusedcolor>$VAR[DialogColor1]</focusedcolor>
 		<disabledcolor>$VAR[DisabledColor]</disabledcolor>
 		<textoffsetx>0</textoffsetx>
+		<orientation>horizontal</orientation>
 	</default>
 
 	<default type="slider">
@@ -144,6 +145,7 @@
 		<height>23</height>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
+		<orientation>horizontal</orientation>
 	</default>
 
 	<default type="progress">
