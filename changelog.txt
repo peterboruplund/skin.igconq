@@ -1,4 +1,4 @@
-17.0.8
+17.0.8   (13th June 2016)
 - Slider control fix
 - OSD settings redesign
 - Option to disable home widget fanart

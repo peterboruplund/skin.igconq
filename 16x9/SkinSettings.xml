@@ -166,7 +166,7 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>31070</label>
+					<label>Display widget fanart on home screen</label>
 					<onclick>Skin.ToggleSetting(widgetFanart)</onclick>
 					<selected>!Skin.HasSetting(widgetFanart)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
