@@ -161,6 +161,16 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 					<visible>!String.IsEqual(Skin.String(menuStyle),lumos)</visible>
 				</control>
+				<!-- Widget fanart -->
+				<control type="radiobutton" id="1006">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>31070</label>
+					<onclick>Skin.ToggleSetting(widgetFanart)</onclick>
+					<selected>!Skin.HasSetting(widgetFanart)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
 
 
 				<!-- Background -->
