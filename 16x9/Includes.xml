@@ -5,7 +5,8 @@
 	<include file="Include_Home_Horizontal.xml" />
 	<include file="Include_Home_Lumos.xml" />
 	<include file="Includes_Widgets.xml" />
-	<include file="script-skinshortcuts-includes.xml"/>
+	<include file="script-skinshortcuts-includes.xml" />
+	<include file="Include_DialogSettings.xml" />
 	<include file="Viewtype50.xml" />
 	<include file="Viewtype51.xml" />
 	<include file="Viewtype52.xml" />
