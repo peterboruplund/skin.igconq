@@ -461,6 +461,11 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 
+	<variable name="skinshortcuts-disableindicator">
+		<value condition="String.IsEqual(ListItem.Property(skinshortcuts-disabled),True)">[COLOR darkred]×[/COLOR] </value>
+		<value />
+	</variable>
+
 	<variable name="skinshortcuts-size">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(layout),tall)">Tall</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(layout),wide)">Wide</value>

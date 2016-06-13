@@ -7,8 +7,10 @@
 		<enableon>304</enableon>
 
 		<!-- Add enable/disable controls -->
+		<item control="305" condition="!String.EndsWith(Window.Property(groupname),.1)">$ADDON[script.skinshortcuts 32025]</item>
 		<item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),False)">$LOCALIZE[24021]</item>
 		<item control="313" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">$LOCALIZE[24022]</item>
+		<item control="302">$ADDON[script.skinshortcuts 32001]</item>
 	</contextmenu>
 
 	<!-- Weather widget -->

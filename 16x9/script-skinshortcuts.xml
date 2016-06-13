@@ -74,7 +74,7 @@
 					<width>260</width>
 					<height>66</height>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$VAR[skinshortcuts-itemlabel]</label>
+					<label>$VAR[skinshortcuts-disableindicator]$VAR[skinshortcuts-itemlabel]</label>
 				</control>
 			</itemlayout>
 
@@ -84,7 +84,7 @@
 					<width>260</width>
 					<height>66</height>
 					<scroll>true</scroll>
-					<label>$VAR[skinshortcuts-itemlabel]</label>
+					<label>$VAR[skinshortcuts-disableindicator]$VAR[skinshortcuts-itemlabel]</label>
 					<animation effect="fade" start="100" end="75" time="0" condition="!Control.HasFocus(211)">Conditional</animation>
 				</control>
 				<control type="image">
@@ -139,15 +139,6 @@
 				<width>1050</width>
 				<height>60</height>
 				<label>$ADDON[script.skinshortcuts 32048]</label>
-				<visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
-			</control>
-
-			<!-- Change label -->
-			<control type="button" id="305">
-				<width>1050</width>
-				<height>40</height>
-				<label>  -  $ADDON[script.skinshortcuts 32025]</label>
-				<label2>$INFO[Container(211).ListItem.Label]</label2>
 				<visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
 			</control>
 
@@ -260,15 +251,6 @@
 				<visible>String.IsEqual(Window.Property(groupname),mainmenu) + [Skin.HasSetting(enableHubs) | String.IsEqual(Skin.String(menuStyle),lumos)]</visible>
 				<disabledcolor>TextColor4</disabledcolor>
 			</control>
-
-			<!-- Remove -->
-			<control type="button" id="302">
-				<width>1050</width>
-				<height>60</height>
-				<label>-</label>
-			</control>
-
-
 
 		</control>
 
