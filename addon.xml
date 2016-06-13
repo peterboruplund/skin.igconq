@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.igconq"
-	version="17.0.7"
+	version="17.0.8"
 	name="IgConq"
 	provider-name="Hitcher Ignoble61">
 	<requires>

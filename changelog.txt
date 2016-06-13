@@ -1,3 +1,9 @@
+17.0.8
+- Slider control fix
+- OSD settings redesign
+- Option to disable home widget fanart
+- Skin Shortcuts 1.0.9 support
+
 17.0.7   (9th June 2016)
 - Fixes - with thanks to meccs
 - PVR Channels view fixes
