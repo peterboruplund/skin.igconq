@@ -76,8 +76,16 @@
 				<control type="button" id="14">
 					<width>600</width>
 					<height>66</height>
-					<label>Addons</label>
+					<label>$LOCALIZE[31063]</label>
 					<textcolor>$VAR[SkinSettingButton14]</textcolor>
+				</control>
+
+				<!-- Backup/Reset -->
+				<control type="button" id="15">
+					<width>600</width>
+					<height>66</height>
+					<label>$LOCALIZE[31075]</label>
+					<textcolor>$VAR[SkinSettingButton15]</textcolor>
 				</control>
 
 			</control>
@@ -98,27 +106,17 @@
 				<scrolltime tween="sine" easing="out">240</scrolltime>
 
 				<!-- Home items -->
-				<!-- Home submenu-->
-				<control type="button" id="1213">
+				<!-- Edit menu-->
+				<control type="button" id="1001">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>31049</label>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-					<visible>ControlGroup(9).HasFocus(10) + [String.IsEqual(Skin.String(mypassword),Skin.String(passcode)) | String.IsEmpty(Skin.String(passcode))]</visible>
-				</control>
-				<!-- Reset all -->
-				<control type="button" id="1214">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-					<label>$ADDON[script.skinshortcuts 32037]</label>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
-
 				<!-- Main menu style -->
-				<control type="button" id="1215">
+				<control type="button" id="1002">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -130,9 +128,8 @@
 					<label2>$VAR[menuStyle]</label2>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
-
 				<!-- Small main menu -->
-				<control type="radiobutton" id="1216">
+				<control type="radiobutton" id="1003">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -142,9 +139,8 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 					<visible>String.IsEmpty(Skin.String(menuStyle))</visible>
 				</control>
-
 				<!-- Hide submenu headings -->
-				<control type="radiobutton" id="1217">
+				<control type="radiobutton" id="1004">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -154,9 +150,8 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 					<visible>String.IsEmpty(Skin.String(menuStyle)) | String.IsEqual(Skin.String(menuStyle),horizontal)</visible>
 				</control>
-
 				<!-- Enable Hubs -->
-				<control type="radiobutton" id="1218">
+				<control type="radiobutton" id="1005">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -167,27 +162,10 @@
 					<visible>!String.IsEqual(Skin.String(menuStyle),lumos)</visible>
 				</control>
 
-				<!-- Backup and restore -->
-				<control type="button" id="1219">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
-					<label>$ADDON[script.skin.helper.service 32028]</label>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
-				<control type="button" id="1220">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
-					<label>$ADDON[script.skin.helper.service 32032]</label>
-					<visible>ControlGroup(9).HasFocus(10)</visible>
-				</control>
 
 				<!-- Background -->
 				<!-- Custom image -->
-				<control type="button" id="1000">
+				<control type="button" id="1101">
 					<width>1050</width>
 					<height>66</height>
 					<onup>101</onup>
@@ -197,7 +175,7 @@
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 				<!-- Background video -->
-				<control type="radiobutton" id="1003">
+				<control type="radiobutton" id="1102">
 					<width>1050</width>
 					<height>66</height>
 					<onup>101</onup>
@@ -208,7 +186,7 @@
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 				<!-- Background visualisation -->
-				<control type="radiobutton" id="1004">
+				<control type="radiobutton" id="1103">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -218,7 +196,7 @@
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 				<!-- Enable artist slideshow -->
-				<control type="radiobutton" id="1005">
+				<control type="radiobutton" id="1104">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -228,7 +206,7 @@
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 				<!-- Fade artist slideshow -->
-				<control type="radiobutton" id="1006">
+				<control type="radiobutton" id="1105">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -238,7 +216,7 @@
 					<visible>ControlGroup(9).HasFocus(11) + Skin.HasSetting(EnableArtistFanart)</visible>
 				</control>
 				<!-- Overlay color -->
-				<control type="button" id="1007">
+				<control type="button" id="1106">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -248,9 +226,10 @@
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 
+
 				<!-- Weather -->
 				<!-- Weather icons-->
-				<control type="button" id="1401">
+				<control type="button" id="1201">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -260,7 +239,7 @@
 					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
 				<!-- Weather fanart -->
-				<control type="button" id="1402">
+				<control type="button" id="1202">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -270,28 +249,10 @@
 					<visible>ControlGroup(9).HasFocus(13)</visible>
 				</control>
 
+
 				<!-- General -->
-				<!-- Animated posters -->
-				<control type="radiobutton" id="1301">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>(Experimental) Display animated posters</label>
-					<onclick>Skin.ToggleSetting(AnimatedPosters)</onclick>
-					<selected>Skin.HasSetting(AnimatedPosters)</selected>
-					<visible>ControlGroup(9).HasFocus(12)</visible>
-				</control>
-				<control type="radiobutton" id="1302">
-					<width>1050</width>
-					<height>66</height>
-					<textwidth>1120</textwidth>
-					<label>(Experimental) Automatically fetch animated posters</label>
-					<onclick>Skin.ToggleSetting(DownloadAnimatedPosters)</onclick>
-					<selected>Skin.HasSetting(DownloadAnimatedPosters)</selected>
-					<visible>ControlGroup(9).HasFocus(12)</visible>
-				</control>
 				<!-- Headings -->
-				<control type="radiobutton" id="1303">
+				<control type="radiobutton" id="1301">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -301,7 +262,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Show curved segments -->
-				<control type="radiobutton" id="1304">
+				<control type="radiobutton" id="1302">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -311,7 +272,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Hide 'Mouse' warning -->
-				<control type="radiobutton" id="1305">
+				<control type="radiobutton" id="1303">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -321,7 +282,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Enable Debug Grid -->
-				<control type="radiobutton" id="1306">
+				<control type="radiobutton" id="1304">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -331,7 +292,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Disable Debug Info -->
-				<control type="radiobutton" id="1307">
+				<control type="radiobutton" id="1305">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -341,7 +302,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Kiosk mode -->
-				<control type="radiobutton" id="1308">
+				<control type="radiobutton" id="1306">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -350,15 +311,26 @@
 					<selected>Skin.HasSetting(KioskMode)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
-				<!-- Reset skin's setting -->
-				<control type="button" id="1309">
+				<!-- Animated posters -->
+				<control type="radiobutton" id="1307">
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>31058</label>
-					<onclick>Skin.ResetSettings</onclick>
+					<label>[COLOR dimgray](Experimental)[/COLOR] Display animated posters</label>
+					<onclick>Skin.ToggleSetting(AnimatedPosters)</onclick>
+					<selected>Skin.HasSetting(AnimatedPosters)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
+				<control type="radiobutton" id="1308">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>[COLOR dimgray](Experimental)[/COLOR] Automatically fetch animated posters</label>
+					<onclick>Skin.ToggleSetting(DownloadAnimatedPosters)</onclick>
+					<selected>Skin.HasSetting(DownloadAnimatedPosters)</selected>
+					<visible>ControlGroup(9).HasFocus(12)</visible>
+				</control>
+
 
 				<!-- Addons -->
 				<!-- Required -->
@@ -454,6 +426,43 @@
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
 
+
+				<!-- BACKUP/RESET -->
+				<!-- Backup and restore -->
+				<control type="button" id="1501">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skin.helper.service,action=backup)</onclick>
+					<label>$ADDON[script.skin.helper.service 32028]</label>
+					<visible>ControlGroup(9).HasFocus(15)</visible>
+				</control>
+				<control type="button" id="1502">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skin.helper.service,action=restore)</onclick>
+					<label>$ADDON[script.skin.helper.service 32032]</label>
+					<visible>ControlGroup(9).HasFocus(15)</visible>
+				</control>
+				<!-- Reset all -->
+				<control type="button" id="1503">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+					<label>$ADDON[script.skinshortcuts 32037]</label>
+					<visible>ControlGroup(9).HasFocus(15)</visible>
+				</control>
+				<!-- Reset skin's setting -->
+				<control type="button" id="1504">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>31058</label>
+					<onclick>Skin.ResetSettings</onclick>
+					<visible>ControlGroup(9).HasFocus(15)</visible>
+				</control>
 			</control>
 
 		</control>

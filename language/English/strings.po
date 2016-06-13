@@ -258,7 +258,7 @@ msgid "Kiosk mode"
 msgstr ""
 
 msgctxt "#31058"
-msgid "Reset all Conq settings"
+msgid "Reset all skin settings"
 msgstr ""
 
 msgctxt "#31059"
@@ -332,4 +332,9 @@ msgstr ""
 #: /16x9/Settings.xml:54
 msgctxt "#31074"
 msgid "Interface"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31075"
+msgid "Backup/Reset"
 msgstr ""
