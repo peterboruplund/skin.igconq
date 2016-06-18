@@ -166,9 +166,19 @@
 					<width>1050</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>Display widget fanart on home screen</label>
+					<label>$LOCALIZE[31076]</label>
 					<onclick>Skin.ToggleSetting(widgetFanart)</onclick>
 					<selected>!Skin.HasSetting(widgetFanart)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
+				<!-- Widget icons -->
+				<control type="radiobutton" id="1007">
+					<width>1050</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>$LOCALIZE[31077]</label>
+					<onclick>Skin.ToggleSetting(widgetIcons)</onclick>
+					<selected>!Skin.HasSetting(widgetIcons)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 

@@ -338,3 +338,13 @@ msgstr ""
 msgctxt "#31075"
 msgid "Backup/Reset"
 msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31076"
+msgid "Widget fanart on home screen"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31077"
+msgid "Widget icons on home screen"
+msgstr ""

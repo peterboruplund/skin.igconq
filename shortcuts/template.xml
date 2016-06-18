@@ -152,7 +152,7 @@
 									<width>35</width>
 									<height>49</height>
 									<texture>views/OverlayWatchedWide.png</texture>
-									<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+									<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 								</control>
 								<control type="image">
 									<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -160,7 +160,7 @@
 									<width>35</width>
 									<height>49</height>
 									<texture>views/OverlayResumableWide.png</texture>
-									<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+									<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 								</control>
 							</control>
 						</control>
@@ -220,7 +220,7 @@
 								<width>35</width>
 								<height>49</height>
 								<texture>views/OverlayWatchedWide.png</texture>
-								<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+								<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 							</control>
 							<control type="image">
 								<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -228,7 +228,7 @@
 								<width>35</width>
 								<height>49</height>
 								<texture>views/OverlayResumableWide.png</texture>
-								<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+								<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 							</control>
 						</control>
 					</focusedlayout>
@@ -877,7 +877,7 @@
 									<width>35</width>
 									<height>49</height>
 									<texture>views/OverlayWatchedWide.png</texture>
-									<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+									<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 								</control>
 								<control type="image">
 									<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -885,7 +885,7 @@
 									<width>35</width>
 									<height>49</height>
 									<texture>views/OverlayResumableWide.png</texture>
-									<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+									<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 								</control>
 							</control>
 						</control>
@@ -945,7 +945,7 @@
 								<width>35</width>
 								<height>49</height>
 								<texture>views/OverlayWatchedWide.png</texture>
-								<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+								<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 							</control>
 							<control type="image">
 								<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -953,7 +953,7 @@
 								<width>35</width>
 								<height>49</height>
 								<texture>views/OverlayResumableWide.png</texture>
-								<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+								<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 							</control>
 						</control>
 					</focusedlayout>
@@ -1266,7 +1266,7 @@
 						<width>35</width>
 						<height>49</height>
 						<texture>views/OverlayWatchedWide.png</texture>
-						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+						<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 					</control>
 					<control type="image">
 						<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -1274,7 +1274,7 @@
 						<width>35</width>
 						<height>49</height>
 						<texture>views/OverlayResumableWide.png</texture>
-						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+						<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 					</control>
 				</itemlayout>
 
@@ -1357,7 +1357,7 @@
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayWatchedWide.png</texture>
-							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+							<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						<control type="image">
 							<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -1365,7 +1365,7 @@
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayResumableWide.png</texture>
-							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+							<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 						</control>
 				</focusedlayout>
 
@@ -1609,7 +1609,7 @@
 						<width>35</width>
 						<height>49</height>
 						<texture>views/OverlayWatchedWide.png</texture>
-						<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+						<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 					</control>
 					<control type="image">
 						<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -1617,7 +1617,7 @@
 						<width>35</width>
 						<height>49</height>
 						<texture>views/OverlayResumableWide.png</texture>
-						<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+						<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 					</control>
 				</itemlayout>
 
@@ -1700,7 +1700,7 @@
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayWatchedWide.png</texture>
-							<visible>IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
+							<visible>!Skin.HasSetting(widgetIcons) + IsEmpty(ListItem.Property(resumetime)) + !IsEmpty(ListItem.PlayCount)</visible>
 						</control>
 						<control type="image">
 							<left>$PYTHON[int(imageWidth) - 45]</left>
@@ -1708,7 +1708,7 @@
 							<width>35</width>
 							<height>49</height>
 							<texture>views/OverlayResumableWide.png</texture>
-							<visible>!IsEmpty(ListItem.Property(resumetime))</visible>
+							<visible>!Skin.HasSetting(widgetIcons) + !IsEmpty(ListItem.Property(resumetime))</visible>
 						</control>
 				</focusedlayout>
 
