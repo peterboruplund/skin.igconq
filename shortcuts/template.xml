@@ -116,7 +116,7 @@
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 									<param name="aspectratio">keep</param>
@@ -127,7 +127,7 @@
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
@@ -138,7 +138,7 @@
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback">DefaultShortcut.png</param>
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
@@ -393,7 +393,7 @@
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 									<param name="aspectratio">keep</param>
@@ -404,7 +404,7 @@
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
@@ -415,7 +415,7 @@
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback">DefaultShortcut.png</param>
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
@@ -670,7 +670,7 @@
 									<top>0</top>
 									<width>183</width>
 									<height>306</height>
-									<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+									<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 									<aspectratio align="center">keep</aspectratio>
 								</control>
 								<control type="label">
@@ -704,7 +704,7 @@
 								<top>0</top>
 								<width>183</width>
 								<height>306</height>
-								<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+								<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 								<aspectratio align="center">keep</aspectratio>
 								<visible>!StringCompare(Container(9000).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
 							</control>
@@ -841,7 +841,7 @@
 									<description>Primary art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 									<param name="aspectratio">keep</param>
@@ -852,7 +852,7 @@
 									<description>Fallback art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback"></param>
 									<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 									<param name="aspectratio">keep</param>
@@ -863,7 +863,7 @@
 									<description>Catch-all art</description>
 									<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 									<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-									<param name="colordiffuse">88f1f1f1</param>
+									<param name="colordiffuse">DiffusePosterNF</param>
 									<param name="fallback">DefaultShortcut.png</param>
 									<param name="art">$INFO[ListItem.Icon]</param>
 									<param name="aspectratio">keep</param>
@@ -1079,7 +1079,7 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 							<aspectratio align="center">keep</aspectratio>
 						</control>
 						<control type="label">
@@ -1110,7 +1110,7 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 							<aspectratio align="center">keep</aspectratio>
 							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
@@ -1230,7 +1230,7 @@
 						<description>Primary art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback"></param>
 						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 						<param name="aspectratio">keep</param>
@@ -1241,7 +1241,7 @@
 						<description>Fallback art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback"></param>
 						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 						<param name="aspectratio">keep</param>
@@ -1252,7 +1252,7 @@
 						<description>Catch-all art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback">DefaultShortcut.png</param>
 						<param name="art">$INFO[ListItem.Icon]</param>
 						<param name="aspectratio">keep</param>
@@ -1320,7 +1320,7 @@
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 								<param name="aspectratio">keep</param>
@@ -1331,7 +1331,7 @@
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 								<param name="aspectratio">keep</param>
@@ -1342,7 +1342,7 @@
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback">DefaultShortcut.png</param>
 								<param name="art">$INFO[ListItem.Icon]</param>
 								<param name="aspectratio">keep</param>
@@ -1464,7 +1464,7 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 							<aspectratio align="center">keep</aspectratio>
 						</control>
 						<control type="label">
@@ -1495,7 +1495,7 @@
 							<top>0</top>
 							<width>183</width>
 							<height>306</height>
-							<texture colordiffuse="88f1f1f1" background="true">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="DiffusePosterNF" background="true">$INFO[ListItem.Icon]</texture>
 							<aspectratio align="center">keep</aspectratio>
 							<visible>!Control.HasFocus(800$SKINSHORTCUTS[id])</visible>
 						</control>
@@ -1573,7 +1573,7 @@
 						<description>Primary art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback"></param>
 						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 						<param name="aspectratio">keep</param>
@@ -1584,7 +1584,7 @@
 						<description>Fallback art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback"></param>
 						<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 						<param name="aspectratio">keep</param>
@@ -1595,7 +1595,7 @@
 						<description>Catch-all art</description>
 						<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 						<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-						<param name="colordiffuse">88f1f1f1</param>
+						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback">DefaultShortcut.png</param>
 						<param name="art">$INFO[ListItem.Icon]</param>
 						<param name="aspectratio">keep</param>
@@ -1663,7 +1663,7 @@
 								<description>Primary art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art]]</param>
 								<param name="aspectratio">keep</param>
@@ -1674,7 +1674,7 @@
 								<description>Fallback art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback"></param>
 								<param name="art">$INFO[ListItem.$SKINSHORTCUTS[art2]]</param>
 								<param name="aspectratio">keep</param>
@@ -1685,7 +1685,7 @@
 								<description>Catch-all art</description>
 								<param name="width">$SKINSHORTCUTS[imageWidth]</param>
 								<param name="height">$SKINSHORTCUTS[imageHeight]</param>
-								<param name="colordiffuse">88f1f1f1</param>
+								<param name="colordiffuse">DiffusePosterNF</param>
 								<param name="fallback">DefaultShortcut.png</param>
 								<param name="art">$INFO[ListItem.Icon]</param>
 								<param name="aspectratio">keep</param>
