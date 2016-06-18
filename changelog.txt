@@ -1,3 +1,8 @@
+17.0.9   (18th June 2016)
+- Option to disable home widget icons
+- Adjust unfocused poster diffuse
+- Code cleanup
+
 17.0.8   (13th June 2016)
 - Slider control fix
 - OSD settings redesign
