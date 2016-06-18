@@ -16,11 +16,14 @@
 	<color name="Locked">66220000</color>
 	
 	<!-- Dialog colors -->
-	<color name="DialogColor1">ffffffff</color>
-	<color name="DialogColor2">84ffffff</color>
+	<color name="DialogColor1">ff000000</color>
+	<color name="DialogColor2">84000000</color>
 	<color name="DisabledColor">ffa10000</color>
 	<color name="InvalidColor">ffa10000</color>
 	<color name="DialogOverlayColorFO">ffffffff</color>
 	<color name="DialogOverlayColorNF">55f1f1f1</color>
+
+	<!-- Default overlay color -->
+	<color name="OverlayColor">ccDDDDDD</color>
 
 </colors>

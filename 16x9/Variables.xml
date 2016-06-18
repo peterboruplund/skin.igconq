@@ -51,7 +51,7 @@
 
 	<variable name="OverlayColor">
 		<value condition="!String.IsEmpty(Skin.String(color.overlay)) + !String.IsEqual(Skin.String(color.overlay),None)">$INFO[Skin.String(color.overlay)]</value>
-		<value>cc000000</value>
+		<value>OverlayColor</value>
 	</variable>
 
 	<variable name="HeadingLabel">

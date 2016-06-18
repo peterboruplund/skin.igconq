@@ -53,14 +53,14 @@
 				<top>152</top>
 				<width>176</width>
 				<height>20</height>
-				<texture border="1,12,1,1" colordiffuse="DialogOverlayColorNF">common/ScrollBackgroundHorizontal.png</texture>
+				<texture border="1,12,1,1" colordiffuse="$VAR[DialogColor1]">common/ScrollBackgroundHorizontal.png</texture>
 			</control>
 			<control type="image">
 				<centerleft>50%</centerleft>
 				<top>152</top>
 				<width>24</width>
 				<height>20</height>
-				<texture border="1,12,1,1" colordiffuse="DialogOverlayColorFO">common/ScrollbarGripHorizontalFO.png</texture>
+				<texture border="1,12,1,1" colordiffuse="$VAR[DialogColor1]">common/ScrollbarGripHorizontalFO.png</texture>
 				<animation effect="slide" start="-76,0" end="76,0" time="800" loop="true" tween="cubic" easing="out" condition="true">Conditional</animation>
 			</control>
 

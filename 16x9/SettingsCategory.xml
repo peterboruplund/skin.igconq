@@ -412,7 +412,7 @@
 		<control type="image" id="11">
 			<width>970</width>
 			<height>-42</height>
-			<texture border="2">common/Divider.png</texture>
+			<texture border="2" colordiffuse="$VAR[DialogColor1]">common/Divider.png</texture>
 		</control>
 
 	</controls>

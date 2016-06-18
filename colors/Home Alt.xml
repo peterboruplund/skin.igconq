@@ -23,4 +23,7 @@
 	<color name="DialogOverlayColorFO">ffffffff</color>
 	<color name="DialogOverlayColorNF">55f1f1f1</color>
 
+	<!-- Default overlay color -->
+	<color name="OverlayColor">cc000000</color>
+
 </colors>

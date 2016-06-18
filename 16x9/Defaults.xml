@@ -72,10 +72,10 @@
 		<radioheight>16</radioheight>
 		<texturenofocus>-</texturenofocus>
 		<texturefocus>-</texturefocus>
-		<textureradioonfocus>common/RadioOn.png</textureradioonfocus>
-		<textureradioonnofocus>common/RadioOn.png</textureradioonnofocus>
-		<textureradioofffocus>common/RadioOff.png</textureradioofffocus>
-		<textureradiooffnofocus>common/RadioOff.png</textureradiooffnofocus>
+		<textureradioonfocus colordiffuse="$VAR[DialogColor1]">common/RadioOn.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="$VAR[DialogColor1]">common/RadioOn.png</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="$VAR[DialogColor1]">common/RadioOff.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="$VAR[DialogColor1]">common/RadioOff.png</textureradiooffnofocus>
 		<textoffsetx>0</textoffsetx>
 		<pulseonselect>false</pulseonselect>
 	</default>
@@ -91,10 +91,10 @@
 		<spinheight>66</spinheight>
 		<texturenofocus>-</texturenofocus>
 		<texturefocus>-</texturefocus>
-		<textureup>common/ArrowUpNF.png</textureup>
-		<texturedown>common/ArrowDownNF.png</texturedown>
-		<textureupfocus>common/ArrowUpFO.png</textureupfocus>
-		<texturedownfocus>common/ArrowDownFO.png</texturedownfocus>
+		<textureup colordiffuse="$VAR[DialogColor1]">common/ArrowUpNF.png</textureup>
+		<texturedown colordiffuse="$VAR[DialogColor1]">common/ArrowDownNF.png</texturedown>
+		<textureupfocus colordiffuse="$VAR[DialogColor1]">common/ArrowUpFO.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[DialogColor1]">common/ArrowDownFO.png</texturedownfocus>
 		<textcolor>$VAR[DialogColor2]</textcolor>
 		<focusedcolor>$VAR[DialogColor1]</focusedcolor>
 		<disabledcolor>$VAR[DisabledColor]</disabledcolor>
@@ -110,10 +110,10 @@
 		<aligny>center</aligny>
 		<spinwidth>43</spinwidth>
 		<spinheight>60</spinheight>
-		<textureup>common/ArrowUpNF.png</textureup>
-		<texturedown>common/ArrowDownNF.png</texturedown>
-		<textureupfocus>common/ArrowUpFO.png</textureupfocus>
-		<texturedownfocus>common/ArrowDownFO.png</texturedownfocus>
+		<textureup colordiffuse="$VAR[DialogColor1]">common/ArrowUpNF.png</textureup>
+		<texturedown colordiffuse="$VAR[DialogColor1]">common/ArrowDownNF.png</texturedown>
+		<textureupfocus colordiffuse="$VAR[DialogColor1]">common/ArrowUpFO.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[DialogColor1]">common/ArrowDownFO.png</texturedownfocus>
 		<font>Font36</font>
 		<textcolor>$VAR[DialogColor2]</textcolor>
 		<focusedcolor>$VAR[DialogColor1]</focusedcolor>

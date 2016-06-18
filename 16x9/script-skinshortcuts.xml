@@ -91,28 +91,28 @@
 					<left>290</left>
 					<width>35</width>
 					<height>66</height>
-					<texture>common/ArrowDownNF.png</texture>
+					<texture colordiffuse="$VAR[DialogColor1]">common/ArrowDownNF.png</texture>
 					<visible>!Control.HasFocus(304)</visible>
 				</control>
 				<control type="image">
 					<left>325</left>
 					<width>35</width>
 					<height>66</height>
-					<texture>common/ArrowUpNF.png</texture>
+					<texture colordiffuse="$VAR[DialogColor1]">common/ArrowUpNF.png</texture>
 					<visible>!Control.HasFocus(303)</visible>
 				</control>
 				<control type="image">
 					<left>290</left>
 					<width>35</width>
 					<height>66</height>
-					<texture>common/ArrowDownFO.png</texture>
+					<texture colordiffuse="$VAR[DialogColor1]">common/ArrowDownFO.png</texture>
 					<visible>Control.HasFocus(304)</visible>
 				</control>
 				<control type="image">
 					<left>325</left>
 					<width>35</width>
 					<height>66</height>
-					<texture>common/ArrowUpFO.png</texture>
+					<texture colordiffuse="$VAR[DialogColor1]">common/ArrowUpFO.png</texture>
 					<visible>Control.HasFocus(303)</visible>
 				</control>
 			</focusedlayout>
