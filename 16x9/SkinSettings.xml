@@ -368,7 +368,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>Skin Shortcuts</label>
+					<label>$LOCALIZE[31079]</label>
 					<onclick>InstallAddon(script.skinshortcuts)</onclick>
 					<selected>System.HasAddon(script.skinshortcuts)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
@@ -380,7 +380,7 @@
 					<height>62</height>
 					<font>Font33</font>
 					<align>left</align>
-					<label>[I]Recommended Add-ons[/I]</label>
+					<label>[I]$LOCALIZE[31080][/I]</label>
 					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -389,7 +389,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>Skin Helper Service</label>
+					<label>$LOCALIZE[31081]</label>
 					<onclick>InstallAddon(script.skin.helper.service)</onclick>
 					<selected>System.HasAddon(script.skin.helper.service)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
@@ -399,7 +399,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>AutoCompletion for virtual keyboard</label>
+					<label>$LOCALIZE[31082]</label>
 					<onclick>InstallAddon(plugin.program.autocompletion)</onclick>
 					<selected>System.HasAddon(plugin.program.autocompletion)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
@@ -409,7 +409,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>Image Resource Select</label>
+					<label>$LOCALIZE[31083]</label>
 					<onclick>InstallAddon(script.image.resource.select)</onclick>
 					<selected>System.HasAddon(script.image.resource.select)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
@@ -421,7 +421,7 @@
 					<height>62</height>
 					<font>Font33</font>
 					<align>left</align>
-					<label>[I]Supported Add-ons[/I]</label>
+					<label>[I]$LOCALIZE[31084][/I]</label>
 					<textcolor>$VAR[TextColor2]</textcolor>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
@@ -430,7 +430,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>Next Up Notification</label>
+					<label>$LOCALIZE[31085]</label>
 					<onclick>InstallAddon(service.nextup.notification)</onclick>
 					<selected>System.HasAddon(service.nextup.notification)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
@@ -440,7 +440,7 @@
 					<height>66</height>
 					<left>20</left>
 					<textwidth>1120</textwidth>
-					<label>Artist Slideshow</label>
+					<label>$LOCALIZE[31086]</label>
 					<onclick>InstallAddon(script.artistslideshow)</onclick>
 					<selected>System.HasAddon(script.artistslideshow)</selected>
 					<visible>ControlGroup(9).HasFocus(14)</visible>

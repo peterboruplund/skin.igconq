@@ -523,7 +523,7 @@
 						<width>405</width>
 						<height>50</height>
 						<align>center</align>
-						<textcolor>$VAR[textcolor2]</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
@@ -534,7 +534,7 @@
 						<width>405</width>
 						<height>50</height>
 						<align>center</align>
-						<textcolor>$VAR[textcolor1]</textcolor>
+						<textcolor>$VAR[TextColor1]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>Control.HasFocus(6000)</visible>
 					</control>
@@ -544,7 +544,7 @@
 						<width>405</width>
 						<height>50</height>
 						<align>center</align>
-						<textcolor>$VAR[textcolor2]</textcolor>
+						<textcolor>$VAR[TextColor2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Control.HasFocus(6000)</visible>
 					</control>

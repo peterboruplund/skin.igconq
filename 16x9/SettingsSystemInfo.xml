@@ -86,7 +86,7 @@
 			<control type="button">
 				<width>300</width>
 				<height>42</height>
-				<label>Services</label>
+				<label>$LOCALIZE[14036]</label>
 				<font>Font42</font>
 				<textcolor>$VAR[TextColor3]</textcolor>
 			</control>

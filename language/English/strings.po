@@ -348,3 +348,48 @@ msgstr ""
 msgctxt "#31077"
 msgid "Widget icons on home screen"
 msgstr ""
+
+#: /16x9/Viewtype53.xml
+msgctxt "#31078"
+msgid "Wall"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31079"
+msgid "Skin Shortcuts"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31080"
+msgid "Recommended Add-ons"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31081"
+msgid "Skin Helper Service"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31082"
+msgid "AutoCompletion for virtual keyboard"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31083"
+msgid "Image Resource Select"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31084"
+msgid "Supported Add-ons"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31085"
+msgid "Next Up Notification"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31086"
+msgid "Artist Slideshow"
+msgstr ""
