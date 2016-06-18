@@ -1,4 +1,4 @@
-17.0.9   (18th June 2016)
+17.0.10   (18th June 2016)
 - Option to disable home widget icons
 - Adjust unfocused poster diffuse
 - Code cleanup
