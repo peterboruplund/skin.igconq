@@ -55,7 +55,7 @@
 		<!-- Scrollbar -->
 		<control type="scrollbar" id="60">
 			<left>690</left>
-			<centertop>50%</centertop>
+			<top>235</top>
 			<width>20</width>
 			<height>692</height>
 			<onleft>5</onleft>

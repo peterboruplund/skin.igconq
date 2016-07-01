@@ -83,8 +83,8 @@
 		<value condition="Window.IsVisible(RadioTimers)">$LOCALIZE[19021]: $LOCALIZE[19040]</value>
 		<value condition="Window.IsVisible(TVSearch)">$LOCALIZE[19020]: $LOCALIZE[137]</value>
 		<value condition="Window.IsVisible(RadioSearch)">$LOCALIZE[19021]: $LOCALIZE[137]</value>
-		<value condition="[Window.IsVisible(musiclibrary) | Window.IsVisible(musicfiles)]">$LOCALIZE[2]</value>
-		<value condition="Window.IsVisible(videolibrary)">$LOCALIZE[3]</value>
+		<value condition="Window.IsVisible(Music)">$LOCALIZE[2]</value>
+		<value condition="Window.IsVisible(Videos)">$LOCALIZE[3]</value>
 		<value condition="Window.IsVisible(pictures)">$LOCALIZE[1]</value>
 		<value condition="Window.IsVisible(programs)">$LOCALIZE[0]</value>
 		<value condition="[Window.IsVisible(settings) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(skinsettings) | Window.IsVisible(systeminfo) | Window.IsVisible(addonbrowser) | Window.IsVisible(profiles) | Window.IsVisible(filemanager)]">$LOCALIZE[5]</value>
@@ -378,12 +378,10 @@
 		<value condition="Container.Content(sets) + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[20434]</value>
 		<value condition="Container.Content(tags) + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[31002]</value>
 		<value condition="Container.Content(tags) + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[20459]</value>
-		<value condition="Window.IsVisible(pvr) + Control.IsVisible(13) + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19043]</value>
-		<value condition="Window.IsVisible(pvr) + Control.IsVisible(13) + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19163]</value>
-		<value condition="Window.IsVisible(pvr) + [Control.IsVisible(14) | Control.IsVisible(17)] + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[31000]</value>
-		<value condition="Window.IsVisible(pvr) + [Control.IsVisible(14) | Control.IsVisible(17)] + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[31001]</value>
-		<value condition="Window.IsVisible(pvr) + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19029]</value>
-		<value condition="Window.IsVisible(pvr) + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19019]</value>
+		<value condition="[Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings)] + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19043]</value>
+		<value condition="[Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings)] + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19163]</value>
+		<value condition="[Window.IsVisible(TVChannels) | Window.IsVisible(RadioRecordings)] + !Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19029]</value>
+		<value condition="[Window.IsVisible(TVChannels) | Window.IsVisible(RadioRecordings)] + Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[19019]</value>
 		<value condition="!Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[31000]</value>
 		<value condition="Integer.IsGreater(Container.NumItems,1)">$LOCALIZE[31001]</value>
 	</variable>

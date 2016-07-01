@@ -66,7 +66,7 @@
 	<include name="WindowBackgroundImage">
 		<control type="visualisation">
 			<include>FullscreenDimensions</include>
-			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+			<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 		</control>
 		<control type="videowindow">
 			<include>FullscreenDimensions</include>
@@ -85,7 +85,7 @@
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<imagepath>$VAR[BackgroundImage]</imagepath>
-			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+			<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<timeperimage>10000</timeperimage>
 			<!--fadetime>200</fadetime-->
 		</control>
@@ -136,11 +136,11 @@
 				<colordiffuse>FanartDiffuse</colordiffuse>
 				<!--texture background="true" diffuse="diffuse.png" colordiffuse="$VAR[FanartColor]">$INFO[ListItem.Art(fanart)]</texture-->
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
-				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(videolibrary).Property(TvTunesIsAlive),True)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
+				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			</control>
 
-			<visible>[Skin.HasSetting(MovieFanart) + Container.Content(Movies)] | [Skin.HasSetting(TVFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(MusicFanart) + Window.IsVisible(musiclibrary)] | [Skin.HasSetting(WeatherFanart) + Window.IsVisible(weather)] | [Skin.HasSetting(AddonFanart) + [Container.Content(Addons) | Window.IsVisible(addonbrowser)]]</visible>
+			<visible>[Skin.HasSetting(MovieFanart) + Container.Content(Movies)] | [Skin.HasSetting(TVFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [Skin.HasSetting(MusicFanart) + Window.IsVisible(Music)] | [Skin.HasSetting(WeatherFanart) + Window.IsVisible(weather)] | [Skin.HasSetting(AddonFanart) + [Container.Content(Addons) | Window.IsVisible(addonbrowser)]]</visible>
 		</control>
 	</include>
 
