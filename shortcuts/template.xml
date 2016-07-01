@@ -45,7 +45,7 @@
 		</controls>
 	</other>
 
-	<submenuOther include="hubLumosWidgets-$SKINSHORTCUTS[id]" level="1"> 
+	<submenuOther include="hubLumosWidgets" level="1"> 
 		<!-- Lumos widget - widget -->
 		<!--condition tag="property" attribute="name|widget" /-->
 
