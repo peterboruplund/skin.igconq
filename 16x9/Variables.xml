@@ -208,13 +208,29 @@
 	</variable>
 
 	<variable name="StatusOverlay">
-		<value condition="ListItem.IsResumable | [[Container.Content(tvshows) | Container.Content(seasons)] + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)]">views/OverlayResumable.png</value>
-		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayWatched.png</value>
+		<value condition="ListItem.IsParentFolder">noop</value>
+		<value condition="ListItem.IsFolder + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)">views/OverlayProgress4.png</value>
+		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayProgressWatched.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,76)">views/OverlayProgress7.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,63)">views/OverlayProgress6.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,51)">views/OverlayProgress5.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,38)">views/OverlayProgress4.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,26)">views/OverlayProgress3.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,13)">views/OverlayProgress2.png</value>
+		<value condition="ListItem.IsResumable">views/OverlayProgress1.png</value>
 	</variable>
 
 	<variable name="StatusOverlayWide">
-		<value condition="ListItem.IsResumable | [[Container.Content(tvshows) | Container.Content(seasons)] + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)]">views/OverlayResumableWide.png</value>
-		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayWatchedWide.png</value>
+		<value condition="ListItem.IsParentFolder">noop</value>
+		<value condition="ListItem.IsFolder + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)">views/OverlayProgressWide4.png</value>
+		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayProgressWideWatched.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,76)">views/OverlayProgressWide7.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,63)">views/OverlayProgressWide6.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,51)">views/OverlayProgressWide5.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,38)">views/OverlayProgressWide4.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,26)">views/OverlayProgressWide3.png</value>
+		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,13)">views/OverlayProgressWide2.png</value>
+		<value condition="ListItem.IsResumable">views/OverlayProgressWide1.png</value>
 	</variable>
 
 	<variable name="CustomMenuHeading">
