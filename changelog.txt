@@ -1,3 +1,8 @@
+17.0.13   (20th July 2016)
+- Show accurate progress in progress icons
+- Update addon information dialog
+- Krypton changes up to 2016-07-17
+
 17.0.12   (1st July 2016)
 - Krypton changes up to 2016-06-20
 
