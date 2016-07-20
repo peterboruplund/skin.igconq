@@ -109,7 +109,7 @@
 							<height>36</height>
 							<align>right</align>
 							<font>Font36</font>
-							<label>24051</label>
+							<label>19114</label>
 							<textcolor>$VAR[DialogColor2]</textcolor>
 						</control>
 						<control type="label">
@@ -121,29 +121,6 @@
 							<textcolor>$VAR[DialogColor1]</textcolor>
 						</control>
 					</control>
-
-					<!-- Rating -->
-					<!--control type="group">
-						<height>36</height>
-						<width>1170</width>
-						<visible>!String.IsEmpty(ListItem.Property(Addon.Rating))</visible>
-						<control type="label">
-							<width>200</width>
-							<height>36</height>
-							<align>right</align>
-							<font>Font36</font>
-							<label>563</label>
-							<textcolor>$VAR[DialogColor2]</textcolor>
-						</control>
-						<control type="label">
-							<left>220</left>
-							<width>950</width>
-							<height>36</height>
-							<font>Font36</font>
-							<label fallback="416">$INFO[ListItem.Property(Addon.Rating)]</label>
-							<textcolor>$VAR[DialogColor1]</textcolor>
-						</control>
-					</control-->
 
 					<!-- Summary -->
 					<control type="group">
@@ -175,11 +152,11 @@
 
 				<!-- Description -->
 				<control type="textbox">
-					<top>370</top>
+					<top>230</top>
 					<width>1170</width>
-					<height>210</height>
+					<height>360</height>
 					<textcolor>$VAR[DialogColor2]</textcolor>
-					<label>$INFO[ListItem.AddonDescription]</label>
+					<label>$VAR[addonInformation]</label>
 				</control>
 
 			</control>
@@ -226,12 +203,6 @@
 					<width>Auto</width>
 					<label>24021</label>
 					<visible>Control.IsEnabled(7)</visible>
-				</control>
-				<!-- Changelog Button -->
-				<control type="button" id="10">
-					<width>Auto</width>
-					<label>24036</label>
-					<visible>Control.IsEnabled(10)</visible>
 				</control>
 				<!-- Auto-update Button -->
 				<control type="radiobutton" id="13">

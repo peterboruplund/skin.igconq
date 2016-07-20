@@ -545,4 +545,10 @@
    		<value>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=12</value>
 	</variable>
 
+	<!-- Addon Information -->
+	<variable name="addonInformation">
+		<value condition="!IsEmpty(ListItem.AddonNews)">[B]$LOCALIZE[29916][/B][CR]$INFO[ListItem.AddonNews][CR][CR][B]$LOCALIZE[21821][/B][CR]$INFO[ListItem.AddonDescription]</value>
+		<value>$INFO[ListItem.AddonDescription]</value>
+	</variable>
+
 </includes>
