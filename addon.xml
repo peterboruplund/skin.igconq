@@ -16,7 +16,11 @@
 		<platform>all</platform>
 		<summary lang="en">A simple, clean and not-so-light mod of Conq</summary>
 		<disclaimer lang="en">Mouse and Touch device not supported</disclaimer>
-		<description lang="en">Original design: Bolteh[CR]Code: Hitcher[CR]Thanks to 'Black for the icons</description>
+		<description lang="en">Original design: Bolteh[CR]Original Kodi skin: Hitcher[CR]Thanks to 'Black for the icons</description>
 		<news>Krypton window ID fixes</news>
 	</extension>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+	</assets>
 </addon>
