@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+
+	<widget-groupings>
+
+		<node label="Test 1" condition="String.IsEmpty(Window.Property(test))">
+			<content>video</content>  
+		</node>
+		<node label="Test 2" condition="!String.IsEmpty(Window.Property(test))">
+			<content>music</content>
+		</node>
+
+	</widget-groupings>
+
 	<contextmenu>
 		<!-- Enable context menu on control 211 -->
 		<enableon>211</enableon>

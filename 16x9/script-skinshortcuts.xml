@@ -134,6 +134,21 @@
 			<usecontrolcoords>true</usecontrolcoords>
 			<scrolltime tween="sine" easing="out">240</scrolltime>
 
+			<control type="button" id="1000">
+				<width>1050</width>
+				<height>60</height>
+				<label>Test button 1</label>
+				<onclick>SetProperty(test,True)</onclick>
+				<onclick>SendClick(312)</onclick>
+			</control>
+			<control type="button" id="1001">
+				<width>1050</width>
+				<height>60</height>
+				<label>Test button 2</label>
+				<onclick>ClearProperty(test)</onclick>
+				<onclick>SendClick(312)</onclick>
+			</control>
+
 			<!-- Change shortcut -->
 			<control type="button" id="401">
 				<width>1050</width>
