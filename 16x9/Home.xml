@@ -45,6 +45,7 @@
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			<imagepath>$VAR[widgetBackground]</imagepath>
 			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<visible>!Skin.HasSetting(widgetFanart)</visible>

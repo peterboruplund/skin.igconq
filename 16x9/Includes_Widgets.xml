@@ -65,7 +65,7 @@
 
 	<include name="weather-widget">
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$LOCALIZE[19030]</label>
 			<label2>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits] ($INFO[Window(Weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits])</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherIconsExtVar]</icon>
@@ -73,7 +73,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Current.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.1.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.1.FanartCode)]$VAR[WeatherIconsExtVar]</icon>
@@ -82,7 +82,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.1.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.2.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</icon>
@@ -91,7 +91,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.2.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.3.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</icon>
@@ -100,7 +100,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.3.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.4.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</icon>
@@ -109,7 +109,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.4.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.5.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<thumb>$VAR[weatherIcons]/$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</thumb>
@@ -118,7 +118,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.5.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.6.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</icon>
@@ -127,7 +127,7 @@
 			<property name="weatherFanart">$INFO[Window(Weather).Property(Daily.6.FanartCode)]</property>
 		</item>
 		<item>
-			<onclick>noop</onclick>
+			<onclick>ActivateWindow(Weather)</onclick>
 			<label>$INFO[Window(Weather).Property(Daily.7.LongDay)]</label>
 			<label2>$INFO[Window(Weather).Property(Day6.LowTemp)]$INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day6.HighTemp)]$INFO[System.TemperatureUnits]</label2>
 			<icon>$VAR[weatherIcons]$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</icon>
