@@ -27,7 +27,7 @@
 					<top>322</top>
 					<width>405</width>
 					<height>405</height>
-					<texture>$INFO[ListItem.Art(thumb)]</texture>
+					<texture>$INFO[ListItem.Icon]</texture>
 					<aspectratio aligny="center">keep</aspectratio>
 				</control>
 				<control type="image">

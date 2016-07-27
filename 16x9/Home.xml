@@ -38,12 +38,13 @@
 
 		<include>WindowBackgroundImage</include>
 
-		<control type="image">
+		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<include>VisibleFadeAnimation</include>
 			<fadetime>400</fadetime>
 			<colordiffuse>FanartDiffuse</colordiffuse>
-			<texture background="true">$VAR[widgetBackground]</texture>
+			<imagepath>$VAR[widgetBackground]</imagepath>
+			<timeperimage>10000</timeperimage>
 			<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)]">Conditional</animation>
 			<visible>!Skin.HasSetting(widgetFanart)</visible>

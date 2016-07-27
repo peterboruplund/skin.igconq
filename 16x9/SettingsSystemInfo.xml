@@ -340,13 +340,14 @@
 
 		<!-- XBMC info -->
 		<control type="textbox">
-			<left>830</left>
-			<top>856</top>
+			<left>910</left>
+			<top>936</top>
 			<width>970</width>
 			<height>118</height>
 			<label>$INFO[Control.GetLabel(52)][CR]$LOCALIZE[13271] $INFO[System.CPUUsage][CR]$LOCALIZE[31059] $INFO[system.memory(used.percent)]</label>
 			<textcolor>$VAR[TextColor1]</textcolor>
 			<shadowcolor>TextColor4</shadowcolor>
+			<align>right</align>
 			<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(500).HasFocus">Conditional</animation>
 		</control>
 

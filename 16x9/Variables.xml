@@ -218,6 +218,7 @@
 		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,26)">views/OverlayProgress3.png</value>
 		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,13)">views/OverlayProgress2.png</value>
 		<value condition="ListItem.IsResumable">views/OverlayProgress1.png</value>
+		<value condition="!IsEmpty(ListItem.PlayCount)">views/OverlayProgressWatched.png</value>
 	</variable>
 
 	<variable name="StatusOverlayWide">
@@ -231,6 +232,7 @@
 		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,26)">views/OverlayProgressWide3.png</value>
 		<value condition="ListItem.IsResumable + IntegerGreaterThan(ListItem.PercentPlayed,13)">views/OverlayProgressWide2.png</value>
 		<value condition="ListItem.IsResumable">views/OverlayProgressWide1.png</value>
+		<value condition="!IsEmpty(ListItem.PlayCount)">views/OverlayProgressWideWatched.png</value>
 	</variable>
 
 	<variable name="CustomMenuHeading">
@@ -435,6 +437,11 @@
 	<variable name="weatherIcons">
 		<value condition="!String.IsEmpty(Skin.String(weatherIcons.path))">$INFO[Skin.String(weatherIcons.path)]</value>
 		<value>resource://resource.images.weathericons.default/</value>
+	</variable>
+
+	<variable name="WeatherIconsExtVar">
+		<value condition="!IsEmpty(Skin.String(weatherIcons.ext))">$INFO[Skin.String(weatherIcons.ext)]</value>
+		<value>.png</value>
 	</variable>
 
 	<variable name="menuStyle">
