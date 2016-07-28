@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.igconq"
-	version="17.0.13"
+	version="17.0.14"
 	name="IgConq"
 	provider-name="Hitcher Ignoble61">
 	<requires>
@@ -17,7 +17,7 @@
 		<summary lang="en">A simple, clean and not-so-light mod of Conq</summary>
 		<disclaimer lang="en">Mouse and Touch device not supported</disclaimer>
 		<description lang="en">Original design: Bolteh[CR]Original Kodi skin: Hitcher[CR]Thanks to 'Black for the icons</description>
-		<news>New progress icons, updated addon information dialog.</news>
+		<news>Tweak favourites and weather, add player process window, minor fixes and tweaks.</news>
 	</extension>
 	<assets>
 		<icon>icon.png</icon>
