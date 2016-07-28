@@ -558,4 +558,10 @@
 		<value>$INFO[ListItem.AddonDescription]</value>
 	</variable>
 
+	<!-- Player Process Info -->
+	<variable name="VideoHWDecoder">
+		<value condition="Player.Process(videohwdecoder)">HW</value>
+		<value>SW</value>
+	</variable>
+
 </includes>

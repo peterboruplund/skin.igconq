@@ -393,3 +393,18 @@ msgstr ""
 msgctxt "#31086"
 msgid "Artist Slideshow"
 msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31087"
+msgid "Video decoder"
+msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31088"
+msgid "Pixel format"
+msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31089"
+msgid "Memory used"
+msgstr ""
