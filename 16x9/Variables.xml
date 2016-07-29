@@ -566,4 +566,12 @@
 		<value>SW</value>
 	</variable>
 
+	<!-- Aliter widget details -->
+	<variable name="Aliter_Widget_Details">
+		<value condition="!IsEmpty(Container(8000).ListItem.Property(channelname)) + SubString(Container(8000).ListItem.Property(type),livechannel)">$INFO[Container(8000).ListItem.Label][CR]$INFO[Container(8000).ListItem.Property(Title)] ($INFO[Container(8000).ListItem.Property(StartTime)] - $INFO[Container(8000).ListItem.Property(EndTime)])[CR]$INFO[Container(8000).ListItem.Property(NextTitle)] ($INFO[Container(8000).ListItem.Property(NextStartTime)] - $INFO[Container(8000).ListItem.Property(NextEndTime)])</value>
+		<value condition="!IsEmpty(Container(8000).ListItem.Property(channelname))">$INFO[Container(8000).ListItem.Label][CR]$INFO[Container(8000).ListItem.Property(StartTime)]</value>
+		<value condition="!IsEmpty(Container(8000).ListItem.Season)">[LIGHT]$INFO[Container(8000).ListItem.TVShowTitle][/LIGHT][CR](s$INFO[Container(8000).ListItem.Season]e$INFO[Container(8000).ListItem.Episode]) $INFO[Container(8000).ListItem.Label]</value>
+		<value>$INFO[Container(8000).ListItem.Label]</value>
+	</variable>
+
 </includes>

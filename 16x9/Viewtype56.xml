@@ -24,8 +24,8 @@
 				<height>720</height>
 				<onup>51</onup>
 				<ondown>51</ondown>
-				<onleft>60</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">3001</onright>
+				<onleft condition="!Skin.HasSetting(KioskMode)">3001</onleft>
+				<onright>8000</onright>
 				<pagecontrol>60</pagecontrol>
 				<orientation>vertical</orientation>
 				<viewtype label="Aliter">list</viewtype>
@@ -60,28 +60,27 @@
 			</control>
 
 			<!-- Debug -->
-			<control type="label">
+			<!--control type="label">
 				<left>750</left>
 				<centertop>50%</centertop>
 				<width>1050</width>
 				<height>720</height>
 				<font>Font36</font>
-				<label>$INFO[Window(10000).Property(NodeHelper_Widget)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetName)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetType)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetTarget)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetPath)][CR][CR]$INFO[Window(10000).Property(NodeHelper_Widget_2)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetName_2)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetType_2)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetTarget_2)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetPath_2)]</label>
+				<label>$INFO[Window(10000).Property(NodeHelper_Widget)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetName)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetType)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetTarget)][CR]$INFO[Window(10000).Property(NodeHelper_WidgetPath)]</label>
 				<textcolor>$VAR[TextColor2]</textcolor>
-			</control>
+			</control-->
 
 			<!-- Widget 1 -->
 			<control id="8000" type="list">
 				<left>2605</left>
-				<top>200</top>
+				<top>608</top>
 				<width>1218</width>
 				<height>306</height>
-				<onleft>9000</onleft>
-				<onback>9000</onback>
+				<onleft>56</onleft>
+				<onback>56</onback>
 				<onright>noop</onright>
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
-				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="out" tween="sine">240</scrolltime>
 				<animation condition="True + StringCompare(Container(8000).NumItems,1)" effect="slide" end="-1000,0" start="0,0" time="0">conditional</animation>
 				<animation condition="True + StringCompare(Container(8000).NumItems,2)" effect="slide" end="-1203,0" start="0,0" time="0">conditional</animation>
@@ -107,7 +106,7 @@
 						<param name="height">306</param>
 						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback" />
-						<param name="art">$INFO[ListItem.Art(poster)]</param>
+						<param name="art">$INFO[ListItem.Art(season.poster)]</param>
 						<param name="aspectratio">keep</param>
 						<param name="shadow">views/DropShadowSmall.png</param>
 						<param name="visible" />
@@ -118,10 +117,10 @@
 						<param name="height">306</param>
 						<param name="colordiffuse">DiffusePosterNF</param>
 						<param name="fallback" />
-						<param name="art">$INFO[ListItem.Icon]</param>
+						<param name="art">$INFO[ListItem.Art(poster)]</param>
 						<param name="aspectratio">keep</param>
 						<param name="shadow">views/DropShadowSmall.png</param>
-						<param name="visible">IsEmpty(ListItem.Art(poster))</param>
+						<param name="visible">IsEmpty(ListItem.Art(season.poster))</param>
 					</include>
 					<include content="widget-image">
 						<description>Catch-all art</description>
@@ -132,7 +131,7 @@
 						<param name="art">$INFO[ListItem.Icon]</param>
 						<param name="aspectratio">keep</param>
 						<param name="shadow">views/DropShadowSmall.png</param>
-						<param name="visible">[ IsEmpty(ListItem.Art(poster)) ] + [ IsEmpty(ListItem.Icon) ]</param>
+						<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
 					</include>
 					<control type="image">
 						<left>138</left>
@@ -151,7 +150,7 @@
 							<param name="height">306</param>
 							<param name="colordiffuse" />
 							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(poster)]</param>
+							<param name="art">$INFO[ListItem.Art(season.poster)]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
 							<param name="visible" />
@@ -162,10 +161,10 @@
 							<param name="height">306</param>
 							<param name="colordiffuse" />
 							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Icon]</param>
+							<param name="art">$INFO[ListItem.Art(poster)]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">IsEmpty(ListItem.Art(poster))</param>
+							<param name="visible">IsEmpty(ListItem.Art(season.poster))</param>
 						</include>
 						<include content="widget-image">
 							<description>Catch-all art</description>
@@ -176,7 +175,7 @@
 							<param name="art">$INFO[ListItem.Icon]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">[ IsEmpty(ListItem.Art(poster)) ] + [ IsEmpty(ListItem.Icon) ]</param>
+							<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
 						</include>
 						<visible>Control.HasFocus(8000)</visible>
 					</control>
@@ -187,7 +186,7 @@
 							<param name="height">306</param>
 							<param name="colordiffuse">DiffusePosterNF</param>
 							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(poster)]</param>
+							<param name="art">$INFO[ListItem.Art(season.poster)]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
 							<param name="visible" />
@@ -198,10 +197,10 @@
 							<param name="height">306</param>
 							<param name="colordiffuse">DiffusePosterNF</param>
 							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Icon]</param>
+							<param name="art">$INFO[ListItem.Art(poster)]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">IsEmpty(ListItem.Art(poster))</param>
+							<param name="visible">IsEmpty(ListItem.Art(season.poster))</param>
 						</include>
 						<include content="widget-image">
 							<description>Catch-all art</description>
@@ -212,7 +211,7 @@
 							<param name="art">$INFO[ListItem.Icon]</param>
 							<param name="aspectratio">keep</param>
 							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">[ IsEmpty(ListItem.Art(poster)) ] + [ IsEmpty(ListItem.Icon) ]</param>
+							<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
 						</include>
 						<visible>!Control.HasFocus(8000)</visible>
 					</control>
@@ -227,228 +226,42 @@
 				</focusedlayout>
 				<content target="videos">$INFO[Window(10000).Property(NodeHelper_WidgetPath)]</content>
 			</control>
-			<control type="grouplist">
-				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
-				<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
-				<align>right</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<itemgap>10</itemgap>
-				<control type="image">
-					<width>33</width>
-					<height>33</height>
-					<texture>busy.gif</texture>
-					<visible>Container(8000).IsUpdating</visible>
-				</control>
-				<control type="label">
-					<minwidth>10</minwidth>
-					<maxwidth>950</maxwidth>
-					<width>auto</width>
-					<height>33</height>
-					<font>Font33</font>
-					<textcolor>$VAR[SubMenuColor]</textcolor>
-					<label>Hello$INFO[Window(10000).Property(NodeHelper_WidgetName)]</label>
-				</control>
-			</control>
 
-			<!-- Widget 2 -->
-			<control id="8001" type="list">
-				<left>2605</left>
-				<top>550</top>
+			<!-- Widget details -->
+			<control type="label">
+				<top>900</top>
+				<left>590</left>
 				<width>1218</width>
-				<height>306</height>
-				<onleft>9000</onleft>
-				<onback>9000</onback>
-				<onright>noop</onright>
-				<viewtype label="">list</viewtype>
-				<orientation>horizontal</orientation>
-				<defaultcontrol always="true">0</defaultcontrol>
-				<scrolltime easing="out" tween="sine">240</scrolltime>
-				<animation condition="True + StringCompare(Container(8001).NumItems,1)" effect="slide" end="-1000,0" start="0,0" time="0">conditional</animation>
-				<animation condition="True + StringCompare(Container(8001).NumItems,2)" effect="slide" end="-1203,0" start="0,0" time="0">conditional</animation>
-				<animation condition="True + StringCompare(Container(8001).NumItems,3)" effect="slide" end="-1406,0" start="0,0" time="0">conditional</animation>
-				<animation condition="True + StringCompare(Container(8001).NumItems,4)" effect="slide" end="-1609,0" start="0,0" time="0">conditional</animation>
-				<animation condition="True + StringCompare(Container(8001).NumItems,5)" effect="slide" end="-1812,0" start="0,0" time="0">conditional</animation>
-				<animation condition="True + IntegerGreaterThan(Container(8001).NumItems,5)" effect="slide" end="-2015,0" start="0,0" time="0">conditional</animation>
-				<animation condition="False + StringCompare(Container(8001).NumItems,1)" effect="slide" end="-1325,0" start="0,0" time="0">conditional</animation>
-				<animation condition="False + StringCompare(Container(8001).NumItems,2)" effect="slide" end="-1670,0" start="0,0" time="0">conditional</animation>
-				<animation condition="False + IntegerGreaterThan(Container(8001).NumItems,2)" effect="slide" end="-2015,0" start="0,0" time="0">conditional</animation>
-				<animation type="visible">
-					<effect delay="100" end="100" start="0" time="200" type="fade" />
-					<effect delay="100" end="0,0" start="600,0" time="200" type="slide" />
-				</animation>
-				<animation type="hidden">
-					<effect end="0" start="100" time="200" type="fade" />
-					<effect end="600,0" start="0,0" time="200" type="slide" />
-				</animation>
-				<itemlayout height="306" width="203">
-					<include content="widget-image">
-						<description>Primary art</description>
-						<param name="width">183</param>
-						<param name="height">306</param>
-						<param name="colordiffuse">DiffusePosterNF</param>
-						<param name="fallback" />
-						<param name="art">$INFO[ListItem.Art(season.poster)]</param>
-						<param name="aspectratio">keep</param>
-						<param name="shadow">views/DropShadowSmall.png</param>
-						<param name="visible" />
-						<param name="aligny">top</param>
-					</include>
-					<include content="widget-image">
-						<description>Fallback art</description>
-						<param name="width">183</param>
-						<param name="height">306</param>
-						<param name="colordiffuse">DiffusePosterNF</param>
-						<param name="fallback" />
-						<param name="art">$INFO[ListItem.Art(poster)]</param>
-						<param name="aspectratio">keep</param>
-						<param name="shadow">views/DropShadowSmall.png</param>
-						<param name="visible">IsEmpty(ListItem.Art(season.poster))</param>
-						<param name="aligny">top</param>
-					</include>
-					<include content="widget-image">
-						<description>Catch-all art</description>
-						<param name="width">183</param>
-						<param name="height">306</param>
-						<param name="colordiffuse">DiffusePosterNF</param>
-						<param name="fallback">DefaultShortcut.png</param>
-						<param name="art">$INFO[ListItem.Icon]</param>
-						<param name="aspectratio">keep</param>
-						<param name="shadow">views/DropShadowSmall.png</param>
-						<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
-						<param name="aligny">top</param>
-					</include>
-					<control type="image">
-						<left>138</left>
-						<top>256</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>$VAR[StatusOverlayWide]</texture>
-						<visible>!Skin.HasSetting(widgetIcons)</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout height="306" width="203">
-					<control type="group">
-						<include content="widget-image">
-							<description>Primary art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse" />
-							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(season.poster)]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible" />
-							<param name="aligny">top</param>
-						</include>
-						<include content="widget-image">
-							<description>Fallback art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse" />
-							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(poster)]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">IsEmpty(ListItem.Art(poster))</param>
-							<param name="aligny">top</param>
-						</include>
-						<include content="widget-image">
-							<description>Catch-all art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse" />
-							<param name="fallback">DefaultShortcut.png</param>
-							<param name="art">$INFO[ListItem.Icon]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
-							<param name="aligny">top</param>
-						</include>
-						<visible>Control.HasFocus(8001)</visible>
-					</control>
-					<control type="group">
-						<include content="widget-image">
-							<description>Primary art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse">DiffusePosterNF</param>
-							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(season.poster)]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible" />
-							<param name="aligny">top</param>
-						</include>
-						<include content="widget-image">
-							<description>Fallback art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse">DiffusePosterNF</param>
-							<param name="fallback" />
-							<param name="art">$INFO[ListItem.Art(poster)]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">IsEmpty(ListItem.Art(season.poster))</param>
-							<param name="aligny">top</param>
-						</include>
-						<include content="widget-image">
-							<description>Catch-all art</description>
-							<param name="width">183</param>
-							<param name="height">306</param>
-							<param name="colordiffuse">DiffusePosterNF</param>
-							<param name="fallback">DefaultShortcut.png</param>
-							<param name="art">$INFO[ListItem.Icon]</param>
-							<param name="aspectratio">keep</param>
-							<param name="shadow">views/DropShadowSmall.png</param>
-							<param name="visible">[ IsEmpty(ListItem.Art(season.poster)) ] + [ IsEmpty(ListItem.Art(poster)) ]</param>
-							<param name="aligny">top</param>
-						</include>
-						<visible>!Control.HasFocus(8001)</visible>
-					</control>
-					<control type="image">
-						<left>138</left>
-						<top>256</top>
-						<width>35</width>
-						<height>49</height>
-						<texture>$VAR[StatusOverlayWide]</texture>
-						<visible>!Skin.HasSetting(widgetIcons)</visible>
-					</control>
-				</focusedlayout>
-				<content target="videos">$INFO[Window(10000).Property(NodeHelper_WidgetPath_2)]</content>
-			</control>
-			<control type="grouplist">
-				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
-				<animation delay="100" effect="fade" end="100" start="0" time="200">Visible</animation>
-				<top>1005</top>
-				<right>120</right>
-				<width>1000</width>
-				<height>33</height>
+				<height>280</height>
+				<font>Font33</font>
 				<align>right</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<itemgap>10</itemgap>
-				<control type="image">
-					<width>33</width>
-					<height>33</height>
-					<texture>busy.gif</texture>
-					<visible>Container(8001).IsUpdating</visible>
-				</control>
-				<control type="label">
-					<minwidth>10</minwidth>
-					<maxwidth>950</maxwidth>
-					<width>auto</width>
-					<height>33</height>
-					<font>Font33</font>
-					<textcolor>$VAR[SubMenuColor]</textcolor>
-					<label>Hello$INFO[Window(10000).Property(NodeHelper_WidgetName_2)]</label>
-				</control>
+				<aligny>top</aligny>
+				<label>$VAR[Aliter_Widget_Details]</label>
+				<visible>Control.HasFocus(8000)</visible>
 			</control>
 
+			<!-- Widget Heading -->
+			<control type="label">
+				<top>900</top>
+				<left>590</left>
+				<width>1218</width>
+				<height>280</height>
+				<font>Font33</font>
+				<align>right</align>
+				<aligny>top</aligny>
+				<label>$INFO[Window(10000).Property(NodeHelper_WidgetName)]</label>
+				<visible>!Control.HasFocus(8000)</visible>
+			</control>
+
+			<!-- (Re)Loading Indicator -->
+			<control type="image">
+				<left>1820</left>
+				<top>905</top>
+				<width>33</width>
+				<height>33</height>
+				<texture>busy.gif</texture>
+				<visible>Container(8000).IsUpdating</visible>
+			</control>
 
 		</control>
 
