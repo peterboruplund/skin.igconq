@@ -4,7 +4,7 @@
 	<backgroundcolor>0x00000000</backgroundcolor>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
-	<views>52,53,51,50</views>
+	<views>56,52,53,51,50</views>
 
 	<controls>
 
@@ -23,6 +23,7 @@
 			<include>Viewtype51</include>
 			<include>Viewtype52</include>
 			<include>Viewtype53</include>
+			<include>Viewtype56</include>
 
 			<!-- Scrollbar (list) -->
 			<control type="scrollbar" id="60">
@@ -83,7 +84,10 @@
 			</control>
 
 			<!-- Item count -->
-			<include>ItemCount</include>
+			<control type="group">
+				<visible>!Control.IsVisible(56)</visible>
+				<include>ItemCount</include>
+			</control>
 
 		</control>
 
@@ -136,6 +140,20 @@
 						<label>$INFO[Container.ViewMode]</label>
 						<height>52</height>
 						<onclick>Container.NextViewMode</onclick>
+					</control>
+					<!-- Widget 1 -->
+					<control type="button" id="93">
+						<label>Widget 1</label>
+						<height>52</height>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=$INFO[Container.FolderPath]-Widget&amp;skinWidgetType=$INFO[Container.FolderPath]-WidgetType&amp;skinWidgetName=$INFO[Container.FolderPath]-WidgetName&amp;skinWidgetTarget=$INFO[Container.FolderPath]-WidgetTarget&amp;skinWidgetPath=$INFO[Container.FolderPath]-WidgetPath)</onclick>
+						<visible>Control.IsVisible(56)</visible>
+					</control>
+					<!-- Widget 2 -->
+					<control type="button" id="92">
+						<label>Widget2</label>
+						<height>52</height>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=$INFO[Container.FolderPath]-Widget_2&amp;skinWidgetType=$INFO[Container.FolderPath]-WidgetType_2&amp;skinWidgetName=$INFO[Container.FolderPath]-WidgetName_2&amp;skinWidgetTarget=$INFO[Container.FolderPath]-WidgetTarget_2&amp;skinWidgetPath=$INFO[Container.FolderPath]-WidgetPath_2)</onclick>
+						<visible>Control.IsVisible(56)</visible>
 					</control>
 					<!-- Fanart -->
 					<control type="radiobutton" id="98">
